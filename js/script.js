@@ -14,6 +14,7 @@ $(window).scroll(function() {
         var CurrScroolVar = $(this).scrollTop();
         if(CurrScroolVar >= ContentSection.eq(0).offset().top) {
             TopMenuButton.removeClass("active");
+            TopMenuButton.delay(1000);
             TopMenuButton.eq(0).addClass("active");
         }
         if(CurrScroolVar >= ContentSection.eq(1).offset().top) {

@@ -7,17 +7,16 @@
 #TOPnav {position: fixed; width: 100%; left: 0; top: 0; 
     padding: 5px 5px 5px 20px; background-color: rgba(0, 0, 0, 0.3);}
 #TOPnav h1 {font-size: 40px;float: left;color: #fff; display: none;}
-#TOPnav ul { padding-right: 20px; text-align: center; position: relative;}
-#TOPnav ul li {display: inline; text-decoration: none;}
-#TOPnav ul .active a {
-    content: "";
-    height: 2px;
-    background: #ffb000;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+#TOPnav ul { padding-right: 20px; text-align: center;}
+#TOPnav ul li {display: inline; text-decoration: none; position: relative;}
+
+#TOPnav ul li::before {
+    content: ""; border-top: 2px solid #e65100; position: absolute; top: 15px; left: 50%;
+    width: 0; border-radius: 80%;
+    transition: all 0.8s ease;
 }
-#TOPnav ul .active a:after {
-    width: 100%; 
-    left: 0; 
+#TOPnav ul .active::before {
+    width: 80%; left: 10%;
 }
 #TOPnav ul li a {display: inline-block; padding: 20px 25px; font-family: "Ubuntu_B";
 font-size: 15px; text-transform: capitalize; color: #fff;}
