@@ -4,7 +4,7 @@
 
 
 /* 상단메뉴 레이아웃 정의 */
-#TOPnav {position: fixed; width: 100%; left: 0; top: 0; 
+#TOPnav {position: fixed; width: 100%; left: 0; top: 0; height: 62px;
     padding: 5px 5px 5px 20px; background-color: rgba(0, 0, 0, 0.3);}
 #TOPnav h1 {font-size: 40px;float: left;color: #fff; display: none;}
 #TOPnav ul { padding-right: 20px; text-align: center;}
@@ -20,13 +20,15 @@
 }
 #TOPnav ul li a {display: inline-block; padding: 20px 25px; font-family: "Ubuntu_B";
 font-size: 15px; text-transform: capitalize; color: #fff;}
-
+#TOPnav .icon {color: #fff; font-size: 50px; position: absolute; top: 0; right: 10px;
+display: none;}
+#TOPnav .icon:hover {color: #8196EB;}
 
 
 /* 메인 article 컨텐츠 정의 */
 article {text-align: center;}
-article > section {height: 100vh; line-height: 100vh;}
-article > section > h2 {font-size: 120px;font-weight: 100; text-transform: uppercase;color: #fff;
+article > section {height: 100vh; line-height: 100vh; overflow: hidden;}
+article > section > h2 {font-size: 70px;font-weight: 100; text-transform: uppercase;color: #fff;
     text-shadow: -3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000;}
 
 #sect_1 {background:radial-gradient(ellipse farthest-corner at center top, #8196EB 0%, #343C5E 100%); }
@@ -34,3 +36,14 @@ article > section > h2 {font-size: 120px;font-weight: 100; text-transform: upper
 #sect_3 {background:radial-gradient(ellipse farthest-corner at center bottom, #E2B9C6 0%, #9D5679 100%); }
 #sect_4 {background:radial-gradient(ellipse farthest-corner at center top, #44564A 0%, #508164 100%); }
 #sect_5 {background:radial-gradient(ellipse farthest-corner at center top, #81AAB3 0%, #D3E1E6 100%); }
+
+@media (max-width: 800px){
+    #TOPnav {height: 67px; padding: 0;}
+    #TOPnav ul {display: none; margin-top: 67px;}
+    #TOPnav .icon {display: block;}
+    #TOPnav ul li a {width: 100%; background-color: rgba(0, 0, 0, 0.3);}
+    #TOPnav ul .active a {background-color: rgba(255, 255, 255, 0.3);}
+    #TOPnav ul li::before {top: 15px; left: 50%; }
+    #TOPnav ul .active::before {width: 10%; left: 45%;}
+    article > section > h2 {font-size: 8vw;}
+}
