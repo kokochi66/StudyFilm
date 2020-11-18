@@ -1,6 +1,7 @@
 
-var TopMenuButton = $("#TOPnav ul li");     // 탑nav 메뉴버튼
-var ContentSection = $("article section");  // 컨텐츠 섹션창
+var TopMenuButton = $("#TOPnav .TOPnav ul li");     // 탑nav 메뉴버튼
+var ContentSection = $(".intro1 section");  // 컨텐츠 섹션창
+var ResponseTopMenu = false;
 
 TopMenuButton.click(function(e) {
     e.preventDefault();                     // HTML의 # 기본기능 차단
@@ -8,12 +9,29 @@ TopMenuButton.click(function(e) {
     var index = CurrTargetButton.index();
     var offset = ContentSection.eq(index).offset();
     $("html, body").animate({scrollTop: offset.top},600,"easeInOutQuint");
+    if(ResponseTopMenu){
+        $("#TOPnav .TOPnav .RESnav").slideUp();
+        $("#TOPnav .TOPnav .cancel").fadeOut();
+        $("#TOPnav .TOPnav .Baricon").fadeIn();
+        ResponseTopMenu = false;
+    }
 });
 
-$("#TOPnav .icon").click(function(e) {
+$("#TOPnav .TOPnav .Baricon").click(function(e) {
     // $("#TOPnav ul").css("display","block"); 
-    $("#TOPnav ul").slideToggle(); 
+    $("#TOPnav .TOPnav .RESnav").slideDown(); 
+    $("#TOPnav .TOPnav .cancel").fadeIn();
+    $("#TOPnav .TOPnav .Baricon").fadeOut();
+    ResponseTopMenu = true;
 });
+$("#TOPnav .TOPnav .cancel").click(function(e) {
+    // $("#TOPnav ul").css("display","block"); 
+    $("#TOPnav .TOPnav .RESnav").slideUp();
+    $("#TOPnav .TOPnav .cancel").fadeOut();
+    $("#TOPnav .TOPnav .Baricon").fadeIn();
+    ResponseTopMenu = false;
+});
+// 반응형 슬라이드 탑메뉴 작업
 
 
 // window 관련된 함수
@@ -44,7 +62,11 @@ $(window).scroll(function() {
 
 $(window).resize(function() {
      var CurrentWidth = $(window).width();
-     if(CurrentWidth > 800 && $("#TOPnav ul").is(":hidden")) 
-     $("#TOPnav ul").removeAttr("style");
+     if(CurrentWidth > 800){
+        $("#TOPnav .TOPnav .RESnav").removeAttr("style");
+        $("#TOPnav .TOPnav .cancel").removeAttr("style");
+        $("#TOPnav .TOPnav .Baricon").removeAttr("style");
+        ResponseTopMenu = false;
+     } 
 });
 // 화면크기 반응형 Toggle로 인해 생겨나는 추가 스타일속성 제거

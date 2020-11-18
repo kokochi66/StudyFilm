@@ -4,31 +4,32 @@
 
 
 /* 상단메뉴 레이아웃 정의 */
-#TOPnav {position: fixed; width: 100%; left: 0; top: 0; height: 62px;
-    padding: 5px 5px 5px 20px; background-color: rgba(0, 0, 0, 0.3);}
-#TOPnav h1 {font-size: 40px;float: left;color: #fff; display: none;}
-#TOPnav ul { padding-right: 20px; text-align: center;}
-#TOPnav ul li {display: inline; text-decoration: none; position: relative;}
+#TOPnav {position: fixed; height: 10%;
+width: 100%; overflow: hidden;}
+#TOPnav .TOPnav {position: relative; margin-top: 15px;}
+#TOPnav .TOPnav .RESnav ul {margin: 0 auto; width: 50%;
+text-align: center;}
+#TOPnav .TOPnav .RESnav ul li {display: inline-block;
+margin-left: 8px; margin-right: 8px;}
+#TOPnav .TOPnav .RESnav ul li.last {margin-right: 0;}
+#TOPnav .TOPnav .RESnav ul li a {font-size: 20px; font-weight: bold;
+text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;}
 
-#TOPnav ul li::before {
-    content: ""; border-top: 2px solid #e65100; position: absolute; top: 15px; left: 50%;
-    width: 0; border-radius: 80%;
-    transition: all 0.8s ease;
-}
-#TOPnav ul .active::before {
-    width: 80%; left: 10%;
-}
-#TOPnav ul li a {display: inline-block; padding: 20px 25px; font-family: "Ubuntu_B";
-font-size: 15px; text-transform: capitalize; color: #fff;}
-#TOPnav .icon {color: #fff; font-size: 50px; position: absolute; top: 0; right: 10px;
-display: none;}
-#TOPnav .icon:hover {color: #8196EB;}
+/* 액티비티 효과 */
+#TOPnav .TOPnav .RESnav ul .active a {color: #902323;}
+
+/* 상단메뉴 반응형 레이아웃 (800px이하) */
+#TOPnav .TOPnav .Baricon {position: absolute; top: 0px; right: 2%;
+font-size: 60px; display: none;}
+#TOPnav .TOPnav .Title {display: none;}
+#TOPnav .TOPnav .cancel {display: none;
+font-size: 50px; position: absolute; top: 2%; right: 3%;}
 
 
 /* 메인 article 컨텐츠 정의 */
-article {text-align: center;}
-article > section {height: 100vh; line-height: 100vh; overflow: hidden;}
-article > section > h2 {font-size: 70px;font-weight: 100; text-transform: uppercase;color: #fff;
+.intro1 {text-align: center;}
+.intro1 > section {height: 100vh; line-height: 100vh; overflow: hidden;}
+.intro1 > section > h2 {font-size: 70px;font-weight: 100; text-transform: uppercase;color: #fff;
     text-shadow: -3px 0 #000, 0 3px #000, 3px 0 #000, 0 -3px #000;}
 
 #sect_1 {background:radial-gradient(ellipse farthest-corner at center top, #8196EB 0%, #343C5E 100%); }
@@ -38,12 +39,22 @@ article > section > h2 {font-size: 70px;font-weight: 100; text-transform: upperc
 #sect_5 {background:radial-gradient(ellipse farthest-corner at center top, #81AAB3 0%, #D3E1E6 100%); }
 
 @media (max-width: 800px){
-    #TOPnav {height: 67px; padding: 0;}
-    #TOPnav ul {display: none; margin-top: 67px;}
-    #TOPnav .icon {display: block;}
-    #TOPnav ul li a {width: 100%; background-color: rgba(0, 0, 0, 0.3);}
-    #TOPnav ul .active a {background-color: rgba(255, 255, 255, 0.3);}
-    #TOPnav ul li::before {top: 15px; left: 50%; }
-    #TOPnav ul .active::before {width: 10%; left: 45%;}
-    article > section > h2 {font-size: 8vw;}
+    #TOPnav {height: 100%;}
+    #TOPnav .TOPnav {margin-right: 0; margin-top: 0;}
+    #TOPnav .TOPnav .RESnav {display: none;}
+    #TOPnav .TOPnav .Baricon {display: block;}
+
+    /* 반응형 탑메뉴 작업 */
+    #TOPnav .TOPnav .RESnav {
+        height: 90%;
+        background-color: rgb(148, 148, 148);
+        text-align: center;
+    }
+    #TOPnav .TOPnav .RESnav ul {padding: 10%;}
+    #TOPnav .TOPnav .RESnav ul li {display: block; margin: 0;
+    padding: 15px; background-color: rgba(0, 0, 0, 0.3);
+margin-bottom: 20px;}
+    #TOPnav .TOPnav .RESnav ul .active {
+        background-color: rgba(219, 103, 103, 0.3);
+    }
 }
