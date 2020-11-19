@@ -18,7 +18,7 @@ TopMenuButton.click(function(e) {
 });
 
 $("#TOPnav .TOPnav .Baricon").click(function(e) {
-    // $("#TOPnav ul").css("display","block"); 
+    // $("#TOPnav ul").css("display","block");
     $("#TOPnav .TOPnav .RESnav").slideDown(); 
     $("#TOPnav .TOPnav .cancel").fadeIn();
     $("#TOPnav .TOPnav .Baricon").fadeOut();
