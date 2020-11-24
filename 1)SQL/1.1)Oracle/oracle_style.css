@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+* {font-family: "regular";}
+#header {height: 100px; background-color: rgb(134, 214, 205);}
+#content {height: 1500px; background-color: rgb(105, 193, 87);}
+#footer {height: 300px; background-color: rgb(158, 127, 224);}
+.container {
+  width: 1200px; background-color: rgba(255,255,255,0.5);
+  margin: 0 auto;
+}
+.button {
+  position: relative;
+  display: inline-block;
+}
+.button input {
+  width: 20px; height: 23px;
+}
+.button i {
+  position: absolute; top: 5px;left: 4px;
+  pointer-events: none;
+}
+
+
+
+/* 헤더 탑 작업 */
+#header .container {padding-top: 20px;}
+#top {height: 25px;}
+#top .left {width: 50%; float: left; font-weight: bold;}
+#top .left a {float: left; padding: 0 13px;}
+#top .left a.last {
+  margin-right: 10px;
+  border-left: 1px solid #999;
+}
+
+#top .left .search {float: left;}
+#top .left .search form {position: relative;}
+#top .left .search .edit {top: 0;left: 0; position: absolute;}
+#top .left .search .button {
+  position: absolute; left: 145px; top: 0;
+}
+
+#top .right {width: 50%; float: left; text-align: right;}
+#top .right a {padding: 0 8px;border-right: 1px solid #999;}
+#top .right a:last-child {border-right: 0;}
+#top .right a.active {
+  font-weight: bold; color: rgb(173, 49, 49);
+}
+/* //헤더 탑 작업 */
+
+#header .container #nav {height: 55px;}
