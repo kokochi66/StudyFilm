@@ -54,7 +54,7 @@ body {background-color: rgb(235, 235, 235);}
 /* 헤더 내비 작업 */
 #nav {height: 55px; position: relative;}
 #nav h3 {
-  position: absolute; top: -5px; right: 40px;
+  position: absolute; top: -5px; right: 0;
   font-size: 40px; font-weight: bold; padding: 0 10px;
 }
 #nav ul li {font-size: 20px; font-weight: bold; float: left;  padding: 10px 15px;}
@@ -76,13 +76,14 @@ body {background-color: rgb(235, 235, 235);}
   background: url(img/main_visual_1.jpg) top;
   background-size: cover; height: 100%;
   background-repeat: no-repeat;
+  border-bottom: 1px solid #222;
 }
 /* //컨텐츠 메인 비주얼 작업 */
 
 /* 컨텐츠 메인 작업 */
 #main {height: 1000px;}
 /* 컨텐츠 메인 업데이트 게시판 작업 */
-#main .update {height: 300px; overflow: hidden;}
+#main .update {height: 300px; overflow: hidden; border-bottom: 2px dashed #777;}
 #main .update div {float: left; height: 223px;}
 #main .update h3 {
   margin-top: 30px; padding: 5px 0;
@@ -99,23 +100,71 @@ body {background-color: rgb(235, 235, 235);}
 #main .update .left ul li span {float: right;}
 
 /* 컨텐츠 메인 업데이트 우측 게시판 */
-#main .update .main_cont_up .top {
-  background-color: rgb(123, 159, 230);
-  width: 100%; height: 50%;
+#main .update .main_cont_up {width: 300px;margin-left: 100px;}
+#main .update .main_cont_up .top {width: 100%; height: 50%;}
+#main .update .main_cont_up .bottom {width: 100%; height: 50%;}
+#main .update .top {border-bottom: 1px solid #222;}
+#main .update h4 {font-size: 20px; font-weight: bold; color: rgb(42, 78, 71);}
+#main .update .center p {font-size: 40px; font-weight: bold; margin-left: 80px; padding: 10px 0;}
+#main .update .center .bottom img {height: 42%;}
+#main .update .center .bottom a {font-size: 18px; font-weight: bold; color: rgb(97, 90, 223)}
+#main .update .right .top img {margin-left: 80px; width: 60%; height: 65%;}
+#main .update .right .bottom li {
+  float: left; display: inline-block; margin-right: 10px;
+  width: 30%; height: 70px; border: 1px solid #888; background-color: #fff;
 }
-#main .update .main_cont_up .bottom {
-  background-color: rgb(230, 212, 123);
-  width: 100%; height: 50%;
-}
-#main .update .center {width: 300px; background-color: rgb(181, 114, 44);margin-left: 100px;}
-
-
-#main .update .right {width: 300px; background-color: rgb(120, 82, 42);margin-left: 100px;}
-
-
+#main .update .right .bottom li:last-child {margin-right: 0;}
 /* //컨텐츠 메인 업데이트 게시판 작업 */
 
-#main .version {height: 400px; background-color: rgb(104, 180, 94);}
+/* 컨텐츠 메인 버전 게시판 작업 */
+#main .version {height: 400px;}
+.version .col {float: left; height: 100%;}
+.version .col.left {width: 300px;}
+.version .col.left h3 {font-size: 20px; font-weight: bold; color: rgb(42, 78, 71); padding: 5px 0;}
+.version .col.left ul {margin-left: 80px; margin-top: 10px;}
+.version .col.left ul li {
+  margin-top: 5px; font-size: 20px; position: relative; font-weight: bold;
+}
+.version .col.left ul li::before {
+  content: ''; display: inline-block; width: 0; height: 0;
+  border-top: 4px solid transparent; border-bottom: 4px solid transparent;
+  border-left: 6px solid #000; position: absolute; top: 20px; left: 110px;
+}
+.version .col.left ul li a {
+  display: inline-block;
+  width: 100px; text-align: center; padding: 5px 10px;
+  border-bottom: 3px solid #333; border-top: 3px solid #333;
+}
+.version .col.left ul li a:hover {background-color: rgb(156, 64, 29); color: rgb(191, 208, 219);}
+.version .col.left ul li a.active {background-color: rgb(156, 64, 29); color: rgb(191, 208, 219);}
+/* //컨텐츠 메인 버전 좌측 게시판 작업 */
+.version .col.center {width: 400px; position: relative;}
+.version .col.center img {border: 5px solid #000; border-radius: 5%;
+  width: 80%; height: 80%; position: absolute; top: 40px; left: 40px;
+  background-color: #fff; transition: all 0.5s ease; opacity: 0;
+}
+.version .col.center img.active {opacity: 1;}
+/* //컨텐츠 메인 버전 중앙 게시판 작업 */
+.version .col.right {width: 500px; height: 100%; position: relative;}
+.version .col.right .list {display: none; }
+.version .col.right .list.active {display: block;
+transition: all 0.8s ease;}
+.version .col.right .list h3 {
+  font-size: 20px; font-weight: bold; color: rgb(42, 78, 71);
+  padding: 5px 0; margin-bottom: 20px;
+  border-bottom: 1px solid #333; margin-top: 80px;
+}
+.version .col.right .list .cont {font-size: 15px; padding: 15px;}
+.version .col.right .list a {
+  display: inline-block; background-color: rgb(78, 147, 210);
+  color: #fff; padding: 10px 20px; font-size: 20px; border-radius: 5%;
+  position: absolute; bottom: 25%; left: 40%; border: 1px solid #222;
+}
+.version .col.right .list a:hover {
+  background-color: rgb(50, 98, 142);
+}
+/* //컨텐츠 메인 버전 게시판 작업 */
+
 #main .example {height: 300px; background-color: rgb(197, 113, 218);}
 
 /* //컨텐츠 메인 작업 */
