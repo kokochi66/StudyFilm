@@ -9,7 +9,7 @@ a:hover {color: #390;}
 
 
 /* 이미지 초기화 */
-img {width: 100%; height: 100%;}
+/* img {width: 100%; height: 100%;} */
 
 /* 폰트 초기화 */
 body, input, textarea, select, button, table {

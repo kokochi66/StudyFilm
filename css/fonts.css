@@ -4,3 +4,8 @@
   src: url(../fonts/PoorStory-Regular.ttf);
   font-family: "regular";
 }
+
+@font-face {
+  src: url(../fonts/Sunflower-Medium.ttf);
+  font-family: "Sunflower";
+}

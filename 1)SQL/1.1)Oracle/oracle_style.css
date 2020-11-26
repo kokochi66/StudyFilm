@@ -3,7 +3,7 @@
 * {font-family: "regular";}
 body {background-color: rgb(235, 235, 235);}
 #header {border-bottom: 1px solid #000;}
-#content {height: 1500px;}
+#content {}
 #footer {height: 200px; border-top: 1px solid  #d1d1d1;
 margin-top: 100px;}
 .container {
@@ -224,6 +224,31 @@ color: rgb(101, 101, 101);}
 
 
 
+
+
+
+
+
+/* 공통 게시판 작업 */
+/* #Notice_content img {width: auto; height: auto;} */
+#Notice_content h1 {
+  font-size: 40px; font-weight: bold; margin-top: 50px;
+  border-bottom: 1px solid #222; margin-bottom: 30px;
+}
+#Notice_content p, #Notice_content strong, #Notice_content ul, #Notice_content ul li,
+#Notice_content a, #Notice_content span, #Notice_content em,
+#Notice_content h2, #Notice_content h3, #Notice_content h4, #Notice_content h5, #Notice_content h6 {
+  font-size: 20px; font-family: "Sunflower"; padding: 5px 2px;
+   color: rgb(36, 36, 36);
+}
+
+#Notice_content a {color: rgb(41, 72, 184);}
+#Notice_content a:hover {text-decoration: underline;}
+#Notice_content h2 {color: #FE2E2E; font-weight: bold;}
+#Notice_content h3 {color: #0E469A; font-weight: bold;}
+#Notice_content h4 {color: #004620; font-weight: bold;}
+#Notice_content h5 {color: #30004A; font-weight: bold;}
+#Notice_content h6 {color: #BA8181; font-weight: bold;}
 
 
 
