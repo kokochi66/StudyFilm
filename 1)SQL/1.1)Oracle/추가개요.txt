@@ -1,0 +1,37 @@
+높은성능 (Improved Performance)
+
+오라클 데이터베이스는 트랜잭션 처리에 데이터베이스 성능 향상을 위한 전략을 제공합니다.
+애플리케이션 클러스터 기능으로 지속적인 정보 파악을 위해 여러 서버를 사용하며, 프로세스 능력을 높입니다.
+상세정보 : https://docs.oracle.com/search/?q=Performance&pg=1&size=10&showfirstpage=true&lang=en
+
+다재다능 (Versatility)
+
+오라클 데이터베이스는 모든 OS에서 전용언어를 제공하여, 특정 운영체제를 호환할 수 있습니다.
+또한 이전 버전과의 호환도 가능하여 정보 손실없이 업그레이드를 지원합니다.
+상세정보 : https://docs.oracle.com/search/?q=compatibility
+
+기능성 (Functionality)
+
+오라클 데이터베이스는 대부분의 기업 수준의 애플레이케이션에 사용되며, 대부분의 은행 시스템에 적용됩니다.
+이는 높은 수준의 기술과 통합된 비즈니스 솔루션을 제공하며, 많은 데이터를 필요로 하는 회사에 이상적입니다.
+https://docs.oracle.com/search/?q=Functionality&pg=1&size=10&showfirstpage=true&lang=en
+
+신뢰성 (Reliability)
+
+오라클 데이터베이스는 데이터 스토리지의 높은 수준의 무결성을 제공함으로 써, 안정성을 확보하며,
+이를 통해 신뢰할 수 있는 데이터를 저장할 수 있습니다.
+https://docs.oracle.com/search/?q=Reliability&pg=1&size=10&showfirstpage=true&lang=en
+
+높은비용 (Cost)
+
+오라클 데이터베이스는 다른 SQL에 비해 운영비용이 매우 높으며, 이는 라이선스 비용으로 시작하며 최대 10배까지 올라갈 수 있습니다.
+http://www.dba-oracle.com/t_licensing_pricing.htm
+
+어려움 (Difficulty)
+
+오라클 데이터베이스는 매우 전문화된 언어로써, 자격을 갖춘 정보 관리자를 찾아, 시스템을 활용하는것이 필요합니다.
+https://medium.com/@shireesha.tibacademy/advantages-disadvantages-of-oracle-sql-1cf77e7022d1
+
+
+추가정보
+https://www.dnsstuff.com/oracle-database-performance-issues-solutions
