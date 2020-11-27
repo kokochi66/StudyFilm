@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>백엔드 개발자가 되기 위한 첫걸음 - Oracle</title>
+  <link rel="stylesheet" href="oracle_style.css">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/fonts.css">
+  <link rel="stylesheet" href="../../css/font-awesome.css">
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <div class="container">
+        <div id="top">
+          <!-- 헤더 탑 좌측 -->
+          <div class="left">
+            <a href="#">추가정보</a>
+            <a class="last" href="../sql_index.html">뒤로가기</a>
+            <div class="search">
+              <!-- 헤더 탑 검색창 -->
+              <form action="index.html" method="post">
+                  <input class="edit" type="text" name="Search">
+                  <div class="button">
+                    <input type="submit" name="Search" value="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </div>
+              </form>
+            </div>
+            <!-- //헤더 탑 검색창 -->
+          </div>
+          <!-- //헤더 탑 좌측 추가정보 -->
+          <!-- 헤더 탑 우측 -->
+          <div class="right">
+            <a class="active" href="#">KOR</a>
+            <a href="#">ENG</a>
+            <a href="#">CHN</a>
+          </div>
+          <!-- //헤더 탑 우측 언어설정 -->
+        </div>
+        <!-- //헤더 탑 -->
+        <div id="nav">
+          <h3>꼬꼬치꼬치의 오라클 공부노트</h3>
+          <ul>
+            <li><a href="#">개발환경</a></li>
+            <li><a href="#">기본사용</a></li>
+            <li><a href="#">서버세팅</a></li>
+            <li><a href="#">쿼리기본</a></li>
+            <li><a href="#">쿼리중급</a></li>
+            <li><a href="#">쿼리고급</a></li>
+          </ul>
+        </div>
+        <!-- //헤더 하단 내비게이션 -->
+      </div>
+    </div>
+    <!-- // 헤더 -->
+    <div id="Notice_content">
+      <!-- 컨텐츠 작업 -->
+
+        <div class="container">
+          <h1>SQL 데이터의 기본 데이터 타입정리</h1>
+
+          <h3>1. 문자형(Character) 데이터 타입</h3>
+          <table border="1" align="center" height="500px" width="1200px">
+            <th bgcolor="#e2a7a7">타입</th>
+            <th bgcolor="#e2a7a7">정의</th>
+            <th bgcolor="#e2a7a7">크기</th>
+            <th bgcolor="#e2a7a7">예시</th>
+            <tr align="center">
+              <td> <h4>CHAR(n)</h4></td>
+              <td>고정길이 문자 타입-남은 값 공백으로 채움</td>
+              <td>최대2000byte</td>
+              <td>'Hello'</td>
+            </tr>
+            <tr align="center">
+              <td><h4>VARCHAR2(n)</h4></td>
+              <td>가변길이 문자 타입-공백으로 채우지 않음</td>
+              <td>최대4000byte</td>
+              <td>'Hello'</td>
+            </tr>
+            <tr align="center">
+              <td><h4>NCHAR(n)</h4></td>
+              <td>고정길이 유니코드 문자(다국어 입력 가능) - 디폴트 값 1byte</td>
+              <td>최대2000byte</td>
+              <td>'Hello'</td>
+            </tr>
+            <tr align="center">
+              <td><h4>NVARCHAR2(n)</h4></td>
+              <td>가변길이 유니코드 문자(다국어 입력 가능) - 디폴트 값 1byte</td>
+              <td>최대2000byte</td>
+              <td>'Hello'</td>
+            </tr>
+            <tr align="center">
+              <td><h4>LONG</h4></td>
+              <td>가변길이 문자</td>
+              <td>최대2GB</td>
+              <td>'Hello'</td>
+            </tr>
+            <tr align="center">
+              <td><h4>CLOB</h4></td>
+              <td>대용량 텍스트</td>
+              <td>최대4GB</td>
+              <td>'Hello'</td>
+            </tr>
+            <tr align="center">
+              <td><h4>NCLOB</h4></td>
+              <td>유니코드 대용량 텍스트</td>
+              <td>최대4GB</td>
+              <td>'Hello'</td>
+            </tr>
+          </table>
+          <br><br><br>
+
+          <h3>2. 숫자형(Number) 데이터 타입</h3>
+          <table border="1" align="center" height="300px" width="1200px">
+            <th bgcolor="#e2a7a7">타입</th>
+            <th bgcolor="#e2a7a7">정의</th>
+            <th bgcolor="#e2a7a7">크기</th>
+            <th bgcolor="#e2a7a7">예시</th>
+            <tr align="center">
+              <td> <h4>NUMBER(P,S)</h4></td>
+              <td>십진수 기준의 가변길이 숫자 :: P와 S를 입력하지 않으면 자동지정<br>P(1~38) default:38 , S(-84~127) default:0</td>
+              <td>최대22byte</td>
+              <td>1952</td>
+            </tr>
+            <tr align="center">
+              <td><h4>FLOAT(P)</h4></td>
+              <td>이진수 기준의 실수<br>P(1~128) default:22</td>
+              <td>최대22byte</td>
+              <td>2.56</td>
+            </tr>
+            <tr align="center">
+              <td><h4>BINARY_FLOAT</h4></td>
+              <td>32비트 부동 소수점 수</td>
+              <td>최대4byte</td>
+              <td>5.0</td>
+            </tr>
+            <tr align="center">
+              <td><h4>BINARY_DOUBLE(n)</h4></td>
+              <td>32비트 부동 소수점 수</td>
+              <td>최대8byte</td>
+              <td>66.2</td>
+            </tr>
+          </table>
+          <br><br><br>
+
+          <h3>3. 날짜 데이터 타입</h3>
+          <table border="1" align="center" height="150px" width="1200px">
+            <th bgcolor="#e2a7a7">타입</th>
+            <th bgcolor="#e2a7a7">정의</th>
+            <th bgcolor="#e2a7a7">크기</th>
+            <th bgcolor="#e2a7a7">예시</th>
+            <tr align="center">
+              <td> <h4>DATE</h4></td>
+              <td>BC4712년 1월 1일부터 9999년 12월 31일까지 입력가능 <br>
+              default : YYYY/MM/DD </td>
+              <td></td>
+              <td>'2020-11-27', '23:59:59', 19981231235959</td>
+            </tr>
+            <tr align="center">
+              <td><h4>TIMESTAMP</h4></td>
+              <td>년,월,일,시,분,초,밀리초까지 입력가능</td>
+              <td></td>
+              <td>'2020-11-27', '23:59:59', 19981231235959</td>
+            </tr>
+          </table>
+
+
+        </div>
+      <!-- //컨텐츠 작업 -->
+    </div>
+    <div id="footer">
+      <div class="container">
+        <div id="link">
+          <ul>
+            <li><a href="https://www.kkpc.com/kor/">
+              <p>참고사이트1</p>
+              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            </a></li>
+            <li><a href="https://www.dnsstuff.com/oracle-database-performance-issues-solutions">
+              <p>참고사이트2</p>
+              <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </a></li>
+            <li><a href="mailto:kokochikochi@gmail.com">
+              <p>제작자 이메일</p>
+              <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+            </a></li>
+            <li><a class="last" href="https://github.com/kokochi66">
+              <p>제작자 깃허브</p>
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a></li>
+          </ul>
+        </div>
+        <div id="rights">
+          <h3>오라클 공부노트 사이트</h3>
+          <ul>
+            <li><a href="#">개인정보 처리방침</a></li>
+            <li><a href="#">법적고지</a></li>
+            <li><a href="#">사회공헌 임직원공간</a></li>
+            <li><a href="#">온라인제보실</a></li>
+          </ul>
+          <p class="address">강원도 춘천</p>
+          <p class="rights">COPYRIGHT © 2020 KOKOCHI. ALL RIGHTS RESERVED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

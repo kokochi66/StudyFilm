@@ -249,8 +249,9 @@ color: rgb(101, 101, 101);}
 #Notice_content h4 {color: #004620; font-weight: bold;}
 #Notice_content h5 {color: #30004A; font-weight: bold;}
 #Notice_content h6 {color: #BA8181; font-weight: bold;}
-
-
+#Notice_content table, #Notice_content th, #Notice_content tr, #Notice_content td {
+  font-size: 20px; font-family: "Sunflower"; padding: 5px 2px; color: rgb(36, 36, 36);
+}
 
 
 
