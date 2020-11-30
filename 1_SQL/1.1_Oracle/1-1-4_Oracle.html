@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>백엔드 개발자가 되기 위한 첫걸음 - Oracle</title>
+  <link rel="stylesheet" href="oracle_style.css">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/fonts.css">
+  <link rel="stylesheet" href="../../css/font-awesome.css">
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <div class="container">
+        <div id="top">
+          <!-- 헤더 탑 좌측 -->
+          <div class="left">
+            <a href="#">추가정보</a>
+            <a class="last" href="Oracle_index.html">뒤로가기</a>
+            <div class="search">
+              <!-- 헤더 탑 검색창 -->
+              <form action="index.html" method="post">
+                  <input class="edit" type="text" name="Search">
+                  <div class="button">
+                    <input type="submit" name="Search" value="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </div>
+              </form>
+            </div>
+            <!-- //헤더 탑 검색창 -->
+          </div>
+          <!-- //헤더 탑 좌측 추가정보 -->
+          <!-- 헤더 탑 우측 -->
+          <div class="right">
+            <a class="active" href="#">KOR</a>
+            <a href="#">ENG</a>
+            <a href="#">CHN</a>
+          </div>
+          <!-- //헤더 탑 우측 언어설정 -->
+        </div>
+        <!-- //헤더 탑 -->
+        <div id="nav">
+          <h3>꼬꼬치꼬치의 오라클 공부노트</h3>
+          <ul>
+            <li><a href="1-1-1_Oracle.html">개발환경</a></li>
+            <li><a href="1-1-2_Oracle.html">기본타입</a></li>
+            <li><a href="1-1-3_Oracle.html">정규식</a></li>
+            <li><a href="1-1-4_Oracle.html">쿼리기본</a></li>
+            <li><a href="1-1-5_Oracle.html">쿼리중급</a></li>
+            <li><a href="1-1-6_Oracle.html">쿼리고급</a></li>
+          </ul>
+        </div>
+        <!-- //헤더 하단 내비게이션 -->
+      </div>
+    </div>
+    <!-- // 헤더 -->
+    <div id="Notice_content">
+      <!-- 컨텐츠 작업 -->
+
+        <div class="container">
+          <h1>SQL 쿼리문 기본</h1>
+
+          <h3>1. DDL - CREATE / ALTER / DROP</h3>
+          <table border="1" align="center" height="200px" width="800px"
+          style="border-collapse: collapse;">
+            <th bgcolor="#c0e394">명령어</th>
+            <th bgcolor="#c0e394">예시</th>
+            <tr align="center">
+              <td> <h4>CREATE</h4></td>
+              <td>CREATE TABLE [테이블명] ( <strong>[기본 값] [NULL허용 여부]</strong> , ... )</td>
+            </tr>
+            <tr align="center">
+              <td><h4>ALTER</h4></td>
+              <td>ALTER TABLE [테이블명] <strong>[RENAME TO] [CHANGE] [MODIFY] [ADD] [DROP]</strong> , ... </td>
+            </tr>
+            <tr align="center">
+              <td><h4>DROP</h4></td>
+              <td>DROP TABLE [테이블명] <strong>[CASCADE CONSTRAINT]</strong></td>
+            </tr>
+          </table>
+          <br><br><br>
+
+
+          <h3>2. DML - INSERT / SELECT / UPDATA / DELETE</h3>
+          <table border="1" align="center" height="300px" width="600px"
+          style="border-collapse: collapse;">
+            <th bgcolor="#c0e394">명령어</th>
+            <th bgcolor="#c0e394">예시</th>
+            <tr align="center">
+              <td> <h4>INSERT</h4></td>
+              <td>INSERT INTO [테이블명] (<strong>[칼럼], ...</strong>)
+              VALUES  (<strong>[값], ...</strong>)</td>
+            </tr>
+            <tr align="center">
+              <td><h4>SELECT</h4></td>
+              <td>SELECT [컬럼] FROM [테이블] <strong>WHERE [조건]</strong></td>
+            </tr>
+            <tr align="center">
+              <td><h4>UPDATE</h4></td>
+              <td>UPDATE [테이블명] SET [칼럼] <strong>WHERE [조건]</strong></td>
+            </tr>
+            <tr align="center">
+              <td><h4>DELETE</h4></td>
+              <td>DELETE FROM [테이블명] <strong>WHERE [조건]</strong></td>
+            </tr>
+          </table>
+          <p>SELECT의 상세 활용은 쿼리 중급에서 다룹니다.</p>
+          <br><br><br>
+
+
+          <h3>3. DCL - GRANT / REVOKE / COMMIT / ROLLBACK</h3>
+          <table border="1" align="center" height="200px" width="600px"
+          style="border-collapse: collapse;">
+            <th bgcolor="#c0e394">명령어</th>
+            <th bgcolor="#c0e394">예시</th>
+            <tr align="center">
+              <td> <h4>GRANT</h4></td>
+              <td><a href="https://pridiot.tistory.com/128">권한 참조</a></td>
+            </tr>
+            <tr align="center">
+              <td><h4>REVOKE</h4></td>
+              <td> <a href="http://blog.naver.com/PostView.nhn?blogId=imjys1201&logNo=220881459203&parentCategoryNo=&categoryNo=25&viewDate=&isShowPopularPosts=true&from=search"> DCL 참조</a></td>
+            </tr>
+            <tr align="center">
+              <td><h4>COMMIT</h4></td>
+              <td>COMMIT</td>
+            </tr>
+            <tr align="center">
+              <td><h4>ROLLBACK</h4></td>
+              <td>ROLLBACK</td>
+            </tr>
+          </table>
+          <br><br><br>
+
+
+        </div>
+      <!-- //컨텐츠 작업 -->
+    </div>
+    <div id="footer">
+      <div class="container">
+        <div id="link">
+          <ul>
+            <li><a href="https://www.kkpc.com/kor/">
+              <p>참고사이트1</p>
+              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            </a></li>
+            <li><a href="https://www.dnsstuff.com/oracle-database-performance-issues-solutions">
+              <p>참고사이트2</p>
+              <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </a></li>
+            <li><a href="mailto:kokochikochi@gmail.com">
+              <p>제작자 이메일</p>
+              <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+            </a></li>
+            <li><a class="last" href="https://github.com/kokochi66">
+              <p>제작자 깃허브</p>
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a></li>
+          </ul>
+        </div>
+        <div id="rights">
+          <h3>오라클 공부노트 사이트</h3>
+          <ul>
+            <li><a href="#">개인정보 처리방침</a></li>
+            <li><a href="#">법적고지</a></li>
+            <li><a href="#">사회공헌 임직원공간</a></li>
+            <li><a href="#">온라인제보실</a></li>
+          </ul>
+          <p class="address">강원도 춘천</p>
+          <p class="rights">COPYRIGHT © 2020 KOKOCHI. ALL RIGHTS RESERVED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
