@@ -62,7 +62,7 @@
         <div class="container">
           <h1>SQL 쿼리문 중급</h1>
 
-          <h4 style="font-size: 30px;">중급 쿼리 목차</h4>
+          <h4 style="font-size: 30px;" id="mkf">중급 쿼리 목차</h4>
           <p><a href="#numb_one">1. 문자열 함수</a></p>
           <p><a href="#numb_two">2. 숫자 함수</a></p>
           <p><a href="#numb_thr">3. 날짜 함수</a></p>
@@ -75,22 +75,101 @@
           <br><br><br><br><br>
 
           <h3 id="numb_one" style="font-size: 30px;">1. 문자열 함수</h3>
+          <table border="1" align="center" height="500px" width="1000px"
+          style="border-collapse: collapse;">
+            <th bgcolor="#3799d9">명령어</th>
+            <th bgcolor="#3799d9">설명</th>
+            <tr align="center">
+              <td> <h4>LOWER('문자열')</h4></td>
+              <td>문자열을 <strong>소문자</strong>로 바꾸어 반환함</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>UPPER('문자열')</h4></td>
+              <td>문자열을 <strong>대문자</strong>로 바꾸어 반환함</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>INITCAP('문자열')</h4></td>
+              <td>첫번째 문자는 <strong>대문자</strong>로, 나머지는 <strong>소문자</strong>로 바꾸어 반환함</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>LPAD('문자열1', 숫자, '문자열2')</h4></td>
+              <td>문자열1의 왼쪽에 문자열2를 숫자만큼 채워서 반환함</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>RPAD('문자열1', 숫자, '문자열2')</h4></td>
+              <td>문자열1의 오른쪽에 문자열2를 숫자만큼 채워서 반환함</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>SUBSTR('문자열', 숫자1, 숫자2)</h4></td>
+              <td>문자열의 숫자1, 숫자2만큼의 범위의 문자열을 반환</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>INSTR('문자열', 문자)</h4></td>
+              <td>문자열에서 문자가 나타나는 위치를 반환</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>LTRIM('문자열', 집합)</h4></td>
+              <td>문자열 왼쪽부터 집합내의 문자가 안나올때까지 삭제</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>RTRIM('문자열', 집합)</h4></td>
+              <td>문자열 오른쪽부터 집합내의 문자가 안나올때까지 삭제</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>SOUNDEX('문자열')</h4></td>
+              <td>해당 문자열과 같은 발음의 문자열 반환</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>TRANSLATE('문자열',문자1, 문자2)</h4></td>
+              <td>문자열의 모든 문자1을 문자2로 치환</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>CHR('문자열')</h4></td>
+              <td>문자열의 ASCII코드를 반환</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>ASCII('문자')</h4></td>
+              <td>문자의 ASCII코드를 반환</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>REPLACE('문자열1', '문자열2', '문자열3')</h4></td>
+              <td>문자열1에서 모든 문자열2를 문자열3으로 치환</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>CONCAT('문자열1', '문자열2')</h4></td>
+              <td>문자열1과 문자열2를 이어붙임</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>LENGTH('문자열')</h4></td>
+              <td>문자열의 길이를 반환</td>
+            </tr>
+
+          </table>
+          <a href="#mkf">목차로</a>
           <br><br><br><br><br>
           <h3 id="numb_two" style="font-size: 30px;">2. 숫자 함수</h3>
+          <a href="#mkf">목차로</a>
           <br><br><br><br><br>
           <h3 id="numb_thr" style="font-size: 30px;">3. 날짜 함수</h3>
+          <a href="#mkf">목차로</a>
           <br><br><br><br><br>
           <h3 id="numb_fou" style="font-size: 30px;">4. 형식 변환 함수</h3>
+          <a href="#mkf">목차로</a>
           <br><br><br><br><br>
           <h3 id="numb_fiv" style="font-size: 30px;">5. NULL 함수</h3>
+          <a href="#mkf">목차로</a>
           <br><br><br><br><br>
           <h3 id="numb_six" style="font-size: 30px;">6. 집계 함수</h3>
+          <a href="#mkf">목차로</a>
           <br><br><br><br><br>
           <h3 id="numb_sev" style="font-size: 30px;">7. ORDER BY절</h3>
+          <a href="#mkf">목차로</a>
           <br><br><br><br><br>
           <h3 id="numb_eig" style="font-size: 30px;">8. GROUP BY절</h3>
+          <a href="#mkf">목차로</a>
           <br><br><br><br><br>
           <h3 id="numb_nin" style="font-size: 30px;">9. HAVING절</h3>
+          <a href="#mkf">목차로</a>
           <br><br><br><br><br>
           <!-- 중급
           비교연산자
