@@ -69,9 +69,7 @@
           <p><a href="#numb_fou">4. 형식 변환 함수</a></p>
           <p><a href="#numb_fiv">5. NULL 함수</a></p>
           <p><a href="#numb_six">6. 집계 함수</a></p>
-          <p><a href="#numb_sev">7. ORDER BY절</a></p>
-          <p><a href="#numb_eig">8. GROUP BY절</a></p>
-          <p><a href="#numb_nin">9. HAVING절</a></p>
+          <p><a href="#numb_sev">7. ORDER BY, GROUP BY, HAVING절</a></p>
           <br><br><br><br><br>
 
           <h3 id="numb_one" style="font-size: 30px;">1. 문자열 함수</h3>
@@ -146,6 +144,7 @@
           </table>
           <a href="#mkf">목차로</a>
           <br><br><br><br><br>
+
           <h3 id="numb_two" style="font-size: 30px;">2. 숫자 함수</h3>
           <table border="1" align="center" height="500px" width="1000px"
           style="border-collapse: collapse;">
@@ -190,42 +189,128 @@
           </table>
           <a href="#mkf">목차로</a>
           <br><br><br><br><br>
+
           <h3 id="numb_thr" style="font-size: 30px;">3. 날짜 함수</h3>
+          <table border="1" align="center" height="250px" width="1000px"
+          style="border-collapse: collapse;">
+            <th bgcolor="#3799d9">명령어</th>
+            <th bgcolor="#3799d9">설명</th>
+            <tr align="center">
+              <td> <h4>SYSDATE</h4></td>
+              <td>오늘의 날짜를 출력한다.</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>ADD_MONTHS(날짜, 정수)</h4></td>
+              <td>날짜에 정수만큼의 월을 더하여 반환한다.</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>LAST_DAY(날짜)</h4></td>
+              <td>날짜의 월에 마지막 날짜를 반환한다.</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>NEXT_DAY(날짜, 요일)</h4></td>
+              <td>날짜의 다음번 요일의 날짜를 반환한다.</td>
+            </tr>
+          </table>
           <a href="#mkf">목차로</a>
           <br><br><br><br><br>
+
           <h3 id="numb_fou" style="font-size: 30px;">4. 형식 변환 함수</h3>
+          <table border="1" align="center" height="300px" width="1000px"
+          style="border-collapse: collapse;">
+            <th bgcolor="#3799d9">명령어</th>
+            <th colspan="2" bgcolor="#3799d9">설명</th>
+            <tr align="center">
+              <td> <h4>TO_CHAR(날짜, '형식')</h4></td>
+              <td>DATE형식을 <strong>문자열</strong>형식으로 변환하는 함수</td>
+              <td>YYYY/RRRR/YY/YEAR [년도] <br> MM/MON/MONTH [월] <br> DD/DAY/DDTH [일] <br> AM/PM [오전/후] <br> HH/HH24 [시간] <br> MI/SS [시간,초] </td>
+            </tr>
+            <tr align="center">
+              <td> <h4>TO_DATE(문자열)</h4></td>
+              <td colspan="2">문자열을 <strong>날짜</strong>형식으로 변환하는 함수</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>TO_NUMBER(문자열)</h4></td>
+              <td colspan="2">문자열을 <strong>숫자</strong>형식으로 변환하는 함수</td>
+            </tr>
+          </table>
           <a href="#mkf">목차로</a>
           <br><br><br><br><br>
+
           <h3 id="numb_fiv" style="font-size: 30px;">5. NULL 함수</h3>
+          <table border="1" align="center" height="250px" width="1000px"
+          style="border-collapse: collapse;">
+            <th bgcolor="#3799d9">명령어</th>
+            <th bgcolor="#3799d9">설명</th>
+            <tr align="center">
+              <td> <h4>NVL(EXP1, EXP2)</h4></td>
+              <td>EXP1이 NULL이라면 EXP2를 반환하고, 아니라면, EXP1를 반환한다.</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>NVL2(EXP1, EXP2, EXP3)</h4></td>
+              <td>EXP1이 NULL이라면 EXP3를 반환하고, 아니라면, EXP2를 반환한다.</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>NULLIF(EXP1, EXP2)</h4></td>
+              <td>EXP1과 EXP2를 비교하여, 같으면 NULL, 아니면 EXP1를 반환한다.</td>
+            </tr>
+          </table>
           <a href="#mkf">목차로</a>
           <br><br><br><br><br>
+
           <h3 id="numb_six" style="font-size: 30px;">6. 집계 함수</h3>
+          <table border="1" align="center" height="300px" width="1000px"
+          style="border-collapse: collapse;">
+            <th bgcolor="#3799d9">명령어</th>
+            <th bgcolor="#3799d9">설명</th>
+            <tr align="center">
+              <td> <h4>COUNT()</h4></td>
+              <td>행의 개수를 반환한다.</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>SUM()</h4></td>
+              <td>행의 모든 합을 반환한다.(NUMBER타입에서만 가능)</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>MAX()</h4></td>
+              <td>행의 <strong>최댓값</strong>을 반환한다.</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>MIN()</h4></td>
+              <td>행의 <strong>최솟값</strong>을 반환한다.</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>AVG()</h4></td>
+              <td>행의 <strong>평균값</strong>을 반환한다.</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>STDDEV()</h4></td>
+              <td>행의 <strong>표준편차값</strong>을 반환한다.</td>
+            </tr>
+          </table>
           <a href="#mkf">목차로</a>
           <br><br><br><br><br>
-          <h3 id="numb_sev" style="font-size: 30px;">7. ORDER BY절</h3>
-          <a href="#mkf">목차로</a>
-          <br><br><br><br><br>
-          <h3 id="numb_eig" style="font-size: 30px;">8. GROUP BY절</h3>
-          <a href="#mkf">목차로</a>
-          <br><br><br><br><br>
-          <h3 id="numb_nin" style="font-size: 30px;">9. HAVING절</h3>
-          <a href="#mkf">목차로</a>
-          <br><br><br><br><br>
-          <!-- 중급
-          비교연산자
-          관계연산자
-          패턴 비교 연산자
-          함수
-          - 문자열 내장함수
-          - 숫자 내장함수
-          - 날짜 함수
-          - 형식 변환함수
-          - NULL 함수
-          - 집계함수
-          GROUP BY
-          HAVING -->
 
-
+          <h3 id="numb_sev" style="font-size: 30px;">7. ORDER BY, GROUP BY, HAVING절</h3>
+          <table border="1" align="center" height="250px" width="1000px"
+          style="border-collapse: collapse;">
+            <th bgcolor="#3799d9">명령어</th>
+            <th bgcolor="#3799d9">예시</th>
+            <tr align="center">
+              <td> <h4>ORDER BY</h4></td>
+              <td>ORDER BY [칼럼] <strong>ASC</strong> (오름차순) <br> ORDER BY [칼럼] <strong>DESC</strong> (내림차순)</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>GROUP BY</h4></td>
+              <td>GROUP BY [칼럼] (칼럼을 중심으로 그룹화)</td>
+            </tr>
+            <tr align="center">
+              <td> <h4>HAVING</h4></td>
+              <td>HAVING [조건] (그룹화의 조건)</td>
+            </tr>
+          </table>
+          <a href="#mkf">목차로</a>
+          <br><br><br><br><br>
         </div>
       <!-- //컨텐츠 작업 -->
     </div>
