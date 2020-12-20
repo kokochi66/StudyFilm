@@ -60,11 +60,51 @@
       <!-- 컨텐츠 작업 -->
 
         <div class="container">
-          <h1>제목 :: 역시 성공은 고난을 동반</h1>
+          <h1>SQL 쿼리문 고급</h1>
 
-          <img src="./img/main_ex_1.png" alt="이미지" width="20%">
-          <p>말없이 등산을 등반 하는 것처럼 I've got a move</p>
-          <p>레츠고 레츠고</p>
+
+          <h6 style="font-size: 30px;" id="mkf">고급 쿼리 목차</h6>
+          <p><a href="#numb_one">1. 조인</a></p>
+          <p><a href="#numb_two">2. 집합 연산자</a></p>
+          <p><a href="#numb_thr">3. 제약조건</a></p>
+          <p><a href="#numb_fou">4. 시퀀스</a></p>
+          <p><a href="#numb_fiv">5. 사용자 권한</a></p>
+          <br><br><br><br><br>
+
+
+          <h3 id="numb_one" style="font-size: 30px;">1. 조인</h3>
+          <img src="./1-1_img/1-6-1.png" alt="예제테이블1" height="150px" style="border:2px solid #333; border-radius:20px;">
+          <img src="./1-1_img/1-6-2.png" alt="예제테이블2" height="150px" style="margin-left: 20px; border:2px solid #333; border-radius:20px;">
+          <img src="./1-1_img/1-6-3.png" alt="예제테이블1" height="150px" style="border:2px solid #333; border-radius:20px;">
+          <h5>1) INNER JOIN</h5>
+          <p>SELECT * FROM [TABLE1] <strong>JOIN</strong> [TABLE2] <strong>ON</strong> [COLUMN1] = [COLUMN2]</p> <br>
+          <img src="./1-1_img/1-6-4.png" alt="예제테이블1" height="150px" style="border:2px solid #333; border-radius:20px;">
+          <h5>2) LEFT OUTER JOIN</h5>
+          <p>SELECT * FROM [TABLE1] <strong>LEFT OUER JOIN</strong> [TABLE2] <strong>ON</strong> [COLUMN1] = [COLUMN2]</p> <br>
+          <img src="./1-1_img/1-6-5.png" alt="예제테이블1" height="150px" style="border:2px solid #333; border-radius:20px;">
+          <h5>3) RIGHT OUTER JOIN</h5>
+          <p>SELECT * FROM [TABLE1] <strong>RIGHT OUTER JOIN</strong> [TABLE2] <strong>ON</strong> [COLUMN1] = [COLUMN2]</p> <br>
+          <img src="./1-1_img/1-6-6.png" alt="예제테이블1" height="150px" style="border:2px solid #333; border-radius:20px;">
+          <h5>4) FULL OUTER JOIN</h5>
+          <p>SELECT * FROM [TABLE1] <strong>FULL OUTER JOIN</strong> [TABLE2] <strong>ON</strong> [COLUMN1] = [COLUMN2]</p> <br>
+          <a href="#mkf">목차로</a>
+          <br><br><br><br><br>
+
+          <h3 id="numb_two" style="font-size: 30px;">2. 집합 연산자</h3>
+          <img src="./1-1_img/1-6-1.png" alt="예제테이블1" height="150px" style="border:2px solid #333; border-radius:20px;">
+          <img src="./1-1_img/1-6-2.png" alt="예제테이블2" height="150px" style="margin-left: 20px; border:2px solid #333; border-radius:20px;"> <br>
+          <img src="./1-1_img/1-6-7.png" alt="예제테이블1" height="150px" style="border:2px solid #333; border-radius:20px;">
+          <h5>1) UNION(합집합)</h5>
+          <p>(SELECT userID FROM [TABLE1]) UNION (SELECT userID FROM [TABLE2])</p> <br>
+          <img src="./1-1_img/1-6-8.png" alt="예제테이블1" height="150px" style="border:2px solid #333; border-radius:20px;">
+          <h5>2) UNION ALL(중복포함 합집합)</h5>
+          <p>(SELECT userID FROM [TABLE1]) UNION ALL (SELECT userID FROM [TABLE2])</p> <br>
+          <img src="./1-1_img/1-6-9.png" alt="예제테이블1" height="150px" style="border:2px solid #333; border-radius:20px;">
+          <h5>3) INTERSECT(교집합)</h5>
+          <p>(SELECT userID FROM [TABLE1]) INTERSECT (SELECT userID FROM [TABLE2])</p> <br>
+          <img src="./1-1_img/1-6-10.png" alt="예제테이블1" height="50px" style="border:2px solid #333; border-radius:20px;">
+          <h5>4) MINUS(차집합)</h5>
+          <p>(SELECT userID FROM [TABLE1]) MINUS (SELECT userID FROM [TABLE2])</p> <br>
           <!-- 고급
           조인
           UNION(집합함수)
