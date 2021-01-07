@@ -3,6 +3,8 @@
 body {overflow: hidden; cursor: none;}
 a {cursor: none; color: auto;}
 a:hover {color: inherit;}
+
+
 /* 상단 메뉴작업 */
 #menu {
   position: absolute; top: 0; left: 0; width: 100vw;
@@ -10,10 +12,10 @@ a:hover {color: inherit;}
   padding: 0 4%; user-select: none;
 }
 #menu h2 {
-  font-size: 35px; padding: 35px 0;
+  font-size: 35px; padding: 35px 0; z-index: 10; position: relative;
   text-shadow: 3px 3px 0 #575757; display: inline-block;
 }
-#menu h2 a {color: #fff; transition: color .2s; z-index: 10;}
+#menu h2 a {color: #fff; transition: color .2s;}
 #menu h2 a:hover {color: #242839;}
 #menu h2 a:hover em {color: #242839;}
 #menu h2 em {color: #d5d286; transition: color .2s;}
@@ -63,6 +65,21 @@ a:hover {color: inherit;}
 }
 #cursor.active {
   transform: scale(4); opacity: 1;
+}
+
+/* 메인 작업 */
+#main {
+  width: 100vw; height: 100vh; background-color: #242839; overflow: hidden;
+  display: flex; flex-direction: column; user-select: none;
+  justify-content: center; align-items: center;
+}
+#main h2 {
+  font-size: 4vw; font-weight: 400; color: #fff;
+  text-shadow: .4vw .4vw 0 #575757;
+}
+#main p {
+  font-size: 1vw; font-weight: 400; color: #fff;
+  text-shadow: .1vw .1vw 0 #000000;
 }
 
 
