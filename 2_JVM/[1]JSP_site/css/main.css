@@ -1,17 +1,22 @@
 @charset "UTF-8";
 * {font-family: "BMhanna";}
 body {overflow: hidden; cursor: none;}
+a {cursor: none; color: auto;}
+a:hover {color: inherit;}
 /* 상단 메뉴작업 */
 #menu {
   position: absolute; top: 0; left: 0; width: 100vw;
   border-bottom: 1px solid #575757; box-sizing: border-box;
-  padding: 0 4%;
+  padding: 0 4%; user-select: none;
 }
 #menu h2 {
-  font-size: 35px; color: #fff; padding: 35px 0;
+  font-size: 35px; padding: 35px 0;
   text-shadow: 3px 3px 0 #575757; display: inline-block;
 }
-#menu h2 em {color: #d5d286;}
+#menu h2 a {color: #fff; transition: color .2s; z-index: 10;}
+#menu h2 a:hover {color: #242839;}
+#menu h2 a:hover em {color: #242839;}
+#menu h2 em {color: #d5d286; transition: color .2s;}
 #menu .mIcon {
   padding: 22px 22px;
   position: absolute; top: 50%; right: 4%;
@@ -31,8 +36,8 @@ body {overflow: hidden; cursor: none;}
 #menu .mIcon.active .bar:nth-child(3) {transform: rotate(-45deg);}
 #menu .side {
   display: block; position: absolute; top: 0; right: -50vw;
-  height: 100vh; width: 50vw; background-color: #1c1c1c; color: #fff !important;
-  transition: right .5s ease-in-out;
+  height: 100vh; width: 50vw; background-color: #1c1c1c;
+  transition: right .5s ease-in-out; user-select: none;
 }
 #menu .side.active {right: 0;}
 #menu .side .exit {
@@ -43,24 +48,10 @@ body {overflow: hidden; cursor: none;}
   transform: translate(0, -50%); font-size: 35px;
   z-index: 10;
 }
-#menu .side ul li {margin-bottom: 15px;
-transition: color .3s;}
-#menu .side ul li:hover {color: #1c1c1c;}
-
-/* 메인 작업 */
-#main {
-  width: 100vw; height: 100vh; background-color: #242839; overflow: hidden;
-  display: flex; flex-direction: column;
-  justify-content: center; align-items: center;
-}
-#main h2 {
-  font-size: 4vw; font-weight: 400; color: #fff;
-  text-shadow: .4vw .4vw 0 #575757;
-}
-#main p {
-  font-size: 1vw; font-weight: 400; color: #fff;
-  text-shadow: .1vw .1vw 0 #000000;
-}
+#menu .side ul li {margin-bottom: 15px;}
+#menu .side ul li a {transition: color .3s; color: #fff;}
+#menu .side ul li.current a, #menu .side ul li.current:hover a {color: #e3d38f;}
+#menu .side ul li:hover a {color: #1c1c1c;}
 
 /* 마우스 커서 디자인 */
 #cursor {
@@ -73,11 +64,6 @@ transition: color .3s;}
 #cursor.active {
   transform: scale(4); opacity: 1;
 }
-
-
-
-
-
 
 
 /* 반응형 디자인 */
