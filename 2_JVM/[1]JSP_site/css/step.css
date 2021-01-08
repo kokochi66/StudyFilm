@@ -1,6 +1,25 @@
 @charset "UTF-8";
+
+#side-step {
+  display: block; position: fixed; top: 50%; right: -50%;
+  width: 50%; transform: translate(0, -50%);
+  transition: right .5s ease-in-out; z-index: 10;
+  user-select: none; pointer-events: none;
+}
+#side-step.active {right: 0;}
+#side-step h2 {
+  font-size: 35px; color: #b0eeff; margin-left: 300px;
+}
+#side-step li {margin-bottom: 15px;}
+#side-step li em {
+  color: #fff; font-size: 30px; margin-left: 300px;
+  transition: color .2s; pointer-events: auto;
+}
+#side-step li em:hover {color: #1c1c1c;}
+
 #contents {}
 #contents .row {}
 #contents .col {
-  width: 100vw; height: 100vh; background-color: #fff;
+  width: 1200px; height: 100vh; background-color: #fff;
+  margin: 0 auto;
 }
