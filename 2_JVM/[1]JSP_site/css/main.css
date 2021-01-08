@@ -5,13 +5,13 @@ a {cursor: none; color: auto;}
 a:hover {color: inherit;}
 
 #wrap {
-  width: 100%; height: 100vh; box-sizing: border-box;
+  width: 100%; min-height: 100vh; box-sizing: border-box;
   overflow: hidden; user-select: none;
 }
 
 /* 상단 메뉴작업 */
 #menu {
-  position: fixed; top: 0; left: 0; width: 100%; transition: background-color .3s;
+  position: fixed; top: 0; left: 0; width: 100%; transition: all .3s; z-index: 3;
   height: 122px; border-bottom: 1px solid #575757; background-color: #242839;
 }
 #menu.scroll {background-color: #fff;}
@@ -20,7 +20,7 @@ a:hover {color: inherit;}
   display: inline-block; z-index: 8;
 }
 #title a {
-  color: #fff; transition: color .2s, text-shadow .2s;
+  color: #fff; transition: all .2s;
   text-shadow: 3px 3px 0 #575757;
 }
 #title.scroll a {color: #000; text-shadow: 3px 3px 0 #e4e4e4;}
@@ -33,11 +33,12 @@ a:hover {color: inherit;}
 #mIcon {
   padding: 22px 22px; position: fixed; top: 61px ; right: 45px;
   transform: translate(0, -50%); z-index: 8;
+  transition: all .3s;
 }
 #mIcon .bar {
   width: 40px; height: 5px; background-color: #fff;
   border-radius: 10px; opacity: 1; position: absolute;
-  transition: transform .3s ease, opacity .3s, background-color .3s; right: 4%;
+  transition: all .3s; right: 4%;
 }
 #mIcon.scroll .bar {background-color: #000;}
 #mIcon.active.scroll .bar {background-color: #fff;}
@@ -51,13 +52,13 @@ a:hover {color: inherit;}
 #side {
   display: block; position: fixed; top: 0; right: -50%;
   height: 100vh; width: 50%; background-color: #1c1c1c;
-  transition: right .5s ease-in-out;
+  transition: all .5s ease-in-out; z-index: 4;
 }
 #side.active {right: 0;}
 #side-cont {
   display: block; position: fixed; top: 50%; right: -50%;
   width: 50%; transform: translate(0, -50%);
-  transition: right .5s ease-in-out; z-index: 10;
+  transition: all .5s ease-in-out; z-index: 8;
   user-select: none; pointer-events: none;
 }
 #side-cont.active {right: 0;}
@@ -75,7 +76,7 @@ a:hover {color: inherit;}
   position: fixed; top: 0; left: 0; border-radius: 50%;
   pointer-events: none; user-select: none;
   transform: scale(1); opacity: 1; z-index: 10;
-  transition: transform .2s, opacity .2s;
+  transition: transform .2s, opacity .2s, z-index .2s;
 }
 #cursor.active {
   transform: scale(4); opacity: 1; z-index: 5;
@@ -88,16 +89,30 @@ a:hover {color: inherit;}
   justify-content: center; align-items: center;
 }
 #main h2 {
-  font-size: 4vw; font-weight: 400; color: #fff;
-  text-shadow: .4vw .4vw 0 #575757;
+  font-size: 75px; font-weight: 400; color: #fff;
+  text-shadow: 4px 4px 0 #575757; transition: all .3s;
 }
 #main p {
-  font-size: 1vw; font-weight: 400; color: #fff;
-  text-shadow: .1vw .1vw 0 #000000;
+  font-size: 20px; font-weight: 400; color: #fff;
+  text-shadow: 2px 2px 0 #000000; transition: all .3s;
 }
 
-
+/* 반응형 디자인 */
 /* 반응형 디자인 */
 @media (max-width: 1200px) {
-  
+  #side {width: 100%; right: -100%;}
+  #side-cont {width: 100%; right: -100%;}
+  #side-cont .side-contents {text-align: center;}
+}
+
+@media (max-width: 960px) {
+  #menu {height: 100px;}
+  #title {font-size: 30px; margin: 27px 25px;}
+  #mIcon {top: 50px; right: 25px;}
+  #main h2 {font-size: 55px;}
+  #main p {font-size: 15px;}
+}
+@media (max-width: 480px) {
+  #main h2 {font-size: 40px;}
+  #main p {font-size: 13px;}
 }
