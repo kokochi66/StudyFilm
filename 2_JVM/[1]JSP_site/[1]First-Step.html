@@ -38,6 +38,7 @@
         <li><em>이클립스 설치</em></li>
         <li><em>톰캣 설치</em></li>
         <li><em>환경설정</em></li>
+        <li><em>맨 위로</em></li>
       </ul>
       <div id="main">
         <h2>1. 실습시작</h2>
@@ -63,30 +64,127 @@
             </ul>
           </div>
         </div>
-        <div class="col col2 clearfix">
+        <!-- //col1 -->
+        <div class="col colb clearfix">
           <div class="title_style">
             <h3>
               <span>1단계</span>JDK 설치
             </h3>
           </div>
+          <!-- //title -->
           <div class="contents_style">
             <ul>
-              <li>
+              <li onclick="window.open('https://www.oracle.com/kr/java/technologies/javase-downloads.html');">
                 <em>설치경로</em>
                 <i class="fa fa-download" aria-hidden="true"></i>
               </li>
-              <li>
+              <li class="page_btn">
                 <em>설치방법</em>
+                <i class="fa fa-sticky-note" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+          <!-- //contents -->
+          <div class="page">
+            <div class="cont">
+              JDK
+            </div>
+          </div>
+          <!-- //page -->
+        </div>
+        <!-- //col2 -->
+        <div class="col colb clearfix">
+          <div class="title_style">
+            <h3>
+              <span>2단계</span>이클립스 설치
+            </h3>
+          </div>
+          <!-- //title -->
+          <div class="contents_style">
+            <ul>
+              <li onclick="window.open('https://www.eclipse.org/downloads/')">
+                <em>설치경로</em>
+                <i class="fa fa-download" aria-hidden="true"></i>
+              </li>
+              <li class="page_btn">
+                <em>설치방법</em>
+                <i class="fa fa-sticky-note" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+          <!-- //contents -->
+          <div class="page">
+            <div class="cont">
+              이클립스
+            </div>
+          </div>
+          <!-- //page -->
+        </div>
+        <!-- //col3 -->
+        <div class="col colb clearfix">
+          <div class="title_style">
+            <h3>
+              <span>3단계</span>톰캣 설치
+            </h3>
+          </div>
+          <!-- //title -->
+          <div class="contents_style">
+            <ul>
+              <li onclick="window.open('http://tomcat.apache.org/')">
+                <em>설치경로</em>
+                <i class="fa fa-download" aria-hidden="true"></i>
+              </li>
+              <li class="page_btn">
+                <em>설치방법</em>
+                <i class="fa fa-sticky-note" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+          <!-- //contents -->
+          <div class="page">
+            <div class="cont">
+              톰캣
+            </div>
+          </div>
+          <!-- //page -->
+        </div>
+        <!-- //col4 -->
+        <div class="col colb clearfix">
+          <div class="title_style">
+            <h3>
+              <span>4단계</span>환경설정
+            </h3>
+          </div>
+          <!-- //title -->
+          <div class="contents_style">
+            <ul>
+              <li>
+                <em>이클립스 설정</em>
+                <i class="fa fa-download" aria-hidden="true"></i>
+              </li>
+              <li>
+                <em>서버 구동</em>
                 <i class="fa fa-server" aria-hidden="true"></i>
               </li>
             </ul>
           </div>
+          <!-- //contents -->
         </div>
+        <!-- //col5 -->
       </div>
     </div>
     <!-- //contents -->
+    <div id="pIcon">
+      <div id="icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+    <div id="footer"></div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/step.js"></script>
 

@@ -3,7 +3,7 @@
 #side-step {
   display: block; position: fixed; top: 50%; right: -50%;
   width: 50%; transform: translate(0, -50%);
-  transition: right .5s ease-in-out; z-index: 8;
+  transition: right .5s ease-in-out; z-index: 102;
   user-select: none; pointer-events: none;
 }
 #side-step.active {right: 0;}
@@ -50,6 +50,40 @@
 }
 #contents .col .contents_style ul li em {color: #000; z-index: 3; position: relative;}
 
+/* 게시판 페이지 */
+#contents .col .page {
+  position: fixed; z-index: 9; opacity: 0; user-select: none; pointer-events: none;
+  top: 0; left: 0; right: 0; bottom: 0; transition: all .3s;
+}
+#contents .col .page.active {opacity: 1;  user-select: auto; pointer-events: auto;}
+#contents .col .page::before {
+  z-index: 9; background-color: #000; opacity: .8; width: 100%; height: 100%;
+  position: absolute; top: 0; left: 0; content: ''; z-index: 10;
+}
+#contents .col .page .cont {
+  width: 500px; height: 500px; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%); z-index: 12; background-color: #fff;
+}
+/* 페이지 아이콘 */
+#pIcon {
+  width: 500px; height: 500px; position: fixed; top: 50%; left: 50%; opacity: 0;
+  transform: translate(-50%, -50%); z-index: 102; user-select: none; pointer-events: none;
+  transition: all .3s; user-select: none; pointer-events: none;
+}
+#pIcon.active {opacity: 1; user-select: auto; pointer-events: auto;}
+#pIcon #icon {
+  top: 10px; right: 20px; padding: 15px 15px; position: absolute;
+  pointer-events: auto;
+}
+#pIcon #icon .bar {
+  width: 30px; height: 3px; background-color: #8b8b8b; right: 0%;
+  border-radius: 10px; opacity: 1; position: absolute; transition: all .3s;
+}
+#pIcon #icon:hover .bar {background-color: #000;}
+#pIcon #icon .bar:nth-child(1) {transform: rotate(45deg);}
+#pIcon #icon .bar:nth-child(2) {transform: rotate(-45deg);}
+
+
 /* 게시판 1 */
 #contents .col1 .contents_style ul li {width: 22%; margin-right: 1.5%;}
 #contents .col1 .contents_style ul li.active::before {box-shadow: inset 0 0 0 200px #ff8f8f; filter: grayscale(0);}
@@ -58,13 +92,12 @@
 #contents .col1 .contents_style ul li:nth-child(3) {background: url(../img/tomcat.png) center center no-repeat; background-size: 300px;}
 #contents .col1 .contents_style ul li:nth-child(4) {background: url(../img/setting.png) center center no-repeat; background-size: 200px;}
 
-/* 게시판 2 */
-#contents .col2 .contents_style ul li {width: 47%; margin-right: 1.5%;}
-#contents .col2 .contents_style ul i {
-  z-index: 1; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 230px;
-  transition: all .3s;
+/* 게시판 2~ */
+#contents .colb .contents_style ul li {width: 47%; margin-right: 1.5%;}
+#contents .colb .contents_style ul i{
+  z-index: 1; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 230px; transition: all .3s;
 }
-#contents .col2 .contents_style ul li.active::before {box-shadow: inset 0 0 0 200px #ff8f8f; filter: grayscale(0);}
+#contents .colb .contents_style ul li.active::before {box-shadow: inset 0 0 0 200px #ff8f8f; filter: grayscale(0);}
 
 
 
@@ -92,7 +125,7 @@
   #contents .col1 .contents_style ul li {height: 200px; line-height: 200px;}
 
   /* 게시판2 */
-  #contents .col2 .contents_style ul i {font-size: 180px;}
+  #contents .colb .contents_style ul i {font-size: 180px;}
 }
 
 @media (max-width: 960px) {
@@ -102,8 +135,8 @@
 
   /* 게시판1 */
   #contents .col1 .contents_style ul li {width: 45%;}
-  #contents .col2 .contents_style ul li {width: 45%; height: 200px; line-height: 200px;}
-  #contents .col2 .contents_style ul i {font-size: 120px;}
+  #contents .colb .contents_style ul li {width: 45%; height: 200px; line-height: 200px;}
+  #contents .colb .contents_style ul i {font-size: 120px;}
 }
 
 
