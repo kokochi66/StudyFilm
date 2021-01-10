@@ -39,23 +39,66 @@ $("#icon").hover(function(){
 }, function() {
   cursor.classList.remove("active");
 });
+// 페이지 넘버 오버효과와 클릭효과
+var cPage = $("#contents .col .page");
+var page_Num = cPage.find(".cont").find(".page-Num").find("li");
+var page_Style = cPage.find(".cont").find(".page-style").find("li");
+page_Num.hover(function(){
+  cursor.style.opacity = 0;
+}, function() {
+  cursor.style.removeProperty("opacity");
+});
+page_Num.click(function() {
+  var index = $(this).index();
+  page_Num.removeClass("active");
+  $(this).addClass("active");
+  page_Style.removeClass("active");
+  page_Style.eq(index).addClass("active");
+  $("#contents .col .page .cont .page-style .number").text(index+1);
+});
 
-// JDK 설치방법 문서열기
+// 페이지 문서열기
 $(".page_btn").click(function(){
-  $(this).parent().parent().siblings(".page").addClass("active");
+  cPage = $(this).parent().parent().siblings(".page");
+  page_Num = cPage.find(".cont").find(".page-Num").find("li");
+  page_Style = cPage.find(".cont").find(".page-style").find("li");
+  cPage.addClass("active");
+  page_Num.eq(0).addClass("active");
+  page_Style.eq(0).addClass("active");
+  cPage.find(".cont").find(".page-style").find(".number").text(1);
   $("#pIcon").addClass("active");
   menu.classList.remove("scroll");
   menuTitle.classList.remove("scroll");
   menuIcon.classList.remove("scroll");
   onPage = true;
 });
+// 페이지 문서닫기
 $("#pIcon #icon").click(function(){
-  $(".page").removeClass("active");
   $("#pIcon").removeClass("active");
+  cPage.removeClass("active");
+  page_Num.removeClass("active");
+  page_Style.removeClass("active");
   menu.classList.add("scroll");
   menuTitle.classList.add("scroll");
   menuIcon.classList.add("scroll");
   onPage = false;
+});
+
+// 마지막 페이지 문서열기 (나중에 수정필요 -> 한번에 되게 해주는게 좋을듯)
+$(".page_btns").click(function() {
+  var index = $(this).index();
+  cPage = $(this).parent().parent().siblings(".page").eq(index);
+  page_Num = cPage.find(".cont").find(".page-Num").find("li");
+  page_Style = cPage.find(".cont").find(".page-style").find("li");
+  cPage.addClass("active");
+  page_Num.eq(0).addClass("active");
+  page_Style.eq(0).addClass("active");
+  cPage.find(".cont").find(".page-style").find(".number").text(1);
+  $("#pIcon").addClass("active");
+  menu.classList.remove("scroll");
+  menuTitle.classList.remove("scroll");
+  menuIcon.classList.remove("scroll");
+  onPage = true;
 });
 
 // 마우스 휠 고정이벤트 (문서가 켜졌을 때)

@@ -98,7 +98,6 @@ a:hover {color: inherit;}
 }
 
 /* 반응형 디자인 */
-/* 반응형 디자인 */
 @media (max-width: 1200px) {
   #side {width: 100%; right: -100%;}
   #side-cont {width: 100%; right: -100%;}
