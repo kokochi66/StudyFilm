@@ -61,20 +61,21 @@
   position: absolute; top: 0; left: 0; content: ''; z-index: 10;
 }
 #contents .col .page .cont {
-  width: 500px; height: 500px; position: absolute; top: 50%; left: 50%;
+  width: 1200px; height: 600px; position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%); z-index: 12; background-color: #fff;
 }
 /* 페이지 아이콘 */
 #pIcon {
-  width: 500px; height: 500px; position: fixed; top: 50%; left: 50%; opacity: 0;
+  width: 1200px; height: 600px; position: fixed; top: 50%; left: 50%; opacity: 0;
   transform: translate(-50%, -50%); z-index: 102; user-select: none; pointer-events: none;
   transition: all .3s; user-select: none; pointer-events: none;
 }
-#pIcon.active {opacity: 1; user-select: auto; pointer-events: auto;}
+#pIcon.active {opacity: 1;}
 #pIcon #icon {
   top: 10px; right: 20px; padding: 15px 15px; position: absolute;
-  pointer-events: auto;
+  user-select: none; pointer-events: none;
 }
+#pIcon.active #icon  {user-select: auto; pointer-events: auto;}
 #pIcon #icon .bar {
   width: 30px; height: 3px; background-color: #8b8b8b; right: 0%;
   border-radius: 10px; opacity: 1; position: absolute; transition: all .3s;
