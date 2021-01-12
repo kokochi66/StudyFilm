@@ -10,6 +10,12 @@
   <link rel="stylesheet" href="../../css/fonts.css">
   <link rel="stylesheet" href="../../css/font-awesome.css">
   <title>JSP StudyNote for kokochi</title>
+  <style>
+    #contents #head .contents_style ul li:nth-child(1) {background: url(img/java.png) center center no-repeat; background-size: 200px;}
+    #contents #head .contents_style ul li:nth-child(2) {background: url(img/eclipse.png) center center no-repeat; background-size: 200px;}
+    #contents #head .contents_style ul li:nth-child(3) {background: url(img/tomcat.png) center center no-repeat; background-size: 300px;}
+    #contents #head .contents_style ul li:nth-child(4) {background: url(img/setting.png) center center no-repeat; background-size: 200px;}
+  </style>
 </head>
 <body>
     <!-- main -->
@@ -25,7 +31,7 @@
       <div id="side"></div>
       <ul id="side-cont">
         <li class="side-contents current"><a href="#">실습시작</a></li>
-        <li class="side-contents"><a href="#">기본사용</a></li>
+        <li class="side-contents"><a href="[2]Second-Step.html">기본사용</a></li>
         <li class="side-contents"><a href="#">중급사용</a></li>
         <li class="side-contents"><a href="#">고급사용</a></li>
         <li class="side-contents"><a href="#">JSTL</a></li>
@@ -49,7 +55,7 @@
     <!-- contents -->
     <div id="contents">
       <div class="row">
-        <div class="col col1 clearfix">
+        <div class="col col4 clearfix" id="head">
           <div class="title_style">
             <h3>
               <span>실습준비</span>목차
@@ -65,7 +71,7 @@
           </div>
         </div>
         <!-- //col1 -->
-        <div class="col colb clearfix">
+        <div class="col col2 clearfix">
           <div class="title_style">
             <h3>
               <span>1단계</span>JDK 설치
@@ -74,17 +80,18 @@
           <!-- //title -->
           <div class="contents_style">
             <ul>
-              <li onclick="window.open('https://www.oracle.com/kr/java/technologies/javase-downloads.html');">
+              <li id="jdk_install">
                 <em>설치경로</em>
                 <i class="fa fa-download" aria-hidden="true"></i>
               </li>
-              <li class="page_btn">
+              <li class="page_btns">
                 <em>설치방법</em>
                 <i class="fa fa-sticky-note" aria-hidden="true"></i>
               </li>
             </ul>
           </div>
           <!-- //contents -->
+          <div class="page"></div>
           <div class="page">
             <div class="cont">
               <ul class="page-style">
@@ -143,7 +150,7 @@
           <!-- //page -->
         </div>
         <!-- //col2 -->
-        <div class="col colb clearfix">
+        <div class="col col2 clearfix">
           <div class="title_style">
             <h3>
               <span>2단계</span>이클립스 설치
@@ -152,17 +159,18 @@
           <!-- //title -->
           <div class="contents_style">
             <ul>
-              <li onclick="window.open('https://www.eclipse.org/downloads/')">
+              <li id="eclipse_install">
                 <em>설치경로</em>
                 <i class="fa fa-download" aria-hidden="true"></i>
               </li>
-              <li class="page_btn">
+              <li class="page_btns">
                 <em>설치방법</em>
                 <i class="fa fa-sticky-note" aria-hidden="true"></i>
               </li>
             </ul>
           </div>
           <!-- //contents -->
+          <div class="page"></div>
           <div class="page">
             <div class="cont">
               <ul class="page-style">
@@ -195,7 +203,7 @@
           <!-- //page -->
         </div>
         <!-- //col3 -->
-        <div class="col colb clearfix">
+        <div class="col col2 clearfix">
           <div class="title_style">
             <h3>
               <span>3단계</span>톰캣 설치
@@ -204,17 +212,18 @@
           <!-- //title -->
           <div class="contents_style">
             <ul>
-              <li onclick="window.open('http://tomcat.apache.org/')">
+              <li id="tomcat_install">
                 <em>설치경로</em>
                 <i class="fa fa-download" aria-hidden="true"></i>
               </li>
-              <li class="page_btn">
+              <li class="page_btns">
                 <em>설치방법</em>
                 <i class="fa fa-sticky-note" aria-hidden="true"></i>
               </li>
             </ul>
           </div>
           <!-- //contents -->
+          <div class="page"></div>
           <div class="page">
             <div class="cont">
               <ul class="page-style">
@@ -238,7 +247,7 @@
           <!-- //page -->
         </div>
         <!-- //col4 -->
-        <div class="col colb clearfix">
+        <div class="col col2 clearfix">
           <div class="title_style">
             <h3>
               <span>4단계</span>환경설정
@@ -252,7 +261,7 @@
                 <i class="fa fa-download" aria-hidden="true"></i>
               </li>
               <li class="page_btns">
-                <em>서버 구동</em>
+                <em>JSP 시작하기</em>
                 <i class="fa fa-server" aria-hidden="true"></i>
               </li>
             </ul>
@@ -280,20 +289,6 @@
                   Server location = Use Tomcat installation 선택 , 서버 옵션에서 Publish module contexts to separate XML files 체크, <br>
                 마지막으로 HTTP 포트번호를 기존 8080에서 겹치는것을 피하기 위해서 8181로 지정하고 저장합니다.</div>
                 </li>
-              </ul>
-              <ul class="page-Num">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-              </ul>
-            </div>
-          </div>
-          <!-- //page1 -->
-          <div class="page">
-            <div class="cont">
-              <ul class="page-style">
-                <div class="number">1</div>
                 <li>
                   <img src="img/[1]FirstStep/Start1.png" alt="" class="top-image">
                   <div class="text">서버 시작버튼을 눌러서 서버를 실행시킵니다.</div>
@@ -306,6 +301,55 @@
               <ul class="page-Num">
                 <li>1</li>
                 <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page1 -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[1]FirstStep/jspST1.png" alt="" class="top-image">
+                  <div class="text">이클립스의 Project Explorer에서 위와같이 Dynamic Web project를 생성합니다.</div>
+                </li>
+                <li>
+                  <img src="img/[1]FirstStep/jspST2.png" alt="" class="top-image">
+                  <div class="text">프로젝트의 이름을 설정하고 Next로 이동합니다.</div>
+                </li>
+                <li>
+                  <img src="img/[1]FirstStep/jspST3.png" alt="" class="top-image">
+                  <div class="text">web.xml 생성에 체크하고 finish를 눌러 프로젝트를 생성합니다.</div>
+                </li>
+                <li>
+                  <img src="img/[1]FirstStep/jspST4.png" alt="" class="top-image">
+                  <div class="text">WebContent 폴더 안에 새로운 jsp파일을 생성합니다. 이름은 자유롭게 합니다.</div>
+                </li>
+                <li>
+                  <img src="img/[1]FirstStep/jspST5.png" alt="" class="top-image">
+                  <div class="text">body 태그 내부에 Hello world를 작성합니다.</div>
+                </li>
+                <li>
+                  <img src="img/[1]FirstStep/jspST6.png" alt="" class="top-image">
+                  <div class="text">ctrl + f11 단축키를 사용하여 서버를 작동시킵니다.</div>
+                </li>
+                <li>
+                  <img src="img/[1]FirstStep/jspST7.png" alt="" class="top-image">
+                  <div class="text">브라우저에서 정상적으로 Hello world가 출력되는지 확인합니다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
               </ul>
             </div>
           </div>
@@ -328,6 +372,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/step1.js"></script>
-
+  <script>
+  // 링크 이동 이벤트
+    document.getElementById('jdk_install').addEventListener('click',function(){window.open('https://www.oracle.com/kr/java/technologies/javase-downloads.html');});
+    document.getElementById('eclipse_install').addEventListener('click',function(){window.open('https://www.eclipse.org/downloads/');});
+    document.getElementById('tomcat_install').addEventListener('click',function(){window.open('http://tomcat.apache.org/');});
+  </script>
 </body>
 </html>

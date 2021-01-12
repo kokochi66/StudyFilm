@@ -1,6 +1,6 @@
 
 const menuSide_step = document.querySelector("#side-step");
-const cont_list = document.querySelector("#contents .col1 .contents_style ul li");
+const cont_list = document.querySelector("#contents #head .contents_style ul li");
 var onPage = false;
 
 // 메뉴 아이콘 클릭효과 (메인에 추가)
@@ -57,21 +57,6 @@ page_Num.click(function() {
   $("#contents .col .page .cont .page-style .number").text(index+1);
 });
 
-// 페이지 문서열기
-$(".page_btn").click(function(){
-  cPage = $(this).parent().parent().siblings(".page");
-  page_Num = cPage.find(".cont").find(".page-Num").find("li");
-  page_Style = cPage.find(".cont").find(".page-style").find("li");
-  cPage.addClass("active");
-  page_Num.eq(0).addClass("active");
-  page_Style.eq(0).addClass("active");
-  cPage.find(".cont").find(".page-style").find(".number").text(1);
-  $("#pIcon").addClass("active");
-  menu.classList.remove("scroll");
-  menuTitle.classList.remove("scroll");
-  menuIcon.classList.remove("scroll");
-  onPage = true;
-});
 // 페이지 문서닫기
 $("#pIcon #icon").click(function(){
   $("#pIcon").removeClass("active");
@@ -113,8 +98,8 @@ $("#wrap").on('scroll touchmove mousewheel', function(event) {
 // 목차 클릭 이동 이벤트
 var cont_li = [];
 var winHeight = $(window).height()/10;
-for(var i = 0; i < 5; i++) cont_li[i] = $("#contents .col").eq(i);
-$("#contents .col1 .contents_style ul li").click(function(e){
+for(var i = 0; i < $("#contents .col").length; i++) cont_li[i] = $("#contents .col").eq(i);
+$("#contents #head .contents_style ul li").click(function(e){
   var index = $(this).index()+1;
   var offset = cont_li[index].offset().top - winHeight;
   $("html, body").animate({scrollTop:offset},550,"easeInOutExpo");
