@@ -27,32 +27,6 @@ document.addEventListener("mousemove", function(e){
   gsap.to(cursor, {duration: .1, left: e.clientX -10, top: e.clientY });
 });
 
-// 메뉴 아이콘 마우스 오버효과
-menuIcon.addEventListener("mouseenter", () => {
-  cursor.classList.add("active");
-});
-menuIcon.addEventListener("mouseleave", () => {
-  cursor.classList.remove("active");
-});
-
-// 메뉴 타이틀 마우스 오버효과
-menuTitle.addEventListener("mouseenter", () => {
-  cursor.classList.add("active");
-});
-menuTitle.addEventListener("mouseleave", () => {
-  cursor.classList.remove("active");
-});
-
-// 메뉴 사이드 마우스 오버효과
-document.querySelectorAll(".side-contents a").forEach(elem => {
-  elem.addEventListener("mouseenter", () => {
-    cursor.classList.add("active");
-  });
-  elem.addEventListener("mouseleave", () => {
-    cursor.classList.remove("active");
-  });
-});
-
 // 스크롤시 메뉴의 색 변경효과
 window.addEventListener('scroll', function(e){
   if(window.scrollY == 0) {
@@ -65,4 +39,14 @@ window.addEventListener('scroll', function(e){
     menuTitle.classList.add("scroll");
     menuIcon.classList.add("scroll");
   }
+});
+
+// 마우스 오버효과1
+document.querySelectorAll(".mouseHover1").forEach(elem => {
+  elem.addEventListener("mouseenter", () => {
+    cursor.classList.add("active");
+  });
+  elem.addEventListener("mouseleave", () => {
+    cursor.classList.remove("active");
+  });
 });

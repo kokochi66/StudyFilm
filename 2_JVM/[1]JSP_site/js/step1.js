@@ -32,14 +32,6 @@ $("#side-step li").click(function(e){
   if(index < $("#contents .col").length) offset = cont_li[index].offset().top - winHeight;
   $("html, body").animate({scrollTop:offset},550,"easeInOutExpo");
 });
-
-// 사이드 마우스 오버효과
-menuSide_step.addEventListener("mouseenter", () => {
-  cursor.classList.add("active");
-});
-menuSide_step.addEventListener("mouseleave", () => {
-  cursor.classList.remove("active");
-});
 // 메뉴 효과 스크립트 ----
 
 
@@ -82,6 +74,7 @@ $(".page_btns").click(function() {
   cPage = $(this).parent().parent().siblings(".page").eq(index);
   page_Num = cPage.find(".cont").find(".page-Num").find("li");
   page_Style = cPage.find(".cont").find(".page-style").find("li");
+  page_Num.addClass(".mouseHover2");
   cPage.addClass("active");
   page_Num.eq(0).addClass("active");
   page_Style.eq(0).addClass("active");
@@ -122,13 +115,6 @@ page_Num.click(function() {
   $("#contents .col .page .cont .page-style .number").text(index+1);
 });
 
-// 페이지 아이콘 오버효과
-$("#icon").hover(function(){
-  cursor.classList.add("active");
-}, function() {
-  cursor.classList.remove("active");
-});
-
 // 마우스 휠 고정이벤트 (문서가 켜졌을 때)
 $("#wrap").on('scroll touchmove mousewheel', function(event) {
   if(onPage) {
@@ -137,7 +123,6 @@ $("#wrap").on('scroll touchmove mousewheel', function(event) {
     return false;
   }
 });
-
 // 페이지 열기/닫기 및 페이징 번호 스크립트 ----
 
 

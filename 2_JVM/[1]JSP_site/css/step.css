@@ -63,8 +63,9 @@
 #contents .col2 .contents_style ul li {width: 47%; margin-right: 1.5%;}
 #contents .col3 .contents_style ul li {width: 30%; margin-right: 1%;}
 #contents .col4 .contents_style ul li {width: 22%; margin-right: 1.5%;}
-#contents .col5 .contents_style ul li {width: 18%; margin-right: 1%;}
-#contents .col5 .contents_style ul i {font-size: 130px;}
+#contents .col4 .contents_style ul li i {font-size: 150px;}
+#contents .col5 .contents_style ul li {width: 17.5%; margin-right: 1%;}
+#contents .col5 .contents_style ul li i {font-size: 130px;}
 
 
 

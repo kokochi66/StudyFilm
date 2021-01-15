@@ -10,12 +10,7 @@
   <link rel="stylesheet" href="../../css/fonts.css">
   <link rel="stylesheet" href="../../css/font-awesome.css">
   <title>JSP StudyNote for kokochi</title>
-  <style>
-    #contents #head .contents_style ul li:nth-child(1) {background: url(img/java.png) center center no-repeat; background-size: 200px;}
-    #contents #head .contents_style ul li:nth-child(2) {background: url(img/eclipse.png) center center no-repeat; background-size: 200px;}
-    #contents #head .contents_style ul li:nth-child(3) {background: url(img/tomcat.png) center center no-repeat; background-size: 300px;}
-    #contents #head .contents_style ul li:nth-child(4) {background: url(img/setting.png) center center no-repeat; background-size: 200px;}
-  </style>
+
 </head>
 <body>
     <!-- main -->
@@ -30,9 +25,9 @@
       </div>
       <div id="side"></div>
       <ul id="side-cont" class="mouseHover1">
-        <li class="side-contents current"><a href="#">실습시작</a></li>
+        <li class="side-contents"><a href="[1]First-Step.html" >실습시작</a></li>
         <li class="side-contents"><a href="[2]Second-Step.html">Servlet 기본</a></li>
-        <li class="side-contents"><a href="[3]Third-Step.html">JSP 기본</a></li>
+        <li class="side-contents current"><a>JSP 기본</a></li>
         <li class="side-contents"><a href="#">고급사용</a></li>
         <li class="side-contents"><a href="#">JSTL</a></li>
         <li class="side-contents"><a href="#">MVC</a></li>
@@ -40,15 +35,15 @@
       </ul>
       <ul id="side-step" class="mouseHover1">
         <h2>목차</h2>
-        <li><em>JDK 설치</em></li>
-        <li><em>이클립스 설치</em></li>
-        <li><em>톰캣 설치</em></li>
-        <li><em>환경설정</em></li>
+        <li><em>JSP태그</em></li>
+        <li><em>액션태그</em></li>
+        <li><em>내부객체1</em></li>
+        <li><em>내부객체2</em></li>
         <li><em>맨 위로</em></li>
       </ul>
       <div id="main">
-        <h2>1. 실습시작</h2>
-        <p>JSP 실습을 위한 기본 준비사항</p>
+        <h2>3. JSP 기본</h2>
+        <p>JSP의 기본 태그들과 객체</p>
       </div>
     <!-- //main -->
 
@@ -63,97 +58,170 @@
           </div>
           <div class="contents_style">
             <ul>
-              <li><em>JDK 설치</em></li>
-              <li><em>이클립스 설치</em></li>
-              <li><em>톰캣 설치</em></li>
-              <li><em>환경설정</em></li>
+              <li>
+                <em>JSP태그</em>
+                <i class="fa fa-file-code-o" aria-hidden="true"></i>
+              </li>
+              <li>
+                <em>액션태그</em>
+                <i class="fa fa-universal-access" aria-hidden="true"></i>
+              </li>
+              <li>
+                <em>내부객체1</em>
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </li>
+              <li>
+                <em>내부객체2</em>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+              </li>
             </ul>
           </div>
         </div>
         <!-- //col1 -->
-        <div class="col col2 clearfix">
+        <div class="col col5 clearfix">
           <div class="title_style">
             <h3>
-              <span>1단계</span>JDK 설치
+              <span>1단계</span>JSP태그
             </h3>
           </div>
           <!-- //title -->
           <div class="contents_style">
             <ul>
-              <li id="jdk_install">
-                <em>설치경로</em>
-                <i class="fa fa-download" aria-hidden="true"></i>
+              <li class="page_btns">
+                <em>스크립트릿</em>
+                <i class="fa fa-podcast" aria-hidden="true"></i>
               </li>
               <li class="page_btns">
-                <em>설치방법</em>
-                <i class="fa fa-sticky-note" aria-hidden="true"></i>
+                <em>선언</em>
+                <i class="fa fa-camera-retro" aria-hidden="true"></i>
+              </li>
+              <li class="page_btns">
+                <em>표현식</em>
+                <i class="fa fa-credit-card" aria-hidden="true"></i>
+              </li>
+              <li class="page_btns">
+                <em>지시자</em>
+                <i class="fa fa-id-card-o" aria-hidden="true"></i>
+              </li>
+              <li class="page_btns">
+                <em>주석</em>
+                <i class="fa fa-flag" aria-hidden="true"></i>
               </li>
             </ul>
           </div>
           <!-- //contents -->
-          <div class="page"></div>
           <div class="page">
             <div class="cont">
               <ul class="page-style">
                 <div class="number">1</div>
                 <li>
-                  <img src="img/[1]FirstStep/JDK1.png" alt="" class="top-image">
-                  <div class="text">JDK 사이트로 이동하여, JDK Download를 클릭합니다.</div>
+                  <img src="img/[3]ThirdStep/jspt_scr0.png" alt="" class="top-image">
+                  <div class="text">스크립트릿은 JSP 내부에서 자바코드를 작성할 때 사용하는 태그이다. <br>
+                  위와같은 형태로 작성하여 자바코드를 작성할 수 있다.</div>
                 </li>
                 <li>
-                  <img src="img/[1]FirstStep/JDK2.png" alt="" class="top-image">
-                  <div class="text">위 항목에서 자신의 운영체제에 맞는 버전을 선택하여 다운로드 합니다.</div>
+                  <img src="img/[3]ThirdStep/jspt_scr1.png" alt="" class="top-image">
+                  <div class="text">위와같은 형태로, 변수를 선언하거나, 반복문, 조건문 등을 사용할 수 있다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page1 -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/jspt_dec1.png" alt="" class="top-image">
+                  <div class="text">선언문태그를 이용하면 JSP파일 내부에서 변수나 메소드르 선언할 수 있다. <br>
+                  선언 태그를 이용하여 선언된 변수나 메소드는 전역의 의미로 사용된다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page2 -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/jspt_ex1.png" alt="" class="top-image">
+                  <div class="text">표현식을 이용하면 정의된 메소드나 변수를 print없이 바로 출력시킬 수 있다. <br>
+                  위와같이 선언 시, 적용되어있는 메소드의 출력값이 나오게된다.</div>
                 </li>
                 <li>
-                  <img src="img/[1]FirstStep/JDK3.png" alt="" class="top-image">
-                  <div class="text">다음으로 환경변수 설정을 위하여, 제어판에서 시스템 탭으로 들어갑니다.</div>
+                  <img src="img/[3]ThirdStep/jspt_ex2.png" alt="" class="top-image">
+                  <div class="text">JSP파일을 실행하면 작성한 자바코드의 결과값이 정상적으로 출력되는 것을 볼 수 있다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page3 -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/jspt_inst1.png" alt="" class="top-image">
+                  <div class="text">지시자 태그는 JSP파일 내부에서 전체적인 속성을 결정할 때 사용되는 태그이다. <br>
+                   첫번째로 page로 사용될 때는 위와같이 언어설정이나 import설정을 할 때 사용된다.</div>
                 </li>
                 <li>
-                  <img src="img/[1]FirstStep/JDK4.png" alt="" class="top-image">
-                  <div class="text">시스템에서 고급 시스템 탭으로 들어갑니다.</div>
+                  <img src="img/[3]ThirdStep/jspt_inst2.png" alt="" class="top-image">
+                  <div class="text">두번째로 include로 사용되는 경우에, 다른 문서의 내용을 가져와서 출력할 수 있다.</div>
                 </li>
                 <li>
-                  <img src="img/[1]FirstStep/JDK5.png" alt="" class="top-image">
-                  <div class="text">고급 시스템 탭의 고급 > 환경변수 로 이동합니다.</div>
-                </li>
-                <li>
-                  <img src="img/[1]FirstStep/JDK6.png" alt="" class="top-image">
-                  <div class="text">환경변수에서 새로만들기 탭을 클릭 후, 변수이름에 JAVA_HOME을 넣고, <br>
-                  변수 값에 설치된 자바 폴더의 링크를 붙여넣습니다.</div>
-                </li>
-                <li>
-                  <img src="img/[1]FirstStep/JDK7.png" alt="" class="top-image">
-                  <div class="text">환경변수 생성 후, 시스템 변수에서 Path를 찾아 더블클릭합니다.</div>
-                </li>
-                <li>
-                  <img src="img/[1]FirstStep/JDK8.png" alt="" class="top-image">
-                  <div class="text">환경변수 편집에서 새로만들기를 하고, 자바의 링크를 추가해줍니다.</div>
-                </li>
-                <li>
-                  <img src="img/[1]FirstStep/JDK9.png" alt="" class="top-image">
-                  <div class="text">cmd에서 java -version 명령어로 자바의 버전이 표시된다면, 설치가 완료된 것입니다.</div>
+                  <img src="img/[3]ThirdStep/jspt_inst3.png" alt="" class="top-image">
+                  <div class="text">기존의 jsp파일 내용이 출력되고, 사이에 별도의 include로 추가된 부분이 출력된다. <br>
+                  추가로, taglib지시자는 uri, prefix속성을 사용하여 태그 라이브러리를 사용할 수 있게 해준다.</div>
                 </li>
               </ul>
               <ul class="page-Num">
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
               </ul>
             </div>
           </div>
-          <!-- //page -->
+          <!-- //page4 -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/jspt_mark1.png" alt="" class="top-image">
+                  <div class="text">JSP에서 주석은 html의 주석과 별도로 사용되며, JSP의 주석은 실행 시, <br>
+                  컴파일되지 않아 출력되는 html의 소스에서 표시되지 않는다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/jspt_mark2.png" alt="" class="top-image">
+                  <div class="text">실행 후, 코드소스를 확인하면 JSP의 주석은 표시되지 않는 것을 확인할 수 있다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page5 -->
         </div>
         <!-- //col2 -->
         <div class="col col2 clearfix">
           <div class="title_style">
             <h3>
-              <span>2단계</span>이클립스 설치
+              <span>2단계</span>액션태그
             </h3>
           </div>
           <!-- //title -->
@@ -206,7 +274,7 @@
         <div class="col col2 clearfix">
           <div class="title_style">
             <h3>
-              <span>3단계</span>톰캣 설치
+              <span>3단계</span>내부객체1
             </h3>
           </div>
           <!-- //title -->
@@ -250,7 +318,7 @@
         <div class="col col2 clearfix">
           <div class="title_style">
             <h3>
-              <span>4단계</span>환경설정
+              <span>4단계</span>내부객체2
             </h3>
           </div>
           <!-- //title -->
@@ -373,10 +441,6 @@
   <script src="js/main.js"></script>
   <script src="js/step1.js"></script>
   <script>
-  // 링크 이동 이벤트
-    document.getElementById('jdk_install').addEventListener('click',function(){window.open('https://www.oracle.com/kr/java/technologies/javase-downloads.html');});
-    document.getElementById('eclipse_install').addEventListener('click',function(){window.open('https://www.eclipse.org/downloads/');});
-    document.getElementById('tomcat_install').addEventListener('click',function(){window.open('http://tomcat.apache.org/');});
   </script>
 </body>
 </html>
