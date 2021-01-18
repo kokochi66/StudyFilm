@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content=" user-scalable=0, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/step.css">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/fonts.css">
+  <link rel="stylesheet" href="../../css/font-awesome.css">
+  <title>JSP StudyNote for kokochi</title>
+
+</head>
+<body>
+    <!-- main -->
+    <div id="wrap">
+      <div id="cursor"></div>
+      <div id="menu"></div>
+      <h2 id="title" class="mouseHover1"><a href="jsp.html"><em>JSP</em>-StudyNote</a></h2>
+      <div id="mIcon" class="mouseHover1">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div id="side"></div>
+      <ul id="side-cont" class="mouseHover1">
+        <li class="side-contents"><a href="[1]First-Step.html" >실습시작</a></li>
+        <li class="side-contents"><a href="[2]Second-Step.html">Servlet 기본</a></li>
+        <li class="side-contents current"><a>JSP 기본</a></li>
+        <li class="side-contents"><a href="#">고급사용</a></li>
+        <li class="side-contents"><a href="#">JSTL</a></li>
+        <li class="side-contents"><a href="#">MVC</a></li>
+        <li class="side-contents"><a href="#">사이트 개요</a></li>
+      </ul>
+      <ul id="side-step" class="mouseHover1">
+        <h2>목차</h2>
+        <li><em>고급사용1</em></li>
+        <li><em>고급사용2</em></li>
+        <li><em>표현식</em></li>
+        <li><em>맨 위로</em></li>
+      </ul>
+      <div id="main">
+        <h2>3. JSP 기본</h2>
+        <p>JSP의 기본 태그들과 객체</p>
+      </div>
+    <!-- //main -->
+
+    <!-- contents -->
+    <div id="contents">
+      <div class="row">
+        <div class="col col4 clearfix" id="head">
+          <div class="title_style">
+            <h3>
+              <span>실습준비</span>목차
+            </h3>
+          </div>
+          <div class="contents_style">
+            <ul>
+              <li>
+                <em>고급사용1</em>
+                <i class="fa fa-file-code-o" aria-hidden="true"></i>
+              </li>
+              <li>
+                <em>고급사용2</em>
+                <i class="fa fa-universal-access" aria-hidden="true"></i>
+              </li>
+              <li>
+                <em>표현식</em>
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- //col1 :: 목차 -->
+        <div class="col col2 clearfix">
+          <div class="title_style">
+            <h3>
+              <span>1단계</span>고급사용1
+            </h3>
+          </div>
+          <!-- //title -->
+          <div class="contents_style">
+            <ul>
+              <li class="page_btns">
+                <em>쿠키</em>
+                <i class="fa fa-podcast" aria-hidden="true"></i>
+              </li>
+              <li class="page_btns">
+                <em>자바빈</em>
+                <i class="fa fa-camera-retro" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+          <!-- //contents -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/jspt_scr0.png" alt="" class="top-image">
+                  <div class="text">스크립트릿은 JSP 내부에서 자바코드를 작성할 때 사용하는 태그이다. <br>
+                  위와같은 형태로 작성하여 자바코드를 작성할 수 있다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/jspt_scr1.png" alt="" class="top-image">
+                  <div class="text">위와같은 형태로, 변수를 선언하거나, 반복문, 조건문 등을 사용할 수 있다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page1 -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/jspt_dec1.png" alt="" class="top-image">
+                  <div class="text">선언문태그를 이용하면 JSP파일 내부에서 변수나 메소드르 선언할 수 있다. <br>
+                  선언 태그를 이용하여 선언된 변수나 메소드는 전역의 의미로 사용된다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page2 -->
+        </div>
+        <!-- //col2 :: 1단계 JSP태그 -->
+        <div class="col col2 clearfix">
+          <div class="title_style">
+            <h3>
+              <span>2단계</span>고급사용2
+            </h3>
+          </div>
+          <!-- //title -->
+          <div class="contents_style">
+            <ul>
+              <li class="page_btns">
+                <em>커넥션풀</em>
+                <i class="fa fa-wpforms" aria-hidden="true"></i>
+              </li>
+              <li class="page_btns">
+                <em>파일업로드</em>
+                <i class="fa fa-gg-circle" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/act_for1.png" alt="" class="top-image">
+                  <div class="text">액션태그는 JSP페이지 내부에서 특정한 동작을 하는데 사용되는 태그이다. <br>
+                   첫번째로, forward는 한 페이지에서 다른 페이지로 이동하는 동작을 수행하도록 한다. <br>
+                 실습을 위해서 두개의 JSP페이지를 생성한다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/act_for2.png" alt="" class="top-image">
+                  <div class="text">첫번째 페이지에서는 출력확인을 위한 메시지와 forward태그를 작성한다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/act_for3.png" alt="" class="top-image">
+                  <div class="text">두번째 페이지에서는 두번째 페이지라는 것을 알리기 위한 출력문을 작성한다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/act_for4.png" alt="" class="top-image">
+                  <div class="text">실행시, 첫번째 페이지 url을 유지하면서, 페이지는 첫번째 페이지가 아닌 두번째 페이지를 보여주고 있는것을 확인할 수 있다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page1 -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/act_inc1.png" alt="" class="top-image">
+                  <div class="text">두번째로 include태그는 현재 페이지 내부에서 다른 페이지를 가져와서 표시하는 태그로, <br>
+                  지시자의 include와 그 역할이 같다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/act_inc2.png" alt="" class="top-image">
+                  <div class="text">JSP파일을 실행 시, 첫번째 JSP 파일 내부에 두번째 페이지가 출력되는 것을 확인할 수 있다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page2 -->
+        </div>
+        <!-- //col3 :: 2단계 액션태그 -->
+        <div class="col col2 clearfix">
+          <div class="title_style">
+            <h3>
+              <span>3단계</span>표현식
+            </h3>
+          </div>
+          <!-- //title -->
+          <div class="contents_style">
+            <ul>
+              <li class="page_btns">
+                <em>EL태그</em>
+                <i class="fa fa-check-square" aria-hidden="true"></i>
+              </li>
+              <li class="page_btns">
+                <em>response</em>
+                <i class="fa fa-window-restore" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+          <!-- //contents -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/obj1_req1.png" alt="" class="top-image">
+                  <div class="text">JSP에서는 내부에서 사용할 수 있는 기본 객체가 있다. <br>
+                  첫번째 객체로 request객체는 웹브라우저에서 서버로 요청된 데이터를 관리하는 객체이다. <br>
+                실습을 위해서 위와같이 두개의 JSP파일을 생성한다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj1_req2.png" alt="" class="top-image">
+                  <div class="text">첫번째 파일에서는 두번째 파일로 값을 전달하기 위한 form태그를 작성한다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj1_req3.png" alt="" class="top-image">
+                  <div class="text">두번째 파일에서는 전달받은 값을 받아오며, 또한 request기본 메소드를 확인하기 위한 다양한 메소드를 출력한다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj1_req4.png" alt="" class="top-image">
+                  <div class="text">첫번째 파일을 실행하여 form태그에 값을 입력해넣는다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj1_req5.png" alt="" class="top-image">
+                  <div class="text">실행하면, 정상적으로 입력값이 전달되며, 기본 메소드를 통해서 어떤값이 출력되는지를 확인할 수 있다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page1 : request -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/obj1_res1.png" alt="" class="top-image">
+                  <div class="text">두번째로 response객체는 웹 브라우저로부터 받은 요청을 응답하는 역할을 하는 객체이다. <br>
+                  실습을 위해, 또 하나의 JSP파일을 생성한다. 이번 실습은 이전 request를 전달하는 form에서 15세 미만은 이용할 수 없도록 만드는 실습이다. <br>
+                 출력문을 위와같이 작성한다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj1_res2.png" alt="" class="top-image">
+                  <div class="text">두번째 페이지로 돌아가서, 위와같이 age값이 15미만이라면 새로 생성한 세번째 페이지로 이동하도록 메소드를 만든다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj1_res3.png" alt="" class="top-image">
+                  <div class="text">첫번째 파일로 돌아가 실행하여 나이를 15세 미만으로 작성한다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj1_res4.png" alt="" class="top-image">
+                  <div class="text">정상적으로 두번째 파일이 아닌, 세번째 파일로 이동하는것을 확인할 수 있다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page2 : response -->
+        </div>
+        <!-- //col4 :: 3단계 내부객체01 -->
+        <div class="col col2 clearfix">
+          <div class="title_style">
+            <h3>
+              <span>4단계</span>내부객체2
+            </h3>
+          </div>
+          <!-- //title -->
+          <div class="contents_style">
+            <ul>
+              <li class="page_btns">
+                <em>세션</em>
+                <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+              </li>
+              <li class="page_btns">
+                <em>예외</em>
+                <i class="fa fa-grav" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+          <!-- //contents -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_ses1.png" alt="" class="top-image">
+                  <div class="text">세션은 클라이언트에서 사용 후, 응답으로 반환된 데이터를 유지해주는 수단으로, <br>
+                  클라이언트 측에 저장되는 쿠키와 달리, 서버측에 저장되어 용량의 제한이 없고, 보안 부분에서 뛰어난 객체입니다. <br>
+                세션 실습을 위해 새로운 JSP파일 두개를 생성합니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_ses2.png" alt="" class="top-image">
+                  <div class="text">세션을 이용한 다양한 메소드들을 테스트합니다. <br>
+                  각각의 메소드의 자세한 내용은 검색하여 찾아보는것이 좋습니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_ses3.png" alt="" class="top-image">
+                  <div class="text">지정해준 버튼을 이용하여 setAttribute로 저장된 세션값들을 각각 출력하도록 합니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_ses4.png" alt="" class="top-image">
+                  <div class="text">세션의 정보가 정상적으로 출력되며, 삭제도 정상적으로 이루어지는지 확인합니다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page1 : session -->
+          <div class="page">
+            <div class="cont">
+              <ul class="page-style">
+                <div class="number">1</div>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_err1.png" alt="" class="top-image">
+                  <div class="text">JSP페이지를 처리하거나, 서블릿 파일을 처리하다가 예외가 생겨서 오류가 발생할 수 있습니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_err2.png" alt="" class="top-image">
+                  <div class="text">여기서 에러가 발생하면 톰캣의 기본 에러페이지로 넘어가게 되는데, <br>
+                  해당 페이지는 이용자측의 신뢰도를 떨어뜨릴 수 있기 때문에 에러페이지를 별도로 구성하는것이 좋습니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_err3.png" alt="" class="top-image">
+                  <div class="text">첫번째로 page 지시자를 이용하는 방법입니다. <br>
+                  JSP페이지의 상단에 page 지시자로 위와같이 선언하여 에러페이지와 연결시킵니다. <br>
+                이렇게하면 해당 페이지에서 에러발생시 작성된 페이지로 넘어가도록 해줍니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_err4.png" alt="" class="top-image">
+                  <div class="text">에러페이지를 작성할 때는 위와같이, exception개체를 사용하기 위한 isErrorpage를 true로 설정하며, <br>
+                  페이지의 상태값을 200으로 초기화해주어야합니다. exception개체는 에러를 표시하는 내부객체로, 에러내용을 표시해줍니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_err5.png" alt="" class="top-image">
+                  <div class="text">설정후, JSP파일을 실행하면 정상적으로 에러페이지로 넘어가며 원인도 출력되는것을 확인할 수 있습니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_err6.png" alt="" class="top-image">
+                  <div class="text">두번째로, web.xml을 이용하는 방법입니다. web.xml파일에 위와같이 특정 에러번호와 해당 번호에 이어지는 <br>
+                  jsp페이지로 연결되도록 설정해줄 수 있습니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_err7.png" alt="" class="top-image">
+                  <div class="text">web.xml에서 설정을 한 상태이므로 이번에 작성되는 에러페이지는 이전과 같이 isErrorPage를 설정할 필요가 없습니다. <br>
+                  다만 페이지의 상태값은 200으로 초기화를 해주어야합니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_err8.png" alt="" class="top-image">
+                  <div class="text">다시 첫 페이지로 돌아가서 실행하면, 정상적으로 500 에러페이지로 이동한것을 알 수 있습니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_err9.png" alt="" class="top-image">
+                  <div class="text">다음으로, 404에러는 존재하지 않는 페이지로 이동하거나 참조할 때 발생합니다. <br>
+                  존재하는 페이지로의 링크를 만들어서 테스트합니다.</div>
+                </li>
+                <li>
+                  <img src="img/[3]ThirdStep/obj2_err10.png" alt="" class="top-image">
+                  <div class="text">정상적으로 404에러페이지로 연결되는것을 확인할 수 있습니다.</div>
+                </li>
+              </ul>
+              <ul class="page-Num">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+              </ul>
+            </div>
+          </div>
+          <!-- //page1 : session -->
+        </div>
+        <!-- //col5 -->
+      </div>
+    </div>
+    <!-- //contents -->
+    <div id="pIcon">
+      <div id="icon" class="mouseHover1">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/step1.js"></script>
+  <script>
+  </script>
+</body>
+</html>
