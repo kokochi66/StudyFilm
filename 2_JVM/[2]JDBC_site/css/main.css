@@ -1,0 +1,75 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Wemakeprice-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {font-family: 'Wemakeprice-Bold';}
+
+/* 메인 */
+main {}
+
+/* 헤더 */
+header {position: fixed; top: 0; left: 0; width: 100%;}
+header #nav {
+  width: 100%;
+}
+#nav .title {font-size: 30px; padding: 30px 50px; display: inline-block;}
+#nav .menu {display: inline-block; float: right; margin: 30px 50px; cursor: pointer;}
+#nav .menu .bar {
+  background-color: #000; width: 25px; height: 3px; margin-bottom: 5px;
+}
+/* //헤더 */
+
+
+/* 콘텐츠 */
+article {padding: 10% 20%; height: 100vh; width: 100vw; box-sizing: border-box;}
+#contents {height: 100%;}
+#contents .step {
+  display: inline-block; margin-right: 13%; width: 15%;
+  position: relative; height: 100%;
+}
+#contents .step:last-child {margin-right: 0;}
+#contents .step .text {
+  transform: translate(-50%, 00); display: inline-block;
+  position: absolute; left: 50%; opacity: 0;
+  animation: .5s ani_Text forwards; animation-delay: 2.4s;
+  font-size: 20px; cursor: pointer;
+}
+#contents .step:nth-child(1) .text {top: 65%;}
+#contents .step:nth-child(2) .text {top: 45%;}
+#contents .step:nth-child(3) .text {top: 25%;}
+#contents .step:nth-child(4) .text {top: 5%;}
+#contents .step .bar {
+  position: absolute; bottom: 0; left: 0; cursor: pointer;
+  width: 100%; height: 10%; background-color: #8fe88a;
+  border: 2px solid #000; transition: background-color .3s;
+}
+#contents .step:nth-child(1) .bar {animation: .6s ani1 forwards;}
+#contents .step:nth-child(2) .bar {animation: .6s ani2 forwards;animation-delay: .6s;}
+#contents .step:nth-child(3) .bar {animation: .6s ani3 forwards;animation-delay: 1.2s;}
+#contents .step:nth-child(4) .bar {animation: .6s ani4 forwards;animation-delay: 1.8s;}
+#contents .step.hover .text {}
+#contents .step.hover .bar {background-color: #6cb9da;}
+@keyframes ani1 {
+    from { height: 10%; }
+    to   { height: 30%; }
+}
+@keyframes ani2 {
+    from { height: 10%; }
+    to   { height: 50%; }
+}
+@keyframes ani3 {
+    from { height: 10%; }
+    to   { height: 70%; }
+}
+@keyframes ani4 {
+    from { height: 10%; }
+    to   { height: 90%; }
+}
+@keyframes ani_Text {
+  from { opacity: 0; transform: translate(-50%, 10px);}
+  to   { opacity: 1; transform: translate(-50%, -10px); }
+}
+/* //콘텐츠 */
