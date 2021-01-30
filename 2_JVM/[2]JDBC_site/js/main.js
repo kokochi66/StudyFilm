@@ -7,9 +7,14 @@ var nav = document.getElementById('nav');
     cont_bar = document.querySelectorAll('#contents .step .bar'),
     page = document.getElementById('page'),
     page_exit = document.getElementById('exit'),
-    page_cont = document.querySelectorAll('#page .page_cont');
+    page_cont = document.querySelectorAll('#page .page_cont'),
+    page_prev = document.getElementById('prev'),
+    page_next = document.getElementById('next'),
+    page_count = document.getElementById('count'),
+    CurrPage_num = [],
     CurrPage = null,
     CurrPage_index = 0,
+    CurrPageNum_index = 1,
     body = document.querySelector('body');
 
 
@@ -46,19 +51,61 @@ cont_bar.forEach(elem => {
 // 페이지 열기/닫기
 cont_text.forEach((elem,i) => {
   elem.addEventListener('click', () => {
-    body.classList.add('doc');
-    CurrPage = page_cont[i];
-    CurrPage_index = i;
+    openPage(i);
   });
 });
 cont_bar.forEach((elem,i) => {
   elem.addEventListener('click', () => {
-    body.classList.add('doc');
-    CurrPage = page_cont[i];
-    CurrPage_index = i;
+    openPage(i);
   });
 })
 body.addEventListener('click', function(e) {
-  if(e.target == article) body.classList.remove('doc');
-  if(e.target == page_exit) body.classList.remove('doc');
+  if(e.target == article) {
+    body.classList.remove('doc');
+    page_cont[CurrPage_index].classList.remove('active');
+    page_cont[CurrPage_index].style.left = 50+'%';
+  }
+  if(e.target == page_exit) {
+    body.classList.remove('doc');
+    page_cont[CurrPage_index].classList.remove('active');
+    page_cont[CurrPage_index].style.left = 50+'%';
+  }
 });
+
+// 페이지 넘기기 (슬라이드)
+
+locatePage();
+
+page_prev.addEventListener('click', () => {
+  prevPage();
+});
+page_next.addEventListener('click', () => {
+  nextPage();
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --페이지 넘기기 --

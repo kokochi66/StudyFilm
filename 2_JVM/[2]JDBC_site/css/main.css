@@ -70,8 +70,9 @@ article {height: 100vh; width: 100vw; box-sizing: border-box;}
 #contents {
   height: 70%; width: 1200px; margin: 0 auto; box-sizing: border-box;
   position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%);
-  transition: all .3s;
+  transition: all .3s; opacity: 1; pointer-events: auto;
 }
+.doc #contents {opacity: 0; pointer-events: none;}
 #contents .step {
   display: inline-block; margin-right: 12%; width: 15%;
   position: relative; height: 100%;
@@ -129,7 +130,7 @@ article {height: 100vh; width: 100vw; box-sizing: border-box;}
   width: 80%; height: 80%; position: absolute;
   top: 140px; left: 50%; background-color: #ffffff; transform: translateX(-50%);
   border: 2px solid #000; border-radius: 10px; opacity: 0; pointer-events: none;
-  transition: opacity .3s;
+  transition: opacity .3s; overflow: hidden;
 }
 #page #exit {
   position: absolute; top: 30px; right: 30px; width: 25px; height: 25px;
@@ -144,16 +145,29 @@ article {height: 100vh; width: 100vw; box-sizing: border-box;}
 #page #exit .bar:nth-child(2) {transform:translateY(-50%) rotate(-45deg);}
 #page #prev {font-size: 50px; position: absolute; left: 30px; top: 50%; cursor: pointer;}
 #page #next {font-size: 50px; position: absolute; right: 30px; top: 50%; cursor: pointer;}
+#page #count {
+  position: absolute; font-size: 40px; top: 20px; left: 20px;
+  width: 50px; height: 50px; border: 2px solid #000; border-radius: 10px;
+  text-align: center; background-color: #fff; z-index: 10;
+}
 .doc #page {opacity: 1; pointer-events: auto;}
 #page .page_cont {
-  width: 80%; margin: 0 auto; margin-top: 50px;
+  width: 100%; height: 100%; position: absolute;  top: 0; left: 50%;
+  transform: translateX(-50%); pointer-events: none; opacity: 0;
+  transition: left .5s;
+}
+#page .page_cont.active {opacity: 1;}
+#page .page_cont .page_num {
+  width: 100%; height: 100%; box-sizing: border-box; padding: 40px;
+  pointer-events: none; position: absolute; top: 0; left: 0;
 }
 #page .page_cont img {
   max-width: 700px; max-height: 400px; margin: 0 auto;
   border: 2px solid #000; border-radius: 10px; display: block;
 }
 #page .page_cont .text {
-  font-size: 20px; text-align: center; padding: 30px;
+  font-size: 20px; text-align: center; padding: 30px; height: 300px; display: table-cell;
+  vertical-align: middle; width: 100vw;
 }
 
 /* //페이지 */
