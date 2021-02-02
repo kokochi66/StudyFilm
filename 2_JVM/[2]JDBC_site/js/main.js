@@ -1,7 +1,9 @@
 // 변수선언
 var nav = document.getElementById('nav');
     side_btn = document.querySelector('.menuBtn'),
+    side_cont = document.querySelectorAll('#side .cont-wrap .cont'),
     side = document.getElementById('side'),
+    sum = document.getElementById('sum'),
     article = document.querySelector('article'),
     cont_text = document.querySelectorAll('#contents .step .text'),
     cont_bar = document.querySelectorAll('#contents .step .bar'),
@@ -21,8 +23,9 @@ var nav = document.getElementById('nav');
 // 헤더 사이드 열기
 side_btn.addEventListener('click', () => {
   if(side.classList.contains('active')) {
-    side.classList.remove('active');
+    side.className = '';
     side_btn.classList.remove('active');
+    sum.classList.remove('active');
   }
   else {
     side.classList.add('active');
@@ -73,15 +76,23 @@ body.addEventListener('click', function(e) {
 });
 
 // 페이지 넘기기 (슬라이드)
-
 locatePage();
+page_prev.addEventListener('click',prevPage);
+page_next.addEventListener('click',nextPage);
 
-page_prev.addEventListener('click', () => {
-  prevPage();
+
+// 사이드 사이트 개요
+side_cont.forEach(elem => {
+  elem.addEventListener('click', () => {
+    if(side.classList.contains('note')) {
+      side.classList.remove('note');
+      sum.classList.remove('active');
+    } else {
+      side.classList.add('note');
+      sum.classList.add('active');
+    }
+  });
 });
-page_next.addEventListener('click', () => {
-  nextPage();
-})
 
 
 
@@ -106,6 +117,4 @@ page_next.addEventListener('click', () => {
 
 
 
-
-
-// --페이지 넘기기 --
+//
