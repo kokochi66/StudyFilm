@@ -2,9 +2,12 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-app.use(express.static('public'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+var root = require('./router/index');  // 라우팅 메인
+
+app.use(express.static('public'));    // 퍼블릭 폴더 정의
+app.use(bodyParser.json());           // json 파일 파싱
+app.use(bodyParser.urlencoded({extended:false})); // 인코딩 파싱
+app.use(root);               // 인덱스 라우팅
 
 app.set('view engine', 'ejs');
 
@@ -12,22 +15,3 @@ app.listen(3000, () => {
   console.log('server start for 3000');
 });
 
-app.get('/', (req,res) => {
-  console.log('test');
-  res.sendFile(__dirname + '/public/main.html');
-});
-
-app.get('/main', (req,res) => {
-  console.log('test');
-  res.sendFile(__dirname + '/public/main.html');
-});
-
-app.get('/form', (req,res) => {
-  console.log('test');
-  res.sendFile(__dirname + '/public/form.html');
-});
-
-app.post('/send_email', (req,res) => {
-    var m = req.body.email;
-    res.render('email.ejs', {'email':m});
-});
