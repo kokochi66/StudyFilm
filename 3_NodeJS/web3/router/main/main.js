@@ -4,7 +4,9 @@ var router = express.Router();
 var path = require('path');     //상대경로를 이용하기 위한 path
 
 router.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, '../public/main.html'));  // 상대경로를 적용함
+    console.log('main js loaded ', req.user);
+    var id = req.user;
+    res.render('main.ejs', {'id':id});
 });
 
 module.exports = router;
