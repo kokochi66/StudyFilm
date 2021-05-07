@@ -4,14 +4,16 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./index.js",
-    "test": "mocha ./index.spec.js"
+    "start": "node ./bin/web.js",
+    "test": "mocha ./api/**/*.spec.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "router": "^1.3.5"
   },
   "devDependencies": {
     "mocha": "^8.3.2",

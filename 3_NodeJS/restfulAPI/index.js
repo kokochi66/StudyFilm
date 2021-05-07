@@ -1,22 +1,18 @@
 const express = require('express')
+const logger = require('morgan')
+const bodyParser = require('body-parser')
 const app = express()
-const port = 3000
+const users_module = require('./api/user/index')
 
-const users = [
-  {'name': 'Alice'}
-];
+app.use(logger('dev'))
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+app.use('/users', users_module);
 
 app.get('/', (req, res) => {
   res.status(200);
   res.send('Hello World!')
-})
-app.get('/users', (req,res) => {
-  res.json(users);
-});
+})    // 홈 이동
 
-
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`)
-// })
-
-module.exports = app;
+module.exports = app
