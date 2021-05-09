@@ -9,6 +9,7 @@ const index = (req,res) => {
     var st = 200;
     if(isNaN(limit)) {
       st = 400;
+      
       limit = users.length;
     } 
     res.status(st);
