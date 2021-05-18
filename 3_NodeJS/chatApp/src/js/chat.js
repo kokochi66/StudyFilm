@@ -13,13 +13,6 @@ chatInput.addEventListener('keypress', (event) => {
         send()
     }
 })
-function send() {
-    const param = {
-        'name':nickname.value,
-        'msg':chatInput.value
-    }
-    socket.emit('chatting', param);
-}
 
 sendButton.addEventListener('click', () => {
     send()
@@ -32,8 +25,6 @@ socket.on('chatting', (data) => {
     displayContainer.scrollTo(0, displayContainer.scrollHeight);
     chatInput.value = '';
 })  // 서버로부터 받는 내용
-
-console.log(socket)
 
 function LiModel(name, msg, time) {
     this.name = name;
@@ -54,5 +45,13 @@ function LiModel(name, msg, time) {
         li.innerHTML = dom;
         chatList.appendChild(li)
     }
+}
+
+function send() {
+    const param = {
+        'name':nickname.value,
+        'msg':chatInput.value
+    }
+    socket.emit('chatting', param);
 }
 

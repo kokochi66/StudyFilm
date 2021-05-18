@@ -1,18 +1,17 @@
 const express = require('express')
 const http = require('http')
 const app = express()
+const router = express.Router()
 const path = require('path')
 const server = http.createServer(app)
 const socketIO = require('socket.io')
 const moment = require('moment')
 const io = socketIO(server)
-const chat = require('./chatApp/app')
 
-app.use('/chat', chat)
-
+app.use(express.static(path.join(__dirname,'src')))
 const PORT = process.env.PORT || 3000;
+
 io.on('connection', (socket) => {
-    console.log('소켓으로부터 입력이 들어옴')
     socket.on('chatting', (data) => {
         const { name, msg } = data
 
