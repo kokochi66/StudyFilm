@@ -1,37 +1,25 @@
 const express = require('express')
-const bodyParser = require('body-parser')
+const http = require('http')
 const app = express()
-const multer = require('multer')
-const fs = require('fs')
-const form_data = multer()
+const path = require('path')
+const server = http.createServer(app)
+const socketIO = require('socket.io')
+const moment = require('moment')
+const io = socketIO(server)
 
+app.use(express.static(path.join(__dirname,'src')))
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-    console.log('3000port connect');
-});
+io.on('connection', (socket) => {
+    socket.on('chatting', (data) => {
+        const { name, msg } = data
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+        io.emit('chatting', {
+            'name':name, 'msg':msg, 'time':moment(new Date()).format('HH:mm A')
+        })
+    })
+})  // 소켓 IO 연결부분, 클라이언트로부터 받은 내용
 
-
-app.get('/upload', (req,res) => {
-    console.log('upload get');
-})
-
-app.post('/upload', (req,res) => {
-    console.log('post connect')
-    res.send(req.body)
-})
-
-
-
-function base64_encode(file) {
-    var bitmap = fs.readFileSync(file)
-    return new Buffer(bitmap).toString('base64');
-}
-
-function base64_decode(base64str, file) {
-    var bitmap = new Buffer(base64str, 'base64')
-    fs.writeFileSync(file, bitmap);
-    console.log('파일 쓰기 성공')
-}
+server.listen(PORT, () => {
+    console.log('server connecting' , PORT)
+})  // http와 연결된 서버를 리슨한다.
