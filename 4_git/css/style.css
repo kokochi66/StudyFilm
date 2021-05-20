@@ -32,7 +32,7 @@
   background-color: var(--trans-color); margin: 30px 50px 0;
   display: none;
 }
-.page {
+.page.active {
   display: block;
 }
 .page .page_title {
