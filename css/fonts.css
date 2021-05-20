@@ -13,3 +13,7 @@
   src: url(../fonts/BMHANNAPro.ttf);
   font-family: "BMhanna";
 }
+@font-face {
+  src: url(../fonts/esamanru_Light.ttf);
+  font-family: "esamanru";
+}
