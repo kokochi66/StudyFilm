@@ -1,0 +1,7 @@
+Chapter 04 :: Environment, 프로퍼티, 프로필, 메시지
+
+01 :: Environment 소개 : 동일한 코드를 사용하면서 일부의 정보만 변경하는 방법을 제공(프로퍼티 통합관리, 프로필을 이용한 선택적 설정정보 변경)
+(chap04.MainByEnvOfJava.java :: ConfigurableApplicationContext를 이용해서 Environment를 직접 구하기)
+
+
+02 :: Environment 와 PropertySource : Environment의 첫번째 기능인 프로퍼티 값 제공
