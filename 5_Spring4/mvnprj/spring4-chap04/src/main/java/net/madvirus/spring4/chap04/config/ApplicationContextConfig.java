@@ -42,6 +42,8 @@ public class ApplicationContextConfig {
 
 	@Configuration
 	@Profile("!prod")
+	// @Configuration 어노테이션 안에 @Configuration 어노테이션을 두어서, 프로필을 설정할 수 있다.
+	// 마찬가지로 중첩을 이용하면 파일 하나에서 설정이 가능하므로 관리가 쉬워진다.
 	public static class DataSourceDev {
 		@Value("${db.driver}")
 		private String driver;

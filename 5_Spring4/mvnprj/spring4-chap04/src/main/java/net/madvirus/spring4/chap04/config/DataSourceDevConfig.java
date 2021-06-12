@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @Profile("dev")
+// @Profile 어노테이션을 사용하여서 프로필을 지정할 수 있다.
 public class DataSourceDevConfig {
 
 	@Value("${db.driver}")

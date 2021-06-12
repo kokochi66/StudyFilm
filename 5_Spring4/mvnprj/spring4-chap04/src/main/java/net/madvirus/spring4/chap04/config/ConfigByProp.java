@@ -20,13 +20,15 @@ public class ConfigByProp {
 	private String user;
 	@Value("${db.password}")
 	private String password;
-
+	// @Value를 통해서 프로퍼티를 설정한다.
+	
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer properties() {
 		PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
 		configurer.setLocation(new ClassPathResource("db.properties"));
+		// 설정한 값을 dp.properties의 프로퍼티값으로 치환한다.
 		return configurer;
-	}
+	} // 정적 메소드로 지정하지 않으면 원하는 방식으로 동작하지 않는다.
 
 	@Bean(initMethod = "init")
 	public ConnectionProvider connectionProvider() {

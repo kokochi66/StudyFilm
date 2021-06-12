@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd"
     profile="!prod">
-
+	<!-- profile설정을 통해서 prod가 아니라는 의미로 저장해두었다. -->
 	<bean id="connProvider" class="net.madvirus.spring4.chap04.JdbcConnectionProvider"
 		init-method="init">
 		<property name="driver" value="${db.driver}" />

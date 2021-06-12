@@ -12,12 +12,14 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @PropertySources(@PropertySource("classpath:/db.properties"))
+// 프로퍼티 파일을 이용해서 Environment에 프로퍼티를 추가할 때 사용, 프로퍼티가 없으면 Environment의 프로퍼티를 사용하게 함.
 public class ConfigByPropSource {
 
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer properties() {
 		PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
 		return configurer;
+		// @PropertySource설정을 이용해서 좀 더 간단하게 프로퍼티를 적용할 수 있다.
 	}
 
 	@Value("${db.driver}")

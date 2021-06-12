@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd"
     profile="prod">
-
+<!-- profile설정을 통해서 prod를 저장해두었다. -->
 	<bean id="connProvider" class="net.madvirus.spring4.chap04.JndiConnectionProvider">
 		<property name="jndiName" value="java:/comp/env/jdbc/db" />
 	</bean>

@@ -1,7 +1,37 @@
 Chapter 04 :: Environment, 프로퍼티, 프로필, 메시지
 
-01 :: Environment 소개 : 동일한 코드를 사용하면서 일부의 정보만 변경하는 방법을 제공(프로퍼티 통합관리, 프로필을 이용한 선택적 설정정보 변경)
+01: Environment 소개 : 동일한 코드를 사용하면서 일부의 정보만 변경하는 방법을 제공(프로퍼티 통합관리, 프로필을 이용한 선택적 설정정보 변경)
 (chap04.MainByEnvOfJava.java :: ConfigurableApplicationContext를 이용해서 Environment를 직접 구하기)
 
 
-02 :: Environment 와 PropertySource : Environment의 첫번째 기능인 프로퍼티 값 제공
+02: Environment 와 PropertySource : Environment의 첫번째 기능인 프로퍼티 값 제공
+
+03: Environment를 스프링 빈에서 사용하기 : EnvironmentAware 인터페이스 구현, @Autowired 어노테이션을 Environment필드에 적용
+
+04: 프로퍼티 파일을 이용한 프로퍼티 설정
+*빈 객체의 프로퍼티나 값을 설정하기 위해 Environment를 직접 사용하는 경우는 거의 없음.
+- XML에서 프로퍼티 설정하기 : <context:property-placeholder> 사용하기 (resources/confprofile/applicationContext.xml)
+- Configuration 어노테이션을 이용하는 자바 설정에서 프로퍼티 사용 : @Value어노테이션 사용 (chap04.config.ConfigByProp.java)
+
+05: 프로필을 이용한 설정 : 각 환경에 맞는 프로필을 설정하고, 선택할 수 있도록 지원하는 기능
+- XML으로 프로필 사용 : 제품환경에 대한 DB연결 설정을 별도 파일로 작성하여, 각각의 파일에 profile 속성값을 주는 방법
+( resources/confprofile/datasource-dev,prod.xml , MainByProfileOfXml.java )
+<beans>태그 중첩으로 프로필 적용하기 ( applicationContext.xml )
+
+- 자바 @Configuration 설정에서 프로필 사용하기 (DataSourceProdConfig.java)
+@Configuration 중첩으로 프로필 적용하기 (ApplicationContextConfig.java)
+
+스프링에서는 프로필 설정시에 프로필을 두개 이상을 설정할 수 있으며, 콤마를 이용해서 적으면 간단하게 구현 가능하다.
+!prod를 붙임으로써, prod프로필이 활성화되지 않을경우 사용된다는 조건을 적용할 수도 있다.
+
+06: MessageSource를 이용한 메시지 국제화 처리
+- ResourceBundleMessageSource를 이용한 설정 : basenames 프로퍼티에 list 태그를 이용하여 베이스 이름 목록을 전달한다.
+defaultEncoding 프로퍼티 값을 UTF-8로 지정해주면, UTF-8로 작성된 메세지 파일을 읽어온다.
+- ReloadableResourceBundleMessageSource를 이용한 설정 : 클래스패스 및 메세지 파일 사용가능, 파일 내용변경시 변경된 내용 반영됨
+basensames를 지정할 때 스프링 자원 경로를 지정한다.
+- 빈 객체에서 메시지 이용하기 : MessageSourceAware 인터페이스를 사용하여 setMessageSource 메소드를 통해 전달한다.
+
+
+
+
+
