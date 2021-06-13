@@ -6,7 +6,7 @@ public class MainByJava {
 
 	public static void main(String[] args) {
 		useConfig();
-		useConfig2();
+//		useConfig2();
 	}
 
 	private static void useConfig() {

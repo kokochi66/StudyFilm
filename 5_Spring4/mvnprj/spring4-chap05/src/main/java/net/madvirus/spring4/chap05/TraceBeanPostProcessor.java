@@ -6,12 +6,11 @@ import java.lang.reflect.Proxy;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
-@Order(2)
-public class TraceBeanPostProcessor implements BeanPostProcessor/*, Ordered */ {
+public class TraceBeanPostProcessor implements BeanPostProcessor, Ordered  {
 
-	/*
 	private int order;
 
 	@Override
@@ -22,7 +21,6 @@ public class TraceBeanPostProcessor implements BeanPostProcessor/*, Ordered */ {
 	public void setOrder(int order) {
 		this.order = order;
 	}
-	*/
 	
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {

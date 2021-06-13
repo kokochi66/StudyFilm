@@ -17,14 +17,19 @@ public class ThresholdRequiedBeanFactoryPostProcessor implements BeanFactoryPost
 
 	@Override
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-		String[] beanNames = beanFactory.getBeanDefinitionNames();
+		String[] beanNames = beanFactory.getBeanDefinitionNames(); // 빈 이름 목록을 구함
 		for (String name : beanNames) {
 			BeanDefinition beanDef = beanFactory.getBeanDefinition(name);
+			// 지정한 이름을 가진 빈의 설정 정보를 구함
 			Class<?> beanClass = getClassFromBeanDef(beanDef);
+			// 설정 정보를 통해서 빈의 클래스 타입을 구한다
 			if (beanClass != null && ThresholdRequired.class.isAssignableFrom(beanClass)) {
+				// 빈의 클래스 타입이 ThresholdRequired를 구현했는지 검사한다.
 				MutablePropertyValues prop = beanDef.getPropertyValues();
+				// 빈의 프로퍼티 MutablePropertyValues를 구한다.
 				if (!prop.contains("threshold")) {
 					prop.add("threshold", defaultThreshold);
+					// threshold 프로퍼티 값이 없다면, defaultThreshold로 설정된 프로퍼티를 추가한다.
 				}
 			}
 		}

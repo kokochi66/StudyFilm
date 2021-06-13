@@ -1,0 +1,6 @@
+Chapter05 :: 확장포인트와 PropertyEditor/ConversionService
+
+1) 스프링 확장 포인트
+1-1 BeanFactoryPostProcessor를 이용한 빈 설정 정보 변경
+(chap05.ThresholdRequiedBeanFactoryPostProcessor.java , application Context.xml
+chap05.Config.java , chap05.Config2.java)
