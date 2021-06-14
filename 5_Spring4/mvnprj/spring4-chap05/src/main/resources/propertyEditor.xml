@@ -10,6 +10,7 @@
 			<map>
 				<entry key="net.madvirus.spring4.chap05.Money"
 					value="net.madvirus.spring4.chap05.MoneyEditor2" />
+					<!-- Money클래스에 대한 변환값을 MoneyEditor2를 사용해서 타입변환을 하도록 한다. -->
 			</map>
 		</property>
 		<property name="propertyEditorRegistrars">
@@ -17,16 +18,24 @@
 				<ref bean="customPropertyEditorRegistrar"/>
 			</list>
 		</property>
+		<!-- 등록한 빈을 proeprtyEditorRegistrars 프로퍼티로 지정해준다. -->
 	</bean>
+	<!-- 기본적으로 특정 타입에 대한 타입Editor를 만들었을경우, 클래스 이름을 타입Editor로 짓고, 해당 클래스의 위치만 지정해주면 된다.
+	하지만 다른 폴더에 있거나 클래스 이름 설정이 다른경우에는, CustomEditorConfigurer를 사용해야한다. -->
 
 	<bean id="customPropertyEditorRegistrar" class="net.madvirus.spring4.chap05.CustomPropertyEditorRegistrar">
 		<property name="datePattern" value="yyyy-MM-dd HH:mm:ss" />
 	</bean>
+	<!-- 생성한 CustomPropertyEditorRegistrar클래스를 빈으로 등록하고, 데이트 패턴을 등록해준다. -->
+	
 	
 	<bean class="net.madvirus.spring4.chap05.RestClient">
 		<property name="serverUrl"
 			value="https://www.googleapis.com/language/translate/v2" />
+			<!-- ProeprtyEditor가 내부적으로 지정된 문자열값을 자동으로 URL 타입으로 치환하여 저장시킨다. -->
+			
 		<property name="apiDate" value="2010-03-01 09:30:00" />
+		<!-- CustomDateEditor는 스프링에서 기본으로 사용되지 않기때문에, 등록이 필요하다. 등록이 없으면 익셉션을 발생시킨다. -->
 	</bean>
 
 	<bean class="net.madvirus.spring4.chap05.InvestmentSimulator">

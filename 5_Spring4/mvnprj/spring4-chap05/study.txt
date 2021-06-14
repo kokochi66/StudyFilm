@@ -4,3 +4,20 @@ Chapter05 :: 확장포인트와 PropertyEditor/ConversionService
 1-1 BeanFactoryPostProcessor를 이용한 빈 설정 정보 변경
 (chap05.ThresholdRequiedBeanFactoryPostProcessor.java , application Context.xml
 chap05.Config.java , chap05.Config2.java)
+
+2) PropertyEditor와 ConversionService
+스프링은 내부적으로 빈객체에 프로퍼티를 지정하여 저장할 때, 자동으로 알맞은 타입으로 변환해준다.
+내부적으로는 PropertyEditor를 이용해서 타입변환을 하며, 스프링 3버전부터는 ConversionService를 이용해서 타입변환을 할 수 있게 되었다.
+
+PropertyEditor는 스프링 설정 편의를 위해서 추가제공되는 객체들이 있다 (예: URL타입 프로퍼티 = RestClient.java , propertyEditor.xml)
+커스텀 PropertyEditor 구현하기 ( MoneyEditor2.java )
+PropertyEditor에 매개변수를 지정하고 싶다면? > PropertyEditorRegistrar을 사용하기. ( CustomPropertyEditorRegistrar.java )
+
+ConversionService 등록하기 (conversionService.xml)
+DefaultConversionSErvice클래스는 내부에 등록된 GenericConverter에 타입변환을 위임한다.
+이 GenericConverter를 이용해서 커스텀 변환을 구현할 수 있다. (MoneyGenericConverter.java)
+그런데 String -> int 와 같이 단순한 한 쌍의 타입변환이 이루어지는 경우에는, Converter 인터페이스를 사용하느 것이 보다 쉽게 구현할 수 있다.
+(StringToMoneyConverter.java)
+
+Converter, GenericConverter 뿐 아니라, Formatter도 이용해서 타입변환을 수행하는
+DefaultFormattingConversionService를 지정하는 방법도 있다. (conversionService2.xml)
