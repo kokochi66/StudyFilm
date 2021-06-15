@@ -11,16 +11,19 @@
 			<artifactId>spring-context</artifactId>
 			<version>4.0.4.RELEASE</version>
 		</dependency>
+		<!-- aop구현을 위해서 aop dependency를 추가해준다. -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
 			<version>4.0.4.RELEASE</version>
 		</dependency>
+		<!-- aspectj 사용을 위해서 의존을 추가해준다. -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.7.4</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>

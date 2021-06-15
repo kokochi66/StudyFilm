@@ -15,8 +15,10 @@
 	<!-- Aspect 설정: Advice를 어떤 Pointcut에 적용할 지 설정 -->
 	<aop:config>
 		<aop:aspect id="traceAspect" ref="profiler">
+			<!-- chap06패키지 및 하위 패키지 모든 public 메소드를 Pointcut 으로 설정한다. -->
 			<aop:pointcut id="publicMethod"
 				expression="execution(public * net.madvirus.spring4.chap06..*(..))" />
+			<!-- 설정한 Pointcut에 profiler 객체의 trace메소드를 적용한다. -->
 			<aop:around pointcut-ref="publicMethod" method="trace" />
 		</aop:aspect>
 		<aop:aspect id="memberUpdateTraceAspect" ref="memberUpdateTraceAdvice">
