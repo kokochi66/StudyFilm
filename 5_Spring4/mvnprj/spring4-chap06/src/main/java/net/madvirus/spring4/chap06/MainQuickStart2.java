@@ -18,10 +18,12 @@ public class MainQuickStart2 {
 		WriteArticleService writeArticleService =
 				ctx.getBean("writeArticleService", WriteArticleService.class);
 		writeArticleService.write(new NewArticleRequest("writer", "title", "content"));
+		// WriteArticleService 는 board 내부의 클래스로 Aspect의 Pointcut안에 들어가있으므로, AroundAdivce가 적용된다.
 
 		ReadArticleService readArticleService = ctx.getBean(ReadArticleService.class);
 		readArticleService.read(1);
 		readArticleService.read(1);
+		// ReadArticleService 도 마찬가지로 적용된다.
 
 		MemberService memberService = ctx.getBean(MemberService.class);
 		MemberRegRequest memberRegReq =
@@ -31,6 +33,7 @@ public class MainQuickStart2 {
 		UpdateInfo updateInfo = new UpdateInfo();
 		updateInfo.setNewName("새이름");
 		memberService.update("madvirus", updateInfo);
+		// member의 regist와 update 함수는 Pointcut안에 들어가있지 않으므로, AroundAdvice가 실행되지 않는다.
 
 		ctx.close();
 	}

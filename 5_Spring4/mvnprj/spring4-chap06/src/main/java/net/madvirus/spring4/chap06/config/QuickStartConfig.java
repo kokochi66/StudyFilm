@@ -15,12 +15,13 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @EnableAspectJAutoProxy
+// @Configuration을 통한 스프링 설정의 경우, @EnableAspectJAutoProxy를 통해서 Aspect 설정을 해주어야한다.
 public class QuickStartConfig {
 
 	@Bean
 	public ProfilingAspect performanceTraceAspect() {
 		return new ProfilingAspect();
-	}
+	} // @Aspect 어노테이션을 적용한 클래스를 빈 객체로 만든다.
 
 	@Bean
 	public UpdateMemberInfoTraceAspect memberInfoTraceAspect() {
