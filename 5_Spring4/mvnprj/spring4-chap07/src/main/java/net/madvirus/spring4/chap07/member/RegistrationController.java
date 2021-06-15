@@ -14,6 +14,7 @@ public class RegistrationController {
 	private MemberService memberService;
 
 	@RequestMapping(method = RequestMethod.GET)
+	// method 값을 설정함으로써, GET으로 데이터를 받을지, POST로 데이터를 받을지를 결정할 수 있다.
 	public String form(@ModelAttribute("memberInfo") MemberRegistRequest memRegReq) {
 		return MEMBER_REGISTRATION_FORM;
 	}

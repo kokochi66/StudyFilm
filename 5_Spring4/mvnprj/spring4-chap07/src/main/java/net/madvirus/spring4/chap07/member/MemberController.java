@@ -32,6 +32,7 @@ public class MemberController {
 
 	@RequestMapping("/members/{memberId}/orders")
 	public String memberOrders(@PathVariable("memberId") String memberId, Model model) {
+		// URL 경로의 변수값을 가져올 때, PathVariable 어노테이션을 사용할 수 있다.
 		MemberInfo mi = memberService.getMemberInfo(memberId);
 		if (mi == null) {
 			return "member/memberNotFound";
