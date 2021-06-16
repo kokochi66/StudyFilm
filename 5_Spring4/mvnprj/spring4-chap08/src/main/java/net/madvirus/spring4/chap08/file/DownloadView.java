@@ -25,7 +25,7 @@ public class DownloadView extends AbstractView {
 			throws Exception {
 		File file = (File) model.get("downloadFile");
 
-		response.setContentType(getContentType());
+		response.setContentType(getContentType()); // 파일 다운로드를 위해 컨텐트 타입을 application/download로 설정한다
 		response.setContentLength((int) file.length());
 
 		String userAgent = request.getHeader("User-Agent");
@@ -38,9 +38,9 @@ public class DownloadView extends AbstractView {
 					"iso-8859-1");
 		}
 		response.setHeader("Content-Disposition", "attachment; filename=\""
-				+ fileName + "\";");
-		response.setHeader("Content-Transfer-Encoding", "binary");
-		OutputStream out = response.getOutputStream();
+				+ fileName + "\";"); // Content-Disposition을 이용해, 전송되는 파일의 이름을 명시한다.
+		response.setHeader("Content-Transfer-Encoding", "binary"); // 전송 파일이 바이너리 타입임을 명시한다.
+		OutputStream out = response.getOutputStream(); // 헤더설정 후에, OutputStream에 파일을 출력한다.
 		FileInputStream fis = null;
 		try {
 			fis = new FileInputStream(file);

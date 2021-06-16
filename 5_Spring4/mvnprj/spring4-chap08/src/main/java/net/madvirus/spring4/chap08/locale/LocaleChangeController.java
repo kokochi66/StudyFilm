@@ -20,6 +20,7 @@ public class LocaleChangeController {
 			HttpServletRequest request, HttpServletResponse response) {
 		Locale locale = new Locale(language);
 		localeResolver.setLocale(request, response, locale);
+		// setLocale 메소드를 이용해서 원하는 locale로 변경할 수 있다.
 		return "redirect:/index.jsp";
 	}
 

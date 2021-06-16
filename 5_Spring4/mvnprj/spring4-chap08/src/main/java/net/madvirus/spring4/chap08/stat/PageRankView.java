@@ -13,13 +13,15 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.web.servlet.view.document.AbstractExcelView;
 
 public class PageRankView extends AbstractExcelView {
-
+// AbstractExcelView를 상속받는 클래스를 만들어서, 엑셀뷰를 구현할 수 있는 클래스를 만든다.
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void buildExcelDocument(Map<String, Object> model,
 			HSSFWorkbook workbook, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		// 엑셀파일을 생성하는데 필요한 HSSFWorkbook 객체를 파라미터를 전달바다, 알맞게 엑셀 데이터를 생성할 수 있다.
 		response.setHeader("Content-Disposition", "attachment; filename=\"pagerank.xls\";");
+		// 엑셀파일을 다운로드 받을 때 사용할 이름을 설정한다.
 
 		HSSFSheet sheet = createFirstSheet(workbook);
 		createColumnLabel(sheet);

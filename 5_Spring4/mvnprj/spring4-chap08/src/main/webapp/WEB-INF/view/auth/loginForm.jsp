@@ -6,6 +6,7 @@
 <head><title><spring:message code="login.form.title"/></title></head>
 <body>
 
+<!-- form을 생성하는 JSP 사용법 -->
 <form:form commandName="loginCommand">
 <form:hidden path="securityLevel"/>
 <form:errors element="div" />
@@ -21,6 +22,7 @@
 </p>
 <p>
     <label for="loginType"><spring:message code="login.form.type" /></label>
+    <!-- 아이템값을 메소드를 활용해서 간단하게 불러올 수 있다. -->
     <form:select path="loginType" items="${loginTypes}" />
 
 <%-- 	<form:select path="loginType"> --%>

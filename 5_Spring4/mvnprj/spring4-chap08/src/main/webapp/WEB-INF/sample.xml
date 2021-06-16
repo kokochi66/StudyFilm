@@ -55,6 +55,10 @@
 		<property name="order" value="1" />
 	</bean>
 
+
+	<!-- InternalResourceViewResolver의 설정
+	일반적으로 JSP, html과 같은 웹 어플리케이션의 내부 자원을 이용해서 응답결과를 생성한다.
+	설정 방법은 지정한 뷰 이름의 앞뒤로 prefix, suffix 프로퍼티를 추가한 값이 실제 사용될 자원의 경로가된다.  -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/" />
@@ -82,6 +86,9 @@
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
 
+	<!-- Locale변경을 위해 성사게 별도의 컨트롤러 클래스를 개발할 필요 없이, mvc 설정을 통해서 Lcoale을 변경할 수 있다.
+	해당 설정을 통해서 LocaleChangeInterceptor가 프로퍼티로 설정한 요청 파라미터가 존재하면,
+	파라미터 값을 이용해서 Locale을  설정하고, LocaleResolver를 이용해서 locale을 변경한다. -->
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 			<property name="paramName" value="language" />

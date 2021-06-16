@@ -17,6 +17,8 @@ import com.lowagie.text.pdf.BaseFont;
 import com.lowagie.text.pdf.PdfWriter;
 
 public class PageReportView extends AbstractPdfView {
+// AbstractPdfView를 상속받아서, 스iText API를 이용해서 PDF를 생성할 수 있는 클래스를 구현한다.
+// 간단하게 buildPdfDocument 메소드를 재정의함으로써, 뷰를 구현할 수 있다.
 	private String fontPath = "c:\\windows\\Fonts\\malgun.ttf";
 
 	@SuppressWarnings("unchecked")
