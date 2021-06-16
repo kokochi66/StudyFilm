@@ -30,7 +30,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 		if (session.getAttribute("auth") == null) {
 			response.sendError(HttpServletResponse.SC_FORBIDDEN);
 			return false;
-		}
+		} // HttpSession에 auth라는 속성이 존재하지 않으면 403(SC_FORBIDDEN) 응답 코드를 전송하고 false를 리턴하는 역할을 한다.
 		return true;
 	}
 

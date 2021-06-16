@@ -33,6 +33,7 @@ public class MemberModificationController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String modify(@Valid @ModelAttribute("modReq") MemberModRequest modReq, Errors errors) {
+		// JSR303 설정이 되었으면 @Valid 어노테이션을 붙이면, 로컬 Validator가 값을 검증하게 된다.
 		if (errors.hasErrors()) {
 			return MEMBER_MODIFICATION_FORM;
 		}

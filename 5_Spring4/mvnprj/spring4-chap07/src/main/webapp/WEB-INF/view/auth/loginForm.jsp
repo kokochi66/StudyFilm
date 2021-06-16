@@ -6,7 +6,7 @@
 <body>
 
 <form:form commandName="loginCommand">
-<form:errors element="div" />
+<form:errors element="div" /> <!--  -->
 <label for="email">이메일</label>: 
 <input type="text" name="email" id="email" value="${loginCommand.email}">
 <form:errors path="email"/> <br>

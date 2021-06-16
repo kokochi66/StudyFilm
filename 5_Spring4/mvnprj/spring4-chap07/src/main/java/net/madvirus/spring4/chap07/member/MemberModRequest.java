@@ -6,7 +6,9 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class MemberModRequest {
-
+// JSR303 어노테이션을 이용한 검증 처리, 값 검증 규칙을 설정한다.
+// 각 어노테이션 별로 메세지 프로퍼티 파일에 규칙에 맞게 에러 메시지를 입력해주면, JSR 303의 기본 에러 메세지 대신 원하는 에러메시지를 출력할 수 있다.
+// JSR303의 주요 어노테이션 - 333p , Hibernate Validator가 제공하는 추가 어노테이션
 	@NotEmpty
 	private String id;
 	@NotEmpty

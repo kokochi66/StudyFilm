@@ -11,6 +11,23 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 // body라는 영역안에 들어가는 값들을 처리할 수 있는 외장모듈을 설정한다.
 
+const router = express.Router()
+router.route('/process/login').post((req,res) => {
+    console.log('/process/login 라우팅 함수에서 받음')
+
+    let paramName = req.params.name
+    let paramId = req.body.id || req.query.id
+    let paramPassword = req.body.password || req.query.password
+
+    res.writeHead(200, {"Content-Type":"text/html;charset=utf8"})
+    res.write('<h1>서버에서 로그인 응답</h1>')
+    res.write(`<div> <p> ${paramId}  </p> </div>`)
+    res.write(`<div> <p> ${paramName}  </p> </div>`)
+    res.write(`<div> <p> ${paramPassword}  </p> </div>`)
+    res.end()
+})
+
+app.use('/', router)
 
 app.get('/', (req,res,next) => {
     console.log('첫번째 미들웨어 호출')
@@ -28,7 +45,10 @@ app.post('/' , (req,res) => {
     res.sendFile(__dirname+"/index.html")
 })
 
-
+app.all('*', (req,res) => {
+    console.log('오류 페이지, 페이지가 존재하지않음')
+    res.status(404).send("<h1> 요청한 페이지가 없습니다. 404에러 </h1>")
+})
 
 
 

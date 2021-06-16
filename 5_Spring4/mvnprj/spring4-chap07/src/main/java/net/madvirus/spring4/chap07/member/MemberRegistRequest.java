@@ -13,6 +13,10 @@ public class MemberRegistRequest {
 	private boolean allowNoti;
 	private Address address;
 	private Date birthday;
+	// 입력받는 생일값을 java.util.Date 타입으로 사용한다.
+	// 여기서 @DateTimeFormat(pattern="yyyyMMdd")와 같은 설정을 해주면, 간단하게 타입처리를 할 수 있다.
+	// 그리고 잘못된 형식일 때 알맞은 메시지를 출력하고 싶다면, 메시지 프로퍼티 파일에 typeMismatch 메시지를 추가해주면 된다.
+	// @DateTimeFormat의 속성 설정 339p
 
 	public String getEmail() {
 		return email;

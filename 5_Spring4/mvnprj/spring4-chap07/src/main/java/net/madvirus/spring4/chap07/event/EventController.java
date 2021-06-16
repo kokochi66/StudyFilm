@@ -42,13 +42,18 @@ public class EventController {
 
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
+		// 컴내드 객체의 Date 타입 프로퍼티에 파라미터 값을 할당할 떄 사용한다.
 		CustomDateEditor dateEditor = new CustomDateEditor(new SimpleDateFormat("yyyyMMdd"), true);
 		binder.registerCustomEditor(Date.class, dateEditor);
+		// CustomDateEditor 객체를 WebDataBinder에 등록해준다. Date타입의 프로퍼티로 값을 변환할떄 해당 에디터를 사용한다는 뜻이다.
+		// 프로퍼티마다 다른 에디터를 적용하고 싶으면, 중간에 프로퍼티 이름을 문자열로 넣어주면 된다.
 	}
 
 	@RequestMapping("/detail")
 	public String detail(HttpServletRequest request, Model model) throws IOException {
 		String id = request.getParameter("id");
+		// @RequestMapping 메서드에 HttpServletRequest타입의 인자를 구하고 이를 통해서 요청 파라미터를 구한다.
+		
 		if (id == null)
 			return REDIRECT_EVENT_LIST;
 		Long eventId = null;
@@ -81,6 +86,7 @@ public class EventController {
 
 	@RequestMapping("/detail2")
 	public String detail2(@RequestParam("id") long eventId, Model model) {
+		// @RequestParam 어노테이션을 사용해서, 메서드의 파라미터를 이용해서 HTTP 요청 파라미터를 받을 수 있다.
 		Event event = getEvent(eventId);
 		if (event == null)
 			return REDIRECT_EVENT_LIST;

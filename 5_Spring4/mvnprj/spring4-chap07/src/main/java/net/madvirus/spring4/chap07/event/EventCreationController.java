@@ -12,6 +12,8 @@ import org.springframework.web.bind.support.SessionStatus;
 
 @Controller
 @SessionAttributes("eventForm")
+// 스프링에서 임시 용도로 사용할 데이터를 세션에 보관할 때 사용할 수 있는 @SessionASttribute 어노테이션
+// 어노테이션을 사용해서 지정한 이름을 이용해서 임시 목적으로 사용될 객체를 세션에 보관하게 된다.
 public class EventCreationController {
 
 	private static final String EVENT_CREATION_STEP1 = "event/creationStep1";
@@ -24,11 +26,12 @@ public class EventCreationController {
 //		model.addAttribute("eventForm", new EventForm());
 //		return EVENT_CREATION_STEP1;
 //	}
+	// @SessionAttributes가 동작하기 위해서, 모델에서 같은 이름을 갖는 객체를 추가하여, 초기화해준다.
 
 	@ModelAttribute("eventForm")
 	public EventForm formData() {
 		return new EventForm();
-	}
+	} // @ModelAttribute를 이용해서도 세션에 보관할 객체를 생성할 수 있다.
 
 	@RequestMapping("/newevent/step1")
 	public String step1() {

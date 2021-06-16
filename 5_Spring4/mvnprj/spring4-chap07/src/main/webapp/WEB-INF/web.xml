@@ -40,6 +40,8 @@ org.springframework.web.context.support.AnnotationConfigWebApplicationContext
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<!-- xml파일을 나누고싶을 경우, 여러개의 DispatchServlet을 구성할 수 있다. 다만 빈 객체는 서로 연동되지 않는다.
+	다만 공통으로 의존파일에 존재하는 빈 객체에는 접근이 가능하다. -->
 
 	<servlet-mapping>
 		<servlet-name>dispatcher2</servlet-name>

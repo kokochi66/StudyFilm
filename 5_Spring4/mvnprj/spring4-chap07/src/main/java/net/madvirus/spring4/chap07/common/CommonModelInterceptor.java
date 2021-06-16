@@ -23,6 +23,6 @@ public class CommonModelInterceptor extends HandlerInterceptorAdapter {
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 		System.out.println("VM: postHandle()");
 		modelAndView.addObject("project", "Spring4");
-	}
+	} // postHandle 메서드가 모델에 project라는 이름으로 Spring4값을 추가하낟.
 
 }
