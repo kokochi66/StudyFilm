@@ -18,7 +18,10 @@ public class SimpleConverterController {
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
 	public String simple(@RequestBody String body) {
+		// 어노테이션 @RequestBody가 붙은 값을 파라미터로 전달한다.
 		return body;
+		// 어노테이션 @ResponseBody가 붙은 메소드는 리턴값으로 Http 응답 데이터로 사용한다.
+		// HttpMessageConverter 구현 클래스 표 430p
 	}
 
 }

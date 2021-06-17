@@ -21,6 +21,7 @@
 			<max-request-size>-1</max-request-size>
 			<file-size-threshold>1024</file-size-threshold>
 		</multipart-config>
+		<!-- DispatcherServlet이 멀티파트를 처리할 수 있도록 multipart-config 설정을 등록해준다. -->
 	</servlet>
 
 	<servlet-mapping>

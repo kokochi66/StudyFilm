@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "message-list")
+// JAXB2를 이용해서 GuestMessageList 객체를 XML로 변환하면 루트 태그가 <message-list>인 XML이 생성된다.
 public class GuestMessageList {
 
 	@XmlElement(name = "message")

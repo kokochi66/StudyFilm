@@ -10,7 +10,7 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 public class ChatWebSocketHandler extends TextWebSocketHandler {
-
+//  웹 소켓 채팅 서버를 위한 서버구현
 	private Map<String, WebSocketSession> users = new ConcurrentHashMap<>();
 
 	@Override
@@ -18,14 +18,14 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
 			WebSocketSession session) throws Exception {
 		log(session.getId() + " 연결 됨");
 		users.put(session.getId(), session);
-	}
+	}	// 클라이언트가 서버에 연결되면 실행되며, users맵에 클라이언트와 관련된 세션을 저장한다.
 
 	@Override
 	public void afterConnectionClosed(
 			WebSocketSession session, CloseStatus status) throws Exception {
 		log(session.getId() + " 연결 종료됨");
 		users.remove(session.getId());
-	}
+	} // 연결이 종료되면 user맵에서 클라이언트와 관련된 세션을 제거한다.
 
 	@Override
 	protected void handleTextMessage(

@@ -19,5 +19,5 @@
 
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
-
+	<!-- StandarrdServletMultipartResolver를 사용하기 위한 등록이다. 먼저 DispatcherServlet에 등록이 필요하다. -->
 </beans>

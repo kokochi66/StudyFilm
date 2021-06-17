@@ -10,16 +10,16 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 public class SpringServletConfig3
 		extends AbstractAnnotationConfigDispatcherServletInitializer {
-
+// @Configuration 기반의 자바 설정을 하고싶다면 이용하는 상속 클래스이다.
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class<?>[] { RootConfig.class };
 	}
-
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		return new Class<?>[] { WebConfig.class };
-	}
+	} // 사용할 클래스의 목록을 리턴하는것으로 간단하게 지정할 수 있다.
+	// 실제 객체를 생성하는것은 상위클래스에서 자동으로 해준다.
 
 	// 상위 클래스는 "dispatcher" 리턴
 	@Override

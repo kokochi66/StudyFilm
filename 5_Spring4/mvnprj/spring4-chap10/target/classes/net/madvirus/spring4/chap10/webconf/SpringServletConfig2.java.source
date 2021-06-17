@@ -8,6 +8,9 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
 
 public class SpringServletConfig2 extends AbstractDispatcherServletInitializer {
+// DispatcherServlet을 직접 생성할 필요 없이, 상위클래스에서 자동으로 설정해준다.
+// 필요한 메소드에 대한 재정의만 들어가면 된다.
+
 	// abstract 메서드 재정의
 	@Override
 	protected WebApplicationContext createServletApplicationContext() {

@@ -14,6 +14,7 @@
 		<websocket:mapping handler="echoHandler" path="/echo-ws" />
 		<websocket:mapping handler="chatHandler" path="/chat-ws" />
 	</websocket:handlers>
+	<!-- 웹소켓 구현 클래스가 완성했다면, 핸들러를 네임스페이스를 이용해서 웹소켓 서버를 설정하면 된다. -->
 
 	<bean id="echoHandler" class="net.madvirus.spring4.chap09.ws.EchoHandler" />
 	<bean id="chatHandler" class="net.madvirus.spring4.chap09.ws.ChatWebSocketHandler" />
