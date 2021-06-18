@@ -24,6 +24,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
 @EnableTransactionManagement
+// @Configuration에서 @Transactional 어노테이션을 적용하기 위해서는 @EnableTrnasactionManager 를 설정해주어야한다.
 public class Config implements TransactionManagementConfigurer {
 
 	@Bean(destroyMethod = "close")

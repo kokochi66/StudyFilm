@@ -9,12 +9,19 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	<!-- JDBC, Mybatis와 같이 JDBC를 이용해서 데이터베이스 연동 처리를 하는 경우,
+	DataSourceTransactionManager를 트랜잭션 관리자로 사용한다.
+	위에서, dataSource프로퍼티를 통해서 전달받은 소스로부터 Connection을 가져오고, 메소드를 사용해서 트랜잭션을 관리한다.
+	JPA를 사용할경우, JpaTransactionManager를 트랜잭션 관리자로 설정함년 된다.
+	이 경우ㅡ, 전달받은 entityManagerFactory를 이용해서 트랜잭션을 관리한다(13장)
+	하이버네이트를 사용하는경우, HibernateTransactionManger를 트랜잭션 관리자로 사용한다.(13장) -->
 
-	<!-- TransactionTemplate을 이용한 트랜잭션 구현 -->
+	
 	<bean id="transactionTemplate"
 		class="org.springframework.transaction.support.TransactionTemplate">
 		<property name="transactionManager" ref="transactionManager" />
 	</bean>
+	<!-- TransactionTemplate을 이용한 트랜잭션 구현 -->
 
 	<bean id="placeOrderService"
 		class="net.madvirus.spring4.chap12.store.service.PlaceOrderServiceTxTemplateImpl">

@@ -30,6 +30,8 @@ public class PlaceOrderServiceAnnotImpl implements PlaceOrderService {
 
 	@Override
 	@Transactional
+	// 525p의 속성을 정의할 수 있다.
+	// 정의하기 전에 tx:annotation-driven 태그를 설정해주어야한다.
 	public PurchaseOrderResult order(PurchaseOrderRequest orderRequest)
 			throws ItemNotFoundException {
 		Item item = itemDao.findById(orderRequest.getItemId());

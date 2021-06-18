@@ -14,11 +14,14 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-
+	
+	<!-- tx:advice는 트랜잭션 적용시에 사용될 Advisor를 생성한다. id는 Advior의 식별값이며,
+	transation-manager 속성은 PlatformTransactionManager빈을 설정한다. -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="order" propagation="REQUIRED" />
 			<tx:method name="get*" read-only="true" />
+			<!-- tx:attribvute 태그의 자식 태그로 속성을 설정한다. 523p -->
 		</tx:attributes>
 	</tx:advice>
 
@@ -27,6 +30,8 @@
 			expression="execution(public * net.madvirus.spring4..*Service.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePublicMethod" />
 	</aop:config>
+	<!-- 실제 트랜잭션을 적용하는 단계는 tx태그가 아니라 aop를 이요해서 이루어진다.
+	aop내부에 advice-ref를 tx Adviosor로 설정해준다 -->
 
 	<bean id="placeOrderService"
 		class="net.madvirus.spring4.chap12.store.service.PlaceOrderServiceImpl">
