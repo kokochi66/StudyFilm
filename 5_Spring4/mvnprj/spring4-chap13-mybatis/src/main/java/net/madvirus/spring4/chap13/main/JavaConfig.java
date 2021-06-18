@@ -29,7 +29,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @Configuration
 @EnableTransactionManagement
 public class JavaConfig {
-
+// @Configurtion 자바 설정을 이용할 때 SqlSessionFactory의 설정 예시. store.xml과 비교하면서 파악
 	@Bean
 	public PersistenceExceptionTranslationPostProcessor postProcessor() {
 		return new PersistenceExceptionTranslationPostProcessor();

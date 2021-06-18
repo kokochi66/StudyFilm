@@ -46,7 +46,7 @@ public class Config implements TransactionManagementConfigurer {
 		DataSourceTransactionManager txMgr = new DataSourceTransactionManager();
 		txMgr.setDataSource(dataSource());
 		return txMgr;
-	}
+	} // 사용할 PlatformTransactionManager를 직접 지정하고싶으면, 인터페이스를 통해서 구현해야한다.
 
 	@Bean
 	public PlaceOrderService placeOrderService() {

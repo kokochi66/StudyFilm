@@ -28,6 +28,8 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @Configuration
 @EnableTransactionManagement
 public class JavaConfig {
+	
+// @Configuration 을 이용한 LacalContainerEntityManagerFactoryBean 설정의 예시
 
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {
@@ -52,12 +54,12 @@ public class JavaConfig {
 	public LocalContainerEntityManagerFactoryBean emf() {
 		LocalContainerEntityManagerFactoryBean emfBean = new LocalContainerEntityManagerFactoryBean();
 		emfBean.setDataSource(dataSource());
-		emfBean.setPersistenceUnitName("store");
+		emfBean.setPersistenceUnitName("store"); // PersistenceUnitName은 반드시 store로 지정해주어야한다.$ㄲ
 		HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
-		jpaVendorAdapter.setDatabase(Database.MYSQL);
+		jpaVendorAdapter.setDatabase(Database.MYSQL); // jpaVendorAdapter는 자체적으로 설정이 가능하다.
 		emfBean.setJpaVendorAdapter(jpaVendorAdapter);
 		return emfBean;
-	}
+	} 
 
 	@Bean
 	public PlatformTransactionManager transactionManager(EntityManagerFactory emFactory) {

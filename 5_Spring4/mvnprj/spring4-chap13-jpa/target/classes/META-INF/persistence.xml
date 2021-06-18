@@ -5,7 +5,8 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
 		http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
-
+	
+	<!-- 매핑관련 정보와 JPA 프로바이더에 특화된 프로퍼티를 설정한다. -->
 	<persistence-unit name="store">
 		<class>net.madvirus.spring4.chap13.store.domain.Item</class>
 		<class>net.madvirus.spring4.chap13.store.domain.PaymentInfo</class>

@@ -51,7 +51,7 @@ public class JavaConfigXmlMapping {
 		HibernateTransactionManager txMgr = new HibernateTransactionManager();
 		txMgr.setSessionFactory(sessionFactoryBean().getObject());
 		return txMgr;
-	}
+	} // @Configuration을 통해서 HibernateTransactionManager 클래스를 설정하는 예시
 
 	@Bean
 	public LocalSessionFactoryBean sessionFactoryBean() {
@@ -62,7 +62,7 @@ public class JavaConfigXmlMapping {
 		prop.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
 		sessionFactoryBean.setHibernateProperties(prop);
 		return sessionFactoryBean;
-	}
+	} // @Configuration을 통해서 LocalSessionFactoryBean 클래스를 설정하는 예시
 
 	@Bean
 	public PlaceOrderServiceImpl placeOrderService() {

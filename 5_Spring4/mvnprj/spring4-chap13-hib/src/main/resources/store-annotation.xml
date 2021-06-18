@@ -16,6 +16,8 @@
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
+		<!-- XML 설정파일 대신 @Entity등의 어노테이션을 이용해서 자바코드에 매핑정보를 설정했다면,
+		annotatedClasses프로퍼티를 이용해서 설정 클래스 목록을 전달한다. -->
 			<list>
 				<value>net.madvirus.spring4.chap13.store.domain.Item</value>
 				<value>net.madvirus.spring4.chap13.store.domain.PaymentInfo</value>
@@ -45,7 +47,8 @@
 	<bean id="itemRepository"
 		class="net.madvirus.spring4.chap13.store.persistence.HibernateItemRepository">
 		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
+	</bean> 
+	<!-- sessionFactory를 빈으로 등록하고, LocalSessionFactoryBean이 생성하는 SessionFactory를 DI로 전달한다. -->
 
 	<bean id="paymentInfoRepository"
 		class="net.madvirus.spring4.chap13.store.persistence.HibernatePaymentInfoRepository">

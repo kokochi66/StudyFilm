@@ -11,6 +11,7 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.3.4.Final</version>
 		</dependency>
+		<!-- 하이버네이트를 JPA 프로바이더로 사용할 것이므로, 하이버네이트 의존을 추가해준다. -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>

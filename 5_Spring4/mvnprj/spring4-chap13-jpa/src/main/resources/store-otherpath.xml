@@ -24,6 +24,8 @@
 
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<!--스프링은 기본적으로 classpath:/META_INF/persistence.xml경로에서 JPA영속 단위 정보를 읽어온다.
+		이 경로가 아닌 다른 경로의 위치한 파일을 사용하고 싶으면 eprsistenceXmlLocation 프로퍼티를 이용하면 된다. -->
 		<property name="persistenceXmlLocation" value="classpath:/META-INF/otherpath.xml" />
 		<property name="persistenceUnitName" value="store-other" />
 		<property name="dataSource" ref="dataSource" />

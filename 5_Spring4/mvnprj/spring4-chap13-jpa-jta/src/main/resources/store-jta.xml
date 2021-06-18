@@ -89,6 +89,9 @@
 		<property name="showSql" value="true" />
 	</bean>
 
+	<!-- JPA와 JTA 트랜잭션을 연동하기 위해서는, 다음과 같이
+	LocalContainerEntityManagerFactoryBean의 jpaProperties 프로퍼티를 이용해서
+	하이버네이트의 platform 설정 속성을 JTA 플랫폼에 맞게 설정해주어야한다. -->
 	<bean id="shopEntityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="persistenceXmlLocation" value="/META-INF/conf-4-jta1.xml" />
