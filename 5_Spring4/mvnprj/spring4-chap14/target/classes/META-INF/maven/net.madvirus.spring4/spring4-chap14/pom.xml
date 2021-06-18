@@ -6,6 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
+		<!-- 스프링 데이터 JPA는 JPA 모듈이므로, JPA 프로바이더 의존도 함께 추가해준다. -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -37,6 +38,8 @@
 			<artifactId>spring-tx</artifactId>
 			<version>4.0.4.RELEASE</version>
 		</dependency>
+		<!-- 스프링 데이터 모듈은 단순 반복되는 코드의 양을 줄이는 것에 목적을 둔 모듈이다.
+		스프링 데이터 JAP를 사용하기 위해 spring-data-jpa 모듈 의존을 추가한다. -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>

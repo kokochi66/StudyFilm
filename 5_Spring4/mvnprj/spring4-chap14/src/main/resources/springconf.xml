@@ -11,11 +11,13 @@
        http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/data/jpa
        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
-
+       
+	<!-- @Autowired, @Resource 같은 어노테이션을 이용할 수 있도록 태그를 등록한다. -->
 	<context:annotation-config />
 
 	<tx:annotation-driven />
-
+	<!-- 스프링 데이터 JPA 모듈이 리파지토리 인터페이스를 찾아서 알맞은 빈 객체를 생성하도록 태그를 추가해준다.
+	chap14.domain. 및 그 하위 패키지에서 리파지토리 인터페이스를 상속받은 인터페이스를 찾아서 리파지터리 구현 빈 객체를 생성한다. -->
 	<jpa:repositories base-package="net.madvirus.spring4.chap14.domain"
 		factory-class="net.madvirus.spring4.chap14.common.CustomRepositoryFactoryBean">
 	</jpa:repositories>

@@ -14,6 +14,7 @@ public class MainForUpdate {
 
 		UpdateEmployeeService updateEmpSvc =
 				ctx.getBean(UpdateEmployeeService.class);
+		// updateEmployeeService 클래스를 통해서 Employee 클래스의 칼럼값이 변경시키는 예제이다.
 		updateEmpSvc.updateEmployee(
 				new UpdateRequest(1L, new Address("서울시", "관악구", "123456")));
 

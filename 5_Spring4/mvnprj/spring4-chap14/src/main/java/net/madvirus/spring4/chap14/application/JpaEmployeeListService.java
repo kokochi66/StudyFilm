@@ -22,6 +22,9 @@ public class JpaEmployeeListService implements EmployeeListService {
 	@Transactional
 	@Override
 	public List<Employee> getEmployee(String keyword, Long teamId) {
+		// 상황에 따라서 다양한 조건을 조합해서 검색 조건을 생성해야 한다면, 사용해야 할 쿼리도 많아지고,
+		// 결과적으로 리파지터리의 쿼리 메서드를 증가시킨느 상황을 만들게된다. 이런 문제를 해결시켜주는것이 Criteria API이다.
+		
 		CriteriaBuilder cb = entityManagerFactory.getCriteriaBuilder();
 
 		CriteriaQuery<Employee> query = cb.createQuery(Employee.class);
@@ -54,6 +57,8 @@ public class JpaEmployeeListService implements EmployeeListService {
 		List<Employee> result = typedQuery.getResultList();
 		return result;
 	}
+	// Specification 타입을 사용하면 Criteria API와 같이 검색 조건 조합을 만들 수 있으면서도,
+	// 검색조건을 생성하는 코드에서 EntityManagerFactory, CriteriaBuilder 등 JPA 관련 코드를 직접 사용하지 않아도 되는 장점이 있다.
 
 	private boolean hasValue(Object value) {
 		return value != null;

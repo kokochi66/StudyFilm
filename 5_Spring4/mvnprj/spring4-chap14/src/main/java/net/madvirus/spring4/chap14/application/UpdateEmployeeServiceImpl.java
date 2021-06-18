@@ -7,7 +7,8 @@ import net.madvirus.spring4.chap14.domain.Employee;
 import net.madvirus.spring4.chap14.domain.EmployeeRepository;
 
 public class UpdateEmployeeServiceImpl implements UpdateEmployeeService {
-
+	
+	// @Autowired 를 이용해서 EmployeeRepository를 주입받도록 구현한다.
 	@Autowired
 	private EmployeeRepository emploeeRepository;
 
