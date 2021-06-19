@@ -6,7 +6,9 @@
 	<title>인덱스 페이지</title>
 </head>
 <body>
+<!-- authorize태그는 현재 사용자가 특정 권한이 있으면 몸체 내용을 보여주는 기능을 한다. -->
 <sec:authorize access="isAuthenticated()">
+<!-- authentication 태그는 현재 접속한 사용자의 인증 정보를 보여준다. -->
 <sec:authentication property="name"/>님 환영합니다.
 </sec:authorize>
 <ul>

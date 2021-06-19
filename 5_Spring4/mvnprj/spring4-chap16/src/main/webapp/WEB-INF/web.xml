@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 		http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="spring4-chap16" version="3.0">
-
+	<!-- 스프링 시큐리티를 위한 스프링 설정을 루트 어플리케이션 컨텍스트에서 사용한다. -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/spring-security.xml</param-value>
@@ -34,7 +34,8 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	<!-- DelegatingFilterProxy를 생성한다. 이름을 springSecurityFilterChain으로 설정한다.
+	 -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>

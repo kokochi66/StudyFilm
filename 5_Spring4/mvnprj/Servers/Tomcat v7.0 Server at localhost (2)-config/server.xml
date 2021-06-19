@@ -130,7 +130,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="spring4-chap07-prj" path="/spring4-chap07-prj" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap07-prj"/><Context docBase="spring4-chap07" path="/spring4-chap07" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap07"/><Context docBase="spring4-chap09" path="/spring4-chap09" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap09"/><Context docBase="spring4-chap09-ws" path="/spring4-chap09-ws" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap09-ws"/><Context docBase="spring4-chap10" path="/spring4-chap10" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap10"/></Host>
+      <Context docBase="spring4-chap07-prj" path="/spring4-chap07-prj" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap07-prj"/><Context docBase="spring4-chap07" path="/spring4-chap07" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap07"/><Context docBase="spring4-chap09" path="/spring4-chap09" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap09"/><Context docBase="spring4-chap09-ws" path="/spring4-chap09-ws" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap09-ws"/><Context docBase="spring4-chap10" path="/spring4-chap10" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap10"/><Context docBase="spring4-chap16" path="/spring4-chap16" reloadable="true" source="org.eclipse.jst.jee.server:spring4-chap16"/></Host>
     </Engine>
   </Service>
 </Server>

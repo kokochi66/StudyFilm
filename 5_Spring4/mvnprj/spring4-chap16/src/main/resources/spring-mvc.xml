@@ -11,7 +11,7 @@
 	<mvc:annotation-driven />
 
 	<mvc:default-servlet-handler />
-
+	<!-- 단순히 웹 요청 경로에 따라 접근제한을 확인하는 것이므로 컨트롤러를 두지않고, 라인경로별로 뷰를 바로 매핑했다. -->
 	<mvc:view-controller path="/index" view-name="index" />
 	<mvc:view-controller path="/home/main" view-name="homeMain" />
 	<mvc:view-controller path="/manager/main" view-name="managerMain" />

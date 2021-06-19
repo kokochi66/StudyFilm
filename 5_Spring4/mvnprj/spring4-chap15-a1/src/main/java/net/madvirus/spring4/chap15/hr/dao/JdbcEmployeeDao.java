@@ -89,7 +89,7 @@ public class JdbcEmployeeDao implements EmployeeDao {
 	public List<Employee> selectList(SearchCondition cond) {
 		// DAO 클래스는 SearchCondition 클래스가 가진 값에 따라 쿼리를 실행하도록 한다.
 		if (cond.hasNoCond()) {
-			return jdbcTemplate.query(SELECT_ALL_QUERY, rowMapper);
+			return jdbcTemplate.query(SELECT_ALL_QUERY, rowMapper);+
 		} else {
 			JunctionCondition andCondition = new AndCondition();
 			if (cond.hasEmpNumber())

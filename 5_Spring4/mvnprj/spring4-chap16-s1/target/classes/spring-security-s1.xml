@@ -23,6 +23,7 @@
 			user-service-ref="customUserDetailsService" />
 
 		<sec:authentication-provider>
+			<!-- jdbc-user-service 태그를 추가하여 간단하게 사용자 테이블을 이용해서 인증을 수행하도록 한다. -->
 			<sec:jdbc-user-service data-source-ref="dataSource"
 				id="jdbcUserService" />
 			<!--

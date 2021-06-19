@@ -12,6 +12,7 @@ import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.transaction.annotation.Transactional;
 
 public class UserJoinService {
+//	JdbcUserDetailsManager는 create()뿐 아니라, 다양한 SQL 쿼리를 지원한다 696p
 	private UserDetailsManager userDetailsManager;
 	private PasswordEncoder passwordEncoder;
 

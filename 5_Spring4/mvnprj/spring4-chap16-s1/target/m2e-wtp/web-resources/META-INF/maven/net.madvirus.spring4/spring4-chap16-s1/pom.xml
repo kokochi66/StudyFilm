@@ -5,7 +5,8 @@
 	<artifactId>spring4-chap16-s1</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<!-- 상황에 맞게 스프링 시큐리티 적용 안하기
+	시큐리티 설정 - spring-security-s1.xml -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
