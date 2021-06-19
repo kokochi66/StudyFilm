@@ -3,6 +3,7 @@ package net.madvirus.spring4.chap15.hr.dao;
 import java.util.Date;
 
 public class SearchCondition {
+// SearchCondition클래스는 검색 화면에서 입력하는 데이터를 포함하고 있다.
 	private Date fromJoinedDate;
 	private Date toJoinedDate;
 	private String nameKeyword;

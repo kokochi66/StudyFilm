@@ -24,6 +24,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
 public class JdbcEmployeeDao implements EmployeeDao {
+// EmployeeDao 인터페이스를 이용해서 구현한다.
 
 	private static final String SELECT_ALL_QUERY = "select * from EMPLOYEE";
 	private JdbcTemplate jdbcTemplate;
@@ -86,6 +87,7 @@ public class JdbcEmployeeDao implements EmployeeDao {
 
 	@Override
 	public List<Employee> selectList(SearchCondition cond) {
+		// DAO 클래스는 SearchCondition 클래스가 가진 값에 따라 쿼리를 실행하도록 한다.
 		if (cond.hasNoCond()) {
 			return jdbcTemplate.query(SELECT_ALL_QUERY, rowMapper);
 		} else {
