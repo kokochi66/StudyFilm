@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context>
+<Context allowCasualMultipartParsing="true" path="/">
     <!-- Default set of monitored resources -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
@@ -12,4 +12,5 @@
             <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
             -->
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    <Resources cachingAllowed="true" cacheMaxSize="100000" />
 </Context>
