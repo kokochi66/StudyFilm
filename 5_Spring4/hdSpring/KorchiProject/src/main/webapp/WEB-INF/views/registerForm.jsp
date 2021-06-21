@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %> <!-- JSP가 생성할 문서의 MIME타입과 문자코드를 지정한다. -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false" %>
 <html>
 <head>
@@ -12,6 +13,15 @@
 
 	<a href="/member/register?userId=kochi&password=1234&coin=5">register/user=kochi,pas=1234,coin=5</a>
 	<a href="/member/register/abcde">register/abcde</a>
+	
+	<form:form modelAttribute="member" method="post" action="/member/register">
+		<form:input path="userName"  /><font color="red"><form:errors path="userName"/></font> <br>
+		<form:password path="password"/><font color="red"><form:errors path="password"/></font> <br>
+		<form:input path="coin"/><font color="red"><form:errors path="coin"/></font> <br>
+		<form:input path="birthday"/><font color="red"><form:errors path="birthday"/></font> <br>
+		<input type="submit" name="btnSubmit" value="등록">
+	</form:form>
+	
 	<form action="/member/register0202" method="post">
 		<input type="text" value="korchi" name="userId">
 		<input type="text" value="1234" name="password">

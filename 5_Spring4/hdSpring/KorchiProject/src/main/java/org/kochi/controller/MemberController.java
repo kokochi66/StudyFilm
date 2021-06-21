@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
+import org.kochi.entity.Member;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,12 +32,23 @@ public class MemberController {
 	// URL 경로 상의 쿼리 파라미터 정보로부터 요청 데이터를 취득할 수 있다.
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public String registerByParameter(String userId, String password, int coin) {
-		logger.info("registerByParameter");
+		logger.info("registerByParameter (get)");
 		logger.info("userId = " + userId);
 		logger.info("password = " + password);
 		logger.info("coin = "+coin);	// 타입변환은 자동으로 되지만, 타입이 알맞지 않은경우 ERR400-잘못된요청이 불려지게 된다.
 		return "success";
 	}
+	
+	@RequestMapping(value="/register", method = RequestMethod.POST)
+	public String register(@Validated Member member, BindingResult result) {
+	// 입력값 검증을  할 도메인 클래스에  @Validated를 지정하여  검증하도록 한다.
+		logger.info("register Validation (post)");
+		if(result.hasErrors()) return"registerForm";
+		logger.info("userId = " + member.getUserName());
+		logger.info("password = " + member.getPassword());
+		return "success";
+	}
+	
 	// URL 경로 상의 변수를 파라미터로 가져올 수 있다.
 	// 폼 필드로 송신하는 경우, 매개변수 명이 일치하면 요청 데이터를 취득할 수 있다.
 	// 타입이 다를경우, 타입 변환하여 요청 데이터를 취득한다. 타입변환이 불가능하면 익셉션을 일으킨다.

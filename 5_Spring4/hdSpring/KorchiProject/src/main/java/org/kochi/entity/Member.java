@@ -1,16 +1,26 @@
-package org.kochi.controller;
+package org.kochi.entity;
 
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Member {
-	
+	@NotBlank
+	@Size(max = 12)
 	private String userName = "kochi";
+	
 	private String password = "1234";
+	
 	@DateTimeFormat(pattern="yyyyMMdd") 
 	// Date타입에 대해서 특정 타입을 지정할 수 있다. 지정하지않으면 기본타입은 yyyy/MM/dd 가 된다.
 	private Date birthday;
+	
+	private int coin = 5;
+	
+	
 	public Member(String userName, String password, Date birthday, int coin) {
 		super();
 		this.userName = userName;
@@ -18,7 +28,7 @@ public class Member {
 		this.birthday = birthday;
 		this.coin = coin;
 	}
-	private int coin = 5;
+	
 	public int getCoin() {
 		return coin;
 	}
