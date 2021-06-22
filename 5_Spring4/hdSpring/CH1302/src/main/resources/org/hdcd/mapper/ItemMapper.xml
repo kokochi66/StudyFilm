@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.hdcd.mapper.ItemMapper">
+
+	<insert id="create">
+		INSERT INTO item 
+			 (
+			   item_name, 
+			   price, 
+			   description, 
+			   picture_url
+			 )
+		VALUES
+			 (
+			   #{itemName},
+			   #{price},
+			   #{description},
+			   #{pictureUrl}
+			 )
+	</insert>
+
+	<select id="read" resultType="Item">
+		SELECT item_id, 
+			   item_name, 
+			   price, 
+			   description, 
+			   picture_url
+		  FROM item
+		 WHERE item_id = #{itemId}
+	</select>
+
+	<update id="update">
+		UPDATE item 
+		   SET item_name = #{itemName}, 
+		   	   price = #{price},
+		   	   description = #{description},
+		   	   picture_url = #{pictureUrl}
+		 WHERE item_id = #{itemId}
+	</update>
+
+	<delete id="delete">
+		DELETE FROM item 
+		 WHERE item_id = #{itemId}
+	</delete>
+
+	<select id="list" resultType="Item">
+		<![CDATA[
+	 	SELECT item_id, 
+	 		   item_name, 
+	 		   price, 
+	 		   description, 
+	 		   picture_url
+	 	  FROM item 
+	 	 WHERE item_id > 0 
+	  ORDER BY item_id DESC
+	 	]]>
+	</select>
+
+	<select id="getPicture" resultType="String">
+		SELECT picture_url 
+		  FROM item 
+		 WHERE item_id = #{itemId}
+	</select>
+
+</mapper>
