@@ -2,7 +2,7 @@ package org.kochi.controller;
 
 import java.util.Date;
 
-import org.kochi.entity.Member;
+import org.kochi.domain.Member;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

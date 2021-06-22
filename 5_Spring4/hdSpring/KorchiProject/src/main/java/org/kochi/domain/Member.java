@@ -1,4 +1,4 @@
-package org.kochi.entity;
+package org.kochi.domain;
 
 import java.util.Date;
 

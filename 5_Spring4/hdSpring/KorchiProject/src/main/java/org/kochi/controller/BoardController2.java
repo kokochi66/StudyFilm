@@ -1,6 +1,6 @@
 package org.kochi.controller;
 
-import org.kochi.entity.Board;
+import org.kochi.domain.Board;
 import org.kochi.service.BoardService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ public class BoardController2 {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController2.class);
 	// LoggerFactory를 이용해서 로그를 담는다.
 	
-	@Autowired
+	/* @Autowired */
 	private BoardService service;
 	// 컨트롤러에서는 @Autowired를 통해서 서비스 구현 객체와 자동 매핑을 해준다.
 	// 여기서 구현 객체는 @Service 어노테이션을 통해서 인터페이스를 구현한 객체와 매핑된다.

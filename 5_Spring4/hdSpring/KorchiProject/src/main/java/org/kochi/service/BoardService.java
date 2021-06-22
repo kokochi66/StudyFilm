@@ -2,7 +2,7 @@ package org.kochi.service;
 
 import java.util.List;
 
-import org.kochi.entity.Board;
+import org.kochi.domain.Board;
 
 public interface BoardService {
 	// 게시판 작성을 위한 서비스 객체를 구현한다.

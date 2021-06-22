@@ -2,7 +2,7 @@ package org.kochi.dao;
 
 import java.util.List;
 
-import org.kochi.entity.Board;
+import org.kochi.domain.Board;
 
 public interface BoardDAO {
 	public void create(Board board) throws Exception;
