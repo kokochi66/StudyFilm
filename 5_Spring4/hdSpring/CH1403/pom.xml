@@ -141,6 +141,7 @@
 			<version>1.2.2</version>
 		</dependency>
 		
+		<!-- AOP 구현을 위한 관련 의존관계 정의 -->
 		<dependency>
 			<groupId>aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
