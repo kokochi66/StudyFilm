@@ -11,7 +11,3 @@
     <li> <a>NodeJS</a> </li>
     <li> <a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/5_Spring4/README.md">Spring</a> </li>
 </ul>
-
-<style> 
-    li {font-size: 25px;}
-</style>
