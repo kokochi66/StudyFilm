@@ -5,7 +5,7 @@
     각 언어에 대한 상세 내용은 하단 리스트 링크로 이어집니다.
 </p>
 <ul>
-    <li> <a>Oracle</a></li>
+    <li> <a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/tree/main/1_SQL/1.1_Oracle">Oracle</a></li>
     <li> <a>MySQL</a> </li>
     <li> <a>MongoDB</a> </li>
     <li> <a>MariaDB</a> </li>
