@@ -11,8 +11,9 @@
 
 <script>
 	$(document).ready(function() {
+	
 		
-		var formObj = $("#item");
+		var formObj = $("#item2");
 
 		$("#btnModify").on("click", function() {
 			formObj.attr("action", "/item2/modify");
@@ -48,7 +49,7 @@
 			</tr>
 			<tr>
 				<td>파일</td>
-				<td><img src="display?itemId=${item.itemId}" width="210" height="240"></td>
+				<td><img src="display?itemId=${item2.itemId}" width="210" height="240"></td>
 			</tr>		
 			<tr>
 				<td>파일</td>
@@ -57,7 +58,7 @@
 			</tr>
 			<tr>
 				<td>파일</td>
-				<td><img src="display2?itemId=${item.itemId}" width="210" height="240"></td>
+				<td><img src="display2?itemId=${item2.itemId}" width="210" height="240"></td>
 			</tr>		
 			<tr>
 				<td>파일</td>

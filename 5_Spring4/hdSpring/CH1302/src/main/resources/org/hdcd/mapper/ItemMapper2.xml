@@ -24,7 +24,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			 )
 	</insert>
 
-	<select id="read" resultType="Item">
+	<select id="read" resultType="Item2">
 		SELECT item_id, 
 			   item_name, 
 			   price, 
@@ -50,7 +50,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 WHERE item_id = #{itemId}
 	</delete>
 
-	<select id="list" resultType="Item">
+	<select id="list" resultType="Item2">
 		<![CDATA[
 	 	SELECT item_id, 
 	 		   item_name, 

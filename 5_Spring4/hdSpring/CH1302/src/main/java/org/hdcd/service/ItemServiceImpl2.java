@@ -45,8 +45,7 @@ public class ItemServiceImpl2 implements ItemService2 {
 
 	@Override
 	public String getPicture2(Integer itemId) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.getPicture2(itemId);
 	}
 
 }

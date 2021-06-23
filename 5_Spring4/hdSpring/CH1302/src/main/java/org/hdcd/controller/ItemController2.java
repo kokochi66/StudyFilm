@@ -76,7 +76,6 @@ public class ItemController2 {
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
 	public String modifyForm(Integer itemId, Model model) throws Exception {
 		Item2 item = this.itemService.read(itemId);
-
 		model.addAttribute(item);
 
 		return "item2/modify";
@@ -145,7 +144,7 @@ public class ItemController2 {
 
 		String fileName = itemService.getPicture(itemId);
 
-		logger.info("FILE NAME: " + fileName);
+		logger.info("FILE NAME1: " + fileName);
 
 		try {
 
@@ -179,7 +178,7 @@ public class ItemController2 {
 		
 		String fileName = itemService.getPicture2(itemId);
 		
-		logger.info("FILE NAME: " + fileName);
+		logger.info("FILE NAME2: " + fileName);
 		
 		try {
 			

@@ -14,10 +14,23 @@ public class Item2 implements Serializable {
 	private String itemName;
 
 	private Integer price;
-
+	
 	private String description;
 	
 	private List<MultipartFile> pictures;
+	
+	private String pictureUrl;
+	
+	private String pictureUrl2;
+
+	@Override
+	public String toString() {
+		return "Item2 [itemId=" + itemId + ", itemName=" + itemName + ", price=" + price + ", description="
+				+ description + ", pictures=" + pictures + ", pictureUrl=" + pictureUrl + ", pictureUrl2=" + pictureUrl2
+				+ "]";
+	}
+
+	
 	
 	public List<MultipartFile> getPictures() {
 		return pictures;
@@ -27,7 +40,7 @@ public class Item2 implements Serializable {
 		this.pictures = pictures;
 	}
 
-	private String pictureUrl;
+	
 	
 	public String getPictureUrl2() {
 		return pictureUrl2;
@@ -37,7 +50,7 @@ public class Item2 implements Serializable {
 		this.pictureUrl2 = pictureUrl2;
 	}
 
-	private String pictureUrl2;
+	
 
 	public String getDescription() {
 		return this.description;

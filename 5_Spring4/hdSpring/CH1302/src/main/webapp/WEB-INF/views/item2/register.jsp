@@ -12,9 +12,10 @@
 <script>
 	$(document).ready(function() {
 
-		var formObj = $("#item");
+		var formObj = $("#item2");
 
 		$("#btnRegister").on("click", function() {
+			console.log('clicked register')
 			formObj.attr("action", "/item2/register");
 			formObj.attr("method", "post");
 			formObj.submit();
