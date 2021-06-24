@@ -8,8 +8,12 @@
 	<!-- 커스텀 로그인 창을 위해서 커스텀 핸들러를 빈으로 등록한다. -->
 	<bean id="customAccessDenied" class="org.hdcd.common.security.CustomAccessDeniedHandler"></bean>
 	<bean id="customLoginSuccess" class="org.hdcd.common.security.CustomLoginSuccessHandler"></bean>
-	<bean id="customPasswordEncoder" class="org.hdcd.common.security.CustomNoOpPasswordEncoder"></bean>
-
+	<!-- 커스텀 암호화 -->
+	<!-- <bean id="customPasswordEncoder" class="org.hdcd.common.security.CustomNoOpPasswordEncoder"></bean> -->
+	
+	<!-- 스프링 시큐리티에서 제공되는 BCryptPasswordEncoder 클래스를 빈으로 등록한다. -->
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	
 	<security:http>
 		<security:intercept-url pattern="/board/list" access="permitAll"/>
 		<security:intercept-url pattern="/board/register" access="hasRole('ROLE_MEMBER')"/>
@@ -34,9 +38,18 @@
 				<security:user name="admin" password="{noop}abcd" authorities="ROLE_MEMBER, ROLE_ADMIN"/>
 			</security:user-service>
 		</security:authentication-provider> -->
-		<security:authentication-provider>
+		
+		<!-- 커스텀 암호화 인증 제공자를 등록한다. -->
+<!-- 		<security:authentication-provider>
 			<security:jdbc-user-service data-source-ref="dataSource"/>
 			<security:password-encoder ref="customPasswordEncoder"/>
+		</security:authentication-provider> -->
+		
+		<security:authentication-provider>
+			<security:jdbc-user-service data-source-ref="dataSource"
+			users-by-username-query="SELECT user_id, user_pw, enabled FROM member WHERE user_id = ?"
+			authorities-by-username-query="SELECT b.user_id, a.auth FROM member_auth a, member b WHERE a.user_no = b.user_no AND b.user_id = ?"/>
+			<security:password-encoder ref="bcryptPasswordEncoder"/>
 		</security:authentication-provider>
 	</security:authentication-manager>
 
