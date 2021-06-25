@@ -10,4 +10,5 @@
   <li><a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/5_Spring4/hdSpring/MdRecord/20210622.md">2021/06/22</a></li>
   <li><a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/5_Spring4/hdSpring/MdRecord/20210623.md">2021/06/23</a></li>
   <li><a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/5_Spring4/hdSpring/MdRecord/20210624.md">2021/06/24</a></li>
+  <li><a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/5_Spring4/hdSpring/MdRecord/20210625.md">2021/06/25</a></li>
 </ul>

@@ -12,7 +12,7 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(CustomAccessDeniedHandler.class);
 
 	@Override

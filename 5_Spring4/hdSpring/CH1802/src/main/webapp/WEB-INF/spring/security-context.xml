@@ -13,6 +13,7 @@
 	
 	<!-- 스프링 시큐리티에서 제공되는 BCryptPasswordEncoder 클래스를 빈으로 등록한다. -->
 	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<bean id="customUserDetailsService" class="org.hdcd.common.security.customUserDetailsService"></bean>
 	
 	<security:http>
 		<security:intercept-url pattern="/board/list" access="permitAll"/>
@@ -45,10 +46,10 @@
 			<security:password-encoder ref="customPasswordEncoder"/>
 		</security:authentication-provider> -->
 		
-		<security:authentication-provider>
-			<security:jdbc-user-service data-source-ref="dataSource"
+		<security:authentication-provider user-service-ref="customUserDetailsService">
+<!-- 			<security:jdbc-user-service data-source-ref="dataSource"
 			users-by-username-query="SELECT user_id, user_pw, enabled FROM member WHERE user_id = ?"
-			authorities-by-username-query="SELECT b.user_id, a.auth FROM member_auth a, member b WHERE a.user_no = b.user_no AND b.user_id = ?"/>
+			authorities-by-username-query="SELECT b.user_id, a.auth FROM member_auth a, member b WHERE a.user_no = b.user_no AND b.user_id = ?"/> -->
 			<security:password-encoder ref="bcryptPasswordEncoder"/>
 		</security:authentication-provider>
 	</security:authentication-manager>
