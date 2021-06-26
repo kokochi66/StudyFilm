@@ -17,7 +17,6 @@ public class HomeController {
 	@RequestMapping(value="/")
 	public String home(Locale locale, Model model) { // 메인 home 화면 매핑
 		logger.info("/ - Home Mapping :: Locale = "+ locale);
-		
 		return "home";
 	}
 }
