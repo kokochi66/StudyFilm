@@ -15,3 +15,4 @@
 
 <!-- Template Main JS File -->
 <script src="${path}/assets/js/main.js"></script>
+<script src="${path}/assets/js/jQuery-2.1.4.min.js"></script>

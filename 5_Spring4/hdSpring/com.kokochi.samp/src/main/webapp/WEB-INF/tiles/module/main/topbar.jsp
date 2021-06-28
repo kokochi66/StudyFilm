@@ -16,7 +16,7 @@
       </div>
       <div class="social-links">
         <a href="https://www.twitch.tv/" class="twitch"><i class="icofont-twitch"></i></a>
-        <a href="/login" class="login"><i class="icofont-user-alt-7"></i></a>
+        <a href="https://id.twitch.tv/oauth2/authorize?client_id=mj1gw4x1w8nwqlui0w1nqbgegmgr3x&redirect_uri=http://localhost:8080/login&response_type=code&scope=&state=asdasdaszvx" class="login"><i class="icofont-user-alt-7"></i></a>
         <a href="#" class="alarm"><i class="icofont-alarm"></i></a>
       </div>
     </div>

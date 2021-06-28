@@ -2,7 +2,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %><c:set var="path" value="/resources"/>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<% 
+	System.out.println(session.getAttribute("user")); 
 
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
