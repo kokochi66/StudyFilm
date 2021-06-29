@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="main-template" template="WEB-INF/tiles/layout/main_template.jsp">
+		<put-attribute name="title" value="Main" />
+		<put-attribute name="navbar" value="/WEB-INF/tiles/components/main/navbar.jsp" />
+		<put-attribute name="header" value="/WEB-INF/tiles/components/main/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/components/main/footer.jsp" />
+		<put-attribute name="copyright" value="/WEB-INF/tiles/components/main/copyright.jsp" />
+		
+		<put-attribute name="style" value="/WEB-INF/tiles/components/src/style.jsp" />
+		<put-attribute name="script" value="/WEB-INF/tiles/components/src/script.jsp" />
+	</definition>
+	
+	<definition name="home" extends="main-template">
+		<put-attribute name="title" value="꼬꼬치꼬치 스프링 프로젝트" />
+		<put-attribute name="content" value="/WEB-INF/tiles/components/cont/portfolio.jsp" />
+	</definition>
+</tiles-definitions>

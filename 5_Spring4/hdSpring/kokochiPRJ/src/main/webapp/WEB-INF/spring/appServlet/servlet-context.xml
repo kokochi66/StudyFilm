@@ -19,6 +19,23 @@
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+		<!-- Tiles 리졸버를 사용하기 위해서 현재 리졸버의 우선순위를 내린다. -->
+		<beans:property name="order" value="2" />
+	</beans:bean>
+	
+	<!-- Tiles 리졸버를 사용하기 위해서 해당 리졸버의 우선순위를 높여서 적용한다. -->
+	<beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+		<beans:property name="order" value="1" />
+	</beans:bean>
+	
+	<!-- Tiles의 설정파일 객체를 불러와서 Tiles의 설정파일이 위치하는 경로를 지정한다. -->
+	<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<beans:property name="definitions">
+			<beans:list>
+				<beans:value>/WEB-INF/tiles/tiles.xml</beans:value>
+			</beans:list>
+		</beans:property>
 	</beans:bean>
 	
 	
