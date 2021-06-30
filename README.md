@@ -6,8 +6,6 @@
 </p>
 
 <ul>
-    <li> <a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/1_SQL/README.md">SQL</a></li>
-    <li> <a>JSP</a> </li>
-    <li> <a>NodeJS</a> </li>
     <li> <a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/5_Spring4/README.md">Spring</a> </li>
+    <li> <a>NodeJS</a> </li>
 </ul>
