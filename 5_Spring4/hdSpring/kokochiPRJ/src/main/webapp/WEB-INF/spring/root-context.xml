@@ -3,9 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
-	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- root-context 파일, 모든 웹 컴포넌트가 공유하는 설정을 정의한다. -->
 	
@@ -44,5 +46,11 @@
 	<!-- 어노테이션 기반 트랜잭션 제어를 활성화한다. -->
 	<tx:annotation-driven/>
 	
+	<!-- Mapper 인터페이스의 스캔을 활성화한다 -->
+	<mybatis-spring:scan base-package="org.kokochi.prj.mapper"/>
+	
+	
+	<!-- Service 패키지를 컴포넌트 스캔 대상으로 한다. -->
+	<context:component-scan base-package="org.kokochi.prj.service"></context:component-scan>
 	
 </beans>

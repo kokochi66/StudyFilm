@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kokochi.prj.mapper.CodeClassMapper">
+	<insert id="create">
+		INSERT INTO code_class (class_code, class_name)
+			VALUES (#{classCode}, #{className})
+	</insert>
+	
+	<select id="read" resultType="CodeClass">
+		SELECT class_code, class_name, use_yn, reg_date
+		FROM code_class
+		WHERE class_code = #{classCode}
+	</select>
+	
+	<update id="update">
+		UPDATE code_class
+		SET class_name = #{className}
+		WHERE class_code = #{classCode}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM code_class
+		WHERE class_code = #{classCode}
+	</delete>
+	
+	<select id="list" resultType="CodeClass">
+		SELECT class_code, class_name, use_yn, reg_date
+		FROM code_class
+		ORDER BY class_code DESC, reg_date DESC
+	</select>
+</mapper>

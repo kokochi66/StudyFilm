@@ -10,7 +10,6 @@
 </head>
 <body id="page-top">
 	<tiles:insertAttribute name="navbar" />
-	<tiles:insertAttribute name="header" />
 	
 	<tiles:insertAttribute name="content" />
 	

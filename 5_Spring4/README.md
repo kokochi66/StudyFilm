@@ -14,4 +14,5 @@
   <li><a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/5_Spring4/hdSpring/MdRecord/hdspring-19-01.md">프로젝트 생성 및 기본 설정</a></li>
   <li><a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/5_Spring4/hdSpring/MdRecord/hdspring-19-02.md">홈 화면 구현과 타일즈 처리</a></li>
   <li><a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/5_Spring4/hdSpring/MdRecord/hdspring-19-03.md">데이터베이스 연동과 테이블  생성</a></li>
+  <li><a href="https://github.com/kokochi66/StudyFilm_BackEnd_kokochi/blob/main/5_Spring4/hdSpring/MdRecord/hdspring-19-04.md">코드그룹 관리하기</a></li>
 </ol>
