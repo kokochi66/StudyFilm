@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class CodeClassController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(CodeClassController.class);
-	private static boolean[] navbar_value = {true, false, false};
+	private static boolean[] navbar_value = {true, false, false,false,false,false,false,false,false,false};
 	
 	@Autowired
 	private CodeClassService service;
@@ -42,12 +42,12 @@ public class CodeClassController {
 		logger.info("/list GET request");
 		model.addAttribute("list", service.list());
 		model.addAttribute("navbar_value", navbar_value);
-		
 	}
 	
 	@RequestMapping(value="/read", method=RequestMethod.GET)
 	public void read(String classCode, Model model) throws Exception {
 		model.addAttribute(service.read(classCode));
+		model.addAttribute("navbar_value", navbar_value);
 	}
 	
 	@RequestMapping(value="/remove", method=RequestMethod.POST)

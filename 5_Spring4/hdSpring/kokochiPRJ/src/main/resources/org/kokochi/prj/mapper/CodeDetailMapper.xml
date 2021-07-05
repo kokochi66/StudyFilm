@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kokochi.prj.mapper.CodeDetailMapper">
+	<insert id="create">
+		INSERT INTO code_detail(class_code, code_name, code_value, sort_seq)
+			VALUES(#{classCode}, #{codeName}, #{codeValue}, #{sortSeq})
+	</insert>
+	
+	<select id="read" resultType="CodeDetail">
+		SELECT class_code, code_value, code_name, sort_seq, use_yn, reg_date
+		FROM code_detail
+		WHERE class_code = #{classCode} AND code_value = #{codeValue}
+	</select>
+	
+	<update id="update">
+		UPDATE code_detail
+		SET code_name = #{codeName}
+		WHERE class_code = #{classCode} AND code_value = #{codeValue}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM code_detail
+		WHERE class_code = #{classCode} AND code_value = #{codeValue}
+	</delete>
+	
+	<select id="list" resultType="CodeDetail">
+		SELECT class_code, code_value, code_name, sort_seq, use_yn, reg_date
+		FROM code_detail
+		ORDER BY class_code ASC, sort_seq ASC
+	</select>
+	
+	<select id="getMaxSortSeq" resultType="int">
+		SELECT MAX(sort_seq)
+		FROM code_detail;
+	</select>
+</mapper>

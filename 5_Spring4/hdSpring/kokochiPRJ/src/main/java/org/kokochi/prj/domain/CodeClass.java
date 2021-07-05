@@ -13,6 +13,12 @@ public class CodeClass implements Serializable {
 	private Date regDate;
 	private Date updDate;
 	
+	
+	@Override
+	public String toString() {
+		return "CodeClass [classCode=" + classCode + ", className=" + className + ", useYn=" + useYn + ", regDate="
+				+ regDate + ", updDate=" + updDate + "]";
+	}
 	public String getClassCode() {
 		return classCode;
 	}

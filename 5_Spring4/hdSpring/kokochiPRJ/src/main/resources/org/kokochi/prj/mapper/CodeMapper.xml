@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kokochi.prj.mapper.CodeMapper">
+	
+	<select id="getCodeClassList" resultType="org.kokochi.common.domain.CodeLabelValue">
+		SELECT class_code AS value, class_name AS label
+		FROM code_class
+		WHERE use_yn = 'Y' ORDER BY class_name
+	</select>
+	
+	
+	<select id="getCodeList" resultType="org.kokochi.common.domain.CodeLabelValue">
+		SELECT code_value AS value, class_name AS label
+		FROM code_detail
+		WHERE class_code = #{classCode} AND use_yn = 'Y'
+		ORDER BY sort_seq
+	</select>
+</mapper>

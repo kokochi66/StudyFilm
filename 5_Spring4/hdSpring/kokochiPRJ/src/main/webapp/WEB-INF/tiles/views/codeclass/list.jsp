@@ -31,7 +31,7 @@
 			  	<c:forEach items="${list}" var="codeClass">
 				    <tr>
 				      <th scope="row">1</th>
-				      <td>${codeClass.regDate}</td>
+				      <td><fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${codeClass.regDate}"/> </td>
 				      <td><a href="/codeclass/read?classCode=${codeClass.classCode}">${codeClass.classCode}</a></td>
 				      <td>${codeClass.className}</td>
 				    </tr>

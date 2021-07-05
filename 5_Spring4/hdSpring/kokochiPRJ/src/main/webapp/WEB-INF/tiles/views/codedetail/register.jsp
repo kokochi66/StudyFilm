@@ -10,7 +10,7 @@
     <div class="container">
         <!-- Portfolio Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-			<spring:message code="codeclass.list.title" />
+			<spring:message code="codedetail.list.title" />
 		</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
@@ -19,11 +19,16 @@
             <div class="divider-custom-line"></div>
         </div>
         <!-- Portfolio Grid Items-->
-        <form:form modelAttribute="codeClass" action="register" id="registForm">
-        	<input type="text" class="form-control" placeholder="classCode" aria-label="classCode" aria-describedby="addon-wrapping" name="classCode"> 
-        	<font><form:errors path="classCode" /></font><br>
-        	<input type="text" class="form-control" placeholder="className" aria-label="classCode" aria-describedby="addon-wrapping" name="className"> 
-        	<font><form:errors path="className" /></font><br>
+        <form:form modelAttribute="codeDetail" action="register" id="registForm">
+        	<spring:message code="codedetail.list.classCode" />
+        	<form:select path="classCode" items="${classCodeList}" itemValue="value" itemLabel="label" cssClass="form-control"/>
+        	<font color="red"><form:errors path="classCode" /></font><br>
+        	<spring:message code="codedetail.list.codeValue" />
+        	<form:input path="codeValue" cssClass="form-control"/>
+        	<font color="red"><form:errors path="codeValue" /></font><br>
+        	<spring:message code="codedetail.list.codeName" />
+        	<form:input path="codeName" cssClass="form-control"/>
+        	<font color="red"><form:errors path="codeName" /></font><br>
         </form:form>
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
 		  <button type="button" class="btn btn-danger" id="btnRegister">Register</button>
@@ -38,7 +43,7 @@
 			registForm = document.querySelector('#registForm');
 	
 	btnList.addEventListener("click",() => {
-		location.href='/codeclass/list'
+		self.location='list'
 	})
 	btnRegister.addEventListener('click', () => {
 		registForm.submit()

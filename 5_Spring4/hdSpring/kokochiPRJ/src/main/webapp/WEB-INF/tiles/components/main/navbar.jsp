@@ -13,9 +13,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded ${navbar_value[0] ? "active" : ""}" href="/codeclass/list"><spring:message code="common.menu1"/></a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded ${navbar_value[1] ? "active" : ""}" href="#about"><spring:message code="common.menu2"/></a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded ${navbar_value[2] ? "active" : ""}" href="#contact"><spring:message code="common.menu3"/></a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded ${navbar_value[0] ? "active" : ""}" href="/codeclass/list"><spring:message code="common.menu1"/></a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded ${navbar_value[1] ? "active" : ""}" href="/codedetail/list"><spring:message code="common.menu2"/></a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded ${navbar_value[2] ? "active" : ""}" href="#contact"><spring:message code="common.menu3"/></a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded ${navbar_value[3] ? "active" : ""}" href="#contact"><spring:message code="common.menu4"/></a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded ${navbar_value[4] ? "active" : ""}" href="#contact"><spring:message code="common.menu5"/></a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded ${navbar_value[5] ? "active" : ""}" href="#contact"><spring:message code="common.menu6"/></a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-1 rounded ${navbar_value[6] ? "active" : ""}" href="#contact"><spring:message code="common.menu7"/></a></li>
             </ul>
         </div>
     </div>
