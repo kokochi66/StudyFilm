@@ -26,4 +26,9 @@
 		<put-attribute name="title" value="CodeDetail" />
 		<put-attribute name="content" value="/WEB-INF/tiles/views/codedetail/{1}.jsp"  />
 	</definition>
+	
+	<definition name="user/*" extends="main-template">
+		<put-attribute name="title" value="User" />
+		<put-attribute name="content" value="/WEB-INF/tiles/views/user/{1}.jsp"  />
+	</definition>
 </tiles-definitions>

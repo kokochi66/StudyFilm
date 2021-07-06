@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kokochi.prj.mapper.MemberMapper">
+	
+	<resultMap type="Member" id="memberMap">
+		<id property="userNo" column="user_no" />
+		<result property="userNo" column="user_no" />
+		<result property="userId" column="user_id" />
+		<result property="userPw" column="user_pw" />
+		<result property="userName" column="user_name" />
+		<result property="job" column="job" />
+		<result property="coin" column="coin" />
+		<result property="enabled" column="enabled" />
+		<result property="regDate" column="regDate" />
+		<result property="updDate" column="updDate" />
+		<collection property="authList" resultMap="authMap" />
+	</resultMap>
+	
+	<resultMap type="MemberAuth" id="authMap">
+		<result property="userNo" column="user_no" />
+		<result property="auth" column="auth" />
+	</resultMap>
+	
+	<select id="readByUserId" resultMap="memberMap">
+		SELECT mem.user_no, mem.user_id, user_pw, user_name, job, coin, enabled, reg_date, upd_date, auth
+		FROM member mem LEFT OUTER JOIN member_auth auth ON mem.user_no = auth.user_no
+		WHERE mem.user_id = #{userId}
+	</select>
+	
+	<insert id="create" useGeneratedKeys="true" keyProperty="userNo">
+		INSERT INTO member(user_id, user_pw, user_name, job) 
+		VALUES(#{userId}, #{userPw}, #{userName}, #{job})
+	</insert>
+	
+	<select id="read" resultMap="memberMap">
+		SELECT mem.user_no, mem.user_id, user_pw, user_name, job, coin, reg_date, upd_date, auth
+		FROM member mem LEFT OUTER JOIN member_auth auth ON mem.user_no = auth.user_no
+		WHERE mem.user_no = #{userNo}
+	</select>
+	
+	<update id="update">
+		UPDATE member
+		SET user_name = #{userName}, job = #{job}
+		WHERE user_no = #{userNo}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM member
+		WHERE user_no = #{user_no}
+	</delete>
+	
+	<select id="list" resultType="Member">
+		SELECT user_no, user_id, user_pw, user_name,
+			(SELECT code_name FROM code_detail WHERE class_code = 'A01' AND code_value = job) AS job,
+			coin, reg_date
+		FROM member
+		ORDER BY reg_date DESC
+	</select>
+	
+	<insert id="createAuth">
+		INSERT INTO member_auth(user_no, auth) VALUES(#{userNo}, #{auth})
+	</insert>
+	
+	<delete id="deleteAuth">
+		DELETE FROM member_auth
+		WHERE user_no = #{userNo}
+	</delete>
+	
+</mapper>

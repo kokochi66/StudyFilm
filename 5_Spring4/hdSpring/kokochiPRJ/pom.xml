@@ -173,7 +173,34 @@
   		<version>5.1.35</version>
   	</dependency>
   	
+  	<!-- 입력값 검증 라이브러리 의존 등록 -->
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-validator</artifactId>
+  		<version>5.4.2.Final</version>
+  	</dependency>
   		
+  	<!-- 스프링 시큐리티 라이브러리 의존관계 정의 -->
+	<dependency>
+  		<groupId>org.springframework.security</groupId>
+  		<artifactId>spring-security-web</artifactId>
+  		<version>5.0.7.RELEASE</version>
+  	</dependency>
+	<dependency>
+  		<groupId>org.springframework.security</groupId>
+  		<artifactId>spring-security-config</artifactId>
+  		<version>5.0.7.RELEASE</version>
+  	</dependency>
+	<dependency>
+  		<groupId>org.springframework.security</groupId>
+  		<artifactId>spring-security-core</artifactId>
+  		<version>5.0.7.RELEASE</version>
+  	</dependency>
+	<dependency>
+  		<groupId>org.springframework.security</groupId>
+  		<artifactId>spring-security-taglibs</artifactId>
+  		<version>5.0.7.RELEASE</version>
+  	</dependency>
   </dependencies>
   
    	<build>

@@ -11,7 +11,7 @@
 	
 	
 	<select id="getCodeList" resultType="org.kokochi.common.domain.CodeLabelValue">
-		SELECT code_value AS value, class_name AS label
+		SELECT code_value AS value, code_name AS label
 		FROM code_detail
 		WHERE class_code = #{classCode} AND use_yn = 'Y'
 		ORDER BY sort_seq
