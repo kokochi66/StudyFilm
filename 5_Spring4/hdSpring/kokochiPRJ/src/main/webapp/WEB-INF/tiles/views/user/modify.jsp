@@ -56,7 +56,8 @@
         	</form:select>
         </form:form>
         <div class="btn-group" role="group">
-		  <button type="button" class="btn btn-danger" id="btnConfirm">Confirm</button>
+		  <button type="button" class="btn btn-primary" id="btnConfirm">Confirm</button>
+		  <button type="button" class="btn btn-danger" id="btnRemove">Remove</button>
 		  <button type="button" class="btn btn-warning" id="btnCancel">Cancel</button>
 		  <button type="button" class="btn btn-success" id="btnList">List</button>
 		</div>
@@ -68,7 +69,8 @@
 			btnConfirm = document.querySelector("#btnConfirm"),
 			btnCancel = document.querySelector('#btnCancel'),
 			registForm = document.querySelector('#registForm'),
-			userNo = document.querySelector('#userNo')
+			userNo = document.querySelector('#userNo'),
+			btnRemove = document.querySelector('#btnRemove')
 			
 	
 	btnList.addEventListener("click",() => {
@@ -79,5 +81,9 @@
 	})
 	btnCancel.addEventListener('click', () => {
 		self.location= `read?userNo=\${userNo.value}`
+	})
+	btnRemove.addEventListener('click', () => {
+		registForm.setAttribute("action","remove")
+		registForm.submit()
 	})
 </script>

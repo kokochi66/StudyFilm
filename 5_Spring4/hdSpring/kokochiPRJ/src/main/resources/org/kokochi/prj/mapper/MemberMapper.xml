@@ -67,4 +67,9 @@
 		WHERE user_no = #{userNo}
 	</delete>
 	
+	<select id="countAll" resultType="int">
+		SELECT count(*)
+		FROM member
+	</select>
+	
 </mapper>

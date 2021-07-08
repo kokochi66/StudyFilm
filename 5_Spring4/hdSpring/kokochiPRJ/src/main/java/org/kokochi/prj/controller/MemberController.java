@@ -34,16 +34,12 @@ public class MemberController {
 	public void register(Member member, Model model) throws Exception {
 		String classCode = "A01";
 		List<CodeLabelValue> jobList = codeService.getCodeList(classCode);
-		for(int i=0;i<jobList.size();i++) {
-			System.out.println(jobList.get(i).toString());
-		}
 		
 		model.addAttribute("jobList", jobList);
 	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public String register(@Validated Member member, BindingResult result, Model model, RedirectAttributes rttr) throws Exception {
-		System.out.println(member.toString());
 		if(result.hasErrors()) {
 			String classCode = "A01";
 			List<CodeLabelValue> jobList = codeService.getCodeList(classCode);
@@ -103,5 +99,30 @@ public class MemberController {
 		
 		return "redirect:/user/list";
 	}
+	
+	@RequestMapping(value="/setup", method=RequestMethod.GET)
+	public String setupAdminForm(Member member, Model model) throws Exception {
+		System.out.println("/setup :: " + service.countAll());
+		if(service.countAll() == 0) return "user/setup";
+		
+		return "redirect:/user/list";
+	}
+	
+	@RequestMapping(value="/setup", method=RequestMethod.POST)
+	public String setupAdmin(Member member, RedirectAttributes rttr) throws Exception {
+		if(service.countAll() == 0) {
+			String inputPassword = member.getUserPw();
+			member.setUserPw(passwordEncoder.encode(inputPassword));
+			
+			member.setJob("00");
+			service.setupAdmin(member);
+			rttr.addFlashAttribute("userName", member.getUserName());
+			return "redirect:/user/list";
+		}
+		
+		return "redirect:/user/setupFailure";
+	}
+	
+	
 	
 }

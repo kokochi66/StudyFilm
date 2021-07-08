@@ -42,15 +42,23 @@
 			  	</c:forEach>
 			  </tbody>
 			</table>
-			<button type="button" class="btn btn-secondary col-1" id="btnRegister">Register</button>
+			 <div class="btn-group col-2" role="group">
+			 	<button type="button" class="btn btn-success" id="btnRegister">Register</button>
+				<button type="button" class="btn btn-danger" id="btnSetup">Setup</button>
+			 </div>
+
         </div>
     </div>
 </section>
 <script>
-const btnRegister = document.querySelector('#btnRegister')
+const btnRegister = document.querySelector('#btnRegister'),
+btnSetup = document.querySelector('#btnSetup')
 
 btnRegister.addEventListener('click', () => {
 	self.location = "register"
+})
+btnSetup.addEventListener('click', () => {
+	self.location = "setup"
 })
 </script>
 

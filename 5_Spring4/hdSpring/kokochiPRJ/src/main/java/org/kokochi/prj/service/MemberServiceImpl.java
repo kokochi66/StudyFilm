@@ -7,6 +7,7 @@ import org.kokochi.prj.domain.MemberAuth;
 import org.kokochi.prj.mapper.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -72,5 +73,25 @@ public class MemberServiceImpl implements MemberService {
 		Member member = mapper.read(userNo);
 		return member.getCoin();
 	}
+
+	@Override
+	public int countAll() throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.countAll();
+	}
+	
+	@Transactional
+	@Override
+	public void setupAdmin(Member member) throws Exception {
+		// TODO Auto-generated method stub
+		mapper.create(member);
+		
+		MemberAuth memberAuth = new MemberAuth();
+		memberAuth.setUserNo(member.getUserNo());
+		memberAuth.setAuth("ROLE_ADMIN");
+		mapper.createAuth(memberAuth);
+	}
+	
+	
 
 }
