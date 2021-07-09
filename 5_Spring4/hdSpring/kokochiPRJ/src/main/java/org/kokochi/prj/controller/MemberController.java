@@ -102,7 +102,6 @@ public class MemberController {
 	
 	@RequestMapping(value="/setup", method=RequestMethod.GET)
 	public String setupAdminForm(Member member, Model model) throws Exception {
-		System.out.println("/setup :: " + service.countAll());
 		if(service.countAll() == 0) return "user/setup";
 		
 		return "redirect:/user/list";

@@ -6,10 +6,20 @@
 	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 	
 	<bean id="bcrptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+	<bean id="customAccessDenied" class="org.kokochi.common.security.CustomAccessDeniedHandler" />
+	<bean id="CustomUserDetailsService" class="org.kokochi.common.security.CustomUserDetailsService" />
+	<bean id="CustomLoginSUccessHandler" class="org.kokochi.common.security.CustomLoginSUccessHandler" />
+	
 	
 	<security:http>
-		<security:form-login/>
+		<security:form-login login-page="/auth/login" authentication-success-handler-ref="customLoginSuccess" />
+		<security:access-denied-handler ref="customAccessDenied"/>
+		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
 	</security:http>
 	
-	<security:authentication-manager></security:authentication-manager>
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="CustomUserDetailsService">
+			<security:password-encoder ref="bcrptPasswordEncoder"/>
+		</security:authentication-provider>
+	</security:authentication-manager>
 </beans>

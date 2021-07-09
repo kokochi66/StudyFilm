@@ -201,6 +201,18 @@
   		<artifactId>spring-security-taglibs</artifactId>
   		<version>5.0.7.RELEASE</version>
   	</dependency>
+  	
+  	<!-- 로그인 기능 구현을 위한 AOP 관련 의존관계 정의 -->
+  	<dependency>
+  		<groupId>aspectj</groupId>
+  		<artifactId>aspectjrt</artifactId>
+  		<version>1.5.4</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>aspectj</groupId>
+  		<artifactId>aspectjweaver</artifactId>
+  		<version>1.5.4</version>
+  	</dependency>
   </dependencies>
   
    	<build>
