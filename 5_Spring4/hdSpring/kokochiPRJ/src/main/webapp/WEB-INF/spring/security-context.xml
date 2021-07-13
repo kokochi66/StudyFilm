@@ -8,12 +8,16 @@
 	<bean id="bcrptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 	<bean id="customAccessDenied" class="org.kokochi.common.security.CustomAccessDeniedHandler" />
 	<bean id="CustomUserDetailsService" class="org.kokochi.common.security.CustomUserDetailsService" />
-	<bean id="CustomLoginSUccessHandler" class="org.kokochi.common.security.CustomLoginSUccessHandler" />
+	<bean id="CustomLoginSuccessHandler" class="org.kokochi.common.security.CustomLoginSuccessHandler" />
 	
 	
 	<security:http>
-		<security:form-login login-page="/auth/login" authentication-success-handler-ref="customLoginSuccess" />
+	
+		<security:form-login login-page="/auth/login" 
+			authentication-success-handler-ref="CustomLoginSuccessHandler" />
 		<security:access-denied-handler ref="customAccessDenied"/>
+		<security:logout logout-url="/auth/logout" invalidate-session="true" delete-cookies="remember-me,JSESSION_ID"/>
+		
 		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
 	</security:http>
 	

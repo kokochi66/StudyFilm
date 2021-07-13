@@ -10,24 +10,33 @@
     <div class="container">
         <!-- Portfolio Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-			<spring:message code="codeclass.list.title" />
+			<spring:message code="board.title" />
 		</h2>
+		
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
+        
         <!-- Portfolio Grid Items-->
-        <form:form modelAttribute="codeClass" action="register" id="registForm">
-        	코드그룹 : <form:input path="classCode" cssClass="form-control" maxlength="3" /> 
-        	<font><form:errors path="classCode" /></font><br>
-        	코드그룹명 : <form:input path="className" cssClass="form-control"/>  
-        	<font><form:errors path="className" /></font><br>
+        <form:form modelAttribute="board" action="register" id="registForm">
+        	
+        	<spring:message code="board.boardTitle" />
+        	<form:input path="title" cssClass="form-control" /> 
+        	<font color="red"><form:errors path="title" /></font><br>
+        	
+        	<spring:message code="board.boardWriter" />
+        	<form:input path="writer" cssClass="form-control" readonly="true" /> 
+        	<font color="red"><form:errors path="writer" /></font><br>
+        	
+        	<spring:message code="board.content" />
+        	<form:textarea path="content" cssClass="form-control" /> 
+        	<font color="red"><form:errors path="content" /></font><br>
         </form:form>
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
 		  <button type="button" class="btn btn-danger" id="btnRegister">Register</button>
-		  <button type="button" class="btn btn-warning" id="btnList">List</button>
 		</div>
     </div>
 </section>

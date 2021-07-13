@@ -36,4 +36,15 @@
 		<put-attribute name="title" value="Login" />
 		<put-attribute name="content" value="/WEB-INF/tiles/views/auth/{1}.jsp" />
 	</definition>
+	
+	<definition name="error/*" extends="main-template">
+		<put-attribute name="title" value="Error" />
+		<put-attribute name="content" value="/WEB-INF/tiles/views/error/{1}.jsp" />
+	</definition>
+	
+	<definition name="board/*" extends="main-template">
+		<put-attribute name="title" value="Board" />
+		<put-attribute name="content" value="/WEB-INF/tiles/views/board/{1}.jsp" />
+	</definition>
+	
 </tiles-definitions>

@@ -11,7 +11,7 @@
     <div class="container">
         <!-- Portfolio Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-			<spring:message code="login.title" />
+			<spring:message code="logout.title" />
 		</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
@@ -19,15 +19,10 @@
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
+        
         <!-- Portfolio Grid Items-->
-        <form action="/login" method="post" class="col-5 m-0-auto">
-        	<spring:message code="login.username" />
-        	<input type="text" name="username" value="admin" class="form-control mb-3"/>
-        	
-        	<spring:message code="login.password" />
-        	<input type="password" name="password" value="1234" class="form-control mb-3"/>
-        	
-        	<input type="submit" class="btn btn-success" value="submit" />
+        <form action="/auth/logout" method="post" class="col-5 m-0-auto">
+        	<input type="submit" class="btn btn-success" value="logout" />
         	<sec:csrfInput/>
         </form>
     </div>

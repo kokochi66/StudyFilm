@@ -7,6 +7,7 @@ import org.kokochi.prj.domain.Member;
 import org.kokochi.prj.service.CodeService;
 import org.kokochi.prj.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,11 +30,13 @@ public class MemberController {
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+	private static boolean[] navbar_value = {false, false, true,false,false,false,false,false,false,false};
 	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public void register(Member member, Model model) throws Exception {
 		String classCode = "A01";
 		List<CodeLabelValue> jobList = codeService.getCodeList(classCode);
+		model.addAttribute("navbar_value", navbar_value);
 		
 		model.addAttribute("jobList", jobList);
 	}
@@ -45,6 +48,7 @@ public class MemberController {
 			List<CodeLabelValue> jobList = codeService.getCodeList(classCode);
 			
 			model.addAttribute("jobList", jobList);
+			model.addAttribute("navbar_value", navbar_value);
 		}
 		
 		String inputPassword = member.getUserPw();
@@ -61,8 +65,11 @@ public class MemberController {
 		
 	}
 	
+	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public void list(Model model) throws Exception {
+		model.addAttribute("navbar_value", navbar_value);
 		model.addAttribute("list", service.list());
 	}
 	
@@ -73,9 +80,11 @@ public class MemberController {
 		
 		model.addAttribute("jobList", jobList);
 		model.addAttribute(service.read(userNo));
+		model.addAttribute("navbar_value", navbar_value);
 	}
 	
 	@RequestMapping(value="/remove", method=RequestMethod.POST)
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public String remove(int userNo, RedirectAttributes rttr) throws Exception {
 		service.remove(userNo);
 		rttr.addFlashAttribute("msg", "SUCCESS");
@@ -90,6 +99,7 @@ public class MemberController {
 		
 		model.addAttribute("jobList", jobList);
 		model.addAttribute(service.read(userNo));
+		model.addAttribute("navbar_value", navbar_value);
 	}
 	
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
@@ -103,7 +113,7 @@ public class MemberController {
 	@RequestMapping(value="/setup", method=RequestMethod.GET)
 	public String setupAdminForm(Member member, Model model) throws Exception {
 		if(service.countAll() == 0) return "user/setup";
-		
+		model.addAttribute("navbar_value", navbar_value);
 		return "redirect:/user/list";
 	}
 	
