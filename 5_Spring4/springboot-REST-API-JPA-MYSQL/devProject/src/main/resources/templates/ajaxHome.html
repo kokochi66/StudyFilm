@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+</head>
+<body>
+    <h1>Ajax Home</h1>
+    <form action="">
+        boardNo : <input type="text" name="boardNo" value="" id="boardNo" /><br/>
+        title : <input type="text" name="title" value="" id="title" /><br/>
+        content : <input type="text" name="content" value="" id="content" /><br/>
+        writer : <input type="text" name="writer" value="" id="writer" /><br/>
+    </form>
+
+    <div>
+        <button id="listBtn">LIST</button>
+        <button id="readBtn">READ</button>
+        <button id="registerBtn">REGISTER</button>
+        <button id="deleteBtn">DELETE</button>
+        <button id="modifyBtn">MODIFY</button>
+
+    </div>
+
+    <script src="/assets/js/jquery-2.1.4.min.js"></script>
+    <script src="/assets/js/ajaxTest/ajaxHome.js"></script>
+</body>
+</html>
