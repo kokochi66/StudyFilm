@@ -250,5 +250,26 @@ $(document).ready(() => {
         })
     })  // GET 요청 ResponseEntity<byte[]> 응답 테스트
 
+    $('#InputFile').on('change', (e) => {
+        console.log("InputFile change")
+        let files = e.target.files;
+        let file = files[0];
+        console.log(file)
+        let formData = new FormData();
+        formData.append("file", file);
+
+        $.ajax({
+            type:"post",
+            url:"/test/file/upload",
+            data: formData,
+            dataType:'text',
+            processData: false,
+            contentType:false,
+            success: (data) =>  {
+                alert(data)
+            }
+        })
+
+    })
 
 })

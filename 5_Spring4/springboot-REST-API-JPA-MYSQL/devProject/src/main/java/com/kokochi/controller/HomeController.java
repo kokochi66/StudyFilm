@@ -45,6 +45,21 @@ public class HomeController {
 	}
 	// /ajaxHome - ajaxHome 매핑
 	
+	@RequestMapping(value="/validajaxHome", method=RequestMethod.GET)
+	public String validajaxHome(Model model) {
+		log.info("/validajaxHome - validajaxHome 매핑");
+		
+		Date date = new Date();
+		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 M월 d일 (E) a h시 m분 s초");
+		String formattedNow = now.format(formatter);
+		
+		model.addAttribute("serverTime", formattedNow);
+		
+		return "validajaxHome";
+	}
+	// /validajaxHome - validajaxHome 매핑
+	
 	/*
 	 * @Slf4j 사용이 제대로 되지 않을 때 :: Maven Dependencies 에서 lombok을 install 해준다.
 	 * 

@@ -1,4 +1,4 @@
-package com.kokochi.controller;
+package com.kokochi.test.controller;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.kokochi.domain.Address;
 import com.kokochi.domain.Board;
@@ -116,7 +117,7 @@ public class RestTestController {
 	public void listForm() {
 		log.info("/board/list - listForm GET");
 	}
-	// listForm\
+	// listForm
 	
 	@GetMapping("/member/register01")
 	public void Memberregister01() {
@@ -226,4 +227,13 @@ public class RestTestController {
 		return entity;
 	}
 	// /member/register10 - ResponseEntity<byte[]> GET test
+
+	@PostMapping(value="/file/upload", produces="text/plain;charset=UTF-8")
+	public ResponseEntity<String> FileUpload(MultipartFile file) throws Exception {
+		log.info("/test/file/upload");
+		String originalFilename = file.getOriginalFilename();
+		ResponseEntity<String> entity = new ResponseEntity<String>("UPLOAD USCCESS :: " + originalFilename, HttpStatus.OK);
+		return entity;
+	}
+	// /test/file/upload
 }
