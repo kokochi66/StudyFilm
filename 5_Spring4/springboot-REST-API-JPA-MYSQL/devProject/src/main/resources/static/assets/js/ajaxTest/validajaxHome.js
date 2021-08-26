@@ -3,6 +3,7 @@ $(document).ready(() => {
         let userIdVal = $('#userId').val();
         let userPasswordVal = $('#userpassword').val();
         let userNameVal = $('#username').val();
+        let dateOfBirthVal = $('#dateOfBirth').val();
         let emailVal = $('#email').val();
         let genderVal = $('input[name="gender"]:checked').val();
     
@@ -10,6 +11,7 @@ $(document).ready(() => {
             userId : userIdVal,
             password: userPasswordVal,
             userName: userNameVal,
+            dateOfBirth: dateOfBirthVal,
             email: emailVal,
             gender: genderVal
         }
@@ -23,7 +25,8 @@ $(document).ready(() => {
                 alert(res)
             },
             error: (xhr, status, error) => {
-                alert('the error message :: ', xhr.status, xhr.responseText, error)
+                alert(`code = ${xhr.status} / message = ${xhr.responseText} / err :: ${error} / `)
+                // 에러 내용을 표시한다.
             }
         })
     })  // member valid register TEST

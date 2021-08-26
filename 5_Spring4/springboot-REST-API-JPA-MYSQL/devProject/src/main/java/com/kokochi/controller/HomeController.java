@@ -41,7 +41,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedNow);
 		
-		return "ajaxHome";
+		return "test/ajaxHome";
 	}
 	// /ajaxHome - ajaxHome 매핑
 	
@@ -56,7 +56,23 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedNow);
 		
-		return "validajaxHome";
+		return "test/validajaxHome";
+	}
+	// /validajaxHome - validajaxHome 매핑
+	
+	
+	@RequestMapping(value="/messageAjaxHome", method=RequestMethod.GET)
+	public String messageAjaxHome(Model model) {
+		log.info("/messageAjaxHome - validajaxHome 매핑");
+		
+		Date date = new Date();
+		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 M월 d일 (E) a h시 m분 s초");
+		String formattedNow = now.format(formatter);
+		
+		model.addAttribute("serverTime", formattedNow);
+		
+		return "test/messageAjaxHome";
 	}
 	// /validajaxHome - validajaxHome 매핑
 	

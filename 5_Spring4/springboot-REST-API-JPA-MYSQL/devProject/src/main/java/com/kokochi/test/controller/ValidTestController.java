@@ -21,8 +21,9 @@ public class ValidTestController {
 	
 	@PostMapping(value="/member/register", produces="text/plain;charset=UTF-8")
 	public ResponseEntity<String> register(@Validated @RequestBody ValidMember member , BindingResult result) {
-		log.info("/valid/member/register POST");
+		log.info("/valid/member/register POST :: " + member.toString());
 		if(result.hasErrors()) {
+			log.info("/valid/member/register Error :: " + result.toString());
 			ResponseEntity<String> entity = new ResponseEntity<String>(result.toString(), HttpStatus.BAD_REQUEST);
 			return entity;
 		}

@@ -1,0 +1,23 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'sample.kokochi'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'	// 자바 버전
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {	// 의존 설정
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
