@@ -1,10 +1,21 @@
 package sample.kokochi.hellospring.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import sample.kokochi.hellospring.domain.Member;
+import sample.kokochi.hellospring.domain.MemberForm;
 import sample.kokochi.hellospring.service.MemberService;
 
+import java.util.List;
+
 @Controller
+@Slf4j
+@RequestMapping(value="/member")
 public class MemberController {
 
     private final MemberService memberService;
@@ -24,5 +35,27 @@ public class MemberController {
         그래서 기본적으로 생성자 주입을 사용하는것이 좋다. (생성자 주입은 상황에 따라서 쉽게 구현을 변경할 수 있다)
         * */
     } //    스프링이 관리하여, 스프링에서 가져다 쓰도록 해야한다. (스프링 컨테이너에 등록함)
+
+    @GetMapping("/register")
+    public String registerMemberForm(Member member) {
+        log.info("/member/register GET");
+        return "member/registerForm";
+    }   // /member/register GET 회원가입 폼
+
+    @PostMapping("/register")
+    public String registerMember(MemberForm memberform) {
+        log.info("/member/register POST");
+        Member member = new Member();
+        member.setName(memberform.getName());
+        memberService.join(member);
+        return "redirect:/";
+    }   // /member/register POST 회원가입 요청
+
+    @GetMapping("/list")
+    public String listMember(Model model) {
+        List<Member> members = memberService.findMember();
+        model.addAttribute("members", members);
+        return "/member/memberList";
+    }   // /member/list GET 회원목록
 
 }

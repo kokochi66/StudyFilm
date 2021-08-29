@@ -2,22 +2,25 @@ package sample.kokochi.hellospring.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sample.kokochi.hellospring.domain.Member;
 import sample.kokochi.hellospring.repository.MemberRepository;
 import sample.kokochi.hellospring.repository.MemoryMemberRepositoryImpl;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
 //@Service
+@Transactional
 public class MemberService {
+
+    private final MemberRepository repository;
 
     @Autowired
     public MemberService(MemberRepository repository) {
         this.repository = repository;
     }
-
-    private final MemberRepository repository;
 
     public Long join(Member member) {
         validateDuplicatedName(member);
