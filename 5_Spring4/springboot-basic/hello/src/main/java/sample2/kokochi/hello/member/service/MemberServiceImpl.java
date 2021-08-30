@@ -2,11 +2,14 @@ package sample2.kokochi.hello.member.service;
 
 import sample2.kokochi.hello.member.Member;
 import sample2.kokochi.hello.member.repository.MemberRepository;
-import sample2.kokochi.hello.member.repository.MemoryMemberRepositoryImpl;
 
 public class MemberServiceImpl implements MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepositoryImpl();
+    private final MemberRepository memberRepository;
+
+    public MemberServiceImpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Override
     public void join(Member member) {
