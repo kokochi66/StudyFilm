@@ -6,9 +6,7 @@ import org.junit.jupiter.api.Test;
 import sample2.kokochi.hello.config.AppConfig;
 import sample2.kokochi.hello.member.Grade;
 import sample2.kokochi.hello.member.Member;
-import sample2.kokochi.hello.member.repository.MemoryMemberRepositoryImpl;
 import sample2.kokochi.hello.member.service.MemberService;
-import sample2.kokochi.hello.member.service.MemberServiceImpl;
 
 public class OrderServiceTest {
 

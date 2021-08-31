@@ -1,5 +1,6 @@
 package sample2.kokochi.hello.discount;
 
+import org.springframework.stereotype.Component;
 import sample2.kokochi.hello.member.Grade;
 import sample2.kokochi.hello.member.Member;
 

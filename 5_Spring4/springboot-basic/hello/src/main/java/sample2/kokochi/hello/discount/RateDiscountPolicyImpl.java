@@ -1,8 +1,10 @@
 package sample2.kokochi.hello.discount;
 
+import org.springframework.stereotype.Component;
 import sample2.kokochi.hello.member.Grade;
 import sample2.kokochi.hello.member.Member;
 
+@Component
 public class RateDiscountPolicyImpl implements DiscountPolicy {
 
     private final double discountRate = 0.2;

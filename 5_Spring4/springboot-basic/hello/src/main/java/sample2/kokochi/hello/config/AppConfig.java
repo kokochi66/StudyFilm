@@ -10,7 +10,7 @@ import sample2.kokochi.hello.member.service.MemberService;
 import sample2.kokochi.hello.member.service.MemberServiceImpl;
 import sample2.kokochi.hello.order.OrderService;
 import sample2.kokochi.hello.order.OrderServiceImpl;
-@Configuration
+//@Configuration
 public class AppConfig {
 
 

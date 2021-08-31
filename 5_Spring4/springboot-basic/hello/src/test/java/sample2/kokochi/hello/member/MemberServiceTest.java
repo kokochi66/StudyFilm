@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import sample2.kokochi.hello.config.AppConfig;
 import sample2.kokochi.hello.member.service.MemberService;
-import sample2.kokochi.hello.member.service.MemberServiceImpl;
 
 public class MemberServiceTest {
 

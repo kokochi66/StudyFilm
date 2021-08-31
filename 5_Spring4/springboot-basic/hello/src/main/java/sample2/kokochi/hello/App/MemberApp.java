@@ -6,7 +6,6 @@ import sample2.kokochi.hello.config.AppConfig;
 import sample2.kokochi.hello.member.Grade;
 import sample2.kokochi.hello.member.Member;
 import sample2.kokochi.hello.member.service.MemberService;
-import sample2.kokochi.hello.member.service.MemberServiceImpl;
 
 
 public class MemberApp {

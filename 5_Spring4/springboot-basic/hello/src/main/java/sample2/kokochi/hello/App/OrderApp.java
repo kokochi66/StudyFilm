@@ -6,10 +6,8 @@ import sample2.kokochi.hello.config.AppConfig;
 import sample2.kokochi.hello.member.Grade;
 import sample2.kokochi.hello.member.Member;
 import sample2.kokochi.hello.member.service.MemberService;
-import sample2.kokochi.hello.member.service.MemberServiceImpl;
 import sample2.kokochi.hello.order.Order;
 import sample2.kokochi.hello.order.OrderService;
-import sample2.kokochi.hello.order.OrderServiceImpl;
 
 
 public class OrderApp {

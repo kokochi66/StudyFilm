@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import sample2.kokochi.hello.member.Grade;
 import sample2.kokochi.hello.member.Member;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class RateDiscountPolicyImplTest {
     RateDiscountPolicyImpl discountPolicy = new RateDiscountPolicyImpl();
 
