@@ -16,8 +16,8 @@ import static org.assertj.core.api.Assertions.*;
 
 public class ConfigTest {
 
-    @Test
     @DisplayName("싱글톤 적용확인")
+    @Test
     void singletonCheck() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberServiceImpl memService = ac.getBean(MemberServiceImpl.class);

@@ -1,5 +1,6 @@
 package sample2.kokochi.hello.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import sample2.kokochi.hello.discount.DiscountPolicy;
@@ -10,9 +11,8 @@ import sample2.kokochi.hello.member.service.MemberService;
 import sample2.kokochi.hello.member.service.MemberServiceImpl;
 import sample2.kokochi.hello.order.OrderService;
 import sample2.kokochi.hello.order.OrderServiceImpl;
-//@Configuration
+@Configuration
 public class AppConfig {
-
 
     // Repository
     @Bean
