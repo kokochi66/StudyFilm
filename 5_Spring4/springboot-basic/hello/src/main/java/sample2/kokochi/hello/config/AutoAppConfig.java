@@ -1,8 +1,11 @@
 package sample2.kokochi.hello.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import sample2.kokochi.hello.member.repository.MemberRepository;
+import sample2.kokochi.hello.member.repository.MemoryMemberRepositoryImpl;
 
 @Configuration
 @ComponentScan(
@@ -12,5 +15,12 @@ import org.springframework.context.annotation.FilterType;
         // 필터링을 통해서 Configuration.class 컴포넌트가 들어가있는 경우는 제외하여 스캔한다. (다른 Config 파일도 등록되면 오류가 발생하기 때문)
 )
 public class AutoAppConfig {
+
+    // 스프링 부트에서는 spring.main.allow-bean-definition-overriding=true 를 붙여주어야 덮어쓰기가 가능하다.
+    // 가능하면 덮어쓰기가 아닌 기본값으로도 충돌이 나지 않도록 세팅하는 것이 좋다.
+    @Bean(name="memoryMemberRepositoryImpl")
+    public MemberRepository memberRepository() {
+        return new MemoryMemberRepositoryImpl();
+    }
 
 }
