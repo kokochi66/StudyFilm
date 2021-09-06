@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 페이지 - 사용자관리</title>
+</head>
+<body>
+
+<h1>사용자관리</h1>
+<div id="list">
+    <table>
+        <tr>
+            <td>번호</td>
+            <td>아이디</td>
+            <td>사용자명</td>
+            <td>이메일</td>
+            <td>권한</td>
+            <td>등록일자</td>
+            <td>수정</td>
+            <td>삭제</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>admin</td>
+            <td>총괄관리자</td>
+            <td>ab@naver.com</td>
+            <td>총괄관리자</td>
+            <td>2021.07.28</td>
+            <td><a href="#">수정</a></td>
+            <td><a href="#">삭제</a></td>
+        </tr>
+    </table>
+</div>
+
+<h1>권한추가</h1>
+<div id="addAuth">
+    <div class="auth">
+        <div class="name">매니저</div>
+        <ul>
+            <li>기본설정</li>
+            <li>체험신청관리</li>
+            <li>메뉴관리</li>
+        </ul>
+    </div>
+</div>
+
+<h1>등록하기</h1>
+<form action="">
+    아이디 : <input type="text" name="id" class="id"/> <br>
+    비밀번호 : <input type="text" name="password" class="password"/><br>
+    비밀번호확인 : <input type="text" name="passwordCon" class="passwordCon"/><br>
+    사용자명 : <input type="text" name="username" class="username"/><br>
+    이메일 : <input type="text" name="email" class="email"/><br>
+    권한 :
+    <select name="auth" class="auth">
+        <option value="매니저">매니저</option>
+        <option value="게시판관리">게시판관리</option>
+    </select><br>
+    <input type="submit" value="등록하기">
+</form>
+
+<h1>수정하기</h1>
+<form action="">
+    아이디 : <input type="text" name="id" class="id"/> <br>
+    비밀번호 : <input type="text" name="password" class="password"/><br>
+    비밀번호확인 : <input type="text" name="passwordCon" class="passwordCon"/><br>
+    사용자명 : <input type="text" name="username" class="username"/><br>
+    이메일 : <input type="text" name="email" class="email"/><br>
+    권한 :
+    <select name="auth" class="auth">
+        <option value="매니저">매니저</option>
+        <option value="게시판관리">게시판관리</option>
+    </select><br>
+    <input type="submit" value="수정하기">
+</form>
+<style>
+    #list table {width: 1000px; border: 1px solid #000;}
+    tr, td {border: 1px solid #000; text-align: center;}
+    #addAuth {width: 1000px;}
+    #addAuth .auth {
+        width: 100%;}
+    #addAuth .name {
+        font-weight: bold;}
+    #addAuth ul {}
+    #addAuth ul li {display: inline-block; margin-right: 5px;}
+</style>
+</body>
+</html>
