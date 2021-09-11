@@ -12,6 +12,8 @@ import static org.assertj.core.api.Assertions.*;
 
 public class SingletonTest {
 
+
+
     @Test
     @DisplayName("순수DI컨테이너")
     void pureContainer() {

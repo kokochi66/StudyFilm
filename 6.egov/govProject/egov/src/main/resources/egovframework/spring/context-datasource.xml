@@ -20,11 +20,11 @@
     
    <!--  Mysql (POM에서 commons-dbcp, mysql-connector-java 관련 라이브러리 설정 )  -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3307/yg_test" />
-        <property name="username" value="root"/>
-        <property name="password" value="1234"/>
-    </bean>
+    <property name="driverClassName" value="net.sf.log4jdbc.DriverSpy"/>
+    <property name="url" value="jdbc:log4jdbc:mysql://localhost:3307/yg_test?autoReconnect=true&serverTimezone=UTC"/>
+    <property name="username" value="root"/>
+    <property name="password" value="1234"/>
+</bean>
    
     
     <!-- oracle (POM에서 commons-dbcp, ojdbc(라이센스 사항으로 별도로 배포되지 않음) 관련 라이브러리 설정)
