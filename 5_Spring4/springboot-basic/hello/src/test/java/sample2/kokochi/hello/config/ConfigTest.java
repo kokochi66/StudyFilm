@@ -23,7 +23,6 @@ public class ConfigTest {
         MemberServiceImpl memService = ac.getBean(MemberServiceImpl.class);
         OrderServiceImpl orderService = ac.getBean(OrderServiceImpl.class);
         MemberRepository memRepository = ac.getBean(MemberRepository.class);
-        assertThat(memService.getMemberRepository()).isEqualTo(orderService.getMemberRepository());
         assertThat(memService.getMemberRepository()).isEqualTo(memRepository);
     }
 }

@@ -10,7 +10,6 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class XmlAppContextTest {
-
     @Test
     void xmlAppContext() {
         ApplicationContext ac = new GenericXmlApplicationContext("appConfig.xml");
