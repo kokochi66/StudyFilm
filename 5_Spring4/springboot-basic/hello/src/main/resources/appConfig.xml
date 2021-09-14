@@ -9,6 +9,6 @@
     <bean id="discountPolicy" class="sample2.kokochi.hello.discount.RateDiscountPolicyImpl" />
     <bean id="orderService" class="sample2.kokochi.hello.order.OrderServiceImpl">
         <constructor-arg name="memberRepository" ref="memberRepository" />
-        <constructor-arg name="discountPolicy" ref="discountPolicy" />
+        <constructor-arg name="discountPolicyImpl" ref="discountPolicy" />
     </bean>
 </beans>
