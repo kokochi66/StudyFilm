@@ -29,7 +29,10 @@ public class AllBeanTest {
     }
 
     static class DiscountService {
-        private final Map<String, DiscountPolicy> policyMap;
+        private final Map<String, DiscountPolicy> policyMap;    // 어느 부분이 DiscountPolicy에 적용되는지 확인할 부분이 필요함
+        // 자동주입이 어느부분에서 들어가는지 확인하기가 어려워, 이런 부분에서 @Configuraton을 사용하는것이 좋을 수 있다.
+        // 아니면 자동주입이 들어간다면 동일한 패키지에 합쳐져 있는 것이 유지보수에 바람직하다.
+
         private final List<DiscountPolicy> policies;
 
         @Autowired
