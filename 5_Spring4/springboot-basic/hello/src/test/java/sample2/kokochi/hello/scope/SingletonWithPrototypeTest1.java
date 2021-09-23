@@ -2,6 +2,8 @@ package sample2.kokochi.hello.scope;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
@@ -31,7 +33,7 @@ public class SingletonWithPrototypeTest1 {
 
         ClientBean bean2 = ac.getBean(ClientBean.class);
         int count2 = bean2.logic();
-        Assertions.assertThat(count2).isEqualTo(2);
+        Assertions.assertThat(count2).isEqualTo(1);
         // 프로토타입 빈을 불러왔음에도 불구하고, 카운트가 겹쳐서 쌓이게 된다.
         // 싱글톤 빈 안에 프로토타입 빈을 생성하여도, 이미 싱글톤 빈은 한 번 생성되고, 다시한번 메소드를 호출하지 않기 때문에
         // 두 프로토타입 빈은 동일한 빈이 된다.
@@ -39,13 +41,16 @@ public class SingletonWithPrototypeTest1 {
 
     @Scope("singleton")
     static class ClientBean {
-        private final PrototypeHBean prototypeBean;
+        // private final PrototypeHBean prototypeBean;
+        @Autowired
+        private ObjectProvider<PrototypeHBean> prototypeBeanProvider;
 
-        public ClientBean(PrototypeHBean prototypeBean) {
+        /*public ClientBean(PrototypeHBean prototypeBean) {
             this.prototypeBean = prototypeBean;
-        }
+        }*/
 
         public int logic() {
+           PrototypeHBean prototypeBean = prototypeBeanProvider.getObject();
             prototypeBean.addCount();
             int count = prototypeBean.getCount();
             return count;
