@@ -52,7 +52,6 @@ public class JpaMain {
             // em.flush()를 실행해주면 바로 쿼리문이 날라가게 된다.
             System.out.println("TEST :: 쿼리문이 날라간 이후에 보여지는 로그");
             */
-            /*
             // 준영속상태 만들기
             Member member = new Member();
             member.setId(112L);
@@ -61,7 +60,6 @@ public class JpaMain {
             em.detach(member);   // 해당하는 객체를 영속상태에서 제거해줌. 이 경우에 1차캐시에서 제외됨.
             em.clear();         // 영속성 컨텍스트를 완전히 비워서 모든 값들을 지워줌
             System.out.println("영속성 상태로 일단 만들어도, commit 이전에 준영속상태를 만들었기 때문에 쿼리가 실행되지 않음.");
-            */
 
 
             tx.commit();
