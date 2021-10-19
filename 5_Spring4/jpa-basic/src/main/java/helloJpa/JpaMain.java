@@ -53,13 +53,20 @@ public class JpaMain {
             System.out.println("TEST :: 쿼리문이 날라간 이후에 보여지는 로그");
             */
             // 준영속상태 만들기
-            Member member = new Member();
+            /*Member member = new Member();
             member.setId(112L);
             member.setName("Hutao");
             em.persist(member);  // 영속상태를 한번 만들어준 뒤에, 영속상태를 푸는데에는 두가지 방법이 존재함.
             em.detach(member);   // 해당하는 객체를 영속상태에서 제거해줌. 이 경우에 1차캐시에서 제외됨.
             em.clear();         // 영속성 컨텍스트를 완전히 비워서 모든 값들을 지워줌
-            System.out.println("영속성 상태로 일단 만들어도, commit 이전에 준영속상태를 만들었기 때문에 쿼리가 실행되지 않음.");
+            System.out.println("영속성 상태로 일단 만들어도, commit 이전에 준영속상태를 만들었기 때문에 쿼리가 실행되지 않음.");*/
+
+
+            Member member = new Member();
+            member.setId(3L);
+            member.setName("Tartar");
+            member.setRoleType(RoleType.ADMIN);
+            em.persist(member);
 
 
             tx.commit();
