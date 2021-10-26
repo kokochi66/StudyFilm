@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
-@Entity
-@Table(name="Member")   // 테이블 이름을 설정하는 부분
+/*@Entity
+@Table(name="Member")   // 테이블 이름을 설정하는 부분*/
 public class Member {
     @Id
     private Long id;
