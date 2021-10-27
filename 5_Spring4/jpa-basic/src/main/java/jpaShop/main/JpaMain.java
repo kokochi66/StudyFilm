@@ -1,6 +1,8 @@
 package jpaShop.main;
 
 import jpaShop.domain.Member;
+import jpaShop.domain.Order;
+import jpaShop.domain.OrderItem;
 import jpaShop.domain.Team;
 
 import javax.persistence.EntityManager;
@@ -19,23 +21,9 @@ public class JpaMain {
 
         try {
 
-            Team team = new Team();
-            team.setName("TeamA");
-            entityManager.persist(team);
-
-            Member member = new Member();
-            member.setName("member1");
-            member.changeTeam(team);
-            entityManager.persist(member);
-
-//            entityManager.flush();
-//            entityManager.clear();
-
-            Team team1 = entityManager.find(Team.class, team.getId());
-            List<Member> members = team1.getMembers();
-            for (Member member1 : members) {
-                System.out.println("TEST :: members :: " + member1.getId()+" " + member1.getName());
-            }
+            Order order = new Order();
+            OrderItem orderItem = new OrderItem();
+            order.addOrderItem(orderItem);
 
             transaction.commit();
         } catch (Exception e) {
