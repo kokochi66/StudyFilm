@@ -1,4 +1,4 @@
-package jpaShop.domain;
+package jpaShop.enumType;
 
 public enum DeliveryStatus {
     OK, READY

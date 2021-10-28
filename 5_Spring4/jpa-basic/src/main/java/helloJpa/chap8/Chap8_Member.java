@@ -1,20 +1,18 @@
-package helloJpa.chap7;
-
-import net.bytebuddy.asm.Advice;
+package helloJpa.chap8;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn
-public abstract class Chap7_Item extends Chap7_BaseEntity {
+public class Chap8_Member {
 
     @Id @GeneratedValue
+    @Column(name = "MEMBER_ID")
     private Long id;
-
     private String name;
-    private int price;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "TEAM_ID")
+    private Chap8_Team team;
 
     public Long getId() {
         return id;
@@ -32,11 +30,12 @@ public abstract class Chap7_Item extends Chap7_BaseEntity {
         this.name = name;
     }
 
-    public int getPrice() {
-        return price;
+    public Chap8_Team getTeam() {
+        return team;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setTeam(Chap8_Team team) {
+        this.team = team;
     }
 }
+

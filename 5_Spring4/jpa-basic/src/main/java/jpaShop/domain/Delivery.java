@@ -1,9 +1,8 @@
 package jpaShop.domain;
 
+import jpaShop.enumType.DeliveryStatus;
+
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Delivery {
@@ -13,7 +12,7 @@ public class Delivery {
     @Column(name="ORDER_ID")
     private Long id;
 
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY)
     private Order order;
 
     private String city;

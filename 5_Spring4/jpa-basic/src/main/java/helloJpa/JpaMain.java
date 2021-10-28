@@ -1,9 +1,9 @@
 package helloJpa;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import helloJpa.chap8.Chap8_Member;
+import helloJpa.chap8.Chap8_Team;
+
+import javax.persistence.*;
 import java.util.List;
 
 public class JpaMain {
@@ -61,13 +61,51 @@ public class JpaMain {
             em.clear();         // 영속성 컨텍스트를 완전히 비워서 모든 값들을 지워줌
             System.out.println("영속성 상태로 일단 만들어도, commit 이전에 준영속상태를 만들었기 때문에 쿼리가 실행되지 않음.");*/
 
-
-            Member member = new Member();
+            /*Member member = new Member();
             member.setId(3L);
             member.setName("Tartar");
             member.setRoleType(RoleType.ADMIN);
-            em.persist(member);
+            em.persist(member);*/
 
+            // 8-1 프록시
+/*            Chap8_Member member = new Chap8_Member();
+            member.setName("kokochi");
+            em.persist(member);
+            Chap8_Member member2 = new Chap8_Member();
+            member2.setName("kibo");
+            em.persist(member2);
+            em.flush();
+            em.clear();
+//            Chap8_Member chap8_member = em.find(Chap8_Member.class, member.getId());
+//            System.out.println("TEST :: findMember :: " + chap8_member.getName());
+//            System.out.println("TEST :: findMember :: " + chap8_member.getId());
+            Chap8_Member findMember = em.find(Chap8_Member.class, member.getId());
+            Chap8_Member findMember2 = em.getReference(Chap8_Member.class, member2.getId());
+            Chap8_Member findMember3 = em.getReference(Chap8_Member.class, member.getId());
+            System.out.println("TEST :: findMember == findMember2 :: " + (findMember.getClass() == findMember2.getClass()));
+            System.out.println("TEST :: findMember == findMember2 :: " + (findMember.getClass() == findMember2.getClass()));
+            System.out.println("TEST :: findMember instanceof :: " + (findMember instanceof Chap8_Member));
+            System.out.println("TEST :: findMember2 instanceof :: " + (findMember2 instanceof Chap8_Member));
+            System.out.println("TEST :: findMember == findMember3 :: " + (findMember.getClass() == findMember3.getClass()));*/
+
+            // 8-2 즉시로딩과 지연로딩
+            Chap8_Team team = new Chap8_Team();
+            team.setName("teamA");
+            em.persist(team);
+            Chap8_Member member = new Chap8_Member();
+            member.setName("member1");
+            member.setTeam(team);
+            em.persist(member);
+            em.flush();
+            em.clear();
+/*            Chap8_Member findMember = em.find(Chap8_Member.class, member.getId());
+            System.out.println("TEST :: findMember :: " + findMember.getTeam().getClass());
+            System.out.println("===============================");
+            findMember.getTeam().getName(); // 즉시로딩 초기화 과정
+            System.out.println("===============================");*/
+
+            // N+1 문제 예제
+            List<Chap8_Member> members = em.createQuery("select m from Chap8_Member m", Chap8_Member.class).getResultList();
 
             tx.commit();
         } catch (Exception e) {

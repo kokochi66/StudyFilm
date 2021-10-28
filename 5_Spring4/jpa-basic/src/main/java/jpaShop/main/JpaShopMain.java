@@ -2,14 +2,17 @@ package jpaShop.main;
 
 import helloJpa.chap7.Chap7_Book;
 import helloJpa.chap7.Chap7_Item;
+import jpaShop.domain.Album;
+import jpaShop.domain.Book;
+import jpaShop.domain.Movie;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.awt.print.Book;
+import java.time.LocalDateTime;
 
-public class JpaMain {
+public class JpaShopMain {
 
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
@@ -18,16 +21,20 @@ public class JpaMain {
         transaction.begin();
 
         try {
-            Chap7_Book book = new Chap7_Book();
-            book.setName("future");
-            book.setAuthor("kokochi");
-            book.setIsbn("isbn");
+            Album album = new Album();
+            album.setArtist("wotamin");
+            album.setEtc("new album");
+            entityManager.persist(album);
+
+            Book book = new Book();
+            book.setAuthor("hayake");
+            book.setIsbn("new book");
             entityManager.persist(book);
 
-            entityManager.flush();
-            entityManager.clear();
-
-            Chap7_Item item = entityManager.find(Chap7_Item.class, book.getId());
+            Movie movie = new Movie();
+            movie.setActor("yoshino");
+            movie.setDirector("oba");
+            entityManager.persist(movie);
 
             transaction.commit();
         } catch (Exception e) {
