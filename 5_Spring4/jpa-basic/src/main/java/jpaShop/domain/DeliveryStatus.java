@@ -1,5 +1,5 @@
 package jpaShop.domain;
 
-public enum OrderStatus {
+public enum DeliveryStatus {
     OK, READY
 }

@@ -1,15 +1,13 @@
 package jpaShop.main;
 
-import jpaShop.domain.Member;
-import jpaShop.domain.Order;
-import jpaShop.domain.OrderItem;
-import jpaShop.domain.Team;
+import helloJpa.chap7.Chap7_Book;
+import helloJpa.chap7.Chap7_Item;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.List;
+import java.awt.print.Book;
 
 public class JpaMain {
 
@@ -20,10 +18,16 @@ public class JpaMain {
         transaction.begin();
 
         try {
+            Chap7_Book book = new Chap7_Book();
+            book.setName("future");
+            book.setAuthor("kokochi");
+            book.setIsbn("isbn");
+            entityManager.persist(book);
 
-            Order order = new Order();
-            OrderItem orderItem = new OrderItem();
-            order.addOrderItem(orderItem);
+            entityManager.flush();
+            entityManager.clear();
+
+            Chap7_Item item = entityManager.find(Chap7_Item.class, book.getId());
 
             transaction.commit();
         } catch (Exception e) {
