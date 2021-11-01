@@ -2,6 +2,9 @@ package jpaShop.main;
 
 import helloJpa.chap7.Chap7_Book;
 import helloJpa.chap7.Chap7_Item;
+import helloJpa.chap9.C9_Address;
+import helloJpa.chap9.C9_Member;
+import helloJpa.chap9.C9_Period;
 import jpaShop.domain.Album;
 import jpaShop.domain.Book;
 import jpaShop.domain.Movie;
@@ -21,20 +24,7 @@ public class JpaShopMain {
         transaction.begin();
 
         try {
-            Album album = new Album();
-            album.setArtist("wotamin");
-            album.setEtc("new album");
-            entityManager.persist(album);
 
-            Book book = new Book();
-            book.setAuthor("hayake");
-            book.setIsbn("new book");
-            entityManager.persist(book);
-
-            Movie movie = new Movie();
-            movie.setActor("yoshino");
-            movie.setDirector("oba");
-            entityManager.persist(movie);
 
             transaction.commit();
         } catch (Exception e) {

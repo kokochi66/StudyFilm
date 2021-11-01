@@ -6,7 +6,7 @@ import helloJpa.chap8.Chap8_Team;
 import javax.persistence.*;
 import java.util.List;
 
-public class JpaMain {
+public class HelloMain {
 
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
