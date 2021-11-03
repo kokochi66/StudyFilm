@@ -1,6 +1,7 @@
 package helloJpa.chap9;
 
 import javax.persistence.Embeddable;
+import java.util.Objects;
 
 @Embeddable
 public class C9_Address {
@@ -8,8 +9,27 @@ public class C9_Address {
     private String street;
     private String zipcode;
 
+    public C9_Address(String city, String street, String zipcode) {
+        this.city = city;
+        this.street = street;
+        this.zipcode = zipcode;
+    }
+
     public C9_Address() {
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        C9_Address that = (C9_Address) o;
+        return Objects.equals(city, that.city) && Objects.equals(street, that.street) && Objects.equals(zipcode, that.zipcode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(city, street, zipcode);
     }
 
     public String getCity() {
@@ -24,15 +44,15 @@ public class C9_Address {
         return street;
     }
 
-    public void setStreet(String street) {
+    private void setStreet(String street) {
         this.street = street;
     }
 
-    public String getZipcode() {
+    private String getZipcode() {
         return zipcode;
     }
 
-    public void setZipcode(String zipcode) {
+    private void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
 }

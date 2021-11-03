@@ -88,7 +88,7 @@ public class HelloMain {
             System.out.println("TEST :: findMember2 instanceof :: " + (findMember2 instanceof Chap8_Member));
             System.out.println("TEST :: findMember == findMember3 :: " + (findMember.getClass() == findMember3.getClass()));*/
 
-            // 8-2 즉시로딩과 지연로딩
+/*            // 8-2 즉시로딩과 지연로딩
             Chap8_Team team = new Chap8_Team();
             team.setName("teamA");
             em.persist(team);
@@ -98,14 +98,16 @@ public class HelloMain {
             em.persist(member);
             em.flush();
             em.clear();
-/*            Chap8_Member findMember = em.find(Chap8_Member.class, member.getId());
+*//*            Chap8_Member findMember = em.find(Chap8_Member.class, member.getId());
             System.out.println("TEST :: findMember :: " + findMember.getTeam().getClass());
             System.out.println("===============================");
             findMember.getTeam().getName(); // 즉시로딩 초기화 과정
-            System.out.println("===============================");*/
+            System.out.println("===============================");*//*
 
             // N+1 문제 예제
-            List<Chap8_Member> members = em.createQuery("select m from Chap8_Member m", Chap8_Member.class).getResultList();
+            List<Chap8_Member> members = em.createQuery("select m from Chap8_Member m", Chap8_Member.class).getResultList();*/
+
+
 
             tx.commit();
         } catch (Exception e) {

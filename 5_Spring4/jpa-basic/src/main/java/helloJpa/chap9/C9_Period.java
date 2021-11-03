@@ -8,6 +8,11 @@ public class C9_Period {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 
+    public C9_Period(LocalDateTime startDate, LocalDateTime endDate) {
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
     public C9_Period() {
 
     }
