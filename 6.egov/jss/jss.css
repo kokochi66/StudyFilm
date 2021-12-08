@@ -1,0 +1,36 @@
+body {
+    background-color: #484848;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#wrap {
+    width: 1200px;
+    height: 100%; margin: 0 auto;
+    background-color: rgba(164, 164, 164, 0.2);
+    padding: 30px;
+}
+* {
+    font-size: 18px; color: #ccc;
+}
+
+.sp {
+    margin-bottom: 20px;
+}
+.sp-box {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+.sp-box:hover {
+    background-color: rgba(183, 174, 174, 0.42);
+}
+.an-box {
+    width: 100%;
+    font-size: 15px; border: 1px solid #ccc;
+    padding: 5px;
+    display: none;
+}
+.an-box.active {display: block;}
