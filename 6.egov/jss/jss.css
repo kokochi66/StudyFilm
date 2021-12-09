@@ -34,3 +34,8 @@ body {
     display: none;
 }
 .an-box.active {display: block;}
+.back-box {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    cursor: pointer;
+}

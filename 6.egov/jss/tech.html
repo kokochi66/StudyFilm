@@ -12,13 +12,13 @@
 
     <div id="wrap">
         <div class="sp">
-            <div class="sp-box" onclick="active(0)">RestFul 아키텍처</div>
+            <div class="sp-box">RestFul 아키텍처</div>
             <div class="an-box">
                 안녕하세요 저는 백엔드 개발자를 목표로, 현재 자바 스프링 중심으로 공부하고있는 김재원이라고 합니다.
             </div>
         </div>
         <div class="sp">
-            <div class="sp-box" onclick="active(1)">MSA</div>
+            <div class="sp-box">MSA</div>
             <div class="an-box">
                 Micro Service Architecture는 Monolothic Architecture와 상반된 개념이라고 할 수 있는데요. <br>
                 거대한 서비스를 하나의 프로젝트로 합쳐 놓은 구조가 Monolothic Architecture 입니다.<br>
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="sp">
-            <div class="sp-box" onclick="active(2)">대량의 데이터를 빠르고 안전하게 처리하는 서버구현</div>
+            <div class="sp-box">대량의 데이터를 빠르고 안전하게 처리하는 서버구현</div>
             <div class="an-box">
                 라인 스튜디오의 서버는 전 세계 유저를 대상으로 대량의 데이터를 빠르고 안전하게 처리하는 서버를 구현한다 라는 내용에 대해서 입니다.<br>
                 트위치 팔로우 매니저라는 제 개인 프로젝트가 있습니다.<br>
@@ -42,40 +42,21 @@
             </div>
         </div>
         <div class="sp">
-            <div class="sp-box" onclick="active(3)">개발자로써 중요하다고 생각하는 가치는 무엇인가요?</div>
+            <div class="sp-box">컴퓨터공학과 복수전공을 선택한 이유가 무엇인가요?</div>
             <div class="an-box"></div>
         </div>
         <div class="sp">
-            <div class="sp-box" onclick="active(4)">컴퓨터공학과 복수전공을 선택한 이유가 무엇인가요?</div>
+            <div class="sp-box">인턴에 합격하게 되면 어떤 부분을, 어떤 자세로 배워나가고 싶으신가요?</div>
             <div class="an-box"></div>
         </div>
         <div class="sp">
-            <div class="sp-box" onclick="active(5)">인턴에 합격하게 되면 어떤 부분을, 어떤 자세로 배워나가고 싶으신가요?</div>
+            <div class="sp-box">마지막으로 하고싶은 말이 있으신가요?</div>
             <div class="an-box"></div>
         </div>
-        <div class="sp">
-            <div class="sp-box" onclick="active(6)">마지막으로 하고싶은 말이 있으신가요?</div>
-            <div class="an-box"></div>
-        </div>
-        <div class="sp">
-            <div class="sp-box" onclick="lc('./line_jss.html')">돌아가기</div>
+        <div class="np">
+            <div class="back-box" onclick="lc('./line_jss.html')">돌아가기</div>
         </div>
     </div>
-    <script>
-        let anList = document.querySelectorAll('.an-box');
-
-        function lc(url) {
-            location.href = url;
-        }
-
-        function active(idx) {
-            if(anList[idx].classList.contains('active')) {
-                anList[idx].classList.remove('active');
-            } else {
-                anList[idx].classList.add('active');
-            }
-
-        }
-    </script>
+    <script src="./jss.js"></script>
 </body>
 </html>
