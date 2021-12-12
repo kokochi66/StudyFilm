@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>line_jss</title>
+    <link rel="stylesheet" href="jss.css">
+</head>
+<body>
+
+    <div id="wrap">
+        <div class="sp">
+            <div class="sp-box">Inner Join과 Outer Join</div>
+            <div class="an-box">
+                Inner Join은 조인이 되는 키값을 기준으로, 두 테이블에 모두 존재하는 데이터를 조회하는 것이며, Null값은 포함되지 않는다. <br>
+                Outer Join은 Left와 Right 중 지정된 쪽의 모든 결과를 보여주고, 반대쪽 매칭되는 값을 보여주어, Null값도 포함된다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">Ajax란?</div>
+            <div class="an-box">
+                Asynchronous Javascript And Xml(비동기식 자바스크립트와 xml)의 약자이며,<br>
+                전체 페이지를 새로고침 하지 않고도 페이지의 일부만을 위해 데이터를 로드하는 기법이며, 비동기통신으로 클라이언트와 서버간의 XML 데이터를 주고받는 기술을 의미한다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">정적 라이브러리와 공유 라이브러리</div>
+            <div class="an-box">
+                정적 링크 라이브러리는 .lib로 표현하며, 컴파일시에 함수가 실행파일에 연결된다.<br>
+                실행파일에 함수의 코드가 복사되기 때문에 실행 파일의 크기가 커지지만, 컴파일이 끝나면 lib 파일이 없어도 프로그램을 실행할 수 있다.<br><br>
+
+                동적 링크 라이브러리는 .dll로 표현하며, 실행 파일에는 호출할 함수의 정보만 포함되고, 실제 함수 코드는 복사되지 않으므로 파일의 크기가 작아진다.<br>
+                실행 파일은 함수에 대한 정보만 갖고 있을 뿐, 실제 코드를 갖고있지 않아 프로그램 실행시킬 때 dll 파일이 항상 존재해야합니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">Array와 List의 차이점을 설명하세요</div>
+            <div class="an-box">
+                Array는 다수의 데이터를 묶어놓은 자료형으로, 인덱스를 통해 데이터에 접근합니다.<br>
+                배열은 크기를 자유자재로 늘렸다 줄였다 할 수 없다는 단점이 있습니다.<br><br>
+
+                List는 빈틈없이 데이터를 적재하는 자료형입니다. 리스트는 자동으로 데이터를 적재할 수 있는 크기가 조정됩니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">Java8의 변경사항에는 무엇이 있나요?</div>
+            <div class="an-box">
+                Java8 버전은 람다표현식, 스트림 API 등이 추가되었습니다.<br>
+                람다식은 화살표모양(->)을 통해 표시하며, 익명 함수를 선언할때 사용됩니다.<br>
+                스트림 API는 저장된 데이터에 접근할 때, 반복문을 사용하지 않고도 간단하게 컬렉션을 사용할 수 있는 편의성을 가진 API 입니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">값에 의한 호출과, 참조에 의한 호출에 대해</div>
+            <div class="an-box">
+                Call by Value는 값에의한 호출입니다. 함수 호출시, 메모리 공간 안에 함수를 윟나 별도의 임시공간이 생성됩니다.<br>
+                값에 의해 호출된 경우, 전달되는 변수를 복사해서 함수의 파라미터로 전달되기 때문에, 해당 함수 내부에서 인자값이 변경되더라도, 원본값은 유지됩니다.<br><br>
+
+                Call by Reference는 참조에 의한 호출입니다. 함수 호출 시 인자로 전달되는 변수가 아닌, 주소를 넘겨줌으로써, 참조 데이터로 변경이 가능합니다.<br>
+                이 경우에는 파라미터값을 변경하면 원본 데이터도 함께 변경됩니다.<br><br>
+
+                자바의 경우에는 원시 자료형 int, long, double 등은 값에의한 호출을 사용하지만, 참조자료형이나 객체는 참조에의한 호출이 적용됩니다.<br>
+                String은 약간 특이한데, 참조 자료형이지만 원시 자료형과 동일하게 적용됩니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">DB의 인덱스의 필요성에 대해서 설명해보세요</div>
+            <div class="an-box">
+                DB의 인덱스는 검색 속도를 높이는데 필요합니다. 인덱스는 정렬된 상태를 유지하기 때문에 원하는 값을 탐색하는데 빠르지만, insert, delete, update에는 쿼리문 실행속도가 느려집니다.<br>
+                즉, DB에서 인덱스는 저장성능을 희생하여 읽기 성능을 높이는 기능이라고 할 수 있습니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">Get 방식과 Post 방식의 차이점에 대해서 설명하세요</div>
+            <div class="an-box">
+                Get 방식은 클라이언트에서 서버로 데이터를 전달할 때, key-value가 결합된 쿼리 스트링 형태로 전달됩니다.<br>
+                주소창에 쿼리스트링이 그대로 보여지기 때문에 보안성이 떨어지고, 길이 제한이 있어 전송 데이터에 한계가 있습니다. POST보다 상대적으로 전송 속도가 빠릅니다.<br><br>
+
+                Post 방식은 서버로 보내기 전에 인코딩하고, 서버에서는 다시 디코딩작업을 합니다. 쿼리스트링 데이터 뿐 아니라, 객체값도 전송이 가능합니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">Db에서 정규화 작업의 필요성은 어떤것이 있을까요</div>
+            <div class="an-box">
+                관계형 데이터베이스 설계시에 데이터 무결성 유지를 위해 테이블을 분할하여 데이터베이스에서 중복 데이터를 제거하는 프로세스입니다.<br>
+                비정규화는 복잡한 쿼리속도를 높이고, 성능을 향상시키기위해 테이블에 중복 데이터를 추가하는 프로세스입니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">객체지향과 절차지향의 차이는 무엇인가요</div>
+            <div class="an-box">
+                객체지향은 실제 세계를 모델링하여 소프트웨어를 개발하는 방법입니다. 코드의 재활용성이 높고, 코딩방식이 간편하다는 장점이 있습니다.<br><br>
+
+                절차지향은 순차적인 처리를 중시하며, 프로그램 전체가 유기적으로 연결되도록 만들어져 있습니다. 처리속도가 빠르다는 장점이 있습니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">Restful API를 설명하세요</div>
+            <div class="an-box">
+                Representational State Transfer의 약자입니다. REST는 리소스, 메소드, 메세지 3가지 요소로 구성됩니다.<br>
+                리소스는 URI로 표현되며, 메소드는 get,post,put,delete 방식, 메시지는 JSON 데이터가 전송됩니다.<br>
+                Restful API를 디자인하는 것은 URI를 규칙에 맞게 잘 설계했는지 여부르 따지는 것입니다.<br>
+                첫번째는 동일한 URI의 행위에 맞게 POST, Put, GET, DELETE 메소드를 사용하는 것입니다.<br>
+                두번째는 URI에 명사를 사용해야하며, 리스트에는 복수형을 사용해야합니다.<br>
+                세번쨰는 URI 경로에 불필요한 파라미터가 들어가지 않아야 합니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">Git에 대해, 장점에 대해 이야기해보세요</div>
+            <div class="an-box">
+                Git은 형상관리 도구 중 하나로, 자신의 소스코드를 효율적으로 관리할 수 있게 해주는 소프트웨어입니다.<br>
+                Git의 장점으로는 branch 기능을 사용해서 분할하여 개발하고, merge하는 방식을 통해 개발을 할 수 있다는 점입니다.<br>
+                인터넷이 연결되지 않은 곳에서도 개발을 할 수 있고, 중앙 저장소가 날아가도 원상복구가 가능합니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">프레임워크와 라이브러리의 차이</div>
+            <div class="an-box">
+                프레임워크는 소프트웨어 환경에서 복잡한 문제를 해결하거나 서술하는 데에 사용되는 기본 개념 구조입니다.<br>
+                일정 수준 이상의 품질을 보증하는 코드를 비교적 빠르고 편하게 완성, 유지보수할 수 있는 솔루션입니다.<br><br>
+
+                라이브러리는 특정 기능이 필요할때 호출해서 사용하는 도구입니다.<br>
+                프레임워크는 큰 뼈대라고 할 수 있으며, 규칙에 맞춰서 안을 채워나가는 느낌이지만, 라이브러리는 개발자가 호출해서 능동적으로 사용하는 것입니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">오라클과 Mysql의 차이</div>
+            <div class="an-box">
+                오라클은 대규모 트랜잭션 로드를 처리하고 성능을 최적화하기 위해 절차적 언어를 통해 DB에 내장된 프로그램 작성을 지원합니다.<br>
+                MYSQL은 단일 DB로 제한되어있어, 대용량 DB에는 부적합하고, DB를 이전 상태로 복원하는데에 도움이되는 저장점이 없으며, COMMIT과 ROLLBACK만 존재합니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">쓰레드에 대해서 설명하세요</div>
+            <div class="an-box">
+                쓰레드란 프로세스 내에서 실제로 작업을 수행하는 주체입니다. 모든 프로세스에는 한 개 이상의 쓰레드가 존재하여 작업을 수행합니다.<br>
+                또 두개 이상의 스레드를 가진 프로세스를 멀티스레드 프로세스 라고 부릅니다.<br>
+                멀티 스레드는 시스템 자원 소모가 감소하고, 처리량이 증가하며, context switching(프로세스 상태를 저장하고 복원하는 과정)이 빠릅니다.<br>
+                그러나 멀티 스레드는 주의깊은 설계가 필요하며, 자원공유 문제가 발생할 수 있다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">자바의 Garbage Collector에 대해서 설명하세요</div>
+            <div class="an-box">
+                가비지 컬렉터는 메모리가 부족한 경우에, 유효하지 않고 낭비되고 있는 메모리를 정리시켜주는 프로그램입니다.<br>
+                JVM은 메모리를 부여받고 프로그램을 실행하다가 메모리가 부족해지는 순간이 오면 OS에게 추가로 메모리를 요청하고, 가비지 컬렉터가 실행됩니다.<br>
+                Stop-the-world : 가비지 컬렉터 실행을 위해서 JVM이 어플리케이션 실행을 멈추는 것으로, GC를 실행하는 스레들르 제외한 모든 스레드들이 작업을 멈춥니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">세션과 쿠키에 대해서 설명하세요</div>
+            <div class="an-box">
+                쿠키는 사용자가 어떤 웹사이트를 방문할 때 생성되는 정보를 담은 임시 파일입니다. key-value로 구성되며, String 형태로 이루어집니다.<br>
+                쿠키는 서버가 가지고있는 것이 아닌 사용자에게 저장되기 때문에 임의로 고칠 수 있으며, 가로채기 쉬워 보안이 취약하다.<br><br>
+
+                세션은 일정 시간동안 같은 사용자로부터 들어오는 상태를 유지시킵니다. 웹 브라우저 당 1개씩 생성되며, 브라우저 종료시 소멸합니다.<br>
+                서버가 허용하는한 용량제한이 없으며, 서버에 저장되기 때문에 보안에 유리합니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">스택과 큐에 대해서 설명하세요</div>
+            <div class="an-box">
+                스택은 후입선출(Last in First out)구조로, 마지막에 들어온 것이 먼저 나갑니다. 후위 표기법 계산에 사용됩니다.<br><br>
+
+                큐는 선입선출(First In First Out)구조로, 먼저 들어온것이 먼저 나갑니다. 줄을 기다리면서 차례대로 처리되는 모든 처리에 사용됩니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">DB의 Anomaly 현상에 대해서 설명하세요</div>
+            <div class="an-box">
+                DB 설계를 할때 이상현상(Anomaly)이 일어나지 않도록 고려해야합니다.<br>
+                갱신이상은 릴레이션에서 튜플에 있는 속성값을 갱신할 때 일부 튜플의 정보만 갱신되어 정보에 모순이 생기는 현상입니다.<br>
+                삽입이상은 데이터를 삽입할 때 의도와 상관없이 원하지 않은 값도 삽입되는 현상입니다.<br>
+                삭제이상은 데이털르 삭제할때 원하지 않은 값도 삭제되는 현상입니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">JDK와 SDK에 대해 설명하세요</div>
+            <div class="an-box">
+                JDK는 자바 개발키트입니다. JVM과 JRE에 의해 실행되고 자바 프로그램을 생성할 수 있게 해줍니다.<br>
+                SDK는 소프트웨어 개발 키트입니다. 특정 플랫폼 대상으로 응용 프로그램을 개발하는 데 사용하는 도구모음입니다.<br>
+                즉, SDK안에 JDK가 포함된 구조입니다. SDK중 자바에 해당하는 부분을 JDK라고 부릅니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">컴파일 에러와 런타임 에러의 차이를 설명하세요</div>
+            <div class="an-box">
+                컴파일 에러는 컴파일을 할 때 발생하는 에러입니다. 대부분 문법상의 오류로 발생합니다.<br>
+                런타임 에러는 프로그램을 실행할 때 발생하는 에러입니다. 개발 설계 미숙으로 발생하는 에러입니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">에러와 예외의 차이를 설명하세요</div>
+            <div class="an-box">
+                에러는 발생시 복구할 수 없는 심각한 오류입니다.<br>
+                예외는 수습할 수 있을 정도의 덜 심각한 오류입니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">try catch와 throws의 차이는 무엇인가요</div>
+            <div class="an-box">
+                throws는 메소드를 호출한 상위 메소드에서 에러에 대한 책임을 맡습니다.<br>
+                try는 예외가 발생한 코드블록을 지정하고, catch에서 예외처리를 할 블록을 지정합니다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">hashcode와 eqauls는 언제 사용하며, 왜 사용하나요?</div>
+            <div class="an-box">
+                자바의 객체 해시코드는 객체를 식별하는 정수값입니다. hashcode() 메소드는 메소드를 실행하여 리턴한 해시코드값이 같은지를 확인합니다.<br>
+                해시코드가 다르면 다른 객체로 판단하며, 해시코드 값이 같으면 eqauls() 메소드를 활용하여 다시 비교한다.<br>
+                즉, hashcode메소드는 해시값과 eqauls()메소드가 둘다 맞아야 동등 객체로 판단한다.<br>
+                그러므로 equals()와 hashcode()는 함께 재정의를 해야 동일 객체임을 판단할 수 있다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">자바의 HashTable에 대해서 설명하세요</div>
+            <div class="an-box">
+                해시 테이블은 key-value형태로 값을 저장하며, key값을 기준으로 고유한 식별값인 해시값을 생성한다. 그리고 이 해시값을 버킷에 저장한다.<br>
+                하지만 해시 테이블의 크기가 한정적이기 때문에, 서로 다른 객체가 같은 해시값을 갖게될수도 있으며, 이를 해시충돌이라고 한다.<br>
+                이렇게 같은 해시값의 버킷 안에 다른 객체가 있는 경우에는 equals메서드가 사용되며, put할시 해당 객체를 덮어쓴다.<br>
+                체이닝 : 버킷 내에 연결리스트를 할당하여, 해시충돌이 발생하면, 연결리스트로 데이터를 연결하는 방식이다.<br>
+                개방주소법 : 해시충돌이 일어나면 다른 버킷에 데이터를 삽입한다.<br>
+            </div>
+        </div>
+
+
+        <div class="np">
+            <div class="back-box" onclick="lc('./line_jss.html')">돌아가기</div>
+        </div>
+    </div>
+    <script src="./jss.js"></script>
+</body>
+</html>
