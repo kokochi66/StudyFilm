@@ -16,6 +16,7 @@ function active(idx) {
 
 function init() {
     let quesArr = [];
+    let npBox = document.querySelector('.np');
     spArr.forEach((elem, idx) => {
         quesArr.push({ q:elem.querySelector('.sp-box').innerText , a:elem.querySelector('.an-box').innerHTML});
     })
@@ -31,11 +32,12 @@ function init() {
             <div class="an-box">${elem.a}</div>
         </div>`
     })
-    html += `
-         <div class="np">
-            <div class="back-box" onclick="lc('./line_jss.html')">돌아가기</div>
-        </div>
-    `;
+    // html += `
+    //      <div class="np">
+    //         <div class="back-box" onclick="lc('./line_jss.html')">돌아가기</div>
+    //     </div>
+    // `;
+    html += npBox.innerHTML;
 
     wrap.innerHTML = html;
 
