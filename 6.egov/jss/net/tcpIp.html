@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>line_jss</title>
+    <link rel="stylesheet" href="../jss.css">
+</head>
+<body>
+
+<div id="wrap">
+    <div class="sp">
+        <div class="sp-box">TCP/IP 기반의 프로토콜</div>
+        <div class="an-box">
+            인터넷 프로토콜 슈트란, 컴퓨터가 서로 정보를 주고받을 때 사용되는 통신규약 입니다. <br>
+            이 중 TCP는 연결서비스를 지원하는 전송 계층의 하나, IP는 데이터를 보낼 때 사용되는 네트워크 계층의 하나입니다. <br>
+            이 두가지 방법이 인터넷 프로토콜 슈트 중 가장 많이 사용되며, 그래서 이를 묶어서 TCP/IP, 인터넷 프로토콜이라고 부릅니다. <br>
+        </div>
+    </div>
+    <div class="sp">
+        <div class="sp-box">TCP/IP의 계층별 소개</div>
+        <div class="an-box">
+            인터넷 연결을 통한 계층에는 HTTP,FTP 등 서비스를 클라이언트에 제공하여, 실질적 작업이 수행되는 어플리케이션 계층, <br>
+            TCP, UDP 등 데이터가 잘 전달될 수 있게 연결성을 보장해주는 전송계층, <br>
+            IP와 같이, 데이터를 받는 대상의 주소를 지정하여 전달하는 인터넷 계층, <br>
+            이더넷, 와이파이와 같이 실질적인 데이터를 기기로 전달하는 네트워크 접근 계층, <br>
+            그리고 물리적으로 컴퓨터로 연결되는 물리계층이 있습니다. <br> <br>
+
+            이와 OSI계층과 다른점은, 어플리케이션 계층이, 세션, 표현, 응용 계층으로 나눠진다는 부분에 있습니다. <br> <br>
+
+            TCP/IP는 패킷교환방식을 이용한 전송계층입니다. <br>
+            네트워크 선로를 통해 패킷을 전송하는 순서 뒤바뀜을 수정하고, 손실을 교정하여, 데이터 전송을 위한 연결을 만드는 연결지향 프로토콜입니다. <br>
+            + IP : 패킷을 분할 및 재조립하며, 수신할 상대 주소를 지정하는 역할 <br>
+            + TCP : 스트림 방식으로, 양방향 통신을 하며, 패킷의 순서를 조절하여 신뢰성이 있음 <br>
+            + UDP : 데이터그램 방식으로, 양방향 연결이 필요없고, 속도를 우선시하며, 신뢰성이 없음 <br>
+            + HTTP : TCP IP 프로토콜에서 동작하는 응용 계층의 프로토콜로, HTML문서를 받는데 사용되고, 클라이언트/서버간 요청/응답으로 통신함 <br>
+            + UDP/IP : 데이터 소실 발생가능성이 있고, 먼저 보낸 데이터보낸 데이터보다 늦게 보낸 데이터가 먼저 도착할 수 있음 <br>
+        </div>
+    </div>
+    <div class="sp">
+        <div class="sp-box">연결 지향 프로토콜에 대해</div>
+        <div class="an-box">
+            TCP는 데이터를 전송하기 전에, 먼저 상대편의 상태를 확인하는 과정을 거치는데, 이를 Three way handshake라고 합니다. <br>
+            이 과정은 송신측에서 먼저, 연결 요청 플래그인 SYN을 보내고, 수신측이 SYN에 대한 응답플래그인 ACK를 보내고, 이를 받은 송신측이 다시 ACK를 보낸 다음 데이터를 보내게 됩니다. <br>
+            이러한 방식을 통해서  TCP는 안정적인, 신뢰성있는 통신방식을 구축합니다. <br> <br>
+
+            클라이언트가 연결을 닫을 때에는 FIN 세그먼트를 서버로 보내고, 서버가 이에대한 ACK 플래그와 FIN 세그먼트를 보냅니다. <br>
+            이를 클라이언트가 받으면, 다시 서버로 ACK를 보내서 서버가 CLOSED상태가 되며, 연결이 공식적으로 닫히면, 클라이언트 측의 모든 자원이 해제됩니다. <br>
+        </div>
+    </div>
+    <div class="sp">
+        <div class="sp-box">소켓이란</div>
+        <div class="an-box">
+            소켓은 두 프로그램이 네트워크를 통해 서로 통신할 수 있도록 양쪽에 생성되는 링크의 단자로, 일종의 통로라고 할 수 있습니다. <br>
+            서버소켓은 연결이 오기만을 기다렸다가 연결이 들어오면, 해당하는 처리를 하여 응답하는 역할을 합니다. <br>
+            클라이언트는 바로 클라이언트 소켓을 생성하여, 데이터 전송을 담당합니다. <br>
+        </div>
+    </div>
+    <div class="sp">
+        <div class="sp-box">CORS에 대해서</div>
+        <div class="an-box">
+            서로 다른 도메인 간에 자원을 공유하는 것은 기본적으로 차단되어 있습니다. <br>
+            즉, CORS는 다른 출처의 url에서 들어오는 자원을 차단하는 에러입니다. <br>
+            이를 해결하기 위해서는 응답 헤더에 특정한 헤더를 포함시켜야합니다. <br>
+            AccessControl-Allow-Origin : 특정 브라우저가 리소스에 접근이 가능하도록 허용 등 <br>
+        </div>
+    </div>
+    <div class="np">
+        <div class="back-box" onclick="lc('./line_jss.html')">돌아가기</div>
+    </div>
+</div>
+<script src="../jss.js"></script>
+</body>
+</html>
