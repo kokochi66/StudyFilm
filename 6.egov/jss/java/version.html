@@ -12,7 +12,7 @@
 
 <div id="title">면접 > 자바</div>
 <div id="wrap">
-    <div class="sp">
+<!--    <div class="sp">
         <div class="sp-box">자바 1.1</div>
         <div class="an-box">
             - JavaBeans <br>
@@ -48,7 +48,7 @@
             - 멀티 예외처리 (| 로 예외 여러개 삽입가능) <br>
             - 컬렉션 생성과 동시에 초기화 (new ArrayList{1,2,3}) <br>
         </div>
-    </div>
+    </div>-->
     <div class="sp">
         <div class="sp-box">자바 1.8</div>
         <div class="an-box">
@@ -58,7 +58,7 @@
             - 컬렉션 생성과 동시에 초기화 (new ArrayList{1,2,3}) <br>
         </div>
     </div>
-    <div class="sp">
+<!--    <div class="sp">
         <div class="sp-box">자바 1.9</div>
         <div class="an-box">
             - 인터페이스에서 private 메소드 사용 <br>
@@ -72,15 +72,28 @@
             - Stop-The-World 개별 스레드로 분리<br>
             - Deprecated된 API 모두 삭제<br>
         </div>
-    </div>
+    </div>-->
     <div class="sp">
         <div class="sp-box">자바 1.11</div>
         <div class="an-box">
-            - HTTP 클라이언트 표준화 기능 추가<br>
-            - 람다 파라미터 지역변수 문법<br>
+            - HTTP 클라이언트 표준화 기능 추가<br><br>
+
+            - 람다 파라미터를 위한 지역변수 표현<br>
+            java 10버전에서 var 구문이 생겨난 상황에서, 람다 파라미터 내에서, 더 명시적으로 var를 통한 지역변수 표현이 가능해졌습니다. <br><br>
+
+            - Java Flight Recorder, Java Misson Control 지원<br>
+            JFR : 실행중인 java 어플리케이션 진단 및 프로파일링 데이터 수집<br>
+            JMC : JFR에서 수집한 데이터를 그래픽으로 표시<br>
+            메모리 누수, GC 오버헤드, I/O 블로킹과 같은 런타임 문제를 진단 가능 <br><br>
+
+            - 도커 컨테이너 기능향상 <br>
+            Java 10 이전에는 컨테이너에 설정된 메모리, CPU 제약조건이 JVM에서 인식되지 않았으나,<br>
+            Java10부터 JVM은 컨테이너 제어그룹에 의해 설정된 제약조건을 사용하여 메모리, CPU 제한을 설정함<br><br>
+
+            - JVM 성능향상 <br>
         </div>
     </div>
-    <div class="sp">
+<!--    <div class="sp">
         <div class="sp-box">자바 1.12</div>
         <div class="an-box">
             - 스위치문 확장<br>
@@ -93,7 +106,7 @@
             - 스위치문 yield 예약어 추가<br>
             - 유니코드 12.1 지원<br>
         </div>
-    </div>
+    </div>-->
     <div class="np">
         <div class="back-box" onclick="lc('./java_list.html')">돌아가기</div>
     </div>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>line_jss</title>
+    <link rel="stylesheet" href="../jss.css">
+</head>
+<body>
+
+    <div id="wrap">
+        <div class="sp">
+            <div class="sp-box">인덱스란?</div>
+            <div class="an-box">
+                데이터가 많이 들어있는 테이블에서, 특정한 값을 찾기 위해서는 테이블의 값 전체를 탐색하는 Full Scan이 수행됩니다. <br>
+                이렇게되면 아주 많은 데이터가 들어있는 테이블의 경우에는 많은 연산이 필요로 하게 될 수 있ㅅ브니다. <br>
+                이를 위해 테이블에 인덱스를 설정하면, 해당 데이터의 위치를 정렬하여 저장하고 있기 때문에, 보다 빠르게 데이터의 위치를 찾을 수 있습니다. <br>
+                그러나, 정렬된 위치를 계속해서 저장해야하기 때문에 INSERT를 할 때마다 정렬값을 다시 지정해야하며, 추가적인 자료가 들어가기 때문에 테이블의 용량도 커집니다. <br>
+                그러므로, INSERT, DELETE, UPDATE 보다 조회가 아주 많이 실행되는 테이블에 적용하는것이 좋습니다. <br> <br>
+
+                인덱스의 자료구조로는 해시와 B+Tree가 있습니다. <br>
+                해시는 시간복잡도가 O(1)이기 때문에 속도가 아주 빠르지만, 해시값의 크기비교가 불가능하기 때문에 연속적인 데이터를 위한 순차검색이 불가능합니다. <br>
+                + 인덱스 헌팅 : 쿼리 성능과 데이터베이스 속도를 향상시키기 위해 인덱스 수집을 강화하는 프로세스 <br>
+                + 클러스터드 인덱스 : 테이블의 기본키값이 비슷한 것 끼리 묶어서 저장하는 인덱스, 외래키나 Join이 자주 사용되는 컬럼에 사용 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">B-Tree와 B+Tree</div>
+            <div class="an-box">
+                B-Tree는 자식 노드의 개수가 2개 이상인 트리입니다. <br>
+                그리고, 노드 안의 데이터가 1개 이상일 수 있으며, 노드의 데이터는 반드시 정렬된 상태여야합니다. <br>
+                균형 트리 구조이기 때문에, 약간의 차이는 있지만 O(Log N)의 시간복잡도를 가집니다. <br> <br>
+
+                B+Tree는 이진트리 형태로 구성된 트리형 자료구조입니다. <br>
+                리프노드를 LinkedList로 연결하여 순차검색을 용이하게 하였으며, log N의 시간복잡도를 가져, 해시테이블보다 속도는 느리지만, 다양한 환경에서 활용될 수 있어 널리 사용됩니다. <br>
+
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">트랜잭션의 ACID</div>
+            <div class="an-box">
+                Atomicity(원자성) : 트랜잭션 연산이 모두 반영되던지 안되던지 하나만 <br>
+                Consistency(일관성) : DB상태는 일관성있게 <br>
+                Isolation(독립성) : 트랜잭션 중에는 다른 트랜잭션 처리 중 데이터를 참조불가 <br>
+                Durability(지속성) : 트랜잭션 결과는 DB에 영구반영 되야함 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">DB 락</div>
+            <div class="an-box">
+                데이터베이스 내에서 여러 트랜잭션이 하나의 데이터로 동시에 접근할 때 이를 제어하는 도구임. <br>
+                공유락 : 트랜잭션이 읽기를 할 때 사용, 읽을수는 있지만 쓸수는 없음 <br>
+                베타락 : 읽고쓸 수 있음 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">RDBMS와 NoSQL의 차이</div>
+            <div class="an-box">
+                RDBMS : 표의 형태로 데이터의 관계를 관리. <br>
+                스키마에 맞추어 관리하므로 데이터 정합성 보장 <br>
+                시스템이 커질수록 쿼리가 복잡하고, 성능저하, 수평적 확장이 어려움 <br> <br>
+
+                NoSQL : 데이터베이스가 거대해짐에 따라, 복잡해지는 관계를 극복하기 위한 데이터베이스 <br>
+                스키마 없이 key-value로 데이터를 관리하여 자유로운 데이터관리 가능 <br>
+                중복 데이터로 인해서 용량이 커짐 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">힌트</div>
+            <div class="an-box">
+                SQL을 튜닝하기 위한 지시구문, 최적의 형태로 SQL문을 처리하지 못하는 경우에, 개발자가 직접 최적의 실행 계획을 제공함 <br>
+                INDEX, PARALLEL 등 다양한 힌트절이 존재함. <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">클러스터링</div>
+            <div class="an-box">
+                여러 DB를 수평적 구조로 구축한 시스템 방식 <br>
+                동기 방식으로 노드들간의 데이터를 동기화 <br>
+                1개의 노드가 죽어도 다른 노드가 살아있어 시스템 장애 없이 운영이 가능 <br>
+                여러 노드간에 데이터를 동기화해야하므로, 쓰기성능이 떨어짐 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">리플리케이션</div>
+            <div class="an-box">
+                여러 DB를 권한에 따라 수직적 구조로 구축한 방식 <br>
+                비동기 방식으로 노드간 데이터를 동기화 <br>
+                비동기 방식으로 데이터가 동기화되어 지연시간이 없음 <br>
+                노드들간의 데이터가 동기화되지 않아 일관성있는 데이터를 얻지 못할 수 있음 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">데이터베이스 튜닝</div>
+            <div class="an-box">
+                데이터베이스 튜닝이란 DB의 성능 향상을 위해 운영체제나, DB 자체의 구조를 이해하고 필요한 요소를 변경하는 작업입니다. <br>
+                데이터베이스 설계 튜닝 : 데이터베이스 설계단계에서 성능을 고려함 <br>
+                데이터베이스 환경 튜닝 : 성능을 고려하여 메모리나 블록 크기 등을 지정함 <br>
+                SQL 문장 튜닝 : 성능을 고려하여 SQL문을 작성하고, 쿼리 문장을 수정함<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">정규화와 비정규화</div>
+            <div class="an-box">
+                정규화는 데이터 무결성을 위해 테이블을 분할하여 중복 데이터를 제거하는것, 테이블을 분할하기 때문에 조인을 통해 값을 가져와야 해서 성능상 문제가 생김 <br>
+                비정규화 : 쿼리속도를 높이기 위해서 테이블에 중복 데이터를 추가하는것 <br>
+                + 제1정규형 : 모든 속성이 원자값을 가짐 <br>
+                + 제2정규형 : 기본키가 아닌 속성이 완전 함수 종속 <br>
+                + 제3정규형 : 기본키가 아닌 속성이 기본키에 직접 종속 <br>
+                + BCNF정규형 : X->Y가 성립할때 모든 결정자 X가 후보키 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">데이터베이스 뷰</div>
+            <div class="an-box">
+                테이블이나 또 다른뷰에 의해 생성되는 가상 테이블로, 테이블의 모든 데이터 중 일부에만 접근할 수 있도록 제한하기위한 기법임 <br>
+                뷰는 데이터를 갖지 않고, 질의하는 문장만을 가진다. <br>
+                접근 제어를 통한 보안성관리에 좋고, 여러개의 다양한 뷰를 구성하여 간단하게 데이터를 관리할 수 있다. <br>
+                그러나 독자적인 인덱스를 가질 수 있으며, INSERT, DELETE, UPDATE 연산에 제약이 따른다. <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">ER 모델</div>
+            <div class="an-box">
+                데이터베이스의 개념적 뷰를 정의하는 엔티티-관계 모델이다. <br>
+                데이터베이스의 연관 관계를 보여준다. <br>
+                + 엔티티 : 객체 <br>
+                + 엔티티 타입 : 유사한 특성을 지닌 객체의 집합 <br>
+                + 엔티티 집합 : 특정 엔티티 유형을 갖는 객체 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">회복기법</div>
+            <div class="an-box">
+                로그기반 회복기법 : <br>
+                    자연갱신 회복기법 : 트랜잭션 부분 완료 상테에서 변경 내용을 고르 파일에만 저장, 커밋 전까지 데이터베이스에 기록하지 않음 <br>
+                    즉시갱신 회복기법 : 트랜잭션 수행 도중에도 변경내용을 즉시 데이터베이스에 기록함 <br> <br>
+                검사점 회복기법 : 장애 발생시, 체크포인트 이전 트랜잭션은 회복에서 제외, 치후 처리된 트랜잭션만 회복작업을 수행 <br>
+                    검사점(체크포인트) : 데이터베이스의 예기지않은 종료, 추동ㄹ시에, 복구하는 과정에서 변경내용을 적용하는 지점 <br> <br>
+                그림자 페이징 회복기법 : 트랜잭션이 실행되는 메모리상의 현재 페이지 테이블과 하드디스크의 섀도우 페이지 테이블을 이용 <br> <br>
+                미디어 회복기법 : 디스크와 같은 비휘발성 저장장치가 손상되는 장애를 대비, DB내용을 백업, 미러링을 통해 물리적 저장장치에 덤프 <br> <br>
+                ARIES 회복기법 : <br>
+                    REDO 중 Repeating history : 붕괴 발생 이전에 수행한 연산을 다시한번 수행 <br>
+                    UNDO 중 Logging : UNDO 시에 로깅하여, 회복을 수행하는 도중에 실패하여 다시 시작할때 UNDO 연산은 반복하지 않음 <br> <br>
+
+                데이터베이스 장애 발생시에, 체크포인트 이전에 처리된 트랜잭션은 회복에서 제외하고, 체크포인트 이후에 처리된 트랜잭션은 회복 작업을 수행하는 것을 검사점 회복 기법이라고 함 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">데이터 사전</div>
+            <div class="an-box">
+                테이블과 데이터베이스 개체의 내용과 구조를 설명하는 정보의 집합 <br>
+                데이터베이스 요소간의 관계를 제어, 조작 및 엑세스 하는 역할을 함 <br>
+                MySQL에서는 information_schema와 mysql, sys, performance_schema가 있으며, select을 통해서 검색할 수 있음 <br>
+                + information_schema : MySQL 내부에 있는 스키마 목록을 확인하며, 스키마 별 언어설정을 확인할 수 있음 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">기본키와 복합키</div>
+            <div class="an-box">
+                기본키는 모든 행의 데이터를 고유하게 식별하는 키입니다. 기본키는 null이 될 수 없고, UNIQUE한 값이어야 합니다. <br>
+                복합키는 기본키가 없을 때 모든 행을 고유하게 식별하기 위해 여러개의 행을 묶어서 사용하는 것입니다. <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">데이터베이스 트리거</div>
+            <div class="an-box">
+                테이블에서 데이터 삽입 전, 삽입 후, 등 이벤트가 발생할 때 마다 자동으로 실행되는 명령어 세트입니다. <br>
+                업무 규칙을 보장, 자동화하며, 데이터 무결성을 강화할 수 있음(특정 조건마다 반드시 실행되야하는 부분을 넣어줌) <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">저장 프로시저</div>
+            <div class="an-box">
+                사전 컴파일된 SQL 쿼리문의 모음으로, 사전에 준비한 많은 명령을 자동으로 실행하여 작업의 효율을 높임 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">DELETE, TRUNCATE, DROP의 차이</div>
+            <div class="an-box">
+                DELETE : 삭제후 잘못삭제한 것을 되돌릴 수 있음 <br>
+                TRUNCATE : 인덱스와 데이터를 모두 다 삭제, 삭제후 되돌릴 수 없음 <br>
+                DROP : 테이블 전체를 삭제, 되돌릴 수 없음 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">데이터베이스 무결성</div>
+            <div class="an-box">
+                데이터베이스에 있는 데이터들의 정확성과 일관성을 위해 지켜야하는 규칙 <br>
+                개체 무결성 : 기본키는 NULL이나 중복값을 가질 수 없음 <br>
+                참조 무결성 : 외래키는 NULL이거나, 참조 테이블의 기본키 값어야함 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">DB 교착상태</div>
+            <div class="an-box">
+                2개 이상의 트랜잭션이 특정 자원에 락이 걸린 채로, 서로가 서로의 자원을 요구하고 있는 상태 <br>
+                지정한 순서대로 테이블에 접근하며, SELECT For Update문의 사용을 피해야함 <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">정형 데이터와 비정형 데이터</div>
+            <div class="an-box">
+                정형데이터는 데이터베이스의 정해진 규칙에 맞게 들어간 데이터를 의미한다. <br>
+                비정형 데이터는 이와 달리, 데이터에 정해진 규칙이 없어, 값의 의미를 쉽게 파악하기 어렵다. <br>
+                반정형 데이터는 JSON이나 XML 데이터와 같이 Key와 Value값을 가져 의미와 데이터를 함께 저장하는 형태이다. <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">테이블 스페이스</div>
+            <div class="an-box">
+                테이블 스페이스는 테이블, 인덱스, 프로시저, 뷰 등의 객체들을 저장해놓는 논리적 공간입니다. <br>
+                테이블 스페이스 관리는 관리자만 가능합니다. <br> <br>
+
+                오라클은 데이터블록, 익스텐드, 세그먼트, 테이블 스페이스 라는 논리적 개념으로 데이터를 관리합니다. <br>
+                데이터 블록 > 익스텐트 > 세그먼트 > 테이블 스페이스 순입니다. <br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">옵티마이저</div>
+            <div class="an-box">
+                SQL을 처리하는 최적의 처리 경로를 생성해주는 DBMS의 핵심엔진 <br>
+                규칙 기반 옵티마이저 : 실행 속도가 빠른 순으로 규칙을 세워두고, 우선순위가 앞서는 방법을 채택 <br>
+                비용 기반 옵티마이저 : 비용을 통계를 사용하여 예측하고 ,비용이 가장 적게드는 방법을 채택 <br>
+            </div>
+        </div>
+
+        <div class="np">
+            <div class="back-box" onclick="lc('./db_list.html')">돌아가기</div>
+        </div>
+    </div>
+    <script src="../jss.js"></script>
+</body>
+</html>
