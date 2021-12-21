@@ -54,8 +54,49 @@
                 이런 부분에서 충분한 대처와, 방법을 고려한 뒤에 적용해야한다고 생각합니다.<br>
             </div>
         </div>
+        <div class="sp">
+            <div class="sp-box">Log4j 취약점에 대해</div>
+            <div class="an-box">
+                JNDI<br>
+                일반적으로 데이터베이스 접근시, JDBC 드라이버 참조를 위해 자바 코드상에서 커넥션을 생성하고, DB와 연결시키는 구성을 만든다.<br>
+                여기서 JNDI는 데이터베이스의 서버이름, 사용자이름, 비밀번호 수정시, 혹은 다른 데이터베이스에 변경될 경우에 JNDI 파라미터를 설정할 수 있다.<br><br>
+
+                Log4J 취약점<br>
+                log4j가 로그를 출력시에, 사용자 ID같은게 있으면 자동으로 내부에서 운영중인 LDAP 서버로 접속해서 변환하는 기능을 제공합니다.<br>
+                여기서 접속하는 주소를 해커의 주소로 변경하면, 해커의 서버로 요청이 전송되어, 서버의 정보를 그대로 탈취할 수 있게 됩니다.<br>
+                + LDAP : 사용자, 시스템, 네트워크, 등 정보를 트리구조로 저장하여 조회하거나 관리해주는 서비스<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">자바 가비지 컬렉터의 동작에 대해</div>
+            <div class="an-box">
+                자바의 가비지 컬렉터는 Mark and Sweep이라는 동작을 한다<br>
+                먼저 JVM의 가비지 컬렉터가 스택에 있는 모든 변수를 스캔하며, 각각의 변수가 참조하는 오브젝트를 찾는 과정을 Mark,<br>
+                이 과정에서 각각의 참조하는 오브젝트가 또한 참조하는 변수들까지 모두 찾는다.<br>
+                이 과정을 위해 모든 스레드가 중단되며, 이를 Stop the world라고 부른다. 이 때문에 함부로 가비지 컬렉터를 실행시키는 System.gc() 메소드를 실행시켜서는 안된다.<br>
+                이렇게 모든 오브젝트를 찾으면, 힙 영역에서 더이상 참조되지 않는 값을 제거하는데, 이를 Sweep이라고 한다.<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">JRE, JDK, J2EE, J2SE 차이</div>
+            <div class="an-box">
+                JRE : JVM이 실행될 수 있도록 돕는 역할<br>
+                JDK : 개발자를 위한 파일, JRE와 JVM이 함께 설치됨<br>
+                J2SE : 자바로 어플리케이션 개발을 하기 위한 API 집합체<br>
+                J2EE : 자바 서버측 개발을 위한 라이브러리 집합체, EJB, JSP, Servlet, JNDI 등 기능을 지원<br>
+            </div>
+        </div>
+        <div class="sp">
+            <div class="sp-box">Wrapper Class인 Integer, String과 같은 객체는 참조형인데도, 파라미터의 값이 바뀌어도 원본이 바뀌지 않는 이유</div>
+            <div class="an-box">
+                Integer, String은 Object를 상속하는 참조형 객체입니다. <br>
+                하지만 이 객체의 내부 구현을 살펴보면 private final이 붙어있습니다. 즉,  Immutable한 객체로 이루어져있습니다. <br>
+                이러한 경우 파라미터로 들어갔을 때, 메모리 스택영역에서는 파라미터에 새로운 메모리 주소값이 할당되며, 값이 변경될경우 참조되는 데이터가 변경되는 것이 아닌, 힙 영역 내에 새로운 메모리 영역으로 새로운 데이터가 할당됩니다. <br>
+                그렇기 때문에, 메소드가 종료되고, 기존 데이터로 돌아갔을 때 새롭게 생성된 변수 주소값은 스택 영역에서 사라지고, 이 주소값이 참조하고있는 힙 영역의 새로운 값도 가비지 컬렉터에 의해 지워지기 때문에 기존 값은 변하지 않습니다.<br>
+            </div>
+        </div>
         <div class="np">
-            <div class="back-box" onclick="lc('./line_jss.html')">돌아가기</div>
+            <div class="back-box" onclick="lc('./tech_list.html')">돌아가기</div>
         </div>
     </div>
     <script src="../jss.js"></script>
