@@ -1,13 +1,16 @@
-package jpabook.jpashop.domain;
+package jpabook.jpashop.domain.order;
 
+import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.domain.model.DeliveryStatus;
 import jpabook.jpashop.domain.model.OrderStatus;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.*;
@@ -15,6 +18,9 @@ import static javax.persistence.FetchType.*;
 @Entity
 @Table(name = "orders")
 @Getter @Setter
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Builder
 public class Order {
 
     @Id @GeneratedValue
@@ -45,12 +51,33 @@ public class Order {
     }
 
     public void addOrderItem(OrderItem orderItem) {
-        orderItems.add(orderItem);
+        this.orderItems.add(orderItem);
         orderItem.setOrder(this);
     }
 
     public void setDelivery(Delivery delivery) {
         this.delivery = delivery;
         delivery.setOrder(this);
+    }
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
+        return Order.builder()
+                .member(member)
+                .delivery(delivery)
+                .status(OrderStatus.ORDER)
+                .orderDate(LocalDateTime.now())
+                .orderItems(Arrays.stream(orderItems).collect(Collectors.toList()))
+                .build();
+    }
+
+    public void cancel() {
+        if (this.delivery.getStatus() == DeliveryStatus.COMP) {
+            throw new IllegalStateException("이미 배송완료된 상품은 취소가 불가능합니다.");
+        }
+        this.setStatus(OrderStatus.CANCEL);
+        this.orderItems.forEach(OrderItem::cancel);
+    }
+
+    public int getTotalPrice() {
+        return this.orderItems.stream().mapToInt(OrderItem::getTotalPrice).sum();
     }
 }

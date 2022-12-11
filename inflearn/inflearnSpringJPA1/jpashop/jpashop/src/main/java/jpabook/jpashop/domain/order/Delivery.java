@@ -1,15 +1,18 @@
-package jpabook.jpashop.domain;
+package jpabook.jpashop.domain.order;
 
+import jpabook.jpashop.domain.Address;
 import jpabook.jpashop.domain.model.DeliveryStatus;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
-import static javax.persistence.FetchType.*;
+import static javax.persistence.FetchType.LAZY;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
 public class Delivery {
 
     @Id
