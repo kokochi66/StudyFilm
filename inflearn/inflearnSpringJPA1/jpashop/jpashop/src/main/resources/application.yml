@@ -6,7 +6,7 @@ spring: #띄어쓰기 없음
     driver-class-name: org.h2.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     properties:
       hibernate:
       # show_sql: true #띄어쓰기 8칸
