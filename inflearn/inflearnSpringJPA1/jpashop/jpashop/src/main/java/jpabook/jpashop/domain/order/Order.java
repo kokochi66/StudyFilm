@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain.order;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.domain.model.DeliveryStatus;
 import jpabook.jpashop.domain.model.OrderStatus;
@@ -8,12 +9,9 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import static javax.persistence.CascadeType.*;
-import static javax.persistence.FetchType.*;
+import static javax.persistence.FetchType.LAZY;
 
 @Entity
 @Table(name = "orders")
@@ -31,10 +29,11 @@ public class Order {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToMany(mappedBy = "order", cascade = ALL)
+    @JsonIgnore
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @OneToOne(fetch = LAZY)
+    @OneToOne(fetch = LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
@@ -60,13 +59,15 @@ public class Order {
         delivery.setOrder(this);
     }
     public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
-        return Order.builder()
-                .member(member)
-                .delivery(delivery)
-                .status(OrderStatus.ORDER)
-                .orderDate(LocalDateTime.now())
-                .orderItems(Arrays.stream(orderItems).collect(Collectors.toList()))
-                .build();
+        Order order = new Order();
+        order.setMember(member);
+        order.setDelivery(delivery);
+        for (OrderItem orderItem : orderItems) {
+            order.addOrderItem(orderItem);
+        }
+        order.setStatus(OrderStatus.ORDER);
+        order.setOrderDate(LocalDateTime.now());
+        return order;
     }
 
     public void cancel() {
