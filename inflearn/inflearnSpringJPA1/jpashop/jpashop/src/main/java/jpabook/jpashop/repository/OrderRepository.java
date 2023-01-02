@@ -2,6 +2,7 @@ package jpabook.jpashop.repository;
 
 import jpabook.jpashop.domain.order.Order;
 import jpabook.jpashop.domain.order.OrderSearch;
+import jpabook.jpashop.domain.order.SimpleOrderQueryDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
@@ -55,8 +56,6 @@ public class OrderRepository {
             jpql += " m.name like :name";
         }
 
-        System.out.println("TEST :: query = " + jpql);
-
         TypedQuery<Order> query = em.createQuery(jpql, Order.class)
                 .setMaxResults(1000);
 
@@ -68,5 +67,21 @@ public class OrderRepository {
         }
 
         return query.getResultList();
+    }
+
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class
+        ).getResultList();
+    }
+
+    public List<SimpleOrderQueryDto> findOrderDtos() {
+        return em.createQuery(
+                "select new jpabook.jpashop.domain.order.SimpleOrderQueryDto(o.id, m.name, o.orderDate, o.status, d.address) from Order o" +
+                        " join o.member m" +
+                        " join o.delivery d", SimpleOrderQueryDto.class
+        ).getResultList();
     }
 }

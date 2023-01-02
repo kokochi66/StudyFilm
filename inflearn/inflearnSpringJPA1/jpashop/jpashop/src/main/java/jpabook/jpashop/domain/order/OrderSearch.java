@@ -5,7 +5,7 @@ import lombok.*;
 
 @Getter @Setter
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @Builder
 public class OrderSearch {
 
