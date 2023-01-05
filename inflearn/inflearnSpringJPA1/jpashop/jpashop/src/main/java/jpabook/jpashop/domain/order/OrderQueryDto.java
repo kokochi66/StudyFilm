@@ -25,4 +25,13 @@ public class OrderQueryDto {
         this.address = address;
         // 쿼리에서 바로 Collections 객체를 가져올 수 없다
     }
+
+    public OrderQueryDto(Long orderId, String name, LocalDateTime orderDate, OrderStatus orderStatus, Address address, List<OrderItemQueryDto> orderItems) {
+        this.orderId = orderId;
+        this.name = name;
+        this.orderDate = orderDate;
+        this.orderStatus = orderStatus;
+        this.address = address;
+        this.orderItems = orderItems;
+    }
 }
