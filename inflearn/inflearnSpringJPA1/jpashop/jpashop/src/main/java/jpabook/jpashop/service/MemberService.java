@@ -1,7 +1,7 @@
 package jpabook.jpashop.service;
 
 import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.repository.MemberRepository;
+import jpabook.jpashop.repository.SpringDataMemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +13,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberService {
 
-    final private MemberRepository memberRepository;
+//    final private MemberRepository memberRepository;
+    final private SpringDataMemberRepository memberRepository;
 
     // 회원 가입
     @Transactional
@@ -35,12 +36,12 @@ public class MemberService {
     }
 
     public Member findOne(Long memberId) {
-        return memberRepository.findOne(memberId);
+        return memberRepository.findById(memberId).orElse(null);
     }
 
     @Transactional
     public void update(Long id, String name) {
-        Member member = memberRepository.findOne(id);
+        Member member = memberRepository.findById(id).orElse(null);
         member.setName(name);
     }
 }
