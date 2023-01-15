@@ -1,5 +1,7 @@
-package Study.datajpa.entity;
+package Study.datajpa.repository;
 
+import Study.datajpa.entity.Member;
+import Study.datajpa.entity.Team;
 import Study.datajpa.repository.MemberJpaRepository;
 import Study.datajpa.repository.MemberRepository;
 import Study.datajpa.repository.TeamJpaRepository;
@@ -19,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @Transactional
 @Rollback(false)
-class MemberTest {
+class MemberJpaRepositoryTest {
 
     @Autowired
     private MemberRepository memberRepository;
@@ -84,6 +86,50 @@ class MemberTest {
         memberJpaRepository.delete(member2);
         long deleteCount = memberJpaRepository.count();
         assertThat(deleteCount).isEqualTo(0);
+    }
+
+    @Test
+    public void findByUsernameAndAGeGreaterThen() {
+        Member member1 = Member.createMember("kokochi", 20);
+        Member member2 = Member.createMember("kokochi", 27);
+        memberJpaRepository.save(member1);
+        memberJpaRepository.save(member2);
+
+        List<Member> result = memberJpaRepository.findByUsernameAndAgeGreaterThen("kokochi", 21);
+        assertThat(result.get(0).getName()).isEqualTo("kokochi");
+        assertThat(result.get(0).getAge()).isEqualTo(27);
+
+        for (Member member : result) {
+            System.out.println("TEST :: member = " + member);
+        }
+    }
+
+    @Test
+    public void findTest1() {
+
+        List<Member> result = memberJpaRepository.findByUsernameAndAgeGreaterThen("kokochi", 21);
+        assertThat(result.get(0).getName()).isEqualTo("kokochi");
+        assertThat(result.get(0).getAge()).isEqualTo(27);
+
+        for (Member member : result) {
+            System.out.println("TEST :: member = " + member);
+        }
+    }
+
+    @Test
+    public void findTestNamedQuery() {
+        Member member1 = Member.createMember("AAA", 20);
+        Member member2 = Member.createMember("BBB", 27);
+        memberJpaRepository.save(member1);
+        memberJpaRepository.save(member2);
+
+        List<Member> result = memberJpaRepository.findByUsername("AAA");
+        assertThat(result.get(0).getName()).isEqualTo("AAA");
+        assertThat(result.get(0).getAge()).isEqualTo(20);
+
+        for (Member member : result) {
+            System.out.println("TEST :: member = " + member);
+        }
     }
 
 }

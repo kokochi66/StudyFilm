@@ -10,6 +10,10 @@ import javax.persistence.*;
 @Builder
 @Entity
 @ToString(of = {"id", "name", "age"})
+@NamedQuery(
+        name="Member.findByUserName",
+        query="select m from Member m where m.name = :name"
+)
 public class Member {
 
     @Id @GeneratedValue
