@@ -6,6 +6,9 @@ import Study.datajpa.entity.Team;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -196,5 +199,34 @@ class MemberRepositoryTest {
         System.out.println("TEST :: kokochi = " + kokochi);
         // 여러개가 나오는 쿼리문인데 단일 리턴타입을 지정하면 IncorrectResultSizeDataAccessException이 발생한다.
         // 반드시 유니크한 조건에만 단건조회로 설정해야 한다.
+    }
+
+    @Test
+    public void paging() {
+        memberRepository.save(Member.createMember("kokochi1", 20));
+        memberRepository.save(Member.createMember("kokochi2", 20));
+        memberRepository.save(Member.createMember("kokochi3", 20));
+        memberRepository.save(Member.createMember("kokochi4", 20));
+        memberRepository.save(Member.createMember("kokochi5", 20));
+
+        int age = 20;
+        PageRequest pageRequest = PageRequest.of(0, 3, Sort.by(Sort.Direction.DESC, "name"));
+
+
+        Page<Member> page = memberRepository.findByAge(age, pageRequest);
+
+        List<Member> members = page.getContent();
+        for (Member member : members) {
+            System.out.println("TEST :: member = " + member);
+        }
+        assertThat(members.size()).isEqualTo(3);
+        assertThat(page.getTotalElements()).isEqualTo(5);
+        assertThat(page.getNumber()).isEqualTo(0);
+        assertThat(page.getTotalPages()).isEqualTo(2);
+        assertThat(page.isFirst()).isTrue();
+        assertThat(page.hasNext()).isTrue();
+
+        // Page를 쉽게 DTO로 만들기
+//        Page<MemberDto> map = page.map(member -> new MemberDto(member.getId(), member.getName(), null));
     }
 }

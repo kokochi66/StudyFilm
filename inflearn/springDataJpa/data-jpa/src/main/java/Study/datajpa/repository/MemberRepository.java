@@ -2,6 +2,8 @@ package Study.datajpa.repository;
 
 import Study.datajpa.entity.Member;
 import Study.datajpa.entity.MemberDto;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -33,4 +35,10 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     List<Member> findByNames(@Param("names") Collection<String> names);
 
     Member findAllByName(String name);
+
+    Page<Member> findByAge(int age, Pageable pageable);
+
+//    @Query(value = "select m from Member m left join m.team t", countQuery = "select count(m.name) from Member m")     // 카운트 쿼리를 분리하여 조인되지 않도록 한다.
+//    Page<Member> findByAge(int age, Pageable pageable);
+
 }
