@@ -12,6 +12,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.Arrays;
 import java.util.List;
 
@@ -228,5 +230,88 @@ class MemberRepositoryTest {
 
         // Page를 쉽게 DTO로 만들기
 //        Page<MemberDto> map = page.map(member -> new MemberDto(member.getId(), member.getName(), null));
+    }
+
+    @PersistenceContext
+    private EntityManager em;
+
+    @Test
+    public void bulkUpdate() {
+        memberRepository.save(Member.createMember("kokochi1", 10));
+        memberRepository.save(Member.createMember("kokochi2", 19));
+        memberRepository.save(Member.createMember("kokochi3", 25));
+        memberRepository.save(Member.createMember("kokochi4", 99));
+        memberRepository.save(Member.createMember("kokochi5", 50));
+
+        int result = memberRepository.bulkAgePlus(20);
+        assertThat(result).isEqualTo(3);
+
+        List<Member> members = memberRepository.findAll();
+        for (Member member : members) {
+            System.out.println("TEST :: member = " + member);
+        }
+        // 벌크 연산은 영속성 컨텍스트를 무시하고, 쿼리를 때리는 것이기 때문에, 기존의 영속성 컨텍스트에 등록되어있는 객체에는 반영이 되지 않는다.
+        // 벌크 연산을 해준 뒤, 영속성 컨텍스트를 초기화해주어야 한다.
+//        em.flush();
+//        em.clear();
+        // Modifying 어노테이션에서 직접 영속성 컨텍스트 초기화를 명시해줄 수 있다.
+
+        members = memberRepository.findAll();
+        for (Member member : members) {
+            System.out.println("TEST :: member = " + member);
+        }
+    }
+
+    @Test
+    public void findMemberLazy() {
+        Team teamA = Team.createTeam("teamA");
+        Team teamB = Team.createTeam("teamB");
+        Team teamC = Team.createTeam("teamC");
+        teamRepository.save(teamA);
+        teamRepository.save(teamB);
+        teamRepository.save(teamC);
+
+        memberRepository.save(Member.createMember("kokochi1", 10, teamA));
+        memberRepository.save(Member.createMember("kokochi2", 19, teamA));
+        memberRepository.save(Member.createMember("kokochi3", 25, teamB));
+        memberRepository.save(Member.createMember("kokochi4", 99, teamB));
+        memberRepository.save(Member.createMember("kokochi5", 50, teamC));
+        em.flush();
+        em.clear();
+
+        List<Member> members = memberRepository.findAll();
+        for (Member member : members) {
+            System.out.println("TEST :: member = " + member.getTeam().getName());
+        }
+    }
+
+    @Test
+    public void queryHint() {
+        Member member1 = memberRepository.save(Member.createMember("kokochi1", 10));
+        memberRepository.save(Member.createMember("kokochi2", 19));
+        memberRepository.save(Member.createMember("kokochi3", 25));
+        memberRepository.save(Member.createMember("kokochi4", 99));
+        memberRepository.save(Member.createMember("kokochi5", 50));
+        em.flush(); // 영속성 컨텍스트의 값을 DB로 반영하는 작업
+        em.clear();
+
+        Member findMember = memberRepository.findReadOnlyByName(member1.getName());
+        findMember.setName("kokochi999");
+
+        em.flush();
+    }
+
+    @Test
+    public void lockTest() {
+        Member member1 = memberRepository.save(Member.createMember("kokochi1", 10));
+        memberRepository.save(Member.createMember("kokochi2", 19));
+        memberRepository.save(Member.createMember("kokochi3", 25));
+        memberRepository.save(Member.createMember("kokochi4", 99));
+        memberRepository.save(Member.createMember("kokochi5", 50));
+        em.flush(); // 영속성 컨텍스트의 값을 DB로 반영하는 작업
+        em.clear();
+
+        List<Member> members = memberRepository.findLockByName(member1.getName());
+        em.flush();
     }
 }
