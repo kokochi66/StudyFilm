@@ -13,6 +13,14 @@ spring:
 #        show_sql: true # 쿼리문이 콘솔에 나옴 (로그로 남기는게 더 좋아서 주석처리)
         format_sql: true  # 쿼리 이쁘게 나오게 해줌
 
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 2000
+        one-indexed-parameters: true # 페이지 인덱싱을 1에서부터 시작하고 싶을 때 글로벌하게 설정해줌, 페이지 객체 내부의 데이터가 모두 1로 맞춰지는게 아니라서, 값이 헷갈릴 수 있음 차라리 커스텀하게 구현하는게 나음
+# 페이지 글로벌 설정
+
 logging.level:
   org.hibernate.SQL: debug
   org.hibernate.type: trace

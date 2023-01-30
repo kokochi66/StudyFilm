@@ -314,4 +314,13 @@ class MemberRepositoryTest {
         List<Member> members = memberRepository.findLockByName(member1.getName());
         em.flush();
     }
+
+
+    @Test
+    public void testCustomRepository() {
+        List<Member> memberCustom = memberRepository.findMemberCustom();
+        for (Member member : memberCustom) {
+            System.out.println("TEST :: member = " + member);
+        }
+    }
 }

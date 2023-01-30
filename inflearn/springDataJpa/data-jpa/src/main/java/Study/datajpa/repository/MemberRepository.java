@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Repository
-public interface MemberRepository extends JpaRepository<Member, Long> {
+public interface MemberRepository extends JpaRepository<Member, Long>, MemberRepositoryCustom {
 
     List<Member> findByNameAndAgeGreaterThan(String name, int age);
 
