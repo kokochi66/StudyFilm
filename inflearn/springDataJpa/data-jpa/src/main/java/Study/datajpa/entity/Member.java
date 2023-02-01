@@ -24,7 +24,7 @@ public class Member extends BaseEntity {
     private String name;
 
     @Column(name = "member_age")
-    private int age;
+    private Integer age;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="team_id")

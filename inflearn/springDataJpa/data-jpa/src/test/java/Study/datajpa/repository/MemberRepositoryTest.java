@@ -6,9 +6,7 @@ import Study.datajpa.entity.Team;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -323,4 +321,88 @@ class MemberRepositoryTest {
             System.out.println("TEST :: member = " + member);
         }
     }
+
+
+    @Test
+    public void queryByExample() {
+        em.persist(Member.createMember("kokochi2", 19));
+        em.persist(Member.createMember("kokochi3", 25));
+        em.persist(Member.createMember("kokochi4", 99));
+        em.persist(Member.createMember("kokochi5", 50));
+        em.flush();
+        em.clear();
+
+        ExampleMatcher matcher = ExampleMatcher.matching().withIgnoreCase("age");
+
+        Example<Member> example = Example.of(Member.builder().name("kokochi2").build(), matcher);
+        List<Member> res = memberRepository.findAll(example);
+        for (Member re : res) {
+            System.out.println("TEST :: member = " + re);
+        }
+        // Example 객체를 사용한 쿼리의 장단점
+        // 동적 쿼리를 쉽게 만들 수 있고, 도메인 객체를 그대로 사용할 수 있다.
+        // 공통으로 모든 DB에서 사용이 가능하다.
+
+        // 조인은 가능하나, INNER JOIN만 가능, OUTER JOIN인 불가능
+        // 중첩된 제약조건이 불가능함
+        // 매칭 조건이 아주 단순함.
+    }
+
+    // Projections - 전체 엔티티가 아니라 원하는 값만 딱 가져온다.
+    // 엔티티 대신에 DTO를 편리하게 사용하기
+    @Test
+    public void queryByProjections() {
+        Team team1 = Team.createTeam("team1");
+        em.persist(team1);
+        em.persist(Member.createMember("kokochi2", 19, team1));
+        em.persist(Member.createMember("kokochi3", 25));
+        em.persist(Member.createMember("kokochi4", 99));
+        em.persist(Member.createMember("kokochi5", 50));
+
+//        List<UserNameOnly> res = memberRepository.findProjectionsByName("kokochi2");
+        // interface만 정의해두면 원하는 값만 딱 가져와준다. interface에 특별히 무언가를 해 줄 필요가 없다
+
+//        List<UserNameOnlyDto> res = memberRepository.findProjections2ByName("kokochi2");
+        // class로도 가능하다.
+
+//        List<UserNameOnlyDto> res = memberRepository.findProjectionsGenericByName("kokochi2", UserNameOnlyDto.class);
+        // 동적 타입으로도 받을 수 있다.
+
+        List<NestedClosedProjections> res = memberRepository.findProjectionsGenericByName("kokochi2", NestedClosedProjections.class);
+        // 중첩 구조에서는 조인해서 모든 값을 다 가져온다 (최적화가 안된다.)
+
+        // 급할 때 쓰기 좋긴하나, 깊게 사용하기엔 전체적으로 기능이 제한되어있는 부분이 많고, 최적화가 안되는 경우가 많다.
+        // 결국 복잡한 경우는 쿼리를 직접 구현하거나, queryDsl을 사용해야한다.
+
+        // 일종의 DTO처럼 interface를 사용할 수 있음
+        for (NestedClosedProjections re : res) {
+            System.out.println("TEST :: re = " + re.getName());
+            System.out.println("TEST :: re = " + re.getTeam().getName());
+        }
+    }
+
+    // 네이티브 쿼리 - 그냥 깡 쿼리문을 스트링으로 적는 것
+    // 가급적 네이티브 쿼리는 사용하지 않는게 제일 좋다.
+    // 동적 쿼리도 안되고, 특정 값만 가져오기도 힘들고, DTO로 가져오기도 기능이 굉장히 제한되어 차라리 MyBatis를 쓰는게 낫다
+    // 네이티브 SQL이 정말 필요하면 JdbcTemplate를 쓰는게 낫다.
+    @Test
+    public void queryByNativeQuery() {
+        Team team1 = Team.createTeam("team1");
+        em.persist(team1);
+        em.persist(Member.createMember("kokochi2", 19, team1));
+        em.persist(Member.createMember("kokochi3", 25));
+        em.persist(Member.createMember("kokochi4", 99));
+        em.persist(Member.createMember("kokochi5", 50));
+
+//        Member res = memberRepository.findByNativeQuery("kokochi2");
+//        System.out.println("TEST :: re = " + res.getName());
+
+        Page<MemberProjection> byNativeProjection = memberRepository.findByNativeProjection(PageRequest.of(0, 10));
+        for (MemberProjection memberProjection : byNativeProjection) {
+            System.out.println("TEST :: memberProjection  name = " + memberProjection.getName());
+            System.out.println("TEST :: memberProjection  id = " + memberProjection.getId());
+            System.out.println("TEST :: memberProjection  teamName = " + memberProjection.getTeamName());
+        }
+    }
+
 }

@@ -67,4 +67,17 @@ public interface MemberRepository extends JpaRepository<Member, Long>, MemberRep
     // select for update - lock
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     List<Member> findLockByName(String name);
+
+    List<UserNameOnly> findProjectionsByName(String name);
+    List<UserNameOnlyDto> findProjections2ByName(String name);
+    <T> List<T> findProjectionsGenericByName(String name, Class<T> type);
+
+    @Query(value = "select * from member where member_name = ?", nativeQuery = true)
+    Member findByNativeQuery(String name);
+
+    @Query(value = "select m.member_id as id, m.member_name as name, t.team_name as teamName" +
+            " from member m left join team t",
+    countQuery = "select count(*) from member",
+    nativeQuery = true)
+    Page<MemberProjection> findByNativeProjection(Pageable pageable);
 }
