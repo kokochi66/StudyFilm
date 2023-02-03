@@ -292,6 +292,7 @@ class MemberRepositoryTest {
         memberRepository.save(Member.createMember("kokochi5", 50));
         em.flush(); // 영속성 컨텍스트의 값을 DB로 반영하는 작업
         em.clear();
+        
 
         Member findMember = memberRepository.findReadOnlyByName(member1.getName());
         findMember.setName("kokochi999");
