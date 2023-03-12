@@ -26,6 +26,7 @@ public class JumpyBlock extends Block {
         }
 
 
+
         // use 메소드가 발동되면
         // 서버 : Main Hand & Off Hand 2번 발동
         // 클라이언트 : Main Hand & Off Hand 2번 발동
