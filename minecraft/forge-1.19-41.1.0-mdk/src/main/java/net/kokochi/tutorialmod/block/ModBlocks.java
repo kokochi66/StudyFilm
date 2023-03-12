@@ -1,6 +1,7 @@
 package net.kokochi.tutorialmod.block;
 
 import net.kokochi.tutorialmod.TutorialMod;
+import net.kokochi.tutorialmod.block.custom.BlueberryCropBlock;
 import net.kokochi.tutorialmod.block.custom.JumpyBlock;
 import net.kokochi.tutorialmod.block.custom.ZirconLampBlock;
 import net.kokochi.tutorialmod.item.ModCreativeModeTab;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -41,6 +43,9 @@ public class ModBlocks {
             .strength(6f).requiresCorrectToolForDrops()
                     .lightLevel(state -> state.getValue(ZirconLampBlock.LIT) ? 15 : 0)) // LIT 상태가 켜져있으면 밝기가 15, 없으면 0이된다.
             , ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> BLUEBERRY_CROP = BLOCKS.register("blueberry_crop", () ->
+            new BlueberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT))); // 밀 블록을 카피해서 생성
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

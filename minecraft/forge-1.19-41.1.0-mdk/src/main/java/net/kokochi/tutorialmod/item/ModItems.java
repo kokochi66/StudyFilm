@@ -1,9 +1,12 @@
 package net.kokochi.tutorialmod.item;
 
 import net.kokochi.tutorialmod.TutorialMod;
+import net.kokochi.tutorialmod.block.ModBlocks;
 import net.kokochi.tutorialmod.item.custom.EightBallitem;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,6 +26,14 @@ public class ModItems {
             ("eight_ball", () -> new EightBallitem(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)
                     .stacksTo(1)));     // 한개까지만 스택이 가능하다.
     // 새롭게 생성한 이벤트를 가진 이벤트 아이템을 생성한다.
+
+    public static final RegistryObject<Item> BLUEBERRY_SEEDS = ITEMS.register("blueberry_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.BLUEBERRY_CROP.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
+
+    public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberry",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)
+                    .food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).build())));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
