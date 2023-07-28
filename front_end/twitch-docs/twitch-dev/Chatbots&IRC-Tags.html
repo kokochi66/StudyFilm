@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Clean Blog - Start Bootstrap Theme</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/styles-boot.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5 ">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="menu">
+                        <div class="side-bar">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <div class="side">
+                        <div class="cont"><a href="overview.html">개요</a></div>
+                        <div class="cont"><a href="Authentication.html">인증</a></div>
+                        <div class="cont">
+                            <div class="top">챗봇 & IRC</div>
+                            <div class="list"><a href="Chatbots&IRC.html">시작하기</a></div>
+                            <div class="list"> <a href="Chatbots&IRC-Guide.html">가이드</a></div>
+                            <div class="list"> <a href="Chatbots&IRC-Membership.html">트위치 IRC : 멤버십</a></div>
+                            <div class="list"> <a href="Chatbots&IRC-Command.html">트위치 IRC : 커맨드</a></div>
+                            <div class="list active">트위치 IRC : 태그</div>
+                            <div class="list"> <a href="Chatbots&IRC-msgIdTags.html">트위치 IRC : msg-id 태그</a></div>
+                        </div>
+                        <div class="cont"><a href="Organization.html">구성</a></div>
+                        <div class="cont"><a href="Drops.html">드롭스</a></div>
+                        <div class="cont"><a href="EmbeddingTwitch.html">임베이딩 트위치</a></div>
+                        <div class="cont"><a href="EventSub.html">이벤트 서브</a></div>
+                        <div class="cont"><a href="Extensions.html">확장</a></div>
+                        <div class="cont"><a href="Insight&Analytics.html">인사이트 & 분석</a></div>
+                        <div class="cont"><a href="MobileDeepLink.html">모바일 딥 링크</a></div>
+                        <div class="cont"><a href="PubSub.html">퍼브서브</a></div>
+                        <div class="cont"><a href="TwitchAPI.html">트위치 API</a></div>
+                        <div class="cont"><a href="VideoBroadcast.html">방송 비디오</a></div>
+                        <div class="cont"><a href="LegacyTwitchAPIv5.html">트위치 API v5</a></div>
+                        <div class="cont"><a href="ChangeLog.html">로그변경</a></div>
+                        <div class="cont"><a href="ProductLifecycle.html">상품 생명주기</a></div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-xl-9 main">
+                        <h1>트위치 IRC : 태그 <a href="https://dev.twitch.tv/docs/irc/tags" class="origin">원본 사이트</a></h1>
+                        <h2 id="overview">개요</h2>
+                        <p><a href="https://ircv3.net/specs/extensions/message-tags.html">IRCv3 메시지 태그 특징에는</a> "메세지 태그는 메시지 별로 추가 메타 데이터를 추가하는 메커니즘 이다." 라고 명시되어 있습니다. 이는 기능 협상을 통해 활성화되는 프로토콜 메세지 포맷의 확장을 통해 이루어집니다. 태그는 선택적인(optional) 문자열을 값으로 갖는 간단한 키 입니다. 태그된 메세지는 서버와 클라이언트에게 보내질 수 있습니다. 각각의 태그가 어떻게 사용될지는 각각의 문서에 따라 달라집니다. </p>
+                        <p>이와 반면에, 태그는 트위치가 IRC 메세지에 첨부할 수 있는 선택적인 메타데이터 이기도 합니다. 클라이언트가 태그기능을 요청하면, EBS에서, 한개 이상의 추가적인 태그를 클라이언트의 메세지에 추가합니다. </p>
+                        <p>이 가이드 문서의 태그와 값에대한 내용은 트위치 IRC가 제공하는 분들입니다. 만약 현재 문서에서 태그가 존재하지 않는다면 해당 태그는 지원되지 않습니다.</p>
+                        <p>다음은 태그 한 개에 해당하는 일반적인 포맷 예시입니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@tag-name=&lt;tag-name&gt;&nbsp;:tmi.twitch.tv&nbsp;&lt;command&gt;&nbsp;#&lt;channel&gt;&nbsp;:&lt;user&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>다음은 태그의 집합(set)에 해당하는 일반적인 포맷 예시입니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">@tag-name-1=&lt;tag-value-1&gt;;tag-name-2=&lt;tag-value-2&gt;;...&nbsp;&lt;rest&nbsp;of&nbsp;the&nbsp;command&nbsp;syntax&nbsp;depends&nbsp;on&nbsp;the&nbsp;particular&nbsp;IRC&nbsp;command&nbsp;used&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>태그는 무작위의 순서로 나타납니다. 여러분은 코드를 작성 할 때에, 코드를 하나하나 별도로 처리하도록 하고, 인식할 수 없는 태그는 무시하도록 작성하세요.</p>
+                        <p>다음 표의 내용을 참고하세요. 몇가지 태그들은 더 이상 지원되지 않습니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">커맨드</th>
+                                    <th width="80%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CLEARCHAT</td>  
+                                    <td>채널의 모든 메세지를 제거하거나, 특정 사용자가 밴되거나 타임아웃되었을 때에, 특정 사용자의 모든 메세지를 제거합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>CLEARMSG</td>  
+                                    <td>채널에서부터 특정한 메세지 한 개를 제거합니다. 이는 IRC의 /delete &lt;target-msg-id&gt; 명령어를 통해서 실행됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>GLOBALUSERSTATE</td>  
+                                    <td>IRC 태그를 이용해서 로그인을 성공한 유저에게 로그인된 유저의 정보를 제공합니다. 이는 인증이 성공된 이후에 PASS/NICK 커맨드를 통해서 보내집니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>PRIVMSG</td>  
+                                    <td>채널로 메세지를 보냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>ROOMSTATE</td>  
+                                    <td>사용자가 채널에 참여하였거나, 채널의 설정정보가 변경되었을 때, 채널의 상태정보를 보냅니다. 참가하였을 경우에는, 채팅방의 모든 설정정보가 포함되며, 설정정보가 변경된 경우에는 관련된 태그만이 보내집니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>USERNOTICE</td>  
+                                    <td>어떠한 이벤트가 발생했을 때, 사용자에게 알림을 보냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>USERSTATE</td>  
+                                    <td>사용자가 채널에 참가하였거나, PRIVMSG 명령어를 통해서 채널에 메세지를 보냈을 때, 사용자의 상태정보를 보냅니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+
+                        <h2 id="clearchat">CLEARCHAT (트위치 태그)</h2>
+                        <p>채널의 모든 메세지를 제거하거나, 특정 사용자가 밴되거나 타임아웃되었을 때에, 특정 사용자의 모든 메세지를 제거합니다.</p>
+                        <p><strong>프로토타입</strong></p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;@ban-duration=&lt;ban-duration&gt;&nbsp;:tmi.twitch.tv&nbsp;CLEARCHAT&nbsp;#&lt;channel&gt;&nbsp;:&lt;user&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">파라미터</th>
+                                    <th width="80%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ban-duration</td>  
+                                    <td>(선택사항) 밴에 대한 기한입니다. 내용이 생략되면, 영구밴을 의미합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>예제 : </strong> ronni가 dallas 채널로부터 영구밴을 당한 경우</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;CLEARCHAT&nbsp;#dallas&nbsp;:ronni</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+
+                        <h2 id="clearmsg">CLEARMSG (트위치 태그)</h2>
+                        <p>채널에서부터 특정한 메세지 한 개를 제거합니다. 이는 IRC의 /delete &lt;target-msg-id&gt; 명령어를 통해서 실행됩니다.</p>
+                        <p><strong>프로토타입</strong></p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@login=&lt;login&gt;;target-msg-id=&lt;target-msg-id&gt;&nbsp;:tmi.twitch.tv&nbsp;CLEARMSG&nbsp;#&lt;channel&gt;&nbsp;:&lt;message&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">파라미터</th>
+                                    <th width="80%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>login</td>  
+                                    <td>메세지를 보낸 사용자의 이름입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>message</td>  
+                                    <td>메세지 입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>target-msg-id</td>  
+                                    <td>메세지의 UUID 입니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>예제</strong> : ronni 의 HeyGuys라는 메세지가 dallas채널로부터 삭제됩니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@login=ronni;target-msg-id=abc-123-def&nbsp;:tmi.twitch.tv&nbsp;CLEARMSG&nbsp;#dallas&nbsp;:HeyGuys</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+
+                        <h2 id="globaluserstate">GLOBALUSERSTATE (트위치 태그)</h2>
+                        <p>IRC 태그를 이용해서 로그인을 성공한 유저에게 로그인된 유저의 정보를 제공합니다. 이는 인증이 성공된 이후에 PASS/NICK 커맨드를 통해서 보내집니다.</p>
+                        <p><strong>프로토타입</strong></p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=&lt;badge-info&gt;;badges=&lt;badges&gt;;color=&lt;color&gt;;display-name=&lt;display-name&gt;;emote-sets=&lt;emote-sets&gt;;turbo=&lt;turbo&gt;;user-id=&lt;user-id&gt;;user-type=&lt;user-type&gt;&nbsp;:tmi.twitch.tv&nbsp;GLOBALUSERSTATE</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p><strong>참고</strong> : 이를 사용하기 전에, 여러분은 요청을 보내고, 다음 태그를 받아야합니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;&nbsp;CAP&nbsp;REQ&nbsp;:twitch.tv/tags</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;CAP&nbsp;*&nbsp;ACK&nbsp;:twitch.tv/tags</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>더 자세한 정보는 <a href="Chatbots&IRC-Guide.html#capability_IRC">트위치 IRC 기능</a>을 참조하세요</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">파라미터</th>
+                                    <th width="80%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>badge-info</td>  
+                                    <td>
+                                        <p>badges 태그에 들어있는, 채팅 배지와 관련된 메타데이터 입니다.</p>
+                                        <p>현재 이 기능은 구독자가 해당 채널을 몇개월 구독했는지를 확인하기 위해서 구독자에게만 사용됩니다. 이에대한 수치는 배지의 버전의 수보다 훨씬 세밀화 되어 있습니다. 예를들어, 어떠한 사용자가 채널을 45개월동안 구독했다고 가정했을 때, badge-info를 이용하면 45개월이라는 값이 그대로 나오지만, badges version을 사용하면 오직 3년이라고만 표시됩니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>badges</td>  
+                                    <td>콤마(,)로 구분되어진 채팅 배지와 그 배지의 각각의 버전에 대한 정보가 담긴 리스트입니다.(각 데이터는 &lt;badge&gt;/&lt;version&gt;형식으로 포맷되어 있습니다.) badge의 값에는 여러가지 값이 존재합니다. (admin, bits, broadcaster, global_mod, moderator, subscriber, staff, turbo 등). 대부분의 배지들은 오직 버전 1만을 가집니다. 하지만 몇몇개의 배지들은 배지를 보유한 기간에 대비한 여러가지 버전이 존재합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>color</td>  
+                                    <td>16진법으로 이루어진 RGB 색깔 코드입니다. 설정되지 않은 경우에는, 빈 문자열로 표시됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>display-name</td>  
+                                    <td><a href="https://ircv3.net/specs/extensions/message-tags.html">IRC 스펙</a>에 따라 표시되는 사용자의 이름입니다. 설정되지 않은 경우에는, 빈 문자열로 표시됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>emote-sets</td>  
+                                    <td>콤마(,)로 구분되어진 하나 이상의 이모티콘 세트로 이루어진 세트의 리스트 입니다. 이는 항상 최소값이 0으로 표시됩니다. <a href="https://dev.twitch.tv/docs/v5/reference/chat/#get-chat-emoticons-by-set">채팅 이모티콘을 집합에서 가져오기</a>를 참고하시면 이모티콘의 하위집합을 확인할 수 있습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>turbo</td>  
+                                    <td>(현재는 사용되지 않습니다 badges로 대체되었습니다.) 사용자가 터보 배재를 갖고있으면 1, 없으면 0이 표시됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>user-id</td>  
+                                    <td>사용자의 ID입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>user-type</td>  
+                                    <td>(현재는 사용되지 않습니다. badges로 대체되었습니다.) 사용자의 타입입니다. empty, mod, global_mod, admin, staff의 값을 가집니다. 스트리머는 이중 어떠한 값도 가질 수 있습니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>예제 : </strong>dallas의 로그인된 admin 사용자를 모두 조회합니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=subscriber/8;badges=subscriber/6;color=#0D4200;display-name=dallas;emote-sets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239;turbo=0;user-id=1337;user-type=admin&nbsp;:tmi.twitch.tv&nbsp;GLOBALUSERSTATE</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+
+                        <h2 id="privmsg">PRIVMSG (트위치 태그)</h2>
+                        <p>채널로 메세지를 보냅니다.</p>
+                        <p><strong>프로토타입</strong></p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=&lt;badge-info&gt;;badges=&lt;badges&gt;;color=&lt;color&gt;;display-name=&lt;display-name&gt;;emotes=&lt;emotes&gt;;id=&lt;id-of-msg&gt;;mod=&lt;mod&gt;;room-id=&lt;room-id&gt;;subscriber=&lt;subscriber&gt;;tmi-sent-ts=&lt;timestamp&gt;;turbo=&lt;turbo&gt;;user-id=&lt;user-id&gt;;user-type=&lt;user-type&gt;&nbsp;:&lt;user&gt;!&lt;user&gt;@&lt;user&gt;.tmi.twitch.tv&nbsp;PRIVMSG&nbsp;#&lt;channel&gt;&nbsp;:&lt;message&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>모든 PRIVMSG 태그는  이전의 프로토타입 리스트가 포함됩니다. 또한 bits 필드는 비트 메세지용으로 전달됩니다. 이에 대한 더 자세한 정보를 알고싶으면, <a href="https://dev.twitch.tv/docs/extensions/monetization/#introduction">확장 수익창출(Extensions Monetization) 가이드</a>를 확인하세요</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">파라미터</th>
+                                    <th width="80%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>badge-info</td>  
+                                    <td>
+                                        <p>badges 태그에 들어있는, 채팅 배지와 관련된 메타데이터 입니다.</p>
+                                        <p>현재 이 기능은 구독자가 해당 채널을 몇개월 구독했는지를 확인하기 위해서 구독자에게만 사용됩니다. 이에대한 수치는 배지의 버전의 수보다 훨씬 세밀화 되어 있습니다. 예를들어, 어떠한 사용자가 채널을 45개월동안 구독했다고 가정했을 때, badge-info를 이용하면 45개월이라는 값이 그대로 나오지만, badges version을 사용하면 오직 3년이라고만 표시됩니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>badges</td>  
+                                    <td>콤마(,)로 구분되어진 채팅 배지와 그 배지의 각각의 버전에 대한 정보가 담긴 리스트입니다.(각 데이터는 &lt;badge&gt;/&lt;version&gt;형식으로 포맷되어 있습니다.) badge의 값에는 여러가지 값이 존재합니다. (admin, bits, broadcaster, global_mod, moderator, subscriber, staff, turbo 등). 대부분의 배지들은 오직 버전 1만을 가집니다. 하지만 몇몇개의 배지들은 배지를 보유한 기간에 대비한 여러가지 버전이 존재합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>bits</td>  
+                                    <td>
+                                        <p>비트메세지용 만으로 보내지는 것입니다. cheer/bits의 양은 사용자에 의해서 사용됩니다. 모든 인스턴스는 다음 정규식을 따릅니다.</p>
+                                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">/(^\|\s)&lt;emote-name&gt;\d+(\s\|$)/</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                                        <p>(여기서, &lt;emote-name&gt;란, <a href="https://dev.twitch.tv/docs/v5/reference/bits/#get-cheermotes">Cheermote 얻기</a>에서 반환된 이모티콘의 이름 값입니다.)</p>
+                                        <p>해당값을 적절한 이모티콘 값으로 대체해주어야 합니다.</p>
+                                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">static-cdn.jtvnw.net/bits/&lt;theme&gt;/&lt;type&gt;/&lt;color&gt;/&lt;size&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                                        <ul>
+                                            <li>theme - light 또는 dark</li>
+                                            <li>type - animated 또는 static</li>
+                                            <li>color - red는 10000 비트 이상, blue는 5000-9999, green은 1000-4999, 보라는 100-999, 회색은  1-99</li>
+                                            <li>size - 1-4 사이의 숫자</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>color</td>  
+                                    <td>16진법으로 이루어진 RGB 색깔 코드입니다. 설정되지 않은 경우에는, 빈 문자열로 표시됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>display-name</td>  
+                                    <td><a href="https://ircv3.net/specs/extensions/message-tags.html">IRC 스펙</a>에 따라 표시되는 사용자의 이름입니다. 설정되지 않은 경우에는, 빈 문자열로 표시됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>emotes</td>  
+                                    <td>
+                                        <p>이모티콘 이미지와 메세지 안의 대체 텍스트에 대한 정보입니다. 이는 널값일 수 있습니다. 문법은 다음과 같습니다.</p>
+                                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;emote&nbsp;ID&gt;:&lt;first&nbsp;index&gt;-&lt;last&nbsp;index&gt;,&lt;another&nbsp;first&nbsp;index&gt;-&lt;another&nbsp;last&nbsp;index&gt;/&lt;another&nbsp;emote&nbsp;ID&gt;:&lt;first&nbsp;index&gt;-&lt;last&nbsp;index&gt;...</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                                        <ul>
+                                            <li>emote ID : 해당 URL을 사용하는 수 입니다. size값은 1.0, 2.0, 3.0 등이 올 수 있습니다.</li>
+                                            <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">http://static-cdn.jtvnw.net/emoticons/v1/:&lt;emote&nbsp;ID&gt;/:&lt;size&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                                            <li>first index, last index : 캐릭터의 위치값(index)입니다. \001ACTION 은 계산하지 않습니다. 사용자가 보낸 메시지의 첫번째 문자열부터 세기 시작합니다. 아래 예제를 확인하세요</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>id</td>  
+                                    <td>메세지의 고유 id 입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>message</td>  
+                                    <td>메세지 값을 의미합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>mod</td>  
+                                    <td>사용자에게 관리자 배지가 있는 경우 1, 아니면 0입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>room-id</td>  
+                                    <td>채널의 고유 id입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>subscriber</td>  
+                                    <td>(현재 사용하지 않음, 대신 badges를 사용함), 구독자 배지가 있는 경우 1, 아니면 0입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>tmi-sent-ts</td>  
+                                    <td>서버가 메세지를 받았을 때의 타임스탬프 값 입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>turbo</td>  
+                                    <td>(현재는 사용되지 않습니다 badges로 대체되었습니다.) 사용자가 터보 배재를 갖고있으면 1, 없으면 0이 표시됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>user-id</td>  
+                                    <td>사용자의 ID입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>user-type</td>  
+                                    <td>(현재는 사용되지 않습니다. badges로 대체되었습니다.) 사용자의 타입입니다. empty, mod, global_mod, admin, staff의 값을 가집니다. 스트리머는 이중 어떠한 값도 가질 수 있습니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>비트를 사용하지 않는 메세지 예제 : </strong>첫번째 Kappa(emote ID 25)는 캐릭터값 0부터 캐릭터값 4까지 이다. 그리고 다른 Kappa는 12부터 16까지이다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=;badges=global_mod/1,turbo/1;color=#0D4200;display-name=ronni;emotes=25:0-4,12-16/1902:6-10;id=b34ccfc7-4977-403a-8a94-33c6bac34fb8;mod=0;room-id=1337;subscriber=0;tmi-sent-ts=1507246572675;turbo=1;user-id=1337;user-type=global_mod&nbsp;:ronni!ronni@ronni.tmi.twitch.tv&nbsp;PRIVMSG&nbsp;#ronni&nbsp;:Kappa&nbsp;Keepo&nbsp;Kappa</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p><strong>비트 메세지를 사용한 예제 : </strong></p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=;badges=staff/1,bits/1000;bits=100;color=;display-name=ronni;emotes=;id=b34ccfc7-4977-403a-8a94-33c6bac34fb8;mod=0;room-id=1337;subscriber=0;tmi-sent-ts=1507246572675;turbo=1;user-id=1337;user-type=staff&nbsp;:ronni!ronni@ronni.tmi.twitch.tv&nbsp;PRIVMSG&nbsp;#ronni&nbsp;:cheer100</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+
+                        <h2 id="roomstate">ROOMSTATE (트위치 태그)</h2>
+                        <p>사용자가 채널에 참여하였거나, 채널의 설정정보가 변경되었을 때, 채널의 상태정보를 보냅니다. 참가하였을 경우에는, 채팅방의 모든 설정정보가 포함되며, 설정정보가 변경된 경우에는 관련된 태그만이 보내집니다.</p>
+                        <p><strong>프로토타입</strong></p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@emote-only=&lt;emote-only&gt;;followers-only=&lt;followers-only&gt;;r9k=&lt;r9k&gt;;slow=&lt;slow&gt;;subs-only=&lt;subs-only&gt;&nbsp;:tmi.twitch.tv&nbsp;ROOMSTATE&nbsp;#&lt;channel&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">파라미터</th>
+                                    <th width="80%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>emote-only</td>  
+                                    <td>
+                                        <p>이모티콘만을 사용하는 모드입니다. 활성화상태라면, 채팅에서 오직 이모티콘만이 허용됩니다. 0과 1 값을 가질 수 있습니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>followers-only</td>  
+                                    <td>
+                                        <p>팔로워만이 채팅이 가능한 모드입니다. 활성화상태라면, 팔로우 한 사용자만이 채팅이 가능합니다. 0과 1값을 가질 수 있거나, 음수가 아닌 정수값을 가질 수 있습니다.(지정 시간(분)동안 팔로우한 사용자만이 채팅이 가능합니다.) </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>r9k</td>  
+                                    <td>
+                                        <p>R9k 모드입니다. 활성화상태라면, 9개 이상의 문자가 메세지 상에서 고유한 값을 가져야 합니다. 0과 1값을 가질 수 있습니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>slow</td>  
+                                    <td>
+                                        <p>관리자 권한이 없는 채팅들은 메세지가 보내질 때 까지 기다려야 합니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>subs-only</td>  
+                                    <td>
+                                        <p>구독자 만이 채팅이 가능한 모드입니다. 활성화상태라면, 구독자만이 채팅이 가능합니다 0과 1 값을 가질 수 있습니다.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>예제 : </strong>dallas 채널에 참가하는 경우입니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@emote-only=0;followers-only=0;r9k=0;slow=0;subs-only=0&nbsp;:tmi.twitch.tv&nbsp;ROOMSTATE&nbsp;#dallas</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p><strong>예제 : </strong>dallas 채널에서 10초동안 슬로우 모드가 사용되었습니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@slow=10&nbsp;:tmi.twitch.tv&nbsp;ROOMSTATE&nbsp;#dallas</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+
+                        <h2 id="usernotice">USERNOTICE (트위치 태그)</h2>
+                        <p>다음의 이벤트가 발생했을 때, 사용자에게 알림을 보냅니다.</p>
+                        <ul>
+                            <li>채널의 구독, 재구독, 채널으로부터의 선물</li>
+                            <li>채널에서 오는 레이드(raid).  레이드란, 스트리머가 시청자를 다른 채널로 보내서 지원하도록 하는 시스템 입니다.</li>
+                            <li>채널 행사(ritual). 대부분의 채널들은 중요한 일이 있을 때, 이를 기념하기 위한 행사를 진행합니다. 예를들어, 시청자가 첫 채팅을 입력할 때와 같은 경우에, 다른 실청자에게 메세지 알림을 공유합니다.</li>
+                        </ul>
+                        <p><strong>프로토타입</strong></p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=&lt;badge-info&gt;;badges=&lt;badges&gt;;color=&lt;color&gt;;display-name=&lt;display-name&gt;;emotes=&lt;emotes&gt;;id=&lt;id-of-msg&gt;;login=&lt;user&gt;;mod=&lt;mod&gt;;msg-id=&lt;msg-id&gt;;room-id=&lt;room-id&gt;;subscriber=&lt;subscriber&gt;;system-msg=&lt;system-msg&gt;;tmi-sent-ts=&lt;timestamp&gt;;turbo=&lt;turbo&gt;;user-id=&lt;user-id&gt;;user-type=&lt;user-type&gt;&nbsp;:tmi.twitch.tv&nbsp;USERNOTICE&nbsp;#&lt;channel&gt;&nbsp;:&lt;message&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>모든 USERNOTICE 태그는 다음 표의 리스트 목록을 포함합니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">파라미터</th>
+                                    <th width="80%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>badge-info</td>  
+                                    <td>
+                                        <p>badges 태그에 들어있는, 채팅 배지와 관련된 메타데이터 입니다.</p>
+                                        <p>현재 이 기능은 구독자가 해당 채널을 몇개월 구독했는지를 확인하기 위해서 구독자에게만 사용됩니다. 이에대한 수치는 배지의 버전의 수보다 훨씬 세밀화 되어 있습니다. 예를들어, 어떠한 사용자가 채널을 45개월동안 구독했다고 가정했을 때, badge-info를 이용하면 45개월이라는 값이 그대로 나오지만, badges version을 사용하면 오직 3년이라고만 표시됩니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>badges</td>  
+                                    <td>콤마(,)로 구분되어진 채팅 배지와 그 배지의 각각의 버전에 대한 정보가 담긴 리스트입니다.(각 데이터는 &lt;badge&gt;/&lt;version&gt;형식으로 포맷되어 있습니다.) badge의 값에는 여러가지 값이 존재합니다. (admin, bits, broadcaster, global_mod, moderator, subscriber, staff, turbo 등). 대부분의 배지들은 오직 버전 1만을 가집니다. 하지만 몇몇개의 배지들은 배지를 보유한 기간에 대비한 여러가지 버전이 존재합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>color</td>  
+                                    <td>16진법으로 이루어진 RGB 색깔 코드입니다. 설정되지 않은 경우에는, 빈 문자열로 표시됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>display-name</td>  
+                                    <td><a href="https://ircv3.net/specs/extensions/message-tags.html">IRC 스펙</a>에 따라 표시되는 사용자의 이름입니다. 설정되지 않은 경우에는, 빈 문자열로 표시됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>emotes</td>  
+                                    <td>
+                                        <p>이모티콘 이미지와 메세지 안의 대체 텍스트에 대한 정보입니다. 이는 널값일 수 있습니다. 문법은 다음과 같습니다.</p>
+                                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;emote&nbsp;ID&gt;:&lt;first&nbsp;index&gt;-&lt;last&nbsp;index&gt;,&lt;another&nbsp;first&nbsp;index&gt;-&lt;another&nbsp;last&nbsp;index&gt;/&lt;another&nbsp;emote&nbsp;ID&gt;:&lt;first&nbsp;index&gt;-&lt;last&nbsp;index&gt;...</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                                        <ul>
+                                            <li>emote ID : 해당 URL을 사용하는 수 입니다. size값은 1.0, 2.0, 3.0 등이 올 수 있습니다.</li>
+                                            <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">http://static-cdn.jtvnw.net/emoticons/v1/:&lt;emote&nbsp;ID&gt;/:&lt;size&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                                            <li>first index, last index : 캐릭터의 위치값(index)입니다. \001ACTION 은 계산하지 않습니다. 사용자가 보낸 메시지의 첫번째 문자열부터 세기 시작합니다. 아래 예제를 확인하세요</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>id</td>  
+                                    <td>메세지의 고유 id 입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>login</td>  
+                                    <td>알림을 보낸 사용자의 이름입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>message</td>  
+                                    <td>메세지 값을 의미합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>mod</td>  
+                                    <td>사용자에게 관리자 배지가 있는 경우 1, 아니면 0입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>msg-id</td>  
+                                    <td>알림의 값의 타입입니다. 다음 값을 가질 수 있습니다 : sub, resub, subgift, anonsubgift, submysterygift, giftpaidupgrade, rewardgift, anongiftpaidupgrade, raid, unraid, ritual, bitsbadgetier.</td>
+                                </tr>
+                                <tr>
+                                    <td>room-id</td>  
+                                    <td>채널의 고유 id입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>system-msg</td>  
+                                    <td>알림과 함께 입력된 메세지입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>tmi-sent-ts</td>  
+                                    <td>서버가 메세지를 받았을 때의 타임스탬프 값 입니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>user-id</td>  
+                                    <td>사용자의 ID입니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>이외에도 msg-param 필드는 몇가지 추가적인 알림을 보냅니다. (sub/resub 와 같은),  자세한 사항은 다음 표를 참고하세요.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">msg-param 파라미터</th>
+                                    <th width="80%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>msg-param-cumulative-month</td>  
+                                    <td>
+                                        <p>sub와 resub의 경우에만 보내집니다.</p>
+                                        <p>사용자가 구독한 총 개월 수 입니다. 이는 msg-param-months의 값과 동일하나, 다른 유형의 사용자 알림을 위해 사용됩니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-displayName</td>  
+                                    <td>
+                                        <p>raid의 경우에만 보내집니다.</p>
+                                        <p>해당 채널로넘어온 사용자 소스에서 표시되는 이름입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-login</td>  
+                                    <td>
+                                        <p>raid의 경우에만 보내집니다.</p>
+                                        <p>해당 채널로 넘어온 소스의 이름입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-months</td>  
+                                    <td>
+                                        <p>subgift, anonsubgift의 경우에만 보내집니다.</p>
+                                        <p>사용자가 구독한 총 개월 수 입니다. 이는 msg-param-cumulative-month의 값과 동일하나, 다른 유형의 사용자 알림을 위해 사용됩니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-promo-gift-total</td>  
+                                    <td>
+                                        <p>anongiftpaidupgrade, giftpaidupgrade의 경우에만 보내집니다.</p>
+                                        <p>msg-param-promo-name 에 의해 인식된 프로모션 중에 보내진 선물의 수 입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-promo-name</td>  
+                                    <td>
+                                        <p>anongiftpaidupgrade, giftpaidupgrade의 경우에만 보내집니다.</p>
+                                        <p>현재 진행중인 프로모션입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-recipient-id</td>  
+                                    <td>
+                                        <p>subgift, anonsubgift의 경우에만 보내집니다.</p>
+                                        <p>구독 선물을 받은 수신자의 사용자 ID 입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-recipient-user-name</td>  
+                                    <td>
+                                        <p>subgift, anonsubgift의 경우에만 보내집니다.</p>
+                                        <p>구독 선물을 받은 수신자의 사용자 이름 입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-sender-login</td>  
+                                    <td>
+                                        <p>giftpaidupgrade의 경우에만 보내집니다.</p>
+                                        <p>구독 선물을 보낸 송신자의 로그인 정보 입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-sender-name</td>  
+                                    <td>
+                                        <p>giftpaidupgradeift의 경우에만 보내집니다.</p>
+                                        <p>구독 선물을 보낸 송신자의 표시 이름 입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-should-share-streak</td>  
+                                    <td>
+                                        <p>sub, resub의 경우에만 보내집니다.</p>
+                                        <p>사용자가 자신의 streak가 공유되길 원하는지에 대한 여부정보입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-streak-months</td>  
+                                    <td>
+                                        <p>sub, resub의 경우에만 보내집니다.</p>
+                                        <p>사용자가 채널을 연속적으로 구독한 개월 수 입니다. 이는 msg-param-should-share-streak 가 0이라면 0이라고 표시됩니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-sub-plan</td>  
+                                    <td>
+                                        <p>sub, resub, subgift, anonsubgift의 경우에만 보내집니다.</p>
+                                        <p>구독 일정이 사용되는 데이터 타입입니다. prime, 1000, 2000, 3000 값이 사용됩니다. 각각 유료 구독의 첫번째, 두번째, 세번째 상태를 나타냅니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-sub-plan-name</td>  
+                                    <td>
+                                        <p>sub, resub, subgift, anonsubgift의 경우에만 보내집니다.</p>
+                                        <p>구독 일정의 표시되는 이름입니다. 이는 기본값이거나, 채널의 주인이 지정한 이름으로 표시됩니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-viewerCount</td>  
+                                    <td>
+                                        <p>raid의 경우에만 보내집니다.</p>
+                                        <p>이 채널로 넘어온 소스채널의 시청자 수 데이터입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-ritual-name</td>  
+                                    <td>
+                                        <p>ritual의 경우에만 보내집니다.</p>
+                                        <p>이 알림을 보낸 행사의 이름입니다. new_chatter값을 가집니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-threshold</td>  
+                                    <td>
+                                        <p>bitsbadgetier의 경우에만 보내집니다.</p>
+                                        <p>사용자가 얻은  비트 배지의 티어입니다.  100, 1000, 10000 값을 가집니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>msg-param-gift-months</td>  
+                                    <td>
+                                        <p>subgift, anonsubgift의 경우에만 보내집니다.</p>
+                                        <p>단일 선물이나, 여러개의 선물이 보내졌던 개월 수 입니다.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>예제 : </strong>ronnie가 재구독을 했을때, dallas 채널로 알림이 보내집니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=;badges=staff/1,broadcaster/1,turbo/1;color=#008000;display-name=ronni;emotes=;id=db25007f-7a18-43eb-9379-80131e44d633;login=ronni;mod=0;msg-id=resub;msg-param-cumulative-months=6;msg-param-streak-months=2;msg-param-should-share-streak=1;msg-param-sub-plan=Prime;msg-param-sub-plan-name=Prime;room-id=1337;subscriber=1;system-msg=ronni\shas\ssubscribed\sfor\s6\smonths!;tmi-sent-ts=1507246572675;turbo=1;user-id=1337;user-type=staff&nbsp;:tmi.twitch.tv&nbsp;USERNOTICE&nbsp;#dallas&nbsp;:Great&nbsp;stream&nbsp;--&nbsp;keep&nbsp;it&nbsp;up!</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p><strong>예제 : </strong>tww2가 mr_woodchunk에게 forstypcup's 채널에서 선물을 보냈을때 알림이 보내집니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=;badges=staff/1,premium/1;color=#0000FF;display-name=TWW2;emotes=;id=e9176cd8-5e22-4684-ad40-ce53c2561c5e;login=tww2;mod=0;msg-id=subgift;msg-param-months=1;msg-param-recipient-display-name=Mr_Woodchuck;msg-param-recipient-id=89614178;msg-param-recipient-name=mr_woodchuck;msg-param-sub-plan-name=House\sof\sNyoro~n;msg-param-sub-plan=1000;room-id=19571752;subscriber=0;system-msg=TWW2\sgifted\sa\sTier\s1\ssub\sto\sMr_Woodchuck!;tmi-sent-ts=1521159445153;turbo=0;user-id=13405587;user-type=staff&nbsp;:tmi.twitch.tv&nbsp;USERNOTICE&nbsp;#forstycup</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p><strong>예제 : </strong>익명의 사용자가 qa_Subs_partner  채널의 TenureCalculator  구독선물을 보냈을 때, 알림이 보내집니다. 이는 다음을 제외하고는 위의 subgift의 알림과 동일합니다.</p>
+                        <ul>
+                            <li>채널의 사용자알림의 송신자</li>
+                            <li>사용자 알림의 송신된 개수</li>
+                        </ul>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=;badges=broadcaster/1,subscriber/6;color=;display-name=qa_subs_partner;emotes=;flags=;id=b1818e3c-0005-490f-ad0a-804957ddd760;login=qa_subs_partner;mod=0;msg-id=anonsubgift;msg-param-months=3;msg-param-recipient-display-name=TenureCalculator;msg-param-recipient-id=135054130;msg-param-recipient-user-name=tenurecalculator;msg-param-sub-plan-name=t111;msg-param-sub-plan=1000;room-id=196450059;subscriber=1;system-msg=An\sanonymous\suser\sgifted\sa\sTier\s1\ssub\sto\sTenureCalculator!\s;tmi-sent-ts=1542063432068;turbo=0;user-id=196450059;user-type=&nbsp;:tmi.twitch.tv&nbsp;USERNOTICE&nbsp;#qa_subs_partner</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p><strong>예제 : </strong>채널에서 레이드 된 경우에 알림이 보내집니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=;badges=turbo/1;color=#9ACD32;display-name=TestChannel;emotes=;id=3d830f12-795c-447d-af3c-ea05e40fbddb;login=testchannel;mod=0;msg-id=raid;msg-param-displayName=TestChannel;msg-param-login=testchannel;msg-param-viewerCount=15;room-id=56379257;subscriber=0;system-msg=15\sraiders\sfrom\sTestChannel\shave\sjoined\n!;tmi-sent-ts=1507246572675;tmi-sent-ts=1507246572675;turbo=1;user-id=123456;user-type=&nbsp;:tmi.twitch.tv&nbsp;USERNOTICE&nbsp;#othertestchannel</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p><strong>예제 : </strong>new_chatter ritual에 대해 알림이 보내집니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=;badges=;color=;display-name=SevenTest1;emotes=30259:0-6;id=37feed0f-b9c7-4c3a-b475-21c6c6d21c3d;login=seventest1;mod=0;msg-id=ritual;msg-param-ritual-name=new_chatter;room-id=6316121;subscriber=0;system-msg=Seventoes\sis\snew\shere!;tmi-sent-ts=1508363903826;turbo=0;user-id=131260580;user-type=&nbsp;:tmi.twitch.tv&nbsp;USERNOTICE&nbsp;#seventoes&nbsp;:HeyGuys</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+
+                        <h2 id="userstate">USERSTATE (트위치 태그)</h2>
+                        <p>사용자가 채널에 참가하였거나, PRIVMSG 명령어를 통해서 채널에 메세지를 보냈을 때, 사용자의 상태정보를 보냅니다.</p>
+                        <p><strong>프로토타입</strong></p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=&lt;badge-info&gt;;badges=&lt;badges&gt;;color=&lt;color&gt;;display-name=&lt;display-name&gt;;emote-sets=&lt;emote-sets&gt;;mod=&lt;mod&gt;;subscriber=&lt;subscriber&gt;;turbo=&lt;turbo&gt;;user-type=&lt;user-type&gt;:tmi.twitch.tv&nbsp;USERSTATE&nbsp;#&lt;channel&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">파라미터</th>
+                                    <th width="80%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>badge-info</td>  
+                                    <td>
+                                        <p>badges 태그에 들어있는, 채팅 배지와 관련된 메타데이터 입니다.</p>
+                                        <p>현재 이 기능은 구독자가 해당 채널을 몇개월 구독했는지를 확인하기 위해서 구독자에게만 사용됩니다. 이에대한 수치는 배지의 버전의 수보다 훨씬 세밀화 되어 있습니다. 예를들어, 어떠한 사용자가 채널을 45개월동안 구독했다고 가정했을 때, badge-info를 이용하면 45개월이라는 값이 그대로 나오지만, badges version을 사용하면 오직 3년이라고만 표시됩니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>badges</td>  
+                                    <td>콤마(,)로 구분되어진 채팅 배지와 그 배지의 각각의 버전에 대한 정보가 담긴 리스트입니다.(각 데이터는 &lt;badge&gt;/&lt;version&gt;형식으로 포맷되어 있습니다.) badge의 값에는 여러가지 값이 존재합니다. (admin, bits, broadcaster, global_mod, moderator, subscriber, staff, turbo 등). 대부분의 배지들은 오직 버전 1만을 가집니다. 하지만 몇몇개의 배지들은 배지를 보유한 기간에 대비한 여러가지 버전이 존재합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>color</td>  
+                                    <td>16진법으로 이루어진 RGB 색깔 코드입니다. 설정되지 않은 경우에는, 빈 문자열로 표시됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>display-name</td>  
+                                    <td><a href="https://ircv3.net/specs/extensions/message-tags.html">IRC 스펙</a>에 따라 표시되는 사용자의 이름입니다. 설정되지 않은 경우에는, 빈 문자열로 표시됩니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>emote-sets</td>  
+                                    <td>콤마(,)로 구분된 리스트로 이루어진 여러분의 이모티콘 세트입니다. <a href="https://dev.twitch.tv/docs/v5/reference/chat/#get-chat-emoticons-by-set">채팅 이모티콘을 세트로 얻기</a>에서 이모티콘 이미지의 하위집합을 확인할 수 있습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>mod</td>  
+                                    <td>사용자에게 관리자 배지가 있는 경우 1, 아니면 0입니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>예제 : </strong>ronni가 dallas 채널에 참여했을 때 알림이 보내집니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;@badge-info=;badges=staff/1;color=#0D4200;display-name=ronni;emote-sets=0,33,50,237,793,2126,3517,4578,5569,9400,10337,12239;mod=1;subscriber=1;turbo=1;user-type=staff&nbsp;:tmi.twitch.tv&nbsp;USERSTATE&nbsp;#dallas</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                    </div>  <!-- //main -->
+                </div>
+            </div>
+        </article>
+
+        <script>
+            window.onload = function() {
+                const side = document.querySelector('.container .row .side'),
+                    menu_side_bar = document.querySelector('.container .row .menu .side-bar')
+                menu_side_bar.addEventListener('click', () => {
+                    if(side.classList.contains('active')) {
+                        side.classList.remove('active');
+                        menu_side_bar.classList.remove('active')
+                    }
+                    else {
+                        side.classList.add('active')
+                        menu_side_bar.classList.add('active')
+                    }
+                    
+                })
+            }
+
+        </script>
+    </body>
+</html>

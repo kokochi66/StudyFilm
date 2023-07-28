@@ -1,0 +1,26 @@
+<%-include('../template_head') %>
+<style>
+  #cont_login {width: 440px; margin: 0 auto; height: 400px;}
+  #cont_login .login_form {display: block; width: 360px; float: left;}
+  #cont_login .login_form > input:focus {outline: none;}
+  #cont_login .login_form .login_id {width: 350px; height: 50px; font-size: 25px; margin-bottom: 20px;}
+  #cont_login .login_form .login_pwd {width: 350px; height: 50px; font-size: 25px;}
+  #cont_login .login_btn {float: left; height: 128px; width: 80px;border: 1px inset #000; font-size: 18px;}
+  #cont_login .login_info {display: flex; float: left; width: 100%; justify-content: center; margin-top: 30px;}
+  #cont_login .login_info > div {float: left; padding-right: 12px; margin-right: 13px; cursor: pointer; border-right: 1px solid #000;}
+  #cont_login .login_info > div:hover {text-decoration: underline;}
+  #cont_login .login_info > div:last-child {margin-right: 0; border-right: none;}
+</style>
+<body>
+  <div id="wrap">
+    <%-include('../header') %>
+    <%-include('./login_cont') %>
+    <!-- //컨텐츠 -->
+  </div>
+  <%-include('../footer') %>
+  <!-- //푸터 -->
+  <%-include('../menu_side') %>
+  <!-- //사이드 메뉴 바 구현 -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9197f67d-5ef2-4f4b-a438-c07fb0e603fb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../etc/2021.10.01~Algorithms/.idea/2021.10.01~Algorithms.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/2021.10.01~Algorithms/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/2021.10.01~Algorithms/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/2021.10.01~Algorithms/java/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/2021.10.01~Algorithms/java/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/2021.10.01~Algorithms/java/Algorithms-java.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/AL/Algorithms/DataStructure/AL_Queue_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/AL/Algorithms/Graph/AL_BellmanFord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2020.M11/D27/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2020.M11/D28/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D20/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D3a/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D6/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D9/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2021.M01/D11/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2021.M01/D28/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D016/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D24/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D27/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D29/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D09/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D10/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/Y2021.M06/Y2021/M06/D24/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/Coding_Algorithms/Study_Project/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/nodejs/2021.05/20210509.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - Algorithms_java/Search/AL_Binary_Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - CodeForce/CF_LEVEL1/CF_100.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - CodeForce/CONT/202011/20201121CONT/CONT_1121_codeReview.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - CodeForce/CONT/202011/CONT_1124.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200810/The Journey Begins_1_add.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200810/The Journey Begins_3_checkPalindrome.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_3_MakeArrayConsecutive2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_5_matrixElementsSum.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200812/Intstream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200813/Smooth_sailing_1_AllLongestStrings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200813/Smooth_sailing_2_commonCharacterCount.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200820/Island_of_Knowledge_1_areEquallyStrong.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200822/Island_of_Knowledge_6_minesweeper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_1_arrayReplace.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_3_variableName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_4_alphabeticShift.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200825/Rains_of_Reason_5_chessBoardCellColor.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200826/Through_the_Fog_4_stringsRearrangement.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200827/Diving_Deeper_2_firstDigit.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200828/Dark_Wilderness_3_longestDigitsPrefix.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200831/chessKnight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200831/differentSquares.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200831/isDigit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202008/20200831/longestWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202009/20200904 [Intro 복습 + Core 진행]/오늘의 공부.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202009/20200909 [학교실습]/KNUweek2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Dictionary_HashMapTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Queue_PriorityQueueTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Set_HashSetTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202009/20200916 [학교실습 + bkj진행]/KNU_week3_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202009/20200927[Pro 진행 + java Stream, Executor]/Ex_chStream_Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202009/20200929[pro 진행]/pro_Level1_6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_13.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_16.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_31.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_35.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201005 [pro2_4~6]/pro_Level2_4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/KNU_week5_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/KNU_week5_e1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201008 [pro]/pro_MonthChel1008_4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201009 [pro2_11~15]/pro_Level2_14.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201013 [pro_stack&amp;queue_1]/pro_stack_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201014 [pro_heap_1 + 학교실습]/pro_Heap_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201017 [pro_hash2~4]/pro_hash_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201021 [Merge]/Merge_Sort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortBKJ1_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortBKJ1_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortingTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/BKJBonus1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/KNU_week7_3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201030 [BKJ]/StackBKJ4_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201030 [BKJ]/StackEX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201031 [BKJ]/QueueBKJ2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202010/20201031 [BKJ]/Recur1031.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201102 [BKJ + BF]/BFS_test1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201104 [PKNU_W9-10 + BKJ]/ALG_MT3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201104 [PKNU_W9-10 + BKJ]/KNU_W9_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201105 [BKJ]/pro_monchal11_5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201108 [BKJ]/BKJ1108.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201110 [BKJ]/BKJ1110.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201113 [BKJ]/BKJ1113.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201120 [PRO]/PRO1120_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201121 [PRO, BOJ]/BOJ1121.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201121 [PRO, BOJ]/PRO1121.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201123 [PRO + BOJ]/BOJ1123.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../etc/~2020.11.26 - codingsample/202011/20201124 [PRO + SW]/PRO1124.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/.idea/2021.10.01~Algorithms.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/Algorithms-java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/src/Y2021/M10/D01/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/src/Y2021/M10/D19/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2021.10.01~Algorithms/java/src/basic/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.mylyn/.taskListIndex/segments_1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.mylyn/.taskListIndex/write.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.mylyn/.tasks.xml.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.mylyn/repositories.xml.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.mylyn/tasks.xml.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.resources/.projects/Study_Project/.markers" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.resources/.projects/Study_Project/org.eclipse.jdt.core/state.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.debug.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.junit.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jsch.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jst.j2ee.webservice.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.m2e.discovery.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.context.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.java.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.monitor.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.tasks.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.pde.api.tools.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.editors.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.navigator.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.wst.jsdt.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.debug.core/.launches/Main.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.debug.core/.launches/Solution.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.debug.ui/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.core/3042195984.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.core/assumedExternalFilesCache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.launching/.install.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/Study_Project/2020/11/48/refactorings.history" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/Study_Project/2020/11/48/refactorings.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.ltk.ui.refactoring/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.16.0.20200318-1040.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.mylyn.tasks.ui/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.oomph.setup/workspace.setup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.tips.ide/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.tm.terminal.view.ui/.executables/data.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.ui.intro/introstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.ui.workbench.texteditor/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.wst.jsdt.core/variablesAndContainers.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.wst.jsdt.ui/OpenTypeHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/.plugins/org.eclipse.wst.jsdt.ui/QualifiedTypeNameHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.metadata/version.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/AL/Algorithms/DataStructure/AL_Queue_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/AL/Algorithms/Graph/AL_BellmanFord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/AL/Algorithms/Graph/AL_Depth_First_Search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/AL/Algorithms/Graph/AL_Dijkstra.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/AL/Algorithms/Graph/AL_Graph_test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/AL/Algorithms/Graph/AL_Prim.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/AL/Algorithms/Graph/AL_Tree_test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/AL/Algorithms/Search/AL_BackTracking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/AL/Algorithms/Sorting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/AL/Algorithms/String/StringBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M11/D25/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M11/D25/Solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M11/D26/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M11/D26/Solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M11/D27/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M11/D28/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M11/D28/Solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M11/D29/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M11/D30/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D1/problem_solving_Dynamic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D10/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D11/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D14/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D17/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D19/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D2/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D20/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D21/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D27/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D28/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D29/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D30/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D3a/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D4/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D6/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2020.M12/Y2020/M12/D9/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D1/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D10/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D11/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D14/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D19/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D20/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D26/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D28/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D30/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D31/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M01/D9/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M02/Y2021/M02/D1/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M02/Y2021/M02/D26/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D01/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D012/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D013/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D015/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D016/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D017/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D018/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D019/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D02/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D03/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D04/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D04/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D05/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D08/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D20/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D21/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D22/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D23/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D24/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D25/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D27/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D28/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D29/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D30/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D31/Linked_kor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M03/Y2021/M03/D31/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D01/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D02/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D03/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D05/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D06/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D09/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D10/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D11/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D12/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D13/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D14/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D15/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D16/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D18/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D19/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D25/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D27/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D28/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D29/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D29/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M04/Y2021/M04/D30/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M05/Y2021/M05/D01/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M05/Y2021/M05/D02/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M05/Y2021/M05/D03/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M06/Y2021/M06/D01/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M06/Y2021/M06/D23/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M06/Y2021/M06/D24/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M07/D01/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M07/D02/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M07/D07/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M07/D10/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M07/D11/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M07/D11/Main2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M07/D12/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M07/D13/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/Y2021.M07/D14/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/src/Solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Coding_Algorithms/Study_Project/src/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nodejs/2021.05/20210504.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nodejs/2021.05/20210505.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nodejs/2021.05/20210509.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nodejs/2021.05/dev/stdin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Data Structure/List/AL_DoubleLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Math/AL_Eratostenes_Sieve.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Math/AL_Euclidean_gcd_lcm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Math/AL_Fast_Power.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Search/AL_Binary_Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Search/AL_Breat_First_Search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Search/AL_Depth_First_Search.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Search/AL_Dijkstra.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Search/AL_Floyd_Warshall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Search/AL_Graph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Search/AL_Kruskal_test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Search/AL_TopoLogy_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Search/Prim_test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Search/coin_change_test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Sort/AL_Bubble_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Sort/AL_Counting_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Sort/AL_Heap_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Sort/AL_Insertion_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Sort/AL_Merge_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Sort/AL_Quick_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/Sort/AL_Selection_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - Algorithms_java/String/AL_Longest_SubSequence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CF_LEVEL1/CF_100.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CF_LEVEL1/CF_102.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CF_LEVEL1/CF_4A.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CF_LEVEL1/CF_71A.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CF_LEVEL1/cf101.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CONT/202011/20201121CONT/CONT_1121.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CONT/202011/20201121CONT/CONT_1121_codeReview.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CONT/202011/20201121CONT/sol1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CONT/202011/20201121CONT/sol2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CONT/202011/CONT_1113.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CONT/202011/CONT_1115.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CONT/202011/CONT_1117.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CONT/202011/CONT_1119.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - CodeForce/CONT/202011/CONT_1124.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200810/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200810/The Journey Begins_1_add.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200810/The Journey Begins_1_add.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200810/The Journey Begins_1_add.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200810/The Journey Begins_2_centuryFromYear.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200810/The Journey Begins_2_centuryFromYear.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200810/The Journey Begins_3_checkPalindrome.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200810/The Journey Begins_3_checkPalindrome.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200810/The_Journey_begins.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200810/from.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_1_adjacentElementsProduct.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_1_adjacentElementsProduct.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_2_shapeArea.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_2_shapeArea.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_3_MakeArrayConsecutive2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_3_MakeArrayConsecutive2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_4_almostIncreasingSequence.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_4_almostIncreasingSequence.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_5_matrixElementsSum.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Edge_of_the_Ocean_5_matrixElementsSum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Intstream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200812/func.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200813/Smooth_sailing_1_AllLongestStrings.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200813/Smooth_sailing_1_AllLongestStrings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200813/Smooth_sailing_2_commonCharacterCount.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200813/Smooth_sailing_2_commonCharacterCount.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200813/Smooth_sailing_3_isLucky.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200813/Smooth_sailing_3_isLucky.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200813/from.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200814/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200814/Smooth_sailing_4_SortByHeight.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200814/Smooth_sailing_4_SortByHeight.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200814/Stream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200814/from.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200814/func.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200814/hashset.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200815/Smooth_sailing_5_reverseInParentheses.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200815/Smooth_sailing_5_reverseInParentheses.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200815/from.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200815/reverseInParentheses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200817/Exploring_the_Waters_1_alternatingSums.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200817/Exploring_the_Waters_1_alternatingSums.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200817/Exploring_the_Waters_1_alternatingSums.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200818/Exploring_the_Waters_2_addBorder.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200818/Exploring_the_Waters_2_addBorder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200818/Exploring_the_Waters_2_addBorder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200819/Exploring_the_Waters_3_areSimilar.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200819/Exploring_the_Waters_3_areSimilar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200819/Exploring_the_Waters_3_areSimilar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200819/Exploring_the_Waters_4_arrayChange.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200819/Exploring_the_Waters_4_arrayChange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200819/Exploring_the_Waters_4_arrayChange.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200819/Exploring_the_Waters_5_palindromeRearranging.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200819/Exploring_the_Waters_5_palindromeRearranging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200819/Exploring_the_Waters_5_palindromeRearranging.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200819/from.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200820/Island_of_Knowledge_1_areEquallyStrong.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200820/Island_of_Knowledge_1_areEquallyStrong.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200820/Island_of_Knowledge_1_areEquallyStrong.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200820/Island_of_Knowledge_2_arrayMaximalAdjacentDifference.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200820/Island_of_Knowledge_2_arrayMaximalAdjacentDifference.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200820/Island_of_Knowledge_2_arrayMaximalAdjacentDifference.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200820/Island_of_Knowledge_3_isIPv4Address.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200820/Island_of_Knowledge_3_isIPv4Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200820/Island_of_Knowledge_3_isIPv4Address.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200820/from.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200821/Island_of_Knowledge_3_isIPv4Address.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200822/Island_of_Knowledge_4_avoidObstacles.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200822/Island_of_Knowledge_4_avoidObstacles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200822/Island_of_Knowledge_4_avoidObstacles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200822/Island_of_Knowledge_5_boxBlur.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200822/Island_of_Knowledge_5_boxBlur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200822/Island_of_Knowledge_5_boxBlur.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200822/Island_of_Knowledge_6_minesweeper.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200822/Island_of_Knowledge_6_minesweeper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200822/Island_of_Knowledge_6_minesweeper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200822/from.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_1_arrayReplace.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_1_arrayReplace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_1_arrayReplace.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_2_evenDigitsOnly.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_2_evenDigitsOnly.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_2_evenDigitsOnly.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_3_variableName.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_3_variableName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_3_variableName.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_4_alphabeticShift.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_4_alphabeticShift.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/Rains_of_Reason_4_alphabeticShift.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/[20200824일자].txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200824/zzCheck_matches.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Rains_of_Reason_5_chessBoardCellColor.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Rains_of_Reason_5_chessBoardCellColor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Rains_of_Reason_5_chessBoardCellColor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Through_the_Fog_1_circleOfNumbers.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Through_the_Fog_1_circleOfNumbers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Through_the_Fog_1_circleOfNumbers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Through_the_Fog_2_depositProfit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Through_the_Fog_2_depositProfit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Through_the_Fog_2_depositProfit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Through_the_Fog_3_absoluteValuesSumMinimization.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Through_the_Fog_3_absoluteValuesSumMinimization.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Through_the_Fog_3_absoluteValuesSumMinimization.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/Through_the_Fog_3_absoluteValuesSumMinimization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200825/[20200825일자].txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200826/Through_the_Fog_4_stringsRearrangement.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200826/[20200826일자].txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200827/Diving_Deeper_1_extractEachKth.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200827/Diving_Deeper_2_firstDigit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200827/Diving_Deeper_3_differentSymbolsNaive.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200827/Diving_Deeper_4_arrayMaxConsecutiveSum.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200827/[20200827일자].txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200828/Dark_Wilderness_1_growingPlant.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200828/Dark_Wilderness_2_knapsackLight.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200828/Dark_Wilderness_3_longestDigitsPrefix.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200828/Dark_Wilderness_4_digitDegree.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200828/Dark_Wilderness_5_bishopAndPawn.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200828/Eruption_of_Light_1_isBeautifulString.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200828/Eruption_of_Light_2_findEmailDomain.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200828/[20200828일자].txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/buildPalindrome.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/chessKnight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/deleteDigit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/differentSquares.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/electionsWinners.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/isDigit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/isMAC48Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/lineEncoding.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/longestWord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/sumUpNumbers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202008/20200831/validTime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200901/FontCounting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200901/OtoX.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200901/differentSquares.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200901/digitsProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200901/fileNaming.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200901/the3npls1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200902/messageFromBinaryCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200902/오늘 공부를 너무 안했ㄷ.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200903/spiralNumbers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200903/sudoku.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200904 [Intro 복습 + Core 진행]/Intro1_Journey_Begins.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200904 [Intro 복습 + Core 진행]/Intro2_Edge_of_the_Ocean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200904 [Intro 복습 + Core 진행]/Intro3_Smooth_Sailing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200904 [Intro 복습 + Core 진행]/TheCore1_Intro_Gates.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200904 [Intro 복습 + Core 진행]/오늘의 공부.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200905 [Core 진행]/TheCore2_At_the_Crossroads.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200905 [Core 진행]/TheCore3_Corner_of_0s_and_1s.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200906 [Core 진행]/TheCore4_Loop_Tunnel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200907 [Intro 복습 + Core 진행]/Intro4_Exploring_the_Waters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200907 [Intro 복습 + Core 진행]/TheCore5_List_Forest_Edge.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200908 [Core 진행]/TheCore6_Labyrinth_of_Nested_Loops1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200909 [학교실습]/KNUweek2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200909 [학교실습]/KNUweek2_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200909 [학교실습]/KNUweek2_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200910 [Core 진행]/20200910일자.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200910 [Core 진행]/TheCore6_Labyrinth_of_Nested_Loops2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200911/bkjcoing_L1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200911/bkjcoing_L2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200911/bkjcoing_L3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200911/bkjcoing_L4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200911/bkjcoing_L5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200911/bkjcoing_L6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200911/programers_LEVEL1_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200912 [Core 진행]/TheCore6_Labyrinth_of_Nested_Loops3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200912 [Core 진행]/TheCore6_rectangleRotation.C" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200914 [Core 진행 + java 문자열]/TheCore6_Labyrinth_of_Nested_Loops4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200914 [Core 진행 + java 문자열]/TheCore7_BookMarket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/BigInteger_BigIntegerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Dictionary_HashMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Dictionary_HashTableTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Map_TreeMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Queue_PriorityQueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Queue_QueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Set_HashSetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Stack_StackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200915 [java 라이브러리]/Vector_VectorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200916 [학교실습 + bkj진행]/KNU_week3_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200916 [학교실습 + bkj진행]/KNU_week3_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200916 [학교실습 + bkj진행]/KNU_week3_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200916 [학교실습 + bkj진행]/bkjcoing_L7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200917 [bkj 진행]/bkjcoing_L8_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200918[bkj 진행]/bkjcoing_L8_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200920[Core 진행]/TheCore8_MirrorLake.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200921/for.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200921/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200922[bkj 진행 + java 문자열]/StringBuilderBufferTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200922[bkj 진행 + java 문자열]/StringTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200922[bkj 진행 + java 문자열]/bkjcoing_L9.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200924[학교실습 + bkj 진행]/KNU_week4_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200924[학교실습 + bkj 진행]/KNU_week4_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200924[학교실습 + bkj 진행]/KNU_week4_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200924[학교실습 + bkj 진행]/Testcase.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200924[학교실습 + bkj 진행]/bkjcoing_L10.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200925[Pro 진행]/pro2_TestHash.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200926[Pro 진행]/pro3_TestHash.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200927[Pro 진행 + java Stream, Executor]/Ex_chExec_Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200927[Pro 진행 + java Stream, Executor]/Ex_chStream_Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200927[Pro 진행 + java Stream, Executor]/Ex_chStream_Test2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200927[Pro 진행 + java Stream, Executor]/Ex_chStream_Test3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200927[Pro 진행 + java Stream, Executor]/Ex_chStream_Test4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200927[Pro 진행 + java Stream, Executor]/pro_Level1_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200928[Pro 진행]/pro_Level1_5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200929[pro 진행]/pro_Level1_6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200930[Pro 진행 + Calendar]/Calendar_CalendarTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/20200930[Pro 진행 + Calendar]/pro_Level1_7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202009/자바matches사용방법.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201001 [pro1_8]/pro_Level1_8.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201002 [pro1_9]/pro_Level1_9.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_10.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_11.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_12.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_13.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_14.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_15.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_16.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_17.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_18.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_19.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_20.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_21.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_22.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_23.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_24.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_25.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_26.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_27.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_28.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_29.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201003 [pro1_10~30]/pro_Level1_30.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_31.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_32.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_33.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_34.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_35.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_36.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_37.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_38.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_39.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_40.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level1_41.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level2_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level2_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201004 [pro1_31~41, pro2_1~3]/pro_Level2_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201005 [pro2_4~6]/pro_Level2_4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201005 [pro2_4~6]/pro_Level2_5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201005 [pro2_4~6]/pro_Level2_6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201006 [pro2_7]/pro_Level2_8.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201006 [pro2_7~8]/pro_Level2_7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201006 [pro2_7~8]/pro_Level2_8.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/KNU_week5_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/KNU_week5_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/KNU_week5_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/KNU_week5_e1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/KNU_week5_e2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/pro_Level2_10.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/pro_Level2_9.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201007 [pro2_9~10 + 학교실습]/testCase.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201008 [pro]/pro_MonthChel1008_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201008 [pro]/pro_MonthChel1008_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201008 [pro]/pro_MonthChel1008_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201008 [pro]/pro_MonthChel1008_4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201009 [pro2_11~15]/QuickSort_Pr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201009 [pro2_11~15]/pro_Level2_11.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201009 [pro2_11~15]/pro_Level2_12.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201009 [pro2_11~15]/pro_Level2_13.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201009 [pro2_11~15]/pro_Level2_14.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201009 [pro2_11~15]/pro_Level2_15.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201010 [pro2_16]/pro_Level2_16.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201011 [pro2_17~20]/pro_Level2_17.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201011 [pro2_17~20]/pro_Level2_18.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201011 [pro2_17~20]/pro_Level2_19.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201011 [pro2_17~20]/pro_Level2_20.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201012 [pro2_21 &amp;&amp; pro_Hash_1]/hash1_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201012 [pro2_21 &amp;&amp; pro_Hash_1]/pro_Hash_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201012 [pro2_21 &amp;&amp; pro_Hash_1]/pro_Level2_21.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201013 [pro_stack&amp;queue_1]/pro_StackQueue_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201013 [pro_stack&amp;queue_1]/pro_stack_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201014 [pro_heap_1 + 학교실습]/KNU_week6_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201014 [pro_heap_1 + 학교실습]/KNU_week6_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201014 [pro_heap_1 + 학교실습]/KNU_week6_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201014 [pro_heap_1 + 학교실습]/pro_Heap_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201014 [pro_heap_1 + 학교실습]/pro_heap_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201015 [pro_sort_1]/pro_Sort_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201015 [pro_sort_1]/pro_sort_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201016 [pro_brute_1]/pro_Brute_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201016 [pro_brute_1]/pro_Brute_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201017 [pro_hash2~4]/pro_hash_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201017 [pro_hash2~4]/pro_hash_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201017 [pro_hash2~4]/pro_hash_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201017 [pro_hash2~4]/pro_hash_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201017 [pro_hash2~4]/pro_hash_4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201017 [pro_hash2~4]/pro_hash_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201018 [pro_StackQueue_2]/pro_StackQueue_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201018 [pro_StackQueue_2]/pro_StackQueue_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201019 [pro_StackQueue_3]/pro_StackQueue_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201019 [pro_StackQueue_3]/pro_StackQueue_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201020 [Selection,Bubble,Insertion,Quick,Heap]/Bubble_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201020 [Selection,Bubble,Insertion,Quick,Heap]/Heap_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201020 [Selection,Bubble,Insertion,Quick,Heap]/Insertion_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201020 [Selection,Bubble,Insertion,Quick,Heap]/Quick_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201020 [Selection,Bubble,Insertion,Quick,Heap]/Selection_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201021 [Merge]/Merge_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201022 [Counting,SortTest1]/Counting_Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201022 [Counting,SortTest1]/SortingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortBKJ1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortBKJ1_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortBKJ1_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortBKJ1_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortBKJ1_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortBKJ1_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortBKJ1_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/SortingTest2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201023 [SortTest2, SortBKJ]/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201024 [SortBKJ2]/SortBKJ2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201025 [SortBKJ3]/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201025 [SortBKJ3]/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201026 [StackBKJ]/StackBKJ1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201027 [StackBKJ2]/StackBKJ2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/BKJBonus1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/KNU_week7_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/KNU_week7_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/KNU_week7_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/KNU_week7_test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/QueueBKJ1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/SortBKJ4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/StackBKJ3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201028 [BKJ + 학교실습]/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201029 [BKJ]/BKJ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201029 [BKJ]/SortBKJ5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201029 [BKJ]/StackBKJ4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201029 [BKJ]/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201030 [BKJ]/OutputStreamReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201030 [BKJ]/QueueBKJ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201030 [BKJ]/SortBKJ6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201030 [BKJ]/StackBKJ4_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201030 [BKJ]/StackEX.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201031 [BKJ]/QueueBKJ2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201031 [BKJ]/Recur1031.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201031 [BKJ]/SortBKJ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201031 [BKJ]/sol1_pro11.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201031 [BKJ]/sol2_pro11.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201031 [BKJ]/sol3_pro11.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202010/20201031 [BKJ]/sol4_pro11.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201101 [prs, BKJ]/SortBKJ1101.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201101 [prs, BKJ]/pro_skill1_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201102 [BKJ + BF]/BFS_test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201102 [BKJ + BF]/BKJ_BF1102.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201102 [BKJ + BF]/DFS_test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201103 [BKJ]/BKJ1103.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201104 [PKNU_W9-10 + BKJ]/ALG_MT1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201104 [PKNU_W9-10 + BKJ]/ALG_MT2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201104 [PKNU_W9-10 + BKJ]/ALG_MT3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201104 [PKNU_W9-10 + BKJ]/BKJ1104_t.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201104 [PKNU_W9-10 + BKJ]/KNU_W9_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201104 [PKNU_W9-10 + BKJ]/KNU_W9_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201104 [PKNU_W9-10 + BKJ]/KNU_W9_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201104 [PKNU_W9-10 + BKJ]/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201105 [BKJ]/BKJ1105.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201105 [BKJ]/pro_monchal11_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201105 [BKJ]/pro_monchal11_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201105 [BKJ]/pro_monchal11_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201105 [BKJ]/pro_monchal11_4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201105 [BKJ]/pro_monchal11_5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201106 [BKJ]/BKJ1106.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201106 [BKJ]/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201106 [BKJ]/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201107 [BKJ]/BKJ1107.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201107 [BKJ]/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201108 [BKJ]/BKJ1108.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201108 [BKJ]/Gorikon1107.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201108 [BKJ]/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201109 [BKJ]/BKJ1109.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201109 [BKJ]/union1109.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201110 [BKJ]/BKJ1110.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201111 [BKJ + KNU]/BKJ1111.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201111 [BKJ + KNU]/KNU_week10_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201111 [BKJ + KNU]/KNU_week10_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201111 [BKJ + KNU]/KNU_week10_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201112 [BKJ]/BKJ1112.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201113 [BKJ]/BKJ1113.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201114 [BKJ]/BKJ1114.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201115 [BKJ]/BKJ1115.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201116 [BKJ]/BKJ1116.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201117 [KNUcon]/BKJ1117.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201117 [KNUcon]/KNUcon_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201117 [KNUcon]/KNUcon_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201117 [KNUcon]/KNUcon_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201118 [BKJ]/BKJ1118.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201118 [BKJ]/KNU_week11_0.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201118 [BKJ]/KNU_week11_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201118 [BKJ]/KNU_week11_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201118 [BKJ]/KNU_week11_3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201118 [BKJ]/KNU_week11_t1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201118 [BKJ]/KNU_week11_t2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201119 [BKJ]/BKJ1119.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201119 [BKJ]/BKJ1119_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201120 [PRO]/PRO1120.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201120 [PRO]/PRO1120_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201121 [PRO, BOJ]/BOJ1121.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201121 [PRO, BOJ]/PRO1121.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201122 [PRO]/PRO1122.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201123 [PRO + BOJ]/BOJ1123.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201123 [PRO + BOJ]/PRO1123.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201124 [PRO + SW]/PRO1124.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/202011/20201124 [PRO + SW]/SW1124.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/Untitled Diagram.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/cppTraining.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/javaTraining.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/pyTraining.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../~2020.11.26 - codingsample/다시 체크할 문제.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="20KrVXjYWZGsZCmu18VJy6ko8UW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9197f67d-5ef2-4f4b-a438-c07fb0e603fb" name="Changes" comment="" />
+      <created>1635804143450</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635804143450</updated>
+      <workItem from="1635804144606" duration="38000" />
+      <workItem from="1635804315756" duration="16000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

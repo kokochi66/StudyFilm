@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Socket.IO sample</h1>
+    <div class="tag"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io()
+        const tag = document.querySelector('.tag')
+        socket.on('connect', () => {
+            console.log('서버와 연결')
+        })
+
+        socket.on('message', (msg) => {
+            const msg_box = document.createElement('div')
+            msg_box.innerHTML = msg
+            tag.append(msg_box)
+        })
+
+    </script>
+</body>
+</html>

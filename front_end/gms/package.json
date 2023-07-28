@@ -1,0 +1,29 @@
+{
+  "name": "gms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "mocha ./test/test1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "http-errors": "^1.7.2",
+    "mocha": "^8.4.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "socket.io": "^4.1.2"
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue.js 기초 익히기5</title>
+    <style>
+        .red {color: red;}
+        .bold {font-weight: bold;}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+</head>
+<body>
+    <h1>Hello vue.js5</h1>
+    <div id="app">
+        <div :class="{ red: isRed, bold: isBold }">TEXT</div>
+        <button @click="updateRed">red</button>
+        <button @click="updateBold">bold</button>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isRed: false,
+                isBold: false
+            },
+            methods: { 
+                updateRed() {
+                    this.isRed = !this.isRed
+                },
+                updateBold() {
+                    this.isBold = !this.isBold
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>

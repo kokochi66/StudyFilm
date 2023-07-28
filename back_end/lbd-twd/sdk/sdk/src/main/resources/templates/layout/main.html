@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="/fragments/homeLayout :: headMain"></head>
+<body id="page-top">
+
+<div id="wrap">
+    <!-- 상단 내비게이션 -->
+<!--    <nav th:replace="/fragments/homeLayout :: navbarMain"></nav>-->
+
+    <!-- 컨텐츠 -->
+    <th:block layout:fragment="content"></th:block>
+
+    <!-- 스크립트 -->
+    <script th:replace="/fragments/homeLayout :: global-script"></script>
+</div>
+<script>
+
+</script>
+</body>
+</html>

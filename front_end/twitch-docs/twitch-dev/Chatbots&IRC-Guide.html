@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Clean Blog - Start Bootstrap Theme</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/styles-boot.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5 ">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="menu">
+                        <div class="side-bar">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <div class="side">
+                        <div class="cont"><a href="overview.html">개요</a></div>
+                        <div class="cont"><a href="Authentication.html">인증</a></div>
+                        <div class="cont">
+                            <div class="top">챗봇 & IRC</div>
+                            <div class="list"><a href="Chatbots&IRC.html">시작하기</a></div>
+                            <div class="list active">가이드</div>
+                            <div class="list"> <a href="Chatbots&IRC-Membership.html">트위치 IRC : 멤버십</a></div>
+                            <div class="list"> <a href="Chatbots&IRC-Command.html">트위치 IRC : 커맨드</a></div>
+                            <div class="list"> <a href="Chatbots&IRC-Tags.html">트위치 IRC : 태그</a></div>
+                            <div class="list"> <a href="Chatbots&IRC-msgIdTags.html">트위치 IRC : msg-id 태그</a></div>
+                        </div>
+                        <div class="cont"><a href="Organization.html">구성</a></div>
+                        <div class="cont"><a href="Drops.html">드롭스</a></div>
+                        <div class="cont"><a href="EmbeddingTwitch.html">임베이딩 트위치</a></div>
+                        <div class="cont"><a href="EventSub.html">이벤트 서브</a></div>
+                        <div class="cont"><a href="Extensions.html">확장</a></div>
+                        <div class="cont"><a href="Insight&Analytics.html">인사이트 & 분석</a></div>
+                        <div class="cont"><a href="MobileDeepLink.html">모바일 딥 링크</a></div>
+                        <div class="cont"><a href="PubSub.html">퍼브서브</a></div>
+                        <div class="cont"><a href="TwitchAPI.html">트위치 API</a></div>
+                        <div class="cont"><a href="VideoBroadcast.html">방송 비디오</a></div>
+                        <div class="cont"><a href="LegacyTwitchAPIv5.html">트위치 API v5</a></div>
+                        <div class="cont"><a href="ChangeLog.html">로그변경</a></div>
+                        <div class="cont"><a href="ProductLifecycle.html">상품 생명주기</a></div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-xl-9 main">
+                        <h1>챗봇 & IRC 가이드 <a href="https://dev.twitch.tv/docs/irc/guide" class="origin">원본 사이트</a></h1>
+                        <h2 id="introduction">소개</h2>
+                        <p>트위치에서는 채팅기능을 위해서 IRC 인터페이스를 제공합니다. 이를 위해서 다음을 따라하세요</p>
+                        <ul>
+                            <li>채널 용 봇 하나 이상을 생성하세요</li>
+                            <li>기존의 웹 인터페이스를 대신해서 챗봇을 IRC 클라이언트로 교체하세요. 몇몇 개발자들은 트위치와 별개의 IRC 채널을 갖고있는 경우에는 이를 사용하는 것이 편하기 때문에 자신의 IRC 채널을 사용합니다. 또 다른 개발자들은 IRC가 웹 인터페이스 보다도 더 가볍고, 강력한 시스템에서 사용할 수 있기 때문에 선호하기도 합니다.</li>
+                        </ul>
+                        <p>일반적인 IRC 서버는 <a href="https://tools.ietf.org/html/rfc1459.html">RFC1459</a>표준을 따르지만, 이와 또 다른 IRC 서버를 사용하는 경우도 존재합니다. 트위치에는 많은 IRC 전용 기능이 존재합니다. 적용을 위한 필수적인 차이점은 다음과 같습니다.</p>
+                        <ul>
+                            <li>채팅 서버가 작동할 수 있는 거대한 규모</li>
+                            <li>시청자, 스트리머, 개발자에게 제공되는 복잡한 트위치 전용의 기능</li>
+                        </ul>
+
+
+                        <h2 id="syatax_notes">문법 노트</h2>
+                        <p>&lt;channel&gt;와 &lt;user&gt;에 대한 참조는 채널과 사용자의 ID가 아닌 로그인 값을 참조하고 있습니다. 채널의 로그인 값인 &lt;channel&gt;는 항상 소문자가 입력되어야 합니다. 다음 표에서는 이러한 문법 규칙에 대해서 기록됩니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="40%">접두사(prefixed)</th>
+                                    <th width="30%">송신자</th>
+                                    <th width="30%">수신자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>&lt;</td>  
+                                    <td>클라이언트</td>  
+                                    <td>서버</td>  
+                                </tr>
+                                <tr>
+                                    <td>&gt;</td>  
+                                    <td>서버</td>  
+                                    <td>연결된 클라이언트</td>  
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <h2 id="connecting_to_twitch_IRC">트위치 IRC로 연결하기</h2>
+                        <p>연결 방식은 다음과 같습니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%"></th>
+                                    <th width="40%">웹 소켓 클라이언트</th>
+                                    <th width="40%">IRC 클라이언트</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SSL</td>  
+                                    <td>wss://irc-ws.chat.twitch.tv:443	</td>  
+                                    <td>irc://irc.chat.twitch.tv:6697</td>  
+                                </tr>
+                                <tr>
+                                    <td>기타</td>  
+                                    <td>ws://irc-ws.chat.twitch.tv:80</td>  
+                                    <td>irc://irc.chat.twitch.tv:6667</td>  
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>인증을 위해서, 여러분의 패스워드값(pass)는 <a href="Authentication.html">API 인증</a>을 통해서 인증된 OAuth 토큰이어야 합니다. 그리고 chat:read(메세지를  읽기 위함) 범위와 chat:edit(메세지를 보내기 위함) 범위를 가져야 합니다. </p>
+                        <ul>
+                            <li>토큰은 접두사로 oauth: 를 가져야합니다. 예를들어, 여러분의 토큰이 abcd라면, oauth:abcd 가 됩니다.</li>
+                            <li>여러분의 계정의 토큰을 빠르게 얻기 위해서, <a href="https://twitchapps.com/tmi/">트위치 채팅 OAuth 비밀번호 생성기</a>를 사용하시면 됩니다.</li>
+                        </ul>
+                        <p>여러분의 닉네임 값인 nick은 여러분의 트위치 계정의 username(login 이름) 의 소문자 형태여야 합니다.</p>
+                        <p>다음은 성공적으로 연결이 된 경우의 세션 예제입니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;&nbsp;PASS&nbsp;oauth:&lt;Twitch&nbsp;OAuth&nbsp;token&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;&nbsp;NICK&nbsp;&lt;user&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;001&nbsp;&lt;user&gt;&nbsp;:Welcome,&nbsp;GLHF!</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;002&nbsp;&lt;user&gt;&nbsp;:Your&nbsp;host&nbsp;is&nbsp;tmi.twitch.tv</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;003&nbsp;&lt;user&gt;&nbsp;:This&nbsp;server&nbsp;is&nbsp;rather&nbsp;new</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;004&nbsp;&lt;user&gt;&nbsp;:-</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;375&nbsp;&lt;user&gt;&nbsp;:-</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;372&nbsp;&lt;user&gt;&nbsp;:You&nbsp;are&nbsp;in&nbsp;a&nbsp;maze&nbsp;of&nbsp;twisty&nbsp;passages.</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;376&nbsp;&lt;user&gt;&nbsp;:&gt;</div></div><div style="text-align:right;margin-top:-13px;margin-right:5px;font-size:9px;font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#e5e5e5;text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>매 5분마다, 서버는 여러분에게 PING:tmi.twitch.tv 메세지를 보낼 것입니다. 여러분의 서버와의 연결을 좀 더 유지하고 싶다면, PONG:tmi.twitch.tv 를 응답하면 됩니다.</p>
+                        <p>만약  여러분의 서버 연결 상태가 어떠한 이유로 인해서 실패가 나오게 된다면, 서버와의 연결 상태가 끊어지게 될 것입니다. 다음은 서버와 연결이 끊어질 수 있는 몇가지 원인들입니다.</p>
+                        <ul>
+                            <li>잘못된 포트로 연결된 경우</li>
+                            <li>잘못된 서버로 연결된 경우</li>
+                            <li>부정확한 유저의 로그인이나 패스워드 정보를 사용하는 경우</li>
+                        </ul>
+
+
+                        <h2 id="re-connecting_to_twitch_IRC">트위치 IRC와의 재연결</h2>
+                        <p>트위치와의 재연결을 위해서는 다음 절차를 따라야합니다. 가장 좋은 방법은 지수 시간마다 재 연결을 시도하는 것입니다. (즉시, 1초, 2초, 4초, 8초 등)</p>
+
+
+                        <h2 id="known_verified_bot">알려지고, 검증된 봇</h2>
+                        <p>봇을 검증하는 절차는 일시적으로 중지되었습니다. 이에 대한 더 자세한 정보를 보고 싶다면, <a href="https://discuss.dev.twitch.tv/t/an-update-for-the-delayed-bot-verification-request-process/32325">봇의 인증 요청 절차에 대한 업데이트 내역</a>을 확인하세요. 현재 문서에서는 공지사항에서 언급된 권한과 내용에 대해 변경사항이 있지 않는 이상 업데이트가 미루어 질 것입니다.</p>
+                        <p>트위치 사용자의 경험과 신뢰도를 더 높여줄 수 있는 봇의 두가지 특성으로는 인지도(known)와 검증(verified)이 있습니다. 이 두가지 특성은 높은 권한을 갖고있습니다. 검증된 봇은 인지도가 높은 봇보다도 더 높게 적용됩니다. 하지만 봇의 검증된 상태는 좀처럼 쉽게 적용되지 않습니다.</p>
+                        <p>인지도와 검증 특성을 모두 갖는 봇은 다음과 같은 특성을 가집니다.</p>
+                        <ul>
+                            <li>일반 유저보다도 더 높은 채팅 제한을 갖고 있습니다.</li>
+                            <li>오토모드에서 해제되지 않습니다. 오토모드에서, 채널의 매니저를 대신하여, 채널에서 위험이 존재하는 채팅을 분석하여, 이를 채팅에 나타나도록 허용하거나 거부 명령을 내릴 수 있습니다.</li>
+                            <li>스팸으로 판단하는 귓속말을 제거합니다. 스팸 분류기(spam classifier)는 이러한 귓속말에 대해서, 지정하고, 스팸 상태를 감시 목적으로 로그로 남겨둡니다.</li>
+                        </ul>
+                        <p>이러한 인지도와 검증  특성을 요청하기 위해서, 다음을 따라서 <a href="https://dev.twitch.tv/limit-increase">https://dev.twitch.tv/limit-increase</a>를 채워줘야 합니다.</p>
+                        <ul>
+                            <li>여러분이 제한을 원하는 부분을 서비스에서 IRC Command와 Message Rate를 선택하세요</li>
+                            <li>클라이언트 ID를 대신하여, 여러분의 봇의 트위치 ID를 입력하세요</li>
+                            <li>여러분의 봇의 새로운 제한에 대해서 입력하세요</li>
+                        </ul>
+                        <p>이 폼을 작성한 후에는, 여러분은 결과 메일을 받게 될 것입니다.</p>
+
+
+                        <h2 id="command&message">커맨드 & 메세지 제한</h2>
+                        <p>여러분이 서버로 보낼 수 있는 IRC 명령어와 메세지들의 개수에는 제한이 있습니다. 이 제한을 넘게되면 30분동안 채팅이 차단됩니다.</p>
+                        <p>인증 회수와 조인율의 제한은 다음과 같습니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">제한</th>
+                                    <th width="80%">적용되는 대상</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>30초에 20개</td>  
+                                    <td>매니저나 운영자가 관리하는 상태가 아닌 채널에 명령어나 메시지를 보낸 사용자</td>  
+                                </tr>
+                                <tr>
+                                    <td>30초에 100개</td>  
+                                    <td>매니저나 운영자가 관리하는 상태가 아닌 채널에 명령어나 메시지를 보낸 사용자</td>  
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>두 유저간의 귓속말 채팅의 경우에는 다음과 같다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="60%">제한</th>
+                                    <th width="40%">적용되는 대상</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>초당 3개,  분당 100개, 일당 40개의 계정</td>  
+                                    <td>봇이 아닌 사용자</td>  
+                                </tr>
+                                <tr>
+                                    <td>초당 10개, 분당 200개, 일당 500개의 계정</td>  
+                                    <td>알려진(Known) 봇</td>  
+                                </tr>
+                                <tr>
+                                    <td>초당 20개, 분당 1200개, 일당 100,000개의 계정</td>  
+                                    <td>인증된(Verified) 봇</td>  
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        
+                        <h2 id="invalid_IRC_commands">무효화된 IRC 명령어</h2>
+                        <p>만약 여러분이 무효화된 명령어를 입력한다면, 여러분은 다음과 같은 421 메시지를 받게 됩니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;&nbsp;WHO&nbsp;#&lt;channel&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;421&nbsp;&lt;user&gt;&nbsp;WHO&nbsp;:Unknown&nbsp;command</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+
+                        <h2 id="generic_IRC_commands">일반적 IRC 명령어</h2>
+                        <p>트위치 API에서는 IRC 기능 중 일부인 WHO를 지원하지 않습니다. 채널의 로그인 방식은 <a href="#syatax_notes">문법 참고사항</a>과 같이, 소문자로 이루어져 있어야 합니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="35%">기능(Capability)</th>
+                                    <th width="65%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>JOIN</td>  
+                                    <td>채널에 참가한다.</td>  
+                                </tr>
+                                <tr>
+                                    <td>PART</td>  
+                                    <td>채널에서 떠난다.</td>  
+                                </tr>
+                                <tr>
+                                    <td>PRIVMSG</td>  
+                                    <td>채널로 메세지를 보낸다.</td>  
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>JOIN</h3>
+                        <p>채널에 참가하는 기능입니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;&nbsp;JOIN&nbsp;#&lt;channel&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:&lt;user&gt;!&lt;user&gt;@&lt;user&gt;.tmi.twitch.tv&nbsp;JOIN&nbsp;#&lt;channel&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:&lt;user&gt;.tmi.twitch.tv&nbsp;353&nbsp;&lt;user&gt;&nbsp;=&nbsp;#&lt;channel&gt;&nbsp;:&lt;user&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:&lt;user&gt;.tmi.twitch.tv&nbsp;366&nbsp;&lt;user&gt;&nbsp;#&lt;channel&gt;&nbsp;:End&nbsp;of&nbsp;/NAMES&nbsp;list</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>JOIN명령이 성공한 이후에, JOIN, MODE, NAMES, PART와 같은 채널에서 사용자와 관련된 명령어를 받으려면, 여러분은 트위치의 특정 <a href="https://dev.twitch.tv/docs/irc/membership">멤버십</a>에 요청을 보내야 합니다.</p>
+                        <p>만약, 여러분이 중돤되었거나 삭제된 챈러에 참가하려고 시도 할 시에, 여러분은 msg_channel_suspended NOTICE 메세지를 받게 될 것입니다. 만약 여러분이 존재하지 않는 서버에 참가 명령을 보내게 된다면, 해당 명령은 취소 될 것입니다.</p>
+
+                        <h3>PART</h3>
+                        <p>채널을 떠나는 기능입니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;&nbsp;PART&nbsp;#&lt;channel&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:&lt;user&gt;!&lt;user&gt;@&lt;user&gt;.tmi.twitch.tv&nbsp;PART&nbsp;#&lt;channel&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        
+                        <h3>PRIVMSG</h3>
+                        <p>채널에 메세지를 보내는 기능입니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;&nbsp;PRIVMSG&nbsp;#&lt;channel&gt;&nbsp;:This&nbsp;is&nbsp;a&nbsp;sample&nbsp;message</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:&lt;user&gt;!&lt;user&gt;@&lt;user&gt;.tmi.twitch.tv&nbsp;PRIVMSG&nbsp;#&lt;channel&gt;&nbsp;:This&nbsp;is&nbsp;a&nbsp;sample&nbsp;message</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+
+                        <h2 id="scope_IRC_command">IRC 명령어의 범위(Scope)</h2>
+                        <p>트위치의 슬래시 명령어는 PRIVMSG를 통해서 보내집니다. 다음 표의 리스트는 이러한 명령과 요구되는 범위를 나타냅니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="60%">명령어</th>
+                                    <th width="40%">요구 범위</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>/ban, /unban</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/clear</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/color</td>  
+                                    <td>chat:edit</td>  
+                                </tr>
+                                <tr>
+                                    <td>/commercial</td>  
+                                    <td>channel_commercial</td>  
+                                </tr>
+                                <tr>
+                                    <td>/delete</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/disconnect</td>  
+                                    <td>	chat:edit</td>  
+                                </tr>
+                                <tr>
+                                    <td>/emoteonly, /emoteonlyoff</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/followers, /followersoff</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/help</td>  
+                                    <td>chat:edit</td>  
+                                </tr>
+                                <tr>
+                                    <td>/host, /unhost</td>  
+                                    <td>channel_editor</td>  
+                                </tr>
+                                <tr>
+                                    <td>/marker</td>  
+                                    <td>channel_editor</td>  
+                                </tr>
+                                <tr>
+                                    <td>/me</td>  
+                                    <td>chat:edit</td>  
+                                </tr>
+                                <tr>
+                                    <td>/mod, /unmod</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/mods</td>  
+                                    <td>chat:edit</td>  
+                                </tr>
+                                <tr>
+                                    <td>/r9kbeta, /r9kbetaoff</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/raid, /unraid</td>  
+                                    <td>channel_editor</td>  
+                                </tr>
+                                <tr>
+                                    <td>/slow, /slowoff</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/subscribers, /subscribersoff</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/timeout, /untimeout</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/vip, /unvip</td>  
+                                    <td>channel:moderate</td>  
+                                </tr>
+                                <tr>
+                                    <td>/vips</td>  
+                                    <td>chat:edit</td>  
+                                </tr>
+                                <tr>
+                                    <td>/w</td>  
+                                    <td>whispers:edit</td>  
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <h2 id="capability_IRC">트위치 IRC 기능(Capabilities)</h2>
+                        <p>IRC v3 기능 등록을 사용하면, 여러분은 트위치의 특정 기능을 등록할 수 있고, 트위치의 특정 명령어, 데이터 등에 접근할 수 있습니다.</p>
+                        <p>이러한 값들은 캐싱 처리를 위해서 즉각적으로 채널로 전송되지는 않습니다. 대신에, 10초마다 일괄처리되어 전송됩니다.</p>
+                        <p>모든 승격되는 사용자에게는 관리자 권한이 부여됩니다. 이러한 사용자의 승격여부(elevation level)을 확인하기 위해서는, <a href="https://dev.twitch.tv/docs/irc/tags">태그 기능</a>을 요청하여, 사용자 타입의 태그를 파싱해야 합니다.</p>
+                        <p>트위치의 특정 기능에는 몇가지 종류가 있습니다.</p>
+                        <ul>
+                            <li><a href="Chatbots&IRC-Membership.html">멤버십(MemberShip)</a> : 멤버십 상태 이벤트 데이터를 추가합니다. 기본값으로는 이 기능을 사용하지 않으면 이 값을 보내지 않습니다.</li>
+                            <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;&nbsp;CAP&nbsp;REQ&nbsp;:twitch.tv/membership</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;CAP&nbsp;*&nbsp;ACK&nbsp;:twitch.tv/membership</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                            <li><a href="Chatbots&IRC-Tags.html">태그(Tags)</a> : 커맨드 기능이 활성화 된 경우에, IRC V3 메세지 태그의 몇가지 명령어를 추가합니다.</li>
+                            <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;&nbsp;CAP&nbsp;REQ&nbsp;:twitch.tv/tags</div><div style="padding:0 6px; white-space:pre; line-height:130%">&gt;&nbsp;:tmi.twitch.tv&nbsp;CAP&nbsp;*&nbsp;ACK&nbsp;:twitch.tv/tags</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                            <li><a href="Chatbots&IRC-Command.html">명령어(Command)</a> : 트위치의 특정 커맨드를 활성화 합니다.</li>
+                            <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">&lt;&nbsp;CAP&nbsp;REQ&nbsp;:twitch.tv/tags&nbsp;twitch.tv/commands</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+                        </ul>
+
+
+                    </div>  <!-- //main -->
+                </div>
+            </div>
+        </article>
+
+        <script>
+            window.onload = function() {
+                const side = document.querySelector('.container .row .side'),
+                    menu_side_bar = document.querySelector('.container .row .menu .side-bar')
+                menu_side_bar.addEventListener('click', () => {
+                    if(side.classList.contains('active')) {
+                        side.classList.remove('active');
+                        menu_side_bar.classList.remove('active')
+                    }
+                    else {
+                        side.classList.add('active')
+                        menu_side_bar.classList.add('active')
+                    }
+                    
+                })
+            }
+
+        </script>
+    </body>
+</html>

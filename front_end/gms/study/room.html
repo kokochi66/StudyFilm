@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소켓 멀티 채팅방 예제</title>
+    <style>
+        #ChatBoard {
+            width: 500px; height: 500px; border: 2px solid #000;
+        }
+
+    </style>
+</head>
+<body>
+    <h2 id="Hchat"></h2>
+    <input type="text" id="ChatRoom" placeholder="채팅방명 입력">
+    <input type="submit" id="ChatChannel" value="채널설정">
+
+    <br>
+    <input type="text" id="ChatNickName" placeholder="이름 입력">
+    <input type="text" id="ChatInput" placeholder="할말 입력">
+    <input type="submit" id="ChatSend" value="클릭">
+    <br>
+    <div id="ChatBoard"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script>
+        window.onload = function() {
+            let socket = io.connect();
+
+           document.getElementById('ChatSend').onclick = function() {
+               let Room = document.getElementById('ChatRoom').value;
+               let NickName = document.getElementById('ChatNickName').value;
+               let Input = document.getElementById('ChatInput').value;
+               let data = {Room, NickName, Input}
+               socket.emit('SendChat', data);
+           }
+
+           document.getElementById('ChatChannel').onclick = function() {
+               console.log('채널 설정')
+               let Room = document.getElementById('ChatRoom').value;
+               let data = {Room}
+               document.getElementById('Hchat').innerHTML = data.Room
+               socket.emit('SettingChannel', data);
+           }
+
+           socket.on('ChatResult', function(data) {
+               console.log('ChatResult도착 ', data)
+               let p = document.createElement('p');
+               p.innerHTML = `${data.NickName} : ${data.Input}`;
+               document.getElementById('ChatBoard').appendChild(p)
+           })
+        }
+
+    </script>
+</body>
+</html>

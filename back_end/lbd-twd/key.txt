@@ -1,0 +1,43 @@
+라인 로그인
+채널 시크릿 : 8627fa9d56888af5a1d80098ea4f0a32
+사용자 아이디 : Uf6313edab8ed9dbc42f64683c9664427
+
+
+라인 블록체인
+채널 시크릿 : c6352ff0134f7ef0f603f819eb24aeeb
+사용자 아이디 : Uf6313edab8ed9dbc42f64683c9664427
+
+service API key : 365822bc-8b1b-4c9f-9c65-22b087753a3f
+service API secret : 9578e7f5-6684-48e0-8055-7874f8f63fbf
+
+AssetWallet
+service wallet address : tlink1dhtwpu3jnhtrna3caff544kswpql8dk28gfzqa
+service wallet Secret : JqqB1Jh47HFIBM7Yr8tinxSB6bQLdBBpmL44eqHvjkM=
+
+
+owWallet
+wallet address : tlink1gqjznvpudy8pwzf6lknx6z4ykvxlpzx7el7qyf
+wallet Secret : 0AWKQhjicK4DAhza+nE6QdZ7CVVcxWT78gQ+CAM/Pho=
+
+
+testWallet
+wallet address : tlink1pc09lsppcgv2xmetp2hzje0u4cewnthc49yx2p
+wallet secret : 5euUWJn5IXJja7IoCkEIoDaz3+EPIZhAJG68Wxilljo=
+
+testWallet2
+wallet address : tlink1yefgfalm90xf2mn6wln7mfu0n26y00l9cftpda
+wallet secret : E5B1fwBeRKOKqrjZ3nzvSeXloD8sPNlrrf7F6NGVMEk=
+
+testWallet3
+wallet address : tlink1fvggch73267d5xdpj7ph8puflves8y5eng59lt
+wallet secret : EnAnF2q1IS0ZRBXMJHhBTX8aZOmixlIymr1ze9vqL0E=
+
+
+
+MovieToken - MOV
+Contract ID : bfe8a2db
+
+
+
+item token contract ID : 92e755ee
+

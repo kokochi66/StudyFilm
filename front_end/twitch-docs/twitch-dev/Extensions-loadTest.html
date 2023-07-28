@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Clean Blog - Start Bootstrap Theme</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/styles-boot.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5 ">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="menu">
+                        <div class="side-bar">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <div class="side">
+                        <div class="cont"><a href="overview.html">개요</a></div>
+                        <div class="cont"><a href="Authentication.html">인증</a></div>
+                        <div class="cont"><a href="Chatbots&IRC.html">챗봇 & IRC</a></div>
+                        <div class="cont"><a href="Organization.html">구성</a></div>
+                        <div class="cont"><a href="Drops.html">드롭스</a></div>
+                        <div class="cont"><a href="EmbeddingTwitch.html">임베이딩 트위치</a></div>
+                        <div class="cont"><a href="EventSub.html">이벤트 서브</a></div>
+                        <div class="cont">
+                            <div class="top">확장</div>
+                            <div class="list"><a href="Extensions.html">시작하기</a></div>
+                            <div class="list"><a href="Extensions-ReqTechBack.html">요구 배경기술</a></div>
+                            <div class="list"><a href="Extensions-DevRig.html">확장 개발도구</a></div>
+                            <div class="list"><a href="Extensions-DesExten.html">확장 디자인</a></div>
+                            <div class="list"><a href="Extensions-build.html">확장 구현하기</a></div>
+                            <div class="list"><a href="Extensions-LifeCycleManage.html">생명주기 관리</a></div>
+                            <div class="list"><a href="Extensions-Monetization.html">수익창출</a></div>
+                            <div class="list"><a href="Extensions-abtest.html">A/B 테스트</a></div>
+                            <div class="list"><a href="Extensions-googleanaly.html">구글 분석 사용하기</a></div>
+                            <div class="list"><a href="Extensions-feedback.html">피드백 향상</a></div>
+                            <div class="list active">로드 테스트 확장</div>
+                            <div class="list"><a href="Extensions-subBestPrac.html">모범사례</a></div>
+                            <div class="list"><a href="Extensions-guide&poly.html">가이드라인 & 규정</a></div>
+                            <div class="list"><a href="Extensions-ref.html">참조</a></div>
+                        </div>
+                        <div class="cont"><a href="Insight&Analytics.html">인사이트 & 분석</a></div>
+                        <div class="cont"><a href="MobileDeepLink.html">모바일 딥 링크</a></div>
+                        <div class="cont"><a href="PubSub.html">퍼브서브</a></div>
+                        <div class="cont"><a href="TwitchAPI.html">트위치 API</a></div>
+                        <div class="cont"><a href="VideoBroadcast.html">방송 비디오</a></div>
+                        <div class="cont"><a href="LegacyTwitchAPIv5.html">트위치 API v5</a></div>
+                        <div class="cont"><a href="ChangeLog.html">로그변경</a></div>
+                        <div class="cont"><a href="ProductLifecycle.html">상품 생명주기</a></div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-xl-9 main">
+                        <h1>탬플릿 <a href="https://dev.twitch.tv/docs/authentication" class="origin">원본 사이트</a></h1>
+                        
+
+  
+                    </div>  <!-- //main -->
+                </div>
+            </div>
+        </article>
+
+        <script>
+            window.onload = function() {
+                const side = document.querySelector('.container .row .side'),
+                    menu_side_bar = document.querySelector('.container .row .menu .side-bar')
+                menu_side_bar.addEventListener('click', () => {
+                    if(side.classList.contains('active')) {
+                        side.classList.remove('active');
+                        menu_side_bar.classList.remove('active')
+                    }
+                    else {
+                        side.classList.add('active')
+                        menu_side_bar.classList.add('active')
+                    }
+                    
+                })
+            }
+
+        </script>
+    </body>
+</html>

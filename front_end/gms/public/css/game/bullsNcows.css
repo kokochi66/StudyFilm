@@ -1,0 +1,128 @@
+.game_box .game_play_box {
+    width: 680px; height: 680px; background-color: rgba(155, 192, 218, 0.842);
+    margin: 0px auto; box-sizing: border-box; border: 5px solid #000;
+    border-radius: 5px; display: flex; justify-content: space-around; flex-direction: column;
+}
+
+.game_box .game_play_box .top {width: 100%; height: 100px;}
+.game_box .game_play_box .top > div {height: 100%; float: left; position: relative;}
+.game_box .game_play_box .top .user1 {}
+.game_box .game_play_box .top .user2 {}
+.game_box .game_play_box .top .user {width: 50%;}
+.game_box .game_play_box .top .user > div {
+    position: absolute;
+}
+.game_box .game_play_box .top .user .img {
+    width: 80px; height: 80px; background-color: rgb(65, 65, 65);
+    top: 50%; transform: translateY(-50%);  border-radius: 10px;
+}
+.game_box .game_play_box .top .user1 .img {left: 5px;}
+.game_box .game_play_box .top .user2 .img {right: 5px;}
+
+.game_box .game_play_box .top .user .info {bottom: 35px;}
+.game_box .game_play_box .top .user1 .info {left: 90px;}
+.game_box .game_play_box .top .user2 .info {right: 90px;}
+
+.game_box .game_play_box .top .user .name {
+    text-shadow: 1px 1px 0 #fff; font-weight: bold; font-size: 20px;  bottom: 10px;
+}
+.game_box .game_play_box .top .user1 .name {left: 90px;}
+.game_box .game_play_box .top .user2 .name {right: 90px;}
+
+
+.game_box .game_play_box .play {width: 100%; height: 450px; border-top: 2px solid #000; box-sizing: border-box;}
+.game_box .game_play_box .play .box {width: 12.5%; height: 100%; box-sizing: border-box; border-left: 2px solid #000; float: left;}
+.game_box .game_play_box .play .box:first-child {border-left: none;}
+.game_box .game_play_box .play .box .board {height: 20%;}
+.game_box .game_play_box .play .box .board .balld {
+    width: 50%; float: left; box-sizing: border-box; border-left: 1px solid #000; height: 50%; position:relative;
+}
+.game_box .game_play_box .play .box .board .balld:nth-child(-n+2) {border-bottom: 1px solid #000;}
+.game_box .game_play_box .play .box .board .balld:nth-child(2n-1) {border-left: none;}
+.game_box .game_play_box .play .box .board .balld .circle {
+    width: 27px; height: 27px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%;
+}
+
+.game_box .game_play_box .play .box .pannel {height: 80%;}
+.game_box .game_play_box .play .box .pannel .ball {height: 25%; box-sizing: border-box; border-top: 1px solid #000; position: relative;}
+.game_box .game_play_box .play .box .pannel .ball .circle {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; height: 50px;  border-radius: 50%;
+}
+
+
+.game_box .game_play_box .select {width: 100%; height: 130px; border-top: 2px solid #000; box-sizing: border-box;}
+.game_box .game_play_box .select .ball {
+    width: 110px; height: 100%; float: left; border-left: 2px solid #000; position: relative;
+}
+.game_box .game_play_box .select .ball:first-child {border-left: none;}
+.game_box .game_play_box .select .ball .circle {
+    width: 60px; height: 60px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  border-radius: 50%;
+}
+.game_box .game_play_box .ball {cursor: pointer;}
+.game_box .game_play_box .ball:hover, .game_box .game_play_box .ball.active {background-color: rgba(255, 255, 255, 0.493);}
+
+
+.game_box .game_play_box .circle {border: 1px solid #000;}
+.game_box .game_play_box .circle.empty {background-color: rgb(73, 73, 73);}
+.game_box .game_play_box .circle.red {background-color: rgb(148, 0, 0);}
+.game_box .game_play_box .circle.blue {background-color: rgb(0, 35, 148);}
+.game_box .game_play_box .circle.green {background-color: rgb(2, 104, 11);}
+.game_box .game_play_box .circle.yellow {background-color: rgb(184, 174, 36);}
+.game_box .game_play_box .circle.purple {background-color: rgb(137, 12, 141);}
+.game_box .game_play_box .circle.white {background-color: rgb(255, 255, 255);}
+
+.game_box .game_info_box {
+    width: 680px; height: 120px; background-color: rgba(216, 216, 216, 0.842); margin: 0px auto;
+    border: 5px solid #000; box-sizing: border-box; border-top: none;
+}
+.game_box .game_info_box .game_channel {
+    width: 220px; height: 100%; float: left;
+    box-sizing: border-box; border-right: 5px solid #000;
+}
+.game_box .game_info_box .game_channel > div {
+    height: 50%; cursor: pointer; line-height: 60px; text-align: center;
+    font-size: 25px; box-sizing: border-box;
+}
+.game_box .game_info_box .game_channel .game_make_room {
+    border-bottom: 5px solid #000; 
+}
+.game_box .game_info_box .game_channel .game_part_room {
+    
+}
+.game_box .game_info_box .game_channel .game_part_room .inputText {
+    height: 100%; width: 70%; display: block; float: left; box-sizing: border-box; font-size: 30px;
+}
+.game_box .game_info_box .game_channel .game_part_room .inputSubmit {
+    width: 30%; height: 100%; background-color: rgb(255, 255, 255); float: left;
+    box-sizing: border-box; border-left: 2px solid #000; 
+}
+
+.game_box .game_info_box .game_play_setting {
+    width: 450px; height: 100%; float: left;
+}
+.game_box .game_info_box .game_play_setting > div {
+    height: 50%; box-sizing: border-box;
+}
+.game_box .game_info_box .game_play_setting .game_setting_button {
+    border-bottom: 5px solid #000;
+}
+.game_box .game_info_box .game_play_setting > div > div {
+    width: 50%; height: 100%; float: left; box-sizing: border-box;
+    text-align: center; line-height: 60px; font-size: 25px; cursor: pointer;
+}
+.game_box .game_info_box .game_play_setting .game_setting_button .game_start {
+    border-right: 5px solid #000;
+}
+.game_box .game_info_box .game_play_setting .game_setting_button .game_info_start {
+
+}
+
+.game_box .game_info_box .game_play_setting .game_setting_check {
+   
+}
+.game_box .game_info_box .game_play_setting .game_setting_check .game_duplicated {
+    border-right: 5px solid #000;
+}
+.game_box .game_info_box .game_play_setting .game_setting_check .game_fasted {
+
+}

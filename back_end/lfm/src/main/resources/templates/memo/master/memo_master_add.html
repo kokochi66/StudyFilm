@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko"  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/memoLayout :: headMain"></head>
+<body>
+
+<!-- 상단 내비게이션 -->
+<nav th:replace="fragments/memoLayout :: navbarMain"></nav>
+<!-- 헤더 -->
+<header th:replace="fragments/memoLayout :: headerMain"></header>
+
+
+<style> /* [::필요::] css 파일로 옮기기 */
+.memo-section-box .form-group .form-control {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+}
+.memo-section-box .form-group-textarea .form-control {
+    height: 20rem;
+}
+
+</style>
+<!-- Memo-List-box -->
+<!-- Contact-->
+<section class="bg-light memo-section-box" id="memo-add-box">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">메모 게시판 생성하기</h2>
+        </div>
+        <form id="add-form" action="/memo/master/add/process" method="post">
+            <div class="row align-items-stretch mb-5">
+                <div class="col-md-12">
+                    <label for="name">게시판 이름</label>
+                    <div class="form-group">
+                        <input class="form-control" id="name" name="name" type="text" placeholder="게시판 이름"/>
+                        <div class="invalid-feedback" >게시판 이름을 작성해 주세요.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">게시판 설명</label>
+                        <input class="form-control" id="description" name="description" type="text" placeholder="게시판 설명"/>
+                        <div class="invalid-feedback" >게시판 설명을 작성해 주세요.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none" >
+                <div class="text-center text-white mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                    To activate this form, sign up at
+                    <br />
+                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                </div>
+            </div>
+            <div class="d-none"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+            <!-- Submit Button-->
+            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" type="submit">게시판 생성하기</button></div>
+        </form>
+    </div>
+</section>
+
+<!-- 푸터 -->
+<footer th:replace="fragments/memoLayout :: footerMain"></footer>
+<!-- 스크립트 -->
+<script th:replace="fragments/memoLayout :: memo-global-script"></script>
+</body>
+</html>
+

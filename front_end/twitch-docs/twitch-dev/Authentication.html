@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Clean Blog - Start Bootstrap Theme</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/styles-boot.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5 ">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="menu">
+                        <div class="side-bar">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <div class="side">
+                        <div class="cont"><a href="overview.html">개요</a></div>
+                        <div class="cont">
+                            <div class="top">인증</div>
+                            <div class="list active">가이드</div>
+                            <div class="list"> <a href="Authentication-getTokenOAuth.html">토큰 얻기 : OAuth</a></div>
+                            <div class="list"> <a href="Authentication-getTokenOIDC.html">토큰 얻기 : OIDC</a></div>
+                        </div>
+                        <div class="cont"><a href="Chatbots&IRC.html">챗봇 & IRC</a></div>
+                        <div class="cont"><a href="Organization.html">구성</a></div>
+                        <div class="cont"><a href="Drops.html">드롭스</a></div>
+                        <div class="cont"><a href="EmbeddingTwitch.html">임베이딩 트위치</a></div>
+                        <div class="cont"><a href="EventSub.html">이벤트 서브</a></div>
+                        <div class="cont"><a href="Extensions.html">확장</a></div>
+                        <div class="cont"><a href="Insight&Analytics.html">인사이트 & 분석</a></div>
+                        <div class="cont"><a href="MobileDeepLink.html">모바일 딥 링크</a></div>
+                        <div class="cont"><a href="PubSub.html">퍼브서브</a></div>
+                        <div class="cont"><a href="TwitchAPI.html">트위치 API</a></div>
+                        <div class="cont"><a href="VideoBroadcast.html">방송 비디오</a></div>
+                        <div class="cont"><a href="LegacyTwitchAPIv5.html">트위치 API v5</a></div>
+                        <div class="cont"><a href="ChangeLog.html">로그변경</a></div>
+                        <div class="cont"><a href="ProductLifecycle.html">상품 생명주기</a></div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-xl-9 main">
+                        <h1>인증 <a href="https://dev.twitch.tv/docs/authentication" class="origin">원본 사이트</a></h1>
+                        <h2 id="intro">소개</h2>
+                        <p>이 안내는 트위치 인증을 사용해, 어플리케이션이 트위치 계정을 대신하여 작업을 수행하거나, 특정 데이터에 엑세스 할 수 있도록 하는 방법을 설명합니다.</p>
+                        <p>우리는 OAuth 인증 방법을 선호하며,  <a href="https://datatracker.ietf.org/doc/html/rfc6749">OAuth 2.0 프로토콜</a>의 일부를 사용합니다.</p>
+                        <p>OAuth 이외에, 트위치는 안정적인 OAuth 2.0의 흐름을 위해서 <a href="https://openid.net/connect/">OIDC(OpenID Connect)</a>를 지원합니다. OIDC 토큰은 AWS의 Cognito와 같은 OIDC 규정 준수를 위해 구축된 서비스와 호환이 가능합니다.</p>
+                        <p>인증방법</p>
+                        <ol>
+                            <li> <a href="#registration">여러분들의 앱을 생성하세요.</a> 
+                                그리고 클라이언트ID(client ID)와 클라이언트 시크릿(client secret)을 얻으세요</li>
+                            <li> <a href="#get_token">토큰을 발급받으세요.</a> 
+                                이를 위해서는 범위지정(scope)과 어플리케이션에 필요한 권한지정(permission)이 필요합니다.</li>
+                            <li> <a href="#send_access_token">여러분의 API 요청에 토큰을 보내세요.</a> 
+                                이를 통해서 API 요청의 인증이 완료됩니다.</li>
+                        </ol>
+                        <p>GO와 Node.js의 샘플 코드가 존재합니다.</p>
+                        <p><strong>주의 : </strong>여러분들의 토큰을 비밀번호와 같이 다뤄야합니다. 여러분들의 토큰을 공용 URL로 사용해서는 안되며, 웹페이지에 공개해서도 안됩니다.</p>
+                        
+            
+                        <h2 id="Validating">요청에 대한 유효성 검사(Validating)</h2>
+                        <p>여러분들이 트위치 인증을 오직 로그인 목적으로만 사용하고 싶다면, 엑세스 토큰(access token)은 반복적으로 유효성을 검사해야합니다. 어플리케이션을 승인한 사용자가 연결을 해제하였는지를 확인하기 위해서, 발급된 OAuth 토큰의 주기적인 유효성 검사가 필요합니다.</p>
+                        <p>유효성 검사가 한 시간 이상이 지난 경우에, 민감한 정보에 대한 수정이나, 접근을 하는 API 요청을 보낸다면, 요청이 보내지기 전에 엑세스 토큰의 유효성을 검사해야합니다.</p>
+                        <p>트위치는 이에 대해 주기적인 감시를 실시합니다. 예를 들어, 로그인에 대해서만 유효성 검증을 실시하고, 이후에는 유효성 검증을 하지 않는 어플리케이션을 발견하면 개발자에게 확인하여 문제를 해결합니다. 만약 문제가 해결되지 않으면, 우리는 개발자의 API키를 취소하거나, 어플리케이션의 성능을 제한하는 등의 처벌을 내릴 수도 있습니다.</p>
+                        <p>OAuth 엑세스 토큰은 최종 사용자의 요구에 따라 다양한 동작을 하며, 이에 따라 유효성 검사가 중요해집니다. 예를들어, 사용자가 트위치 계정과 당신의 어플리케이션의 통합 연결을 해제하려고 하면, 트위치 계정 설정에서 이를 수행할 수 있습니다. 사용자가 통합 연결을 끊는다면, 해당 연결 간의 모든 OAuth 토큰이 무효화 될 것입니다. 이러한 상황에서, 끊어진 OAuth 토큰은 다른 제 3의 서비스로 연결 될 것입니다. 그러므로 연결이 끊어진 사용자가 서비스 간의 세션 역시 무효화 되어야합니다.</p>
+                        <p>요청에 대한 유효성 검사를 하고 싶다면, 여러분의 OAuth 토큰을 헤더에 담아서 유효성 검사 엔드포인트(https://id.twitch.tv/oauth2/validate)로 제출해야 합니다. 인증이 되었다면, 응답 요청은 여러분의 토큰의 상태(status)가 포함됩니다. 응답이 성공적으로 갔다면, 발급된 엑세스 토큰이 유효함을 의미합니다.</p>
+                        <p>다음은 요청에 대한 예제 코드입니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">curl&nbsp;-H&nbsp;"Authorization:&nbsp;OAuth&nbsp;&lt;access&nbsp;token&gt;"&nbsp;https://id.twitch.tv/oauth2/validate</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>그리고, 다음은 응답에 대한 예제 입니다.</p>    
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"client_id":&nbsp;"wbmytr93xzw8zbg0p1izqyzzc5mbiz",</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"login":&nbsp;"twitchdev",</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"scopes":&nbsp;[</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;"channel:read:subscriptions"</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;],</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"user_id":&nbsp;"141981764",</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"expires_in":&nbsp;5520838</div><div style="padding:0 6px; white-space:pre; line-height:130%">}</div></div><div style="text-align:right;margin-top:-13px;margin-right:5px;font-size:9px;font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        
+                        
+                        <h2 id="registration">어플리케이션 등록(Registration)</h2>
+                        <p>트위치 API를 사용한 어플리케이션을 만들기 위해서, 먼저 여러분들의 어플리케이션을 <a href="https://dev.twitch.tv/console/apps/create">트위치 개발자 사이트에 등록</a>해야합니다. 등록시에, 인증 후에 리다이렉션 되는 URI를 지정합니다. 여러분들은 다른 환경에서 동일한 클라이언트를 사용하는 경우에, 여러개의 URI를 등록할 수 있습니다.</p>
+                        <p>여러분들의 개발자 어플리케이션을 등록했다면, client ID를 발급 받았을 것입니다. 몇몇 인증의 경우에는, 마찬가지로 위의 사이트에서 발급받을 수 있는 client secret이 필요한 경우도 있습니다.</p>
+                        <ul>
+                            <li>Client ID의 경우에는 공용이며, 공유가 가능합니다.</li>
+                            <li>Client secret은 어플리케이션의 비밀번호의 역할을 하며, 다른 사용자에게 노출되지 않도록 주의해야합니다.</li>
+                        </ul>
+                        <p>client secret은 기밀이 유지되어야 하므로, 트위치에서도 한번 페이지를 떠나면 이를 다시 확인할 수 없습니다. 그러므로, 여러분들은 이 암호를 별도의 장소에 기록해 두어야 합니다. 또한, 새로운 client secret을 발급받는 즉시, 기존의 client secret은 무효화 되어, 어플리케이션이 업데이트 될 때 까지 API 요청이 실패처리가 될 수 있습니다.</p>
+                        <p><strong>주의 : </strong>Client ID는 각 어플리케이션 에 대해서 고유한 값을 가집니다. 그러므로 여러 어플리케이션에서 동일한 Client ID를 사용해서는 안됩니다. 또한, 어플리케이션은 의도한 API에 적절한 범위를 요청해야합니다. 이 가이드라인을 준수하지 않는다면, 트위치 API에 대한 어플리케이션의 엑세스가 정지될 수 있습니다.</p>
+                    
+                    
+                        <h2 id="type_token">토큰의 타입(type)</h2>
+                        <p>트위치는 몇가지 토큰의 타입을 제공합니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="15%">토큰 타입</th>
+                                    <th width="85%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ID 토큰(OIDC)</td>
+                                    <td>
+                                        <p>최종 사용자에게 지정된 권한에 대한 집합이다. OIDC 토큰을 사용하면, 여러분들은 특정한 권한을 가진 사용자의 세부정보를 얻을 수 있습니다. 이러한 세부정보는 ID 토큰의 권한 정보로 표시됩니다.</p>
+                                        <p>우리의 엔드포인트는 <a href="https://id.twitch.tv/oauth2/.well-known/openid-configuration">https://id.twitch.tv/oauth2/.well-known/openid-configuration</a>에 있습니다. 이는 AWS Cognito와 같은 OIDC 표준 클라이언트 에서도 사용될 수 있습니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>사용자 엑세스 토큰</td>
+                                    <td>
+                                        <p>어플리케이션이 요청을 보내서 사용자를 인증하고, 접근을 할 수 있도록 합니다. 여러분의 어플리케이션으 트위치 로그인을 사용하거나, 컨텍스트에서 요청을 사용하는 경우에는 사용자 엑세스 토큰을 사용해야 합니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>앱 엑세스 토큰</td>
+                                    <td>
+                                        <p>여러분의 어플리케이션을 인증하고, 자원에 접근하도록 인증하는 역할을 합니다. 앱 엑세스 토큰은 사용자와 연결되어있지 않다면 사용할 수 없으며, 사용자 인증이 요구되는 엔드포인트를 사용할 수 없습니다.</p>
+                                        <p>몇몇의 트위치 API 엔드포인트는 어플리케이션 인증을 요구합니다.(이것은 사용자 인증과는 다릅니다) 만약, 여러분들의 어플리케이션이 이러한 엔드포인트를 사용한다면, 여러분들은 앱 엑세스 토큰을 생성할 필요가 있습니다. 앱 엑세스 토큰은 클라이언트의 자격(credential)을 가져옵니다. 이를 통해서 여러분들은 특정한 보안 API 요청을 보낼 수 있습니다. 클라이언트 자격은 클라이언트 ID를 대신하여 자격 증명을 하는데에 사용될 수도 있습니다.</p>
+                                        <p>앱 엑세스 토큰은 60일 동안 사용이 가능합니다. 그래서 여러분은 유효성 검사 요청을 보내서 여러분의 앱 엑세스 토큰이 유효한지를 먼저 확인해야합니다. 만약 여러분의 앱 엑세스 토큰의 유효기간이 지났다면 새로운 토큰을 발급받아야 합니다.</p>
+                                        <p>앱 엑세스 토큰은 오직 서버 간 API 통신에서만 사용되며, 클라이언트 코드 상에서 노출되어서는 안됩니다. </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>사용자 엑세스 토큰과 앱 엑세스 토큰은 모두 bearer 타입의 토큰입니다. "Bearer"는 헤더 인증에서 등장합니다. <a href="#send_access_token">유저 엑세스와 앱 엑세스 토큰 보내기</a>를 참조하세요. </p>
+                    
+                    
+                        <h2 id="get_token">토큰 발급받기</h2>
+                        <p> 트위치의 인증 전용 도메인은 https://id.twitch.tv 입니다.</p>
+                        <p><strong>참고 : </strong>URL이 https://api.twitch.tv/kraken 에서 https://id.twitch.tv 로 변경되었습니다. 구버전인 kraken 도메인도 여전히 트위치 API v.5의 기능이 제거될 때 까지 기능할 것입니다. 하지만 트위치 API v.5는 추천드리지 않습니다. </p>
+                        <p>우리들은 다음 몇가지 인증 흐름(flow)를 제공합니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">흐름 타입</th>
+                                    <th width="80%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>암시적(Implicit) 흐름</td>
+                                    <td>
+                                        <p>여러분의 어플리케이션이 서버를 사용하지 않는, 클라이언트 사이드나 자바 스크립트, 혹은 모바일 어플리케이션일 때 사용됩니다. 이 방식은 서버나 API에 요청을 보낼 필요가 없습니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>인증 흐름</td>
+                                    <td>
+                                        <p>여러분의 어플리케이션이 서버를 사용하고, client secret의 보안을 지킬 수 있으며, 서버간의 요청을 처리할 수 있습니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>클라이언트 자격 흐름</td>
+                                    <td>
+                                        <p>앱 엑세스 토큰이 필요합니다.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>각 토큰을 얻는데 사용되는 절차는 토큰에 따라서 다릅니다. 그것은 다음과 같습니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="40%">절차</th>
+                                    <th width="25%">사용자 엑세스 토큰</th>
+                                    <th width="10%">ID 토큰</th>
+                                    <th width="25%">앱 엑세스 토큰</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>OIDC 암시적 코드 흐름</td>
+                                    <td>✔</td>
+                                    <td>✔</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>OAuth 암시적 코드 흐름</td>
+                                    <td>✔</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>OIDC 인증 코드 흐름</td>
+                                    <td>✔</td>
+                                    <td>✔</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>OAuth 인증 코드 흐름</td>
+                                    <td>✔</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>OAuth 클라이언트 자격 흐름</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>✔</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>보안 목적에 의해서, 예제에서는 가짜 엑세스 토큰인, "0123456789abcdefhghijABCDEFGHIJ"가 사용됩니다.</p>
+            
+            
+                        <h2 id="send_access_token">사용자 엑세스와 앱 엑세스 토큰 보내기</h2>
+                        <p>API 인증 요청을 보낼 때, 엑세스 토큰을 헤더에 담아야 합니다. 헤더는 어떤 API를 사용하느냐에 따라 달라집니다.</p>
+                        <p>트위치 API의 경우</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">curl&nbsp;-H&nbsp;"Authorization:&nbsp;Bearer&nbsp;&lt;access&nbsp;token&gt;"&nbsp;https://api.twitch.tv/helix/</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>트위치 API v.5의 경우(비추천)</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">curl&nbsp;-H&nbsp;"Authorization:&nbsp;OAuth&nbsp;&lt;access&nbsp;token&gt;"&nbsp;https://api.twitch.tv/kraken/</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+            
+            
+                        <h2 id="Revoking_token">엑세스 토큰 해지(Revoking)하기</h2>
+                        <p>엑세스 토큰을 해지하려면, 트위치 OAuth 토큰 취소 엔드포인트를 사용해야합니다. 해당 구현은 <a href="https://datatracker.ietf.org/doc/html/rfc7009#section-2.1">OAuth 표준</a>을 따릅니다.</p>
+                        <p>여러분의 서버에서, 토큰을 해지하려면 다음 요청 형식을 따릅니다. 더 자세한 예제는 본 사이트를 참고하세요.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">POST&nbsp;https://id.twitch.tv/oauth2/revoke</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;?client_id=&lt;your&nbsp;client&nbsp;ID&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&amp;token=&lt;your&nbsp;OAuth&nbsp;token&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>이 요청은 앱 엑세스 토큰도 마찬가지로 동작합니다.</p>
+                        <p>요청이 성공하면 200 OK와 함께 바디에는 아무런 값이 전달되지 않습니다. 요청이 취소되었다면, 400 Bad Request와 함께 "Invalid token"메세지가 전달 될 것입니다.</p>
+                        <p>잘못된 요청으로 인해서 400 Bad Request가 온 경우, 요청 수정 방법에 대한 정보가 기록되며, 일반적으로 client_id에 대한 수정이 요청됩니다. </p>
+            
+                        
+                        <h2 id="Refreshing_token">엑세스 토큰 갱신(Refreshing))하기</h2>
+                        <p>OAuth2 엑세스 토큰은 만기 기한이 존재합니다. 만기 기한은 토큰을 획득한 방법에 따라 달라집니다. 토큰 반환 시에, 토큰의 기한을 나타내는 expires_in 필드를 반환합니다. 하지만 여러분들은 토큰 인증 실패에 대해 유동적으로 어플리케이션을 구성할 필요가 있습니다. 즉, 여러분들의 어플리케이션은 토큰의 만기 기한이 언제까지 인지를 인식하고 있는 것 보다는, 언제든지 토큰이 무효화 되었을 때 이를 대처할 수 있는 준비가 되어있어야 합니다.</p>
+                        <p>언젠가는 만기되는 토큰에 대비하여 오랜 기간동안 인증을 유지하기 위해서는, 우리는 <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-6">OAuth2 RFC의 엑세스 토큰 갱신</a> 가이드라인을 따라서 세션을 갱신해야 합니다. 일반적으로, 토큰을 갱신하는 행위는 주어진 인증 기한을 연장하기 위해서 사용됩니다.</p>
+                        <p><strong>참고 : </strong>앱 엑세스 토큰과 ID 토큰은 갱신이 불가능합니다.</p>
+            
+                        <h3>갱신 방법</h3>
+                        <p>토큰을 갱신하기 위해서, 여러분은 body로부터 오는 쌍인 엑세스 토큰(access token)과 갱신 토큰(refresh token)이 필요합니다. 예제는 다음과 같습니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"access_token":&nbsp;"0123456789abcdefghijABCDEFGHIJ",</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"refresh_token":&nbsp;"eyJfaWQmNzMtNGCJ9%6VFV5LNrZFUj8oU231/3Aj",</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"expires_in":&nbsp;3600,</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"scope":&nbsp;"channel:read:subscriptions",</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"token_type":&nbsp;"bearer"</div><div style="padding:0 6px; white-space:pre; line-height:130%">}</div></div><div style="text-align:right;margin-top:-13px;margin-right:5px;font-size:9px;font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>여러분들은 또한, 클라이언트 ID와 클라이언트 시크릿이 필요합니다. 이는 엑세스 토큰과 갱신 토큰을 생성하기 위해 사용됩니다.</p>
+                        <p>갱신을 위하여, 다음 요청을 사용하세요.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">POST&nbsp;https://id.twitch.tv/oauth2/token</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;--data-urlencode</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;?grant_type=refresh_token</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&amp;refresh_token=&lt;your&nbsp;refresh&nbsp;token&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&amp;client_id=&lt;your&nbsp;client&nbsp;ID&gt;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&amp;client_secret=&lt;your&nbsp;client&nbsp;secret&gt;</div></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>추가적인 파라미터와, 옵션으로 사용되는 파라미터는 다음과 같습니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">요구 파라미터</th>
+                                    <th width="10%">타입</th>
+                                    <th width="70%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>client_id</td>
+                                    <td>string</td>
+                                    <td>
+                                        <p>여러분들의 클라이언트 ID 입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>client_secret</td>
+                                    <td>string</td>
+                                    <td>
+                                        <p>여러분들의 클라이언트 시크릿 입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>grant_type</td>
+                                    <td>string</td>
+                                    <td>
+                                        <p>갱신 토큰(refresh token)이 들어가야 합니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>refresh_token</td>
+                                    <td>string</td>
+                                    <td>
+                                        <p>클라이언트로 발급되는 갱신 토큰(refresh token)입니다.</p>
+                                        <p>여러분의 갱신 토큰에는 안전하지 않은 URL 문자가 들어가있을 수 있습니다. 그러므로, 갱신 요청에 담기 이전에, 여러분의 갱신 토큰을 인코딩 해야 합니다. 그렇지 않으면, 여러분은 "Invalid refresh token" 에러를 받게 될 것입니다.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">옵션 파라미터</th>
+                                    <th width="10%">타입</th>
+                                    <th width="70%">설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>scope</td>
+                                    <td>string</td>
+                                    <td>
+                                        <p>공백으로 구분되는 <a href="#Scope">범위(scope)</a>의 목록입니다. 이 범위는 원래 부여받은 토큰에 할당되어 있는 범위의 전체집합이거나, 하위집합이어야 합니다. 다시말해서, 원래 자원이 갖고있는 범위가 아닌 것을 포함할 수 없습니다.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>예제는 다음과 같습니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"access_token":&nbsp;"1ssjqsqfy6badst1ws7m03gras79zfr",</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"refresh_token":&nbsp;"eyJfMzUtNDU0OC04MWYwLTQ5MDY5ODY4NGNlMSJ9%asdfasdf=",</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"scope":&nbsp;[</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;"channel:read:subscriptions",</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;"channel:manage:polls"</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;],</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"token_type":&nbsp;"bearer"</div><div style="padding:0 6px; white-space:pre; line-height:130%">}</div></div><div style="text-align:right;margin-top:-13px;margin-right:5px;font-size:9px;font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>요청에 실패하였으면 다음과 같은 응답이 오게됩니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"error":&nbsp;"Bad&nbsp;Request",</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"status":&nbsp;400,</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;"message":&nbsp;"Invalid&nbsp;refresh&nbsp;token"</div><div style="padding:0 6px; white-space:pre; line-height:130%">}</div></div><div style="text-align:right;margin-top:-13px;margin-right:5px;font-size:9px;font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>사용자가 비밀번호를 변경하거나, 어플리케이션과의 연결을 해지한다면, 우리는 사용자에 대한 모든 토큰을 제거합니다. 그렇게되면 갱신 토큰과 엑세스 토큰은 401 에러를 응답할 것입니다.</p>
+            
+                        <h3>인증 실패로 인한 서버 거부 응답을 갱신하기</h3>
+                        <p>우리는 여러분이 인증 실패로 인해 서버 응답이 거절되었을 때, 여러분의 토큰을 갱신하는 방법을 추천드립니다. 여러분의 엑세스 토큰이 언제든지 만료되거나 취소 될 수 있다는 점을 감안하고, 이러한 상황을 어플리케이션에서 적절하게 처리할 수 있도록 준비를 갖춰야 합니다. 따라서 특정한 기한을 맞춰서 갱신을 하는 것 보다, 토큰의 무효화로 인한 서버 거부에 대한 응답으로 갱신 처리를 하는 것이 좋습니다.</p>
+                        <p>여러분의 요청이 기한 만기나, 부정확한 인증 자격으로 인해서 실패하였을 경우, API는 401 상태를 반환합니다.</p>
+                        <div class="colorscripter-code" style="color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#fafafa;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #e5e5e5"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div><div style="line-height:130%">10</div><div style="line-height:130%">11</div><div style="line-height:130%">12</div><div style="line-height:130%">13</div><div style="line-height:130%">14</div><div style="line-height:130%">15</div><div style="line-height:130%">16</div><div style="line-height:130%">17</div><div style="line-height:130%">18</div><div style="line-height:130%">19</div><div style="line-height:130%">20</div><div style="line-height:130%">21</div><div style="line-height:130%">22</div><div style="line-height:130%">23</div><div style="line-height:130%">24</div><div style="line-height:130%">25</div><div style="line-height:130%">26</div><div style="line-height:130%">27</div><div style="line-height:130%">28</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%">DELETE&nbsp;<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span>kraken<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span>users<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span>test_user1<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span>follows<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span>channels<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span>test_channel&nbsp;HTTP<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span><span style="color:#0099cc">1.</span><span style="color:#0099cc">1</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">Host:&nbsp;api.twitch.tv</div><div style="padding:0 6px; white-space:pre; line-height:130%">User<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Agent:&nbsp;curl<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span><span style="color:#0099cc">7.</span><span style="color:#0099cc">43.</span><span style="color:#0099cc">0</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">Accept:&nbsp;application<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span>vnd.twitchtv.v3<span style="color:#0086b3"></span><span style="color:#a71d5d">+</span>json</div><div style="padding:0 6px; white-space:pre; line-height:130%">Authorization:&nbsp;OAuth&nbsp;<span style="color:#0086b3"></span><span style="color:#a71d5d">&lt;</span>access_token<span style="color:#0086b3"></span><span style="color:#a71d5d">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">Client<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>ID:&nbsp;retgzhvpsxjwun0rvrb1rfwheegu1yw</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">HTTP<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span><span style="color:#0099cc">1.</span><span style="color:#0099cc">1</span>&nbsp;<span style="color:#0099cc">401</span>&nbsp;Unauthorized</div><div style="padding:0 6px; white-space:pre; line-height:130%">Accept<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Ranges:&nbsp;bytes</div><div style="padding:0 6px; white-space:pre; line-height:130%">Access<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Control<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Allow<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Headers:</div><div style="padding:0 6px; white-space:pre; line-height:130%">Access<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Control<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Allow<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Methods:</div><div style="padding:0 6px; white-space:pre; line-height:130%">Access<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Control<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Allow<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Origin:&nbsp;<span style="color:#0086b3"></span><span style="color:#a71d5d">*</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">Age:&nbsp;<span style="color:#0099cc">0</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">Cache<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Control:&nbsp;max<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>age<span style="color:#0086b3"></span><span style="color:#a71d5d">=</span><span style="color:#0099cc">0</span>,&nbsp;private,&nbsp;must<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>revalidate</div><div style="padding:0 6px; white-space:pre; line-height:130%">Content<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Type:&nbsp;application<span style="color:#0086b3"></span><span style="color:#a71d5d">/</span>json;&nbsp;charset<span style="color:#0086b3"></span><span style="color:#a71d5d">=</span>utf<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span><span style="color:#0099cc">8</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">Date:&nbsp;Wed,&nbsp;<span style="color:#0099cc">12</span>&nbsp;Oct&nbsp;<span style="color:#0099cc">2016</span>&nbsp;<span style="color:#0099cc">22</span>:<span style="color:#0099cc">25</span>:<span style="color:#0099cc">10</span>&nbsp;GMT</div><div style="padding:0 6px; white-space:pre; line-height:130%">Server:&nbsp;nginx</div><div style="padding:0 6px; white-space:pre; line-height:130%">Status:&nbsp;<span style="color:#0099cc">401</span>&nbsp;Unauthorized</div><div style="padding:0 6px; white-space:pre; line-height:130%">Vary:&nbsp;Accept<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Encoding</div><div style="padding:0 6px; white-space:pre; line-height:130%">Via:&nbsp;<span style="color:#0099cc">1.</span><span style="color:#0099cc">1</span>&nbsp;varnish</div><div style="padding:0 6px; white-space:pre; line-height:130%">Content<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>Length:&nbsp;<span style="color:#0099cc">89</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">Connection:&nbsp;keep<span style="color:#0086b3"></span><span style="color:#a71d5d">-</span>alive</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#63a35c">"error"</span>:&nbsp;<span style="color:#63a35c">"Unauthorized"</span>,</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#63a35c">"message"</span>:&nbsp;<span style="color:#63a35c">"Token&nbsp;invalid&nbsp;or&nbsp;missing&nbsp;required&nbsp;scope"</span>,</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#63a35c">"status"</span>:&nbsp;<span style="color:#0099cc">401</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">}</div></div><div style="text-align:right;margin-top:-13px;margin-right:5px;font-size:9px;font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#e5e5e5;text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+                        <p>401 오류가 발생한 경우에, 갱신 토큰이 있다면, 토큰을 갱신해야합니다. 갱신이 실패했다면, 어플리케이션에서 사용자에게 OAuth2 흐름(flow)을 통한 메세지를 표시해 주어야 합니다. </p>
+            
+                        <h3>어플리케이션에서 토큰 갱신을 다루기</h3>
+                        <p>우리는 여러분의 엑세스 토큰의 모든 사용자와 관련되어 동기적으로 갱신하는 것을 추천드립니다. 다시말해, 동일한 토큰에 대한 갱신 요청을 동시에 여러개를 보내지 마세요. 갱신 요청은 한 번 보낸 다음, 해당 요청에서 반환되는 토큰을 모든 사용자에게 적절히 재배포 해야합니다.</p>
+                        <p>API에서는 사용 가능한 엑세스 토큰과 관련된 갱신 토큰의 개수를 제한합니다. 클라이언트/사용자 당 50개의 토큰을 사용할 수 있습니다. 만약 동일한 권한을 갖는 여러개의 스레드가 동시에 갱신되어야 하는 경우라면, 갱신이 끝날 때 까지 스레드가 동작하지 않을 수도 있습니다. 갱신작업의 동기화를 사용한다면, 어플리케이션에서 제한을 초과하는 상황을 방지할 수 있습니다.</p>
+            
+            
+                        <h2 id="Scope">범위(Scope)</h2>
+                        <p>이전에 언급한 대로, 사용자에게 인증 요청을 보낼 때, URL의 범위(scope) 파라미터를 통해서 어플리케이션에 필요한 권한을 지정할 수 있습니다. 이 범위는 인증 성공시 응답받게 되는 엑세스 토큰과 관련이 있습니다. OAuth 혹은 OIDC 요청을 보낼 때, 여러가지의 범위를 요청할 수 있습니다. 범위를 지정하지 않으면, 어플리케이션은 사용자에 대한 기본적인 정보만을 받게 됩니다. </p>
+                        <p>범위는 공백으로 구분된 리스트 형태로 URL의 scope 파라미터에 담깁니다. 인증 요청은 다음과 같이 보낼 수 있습니다.</p>
+                        <p>&scope=user:edit%20user:read:email</p>
+                        <p>사용자는 앱 인증 시, 요청된 권한을 볼 수 있으므로, 필요한 권한만을 인증해야 합니다.</p>
+                        <p>앱 엑세스 토큰을 요청할 때는 범위가 필요하지 않습니다.</p>
+                        <h3>트위치 API</h3>
+                        <p>아래의 표는 트위치 API에서의 사용가능한 포괄적인 범위 리스트를 나타내고 있습니다. 이러한 범위가 필요하지 않은 더 포괄적인 트위치 API의 엔드포인트를 버보고싶다면 <a href="https://dev.twitch.tv/docs/api/reference">트위치 API 레퍼런스</a>를 참조하세요.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="20%">범위 이름</th>
+                                    <th width="80%">엑세스 타입과 관련된 엔드포인트</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>analytics:read:extensions</td>
+                                    <td>
+                                        <p>인증된 계정에 대한 트위치 확장(Extension)의 데이터를 가져옵니다.</p>
+                                        <p><a href="https://dev.twitch.tv/docs/api/reference#get-extension-analytics">확장분석(Extension Analytics) 데이터 가져오기</a></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>analytics:read:games</td>
+                                    <td>
+                                        <p>인증된 계정에 대한 게임(Game)의 데이터를 가져옵니다.</p>
+                                        <p><a href="https://dev.twitch.tv/docs/api/reference#get-game-analytics">게임(Game) 데이터 가져오기</a></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>bits:read</td>
+                                    <td>
+                                        <p>채널에 대한 비트(Bits) 데이터를 가져옵니다.</p>
+                                        <p><a href="https://dev.twitch.tv/docs/api/reference#get-bits-leaderboard">리더보드에서 비트(Bits) 데이터 가져오기</a></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:edit:commercial</td>
+                                    <td>
+                                        <p>채널의 광고(Commercials)를 실행합니다.</p>
+                                        <p><a href="https://dev.twitch.tv/docs/api/reference#start-commercial">광고 실행하기</a></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:manage:broadcast</td>
+                                    <td>
+                                        <p>구성 업데이트 및 스트림 태그, 스트림 마커 등 채널의 방송 구성(broadcast configuration)을 관리합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#modify-channel-information">채널정보 수정하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#create-stream-marker">스트림 마커 생성하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#replace-stream-tags">스트림 태그 재설정하기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:manage:polls</td>
+                                    <td>
+                                        <p>채널의 설문조사(poll)를 관리합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#create-poll">설문조사 생성하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#end-poll">설문조사 끝내기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:manage:predictions</td>
+                                    <td>
+                                        <p>채널의 채널 포인트 예측(Channel Points Predictions)을 관리합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#create-prediction">채널 포인트 예측 생성하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#end-prediction">채널 포인트 예측 끝내기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:manage:redemptions</td>
+                                    <td>
+                                        <p>채널 포인트의 커스텀 보상(reward)과 채널로의 상환(redemption)을 관리합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#create-custom-rewards">커스텀 보상 생성하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#delete-custom-reward">커스텀 보상 지우기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#update-custom-reward">커스텀 보상 수정하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#update-redemption-status">상황 상태 수정하기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:manage:schedule</td>
+                                    <td>
+                                        <p>채널의 스트림 스케줄을 관리합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#update-channel-stream-schedule">채널 스트림 스케줄 수정하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#create-channel-stream-schedule-segment">채널 스트림 스케줄 세그먼트 생성하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#update-channel-stream-schedule-segment">채널 스트림 스케줄 세그먼트 수정하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#delete-channel-stream-schedule-segment">채널 스트림 스케줄 세그먼트 삭제하기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:manage:videos</td>
+                                    <td>
+                                        <p>채널의 비디오와 비디오 삭제에 대해 관리합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#delete-videos">비디오 삭제하기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:read:editors</td>
+                                    <td>
+                                        <p>사용자 중 편집 권한(editor role)이 있는 사용자의 리스트를 확인합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-channel-editors">채널의 편집자 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:read:hype_train</td>
+                                    <td>
+                                        <p>채널의 후원열차(Hype Train)에 대한 정보를 확인합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-hype-train-events">후원열차 이벤트 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:read:polls</td>
+                                    <td>
+                                        <p>채널의 설문조사(poll)를 확인합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-polls">설문조사 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:read:predictions</td>
+                                    <td>
+                                        <p>채널의 채널 포인트 예측(Channel Points Predictions)를 확인합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-predictions">채널 포인트 예측 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:read:redemptions</td>
+                                    <td>
+                                        <p>채널 포인트 커스텀 보상과 채널로의 상환을 확인합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-custom-reward">커스텀 보상 가져오기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-custom-reward-redemption">커스텀 보상 상환 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:read:stream_key</td>
+                                    <td>
+                                        <p>승인된 사용자의 스트림 키를 확인합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-stream-key">스트림 키 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>channel:read:subscriptions</td>
+                                    <td>
+                                        <p>채널의 모든 후원자들의 리스트를 확인하고, 특정 사용자가 채널을 후원하고 있는지를 확인합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-broadcaster-subscriptions">방송 후원자 정보 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>clips:edit</td>
+                                    <td>
+                                        <p>채널의 클립을 관리합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#create-clip">클립 생성하기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>moderation:read</td>
+                                    <td>
+                                        <p>채널의 관리자(moderartion) 정보와 밴, 타임아웃, 오토모드 세팅에 대한 정보를 가져옵니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#check-automod-status">오토모드 상태 가져오기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-banned-events">밴 이벤트 가져오기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-banned-users">밴 유저 정보 가져오기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-moderators">관리자 정보 가져오기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-moderator-events">관리 이벤트 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>moderator:manage:automod</td>
+                                    <td>
+                                        <p>자신이 매니저로 활동하는 채널을 오토 모드로 메세지를 관리하는 방법을 관리합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#manage-held-automod-messages">오토모드 메세지 관리하기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>user:edit</td>
+                                    <td>
+                                        <p>사용자 객체를 관리합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#update-user">사용자 수정하기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>user:edit:follows</td>
+                                    <td>
+                                        <p>사용자의 팔로우를 생성합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#create-user-follows">사용자 팔로우 생성하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#delete-user-follows">사용자 팔로우 제거하기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>user:manage:blocked_users</td>
+                                    <td>
+                                        <p>사용자의 차단 리스트를 관리합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#block-user">사용자 차단하기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#unblock-user">사용자 차단 해제하기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>user:read:blocked_users</td>
+                                    <td>
+                                        <p>사용자의 차단 리스트를 확인합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-user-block-list">사용자 차단 리스트 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>user:read:broadcast</td>
+                                    <td>
+                                        <p>사용자의 방송 구성(broadcasting configuration)과 확장 구성(Extension configuration)을 확인합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-stream-markers">스트림 마커 가져오기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-user-extensions">사용자 확장 가져오기</a><br>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-user-active-extensions">사용자 활성 확장(User Active Extension) 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>user:read:email</td>
+                                    <td>
+                                        <p>사용자의 이메일 주소를 확인합니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-users">사용자 정보 가져오기(옵션설정)</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>user:read:follows</td>
+                                    <td>
+                                        <p>채널의 사용자 팔로우 정보 리스트를 가져옵니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#get-followed-streams">팔로우된 리스트 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>user:read:subscriptions</td>
+                                    <td>
+                                        <p>인증된 사용자의 특정 채널에 대한 후원정보를 가져옵니다.</p>
+                                        <p>
+                                            <a href="https://dev.twitch.tv/docs/api/reference#check-user-subscription">사용자 후원 정보 가져오기</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+            
+                        <h3>트위치 API v5</h3>
+                        <p>트위치 API v5가 지원이 중단되면서, 트위치 API의 범위로 호환(migration)될 수 있도록 매핑되었습니다. 여러분들은 이 매핑에 대한 정보를 <a href="https://dev.twitch.tv/docs/api/migration">트위치 API 호환 가이드</a> 엔드포인트에서 확인할 수 있습니다.</p>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="30%">범위 이름</th>
+                                    <th width="70%">엑세스 타입</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>channel_subscriptions</td>
+                                    <td>채널의 모든 구독자들을 확인합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>channel_commercial</td>
+                                    <td>채널의 광고 정보를 확인합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>channel_editor</td>
+                                    <td>채널의 메타 데이터를 작성합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>user_follows_edit</td>
+                                    <td>사용자의 팔로우된 채널을 관리합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>channel_read</td>
+                                    <td>채널의 이메일 주소와 스트림 키를 확인합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>user_read</td>
+                                    <td>사용자 정보를 확인합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>user_blocks_read</td>
+                                    <td>사용자 차단 정보를 확인합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>user_blocks_edit</td>
+                                    <td>사용자의 차단 리스트를 관리합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>채팅 및 게시-구독(PubSub)</h3>
+                        <table width="95%">
+                            <thead>
+                                <tr>
+                                    <th width="30%">범위 이름</th>
+                                    <th width="70%">엑세스 타입</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>channel:moderate</td>
+                                    <td>채널에서의 관리 동작을 합니다. 사용자는 채널의 매니저 권한을 갖고 있어야 합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>chat:edit</td>
+                                    <td>라이브 스트리밍 방으로 채팅 정보를 보냅니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>chat:read</td>
+                                    <td>라이브 스트리밍의 방에서 채팅 정보를 가져옵니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>whispers:read</td>
+                                    <td>자신의 비공개(Whisper) 메세지를 확인합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>whispers:edit</td>
+                                    <td>비공개 메세지를 보냅니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>  <!-- //main -->
+                </div>
+            </div>
+        </article>
+
+        <script>
+            window.onload = function() {
+                const side = document.querySelector('.container .row .side'),
+                    menu_side_bar = document.querySelector('.container .row .menu .side-bar')
+                menu_side_bar.addEventListener('click', () => {
+                    if(side.classList.contains('active')) {
+                        side.classList.remove('active');
+                        menu_side_bar.classList.remove('active')
+                    }
+                    else {
+                        side.classList.add('active')
+                        menu_side_bar.classList.add('active')
+                    }
+                    
+                })
+            }
+
+        </script>
+    </body>
+</html>

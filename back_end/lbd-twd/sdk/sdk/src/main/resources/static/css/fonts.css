@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Lines';
+    src: url('/fonts/LINES-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tway_air';
+    src: url('/fonts/tway_air.ttf');
+    font-weight: normal;
+    font-style: normal;
+}

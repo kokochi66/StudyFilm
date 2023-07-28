@@ -1,0 +1,21 @@
+app.codesignal.com
+
+avoidObstacles
+장애물을 피할 수 있는 최소한의 값을 구한다.
+
+나의 아이디어:
+각 값을 mod연산 후, 모든 값에 나머지가 0이 나오지 않는 최소값을 구한다.
+나머지가 0이 나온다면 반복문을 돌다가 break.
+
+arr_integer insertEM(arr_integer a, int *b){
+	int len = a.size,i;
+	for(i=0;i<len;i++) a.arr[i] = b[i];
+	return a;
+}
+
+
+boxBlur
+박스의 3x3 평균값을 저장하는 출력박스를 출력
+
+minesweeper
+지뢰찾기 만들기

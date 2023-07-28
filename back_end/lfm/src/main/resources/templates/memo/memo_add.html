@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko"  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/memoLayout :: headMain"></head>
+<body id="page-top">
+
+<!-- 상단 내비게이션 -->
+<nav th:replace="fragments/memoLayout :: navbarMain"></nav>
+<!-- 헤더 -->
+<header th:replace="fragments/memoLayout :: headerMain"></header>
+<!-- 컨텐츠 폼 -->
+<section class="page-section bg-light memo-section-box" id="memo-add-box">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase" th:text="${master.name}"></h2>
+            <h3 class="section-subheading text-muted" th:text="${master.description}"></h3>
+        </div>
+        <form id="memo-add-form" class="action-form" action="/memo/add/process" method="post">
+            <input type="hidden" name="masterId" th:value="${master.id}">
+            <div class="row align-items-stretch mb-5">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <!-- Name input-->
+                        <input class="form-control" id="title" name="title" type="text" placeholder="게시글 제목을 입력하세요"/>
+                        <div class="invalid-feedback" >A name is required.</div>
+                    </div>
+                    <div class="form-group">
+                        <!-- Email address input-->
+                        <input class="form-control" id="writer" name="writer" type="text" placeholder="작성자 이름을 입력하세요"/>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group form-group-textarea mb-md-0">
+                        <!-- Message input-->
+                        <div id="write-contents"></div>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center text-white mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                    To activate this form, sign up at
+                    <br />
+                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                </div>
+            </div>
+            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+            <!-- Submit Button-->
+            <div class="text-center">
+                <button id="save-btn" class="btn btn-primary btn-xl text-uppercase" type="button">작성하기</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- 푸터 -->
+<footer th:replace="fragments/memoLayout :: footerMain"></footer>
+<!-- 스크립트 -->
+<script th:replace="fragments/memoLayout :: memo-global-script"></script>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        const Editor = toastui.Editor;
+        const editor = new Editor({
+            el: document.querySelector('#write-contents'),
+            height: '600px',
+            viewer: true,
+            initialEditType: 'markdown',
+            previewStyle: 'vertical'
+        });
+
+        document.querySelector('#save-btn').addEventListener('click', (e) => {
+            if(!confirm('게시글을 작성하시겠습니까?')) return;
+            oEditors.getById['write-contents'].exec("UPDATE_CONTENTS_FIELD", []);
+            document.querySelector('#memo-add-form').submit();
+        })
+    });
+</script>
+</body>
+</html>
+

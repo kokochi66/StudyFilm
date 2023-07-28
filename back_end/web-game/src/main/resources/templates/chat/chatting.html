@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Server</title>
+    <script>
+        var socket = new WebSocket("ws://localhost:1234/chat");
+
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            socket.send(message);
+            document.getElementById("message").value = "";
+        }
+
+        socket.onmessage = function(event) {
+            var chat = document.getElementById("chat");
+            var message = event.data;
+            chat.innerHTML += "<p>" + message + "</p>";
+        };
+    </script>
+</head>
+<body>
+<div id="chat"></div>
+<input type="text" id="message" />
+<button onclick="sendMessage()">Send</button>
+</body>
+</html>

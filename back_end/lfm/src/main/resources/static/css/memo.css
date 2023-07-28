@@ -1,0 +1,36 @@
+
+/* 게시판 폼 디자인 */
+.memo-section-box .form-group .form-control {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+}
+.memo-section-box .form-group-textarea .form-control {
+    height: 20rem;
+}
+
+
+
+
+/* 게시판 상세보기 페이지 */
+.view-title {
+    padding: 15px 10px;
+    border-bottom: 2px solid #000;
+    font-size: 30px;
+}
+.view-info {
+    display: flex;
+    justify-content: space-between;
+}
+.view-info .view-writer {
+
+}
+.view-info .view-regDate {
+
+}
+.view-contents {
+    margin-top: 100px;
+}
+
+.view-contents * {
+    text-align: left;
+}

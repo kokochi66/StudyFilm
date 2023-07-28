@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko"  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/memoLayout :: headMain"></head>
+<body id="page-top">
+
+<!-- 상단 내비게이션 -->
+<nav th:replace="fragments/memoLayout :: navbarMain"></nav>
+<!-- 헤더 -->
+<header th:replace="fragments/memoLayout :: headerMain"></header>
+
+<style> /* [::필요::] css 파일로 옮기기 */
+    #memo-list-box .form-group .form-control {padding: 1.25rem;}
+
+</style>
+<!-- Memo-List-box -->
+<section class="page-section bg-light" id="memo-list-box">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase" th:text="${master.name}"></h2>
+            <h3 class="section-subheading text-muted" th:text="${master.description}"></h3>
+        </div>
+        <form class="action-form btn-group" action="" method="">
+            <input type="hidden" name="id" th:value="${master.id}">
+            <button type="button" class="btn btn-info location-href" th:data-locationHref="${'/memo/add?id=' + master.id}">글 작성</button>
+            <button type="button" class="btn btn-danger form-submit confirm-btn" data-confirm="게시판을 삭제하시겠습니까?" data-action="/memo/master/delete/process" data-method="post">게시판 삭제</button>
+        </form>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col" width="10%">번호</th>
+                <th scope="col" width="20%">작성자</th>
+                <th scope="col" width="50%">글 제목</th>
+                <th scope="col" width="20%">작성일자</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="board : ${boardList}">
+                <td th:text="${board.id}"></td>
+                <td th:text="${board.writer}"></td>
+                <td>
+                    <a th:href="${'/memo/view?id='+board.id}" th:text="${board.title}"></a>
+                </td>
+                <td th:text="${board.createdDate}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+        </div>
+    </div>
+</section>
+<!-- 푸터 -->
+<footer th:replace="fragments/memoLayout :: footerMain"></footer>
+<!-- 스크립트 -->
+<script th:replace="fragments/memoLayout :: memo-global-script"></script>
+</body>
+</html>

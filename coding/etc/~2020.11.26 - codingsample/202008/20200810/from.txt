@@ -1,0 +1,13 @@
+app.codesignal.com
+
+Intro
+
+The Journey Begins
+1. add
+두 정수를 받아서 더한 값을 반환하는 함수
+
+2. centuryFromYear
+정수를 받아서, 몇세기인지를 반환하는 함수
+
+3. checkPalindrome
+문자열을 받아서, 좌우대칭인지를 bool로 반환하는 함수

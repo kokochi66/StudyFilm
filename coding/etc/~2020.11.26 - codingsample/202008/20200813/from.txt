@@ -1,0 +1,13 @@
+app.codesignal.com
+
+Intro
+
+Smooth sailing
+1. AllLongestStrings
+문자열 배열을 받아서 가장 길이가 긴 문자열만을 저장한 배열을 반환
+
+2. commonCharacterCount
+문자열 두개를 받아, 같은 알파벳의 개수를 반환
+
+3. checkPalindrome
+문자열을 받아서, 좌우대칭인지를 bool로 반환하는 함수

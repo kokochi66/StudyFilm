@@ -1,0 +1,45 @@
+<div id="contents">
+  <div id="cont_title">
+    <h2>GMS - 게임센터</h2>
+    <span>친구들과 함께 다양한 게임을 즐겨보세요!</span>
+  </div>
+  <div id="cont_login">
+    <form action="/login" class="login_form" method="POST">
+      <input type="text" name="" placeholder="ID" class="login_id">
+      <input type="password" name="" placeholder="password" class="login_pwd">
+    </form>
+    <button type="button" name="button" class="login_btn">로그인</button>
+    <div class="login_info">
+      <div class="find_id">아이디 찾기</div>
+      <div class="find_pwd">비밀번호 찾기</div>
+      <div class="register">회원가입</div>
+    </div>
+  </div>
+</div>
+<script>
+  function submitPost() {
+    let id = $('.login_id').val()
+    let pwd = $('.login_pwd').val()
+    //Ajax POST Method TEST
+    $.ajax({
+        url: '/login',
+        dataType: 'json',
+        type: 'POST',
+        data: {id:id, pwd:pwd},
+        success: (result) => {
+            if (result) {
+            if(result.res === 'success') {
+                alert('로그인에 성공하였습니다.')
+                location.href =`<%= url%>`;
+            } else if(result.res === 'fault') {
+                alert('로그인에 실패하였습니다.')
+            }
+            } 
+        },
+        error: (xhr, status) => {
+            alert(xhr +" : "+status)
+        }
+        });
+}
+</script>
+<script src="/js/user/login.js"></script>

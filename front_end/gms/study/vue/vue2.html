@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue.js 기초 익히기2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+</head>
+<body>
+    <h1>Hello Vue.js2</h1>
+    <div id="app">
+        <form v-on:submit.prevent="submit">
+            <!-- <input type="text" :value="text" @keyup="updateText"><br> -->
+            <input type="text" v-model="text"><br>
+            {{ text }}
+            <input type="submit" value="Submit">
+        </form>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                year: 2021,
+                text: ''
+            },
+            methods: {
+                submit() {
+                    alert('submitted')
+                    console.log('hello')
+                },
+                // updateText(event) {
+                //     console.log(event)
+                //     this.text = event.target.value
+                // }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+.game_box {width: 60%;  background-color: rgba(195, 235, 215, 0.842);}
+
+
+.game_box .game_play_box {
+    width: 680px; height: 680px; background-color: rgba(155, 192, 218, 0.842);
+    margin: 0px auto; box-sizing: border-box; border: 5px solid #000;
+    border-radius: 5px; display: flex; justify-content: space-around; flex-direction: column;
+}
+.game_box .game_play_box .row_set {
+    width: 100%; display: flex; justify-content: space-around; box-sizing: border-box; 
+}
+.game_box .game_play_box .row_set .pannel {
+    height: 100%; border: 1px solid #000; background-size: 900%;
+    border-radius: 3px; background-image: url('/img/game/minesweeper/sprites.png'); background-repeat: no-repeat;
+}
+.game_box .game_play_box .row_set .pannel.first {filter: drop-shadow(16px 16px 20px red) invert(75%);}
+.game_box .game_play_box.easy .row_set {height: 8%;}
+.game_box .game_play_box.easy .row_set .pannel {width: 8%; background-position: 0px -178.718px;}
+
+.game_box .game_play_box.normal .row_set {height: 4.5%;}
+.game_box .game_play_box.normal .row_set .pannel {width: 4.5%; background-position: 0px -100px;}
+
+.game_box .game_play_box.hard .row_set {height: 3.5%;}
+.game_box .game_play_box.hard .row_set .pannel {width: 3.2%; background-position: 0px -70.3px;}
+
+
+.game_box .game_info_box {
+    width: 680px; height: 120px; background-color: rgba(161, 161, 161, 0.842); margin: 0px auto;
+}
+.game_box .game_info_box .game_level {width: 100%; float: left;}
+.game_box .game_info_box .game_level > button {
+    cursor: pointer; font-size: 20px; font-weight: bold; float: left; width: 220px;
+    background-color: rgb(255, 255, 255); display: block;
+    border-left: 5px solid #000; box-sizing: content-box; padding: 5px 0; border-bottom: 5px solid #000;
+}
+.game_box .game_info_box .game_level > button:last-child {border-right: 5px solid #000;}
+.game_box .game_info_box .game_level > button:hover {background-color: rgb(167, 167, 167);}
+.game_box .game_info_box .game_info {width: 100%; float: left;}
+.game_box .game_info_box .game_info > div {
+    float: left; height: 75px;
+    background-color: #fff;  width: 50%; display: block;
+    box-sizing: border-box; border-left: 5px solid #000; border-bottom: 5px solid #000;
+}
+.game_box .game_info_box .game_info .play_time {border-right: 5px solid #000;}
+.game_box .game_info_box .game_info > div > div {
+    float: left; height: 100%; text-align: center; line-height: 70px; font-weight: bold; box-sizing: border-box; 
+}
+.game_box .game_info_box .game_info > div > .text {width: 20%; border-right: 5px solid #000; font-size: 25px;}
+.game_box .game_info_box .game_info > div > .cont {width: 80%;  font-size: 30px;}
+
+
+.game_mypage .my_record {}
+.game_mypage .my_record h3 {
+    font-size: 30px; font-weight: bold; text-align: center; padding: 4.5px 0;
+    border-top: 3px solid #000; border-bottom: 3px solid #000;
+}
+.game_mypage .my_record .record_box {
+    height: 140px; width: 100%; box-sizing: border-box; border-bottom: 3px solid #000;
+}
+.game_mypage .my_record .record_box > div {
+    float: left; height: 100%; line-height: 137px; font-weight: bold; text-align: center;
+}
+.game_mypage .my_record .record_box .text {
+    width: 30%; font-size: 22px; border-right: 3px solid #000; box-sizing: border-box;
+}
+.game_mypage .my_record .record_box .cont {width: 70%; font-size: 30px;}

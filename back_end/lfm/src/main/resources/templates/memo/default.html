@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko"  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/memoLayout :: headMain"></head>
+<body id="page-top">
+
+<!-- 상단 내비게이션 -->
+<nav th:replace="fragments/memoLayout :: navbarMain"></nav>
+<!-- 헤더 -->
+<header th:replace="fragments/memoLayout :: headerMain"></header>
+
+<!-- 푸터 -->
+<footer th:replace="fragments/memoLayout :: footerMain"></footer>
+<!-- Portfolio Modals-->
+<th:block th:replace="fragments/memoLayout :: portfolioPopup"></th:block>
+
+<!-- 스크립트 -->
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        // [::] ===== 전체 공통 스크립트 ===== [::]
+        // [::] 경로 이동 스크립트
+        document.querySelectorAll('.location-href').forEach((elem, idx) => {
+            elem.addEventListener('click', (e) => {
+                location.href = elem.getAttribute('data-locationHref');
+
+            })
+        })
+        // [::] ===== //전체 공통 스크립트 ===== [::]
+    });
+</script>
+</body>
+</html>
