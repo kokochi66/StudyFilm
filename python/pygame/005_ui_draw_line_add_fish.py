@@ -1,4 +1,5 @@
 import pygame as pg
+import random
 
 pg.init()
 
@@ -17,11 +18,9 @@ window.blit(backgroun_image, (0, 0))
 
 fish1 = pg.image.load("img/fish1.png")
 fish1 = pg.transform.scale(fish1, (64, 64))
-window.blit(fish1, (100, 400))
 
 fish2 = pg.image.load("img/fish2.png")
 fish2 = pg.transform.scale(fish2, (64, 64))
-window.blit(fish2, (200, 300))
 
 score_bar = pg.image.load("img/score_bar.png")
 score_bar = pg.transform.scale(score_bar, (250, 74))
@@ -30,6 +29,25 @@ score_bar = pg.transform.scale(score_bar, (250, 74))
 time_bar = pg.image.load("img/time_bar.png")
 time_bar = pg.transform.scale(time_bar, (200, 55))
 
+fish_list = [fish1, fish2]
+fish_position = []
+
+for row in range(70, 520, 90) :
+    pg.draw.line(window, (255, 255, 255), (row, 370), (row, height - 30), 3)
+    for col in range(370, height - 30, 80):
+        pg.draw.line(window, (255, 255, 255), (70, col), (520, col), 3)
+        fish_position.append((row + 10, col + 10))
+
+pg.draw.line(window, (255, 255, 255), (520, 370), (520, height - 30), 3)
+pg.draw.line(window, (255, 255, 255), (70, height - 30), (520, height - 30), 3)
+
+fish_position = random.sample(fish_position, 5)
+print(fish_position)
+
+for position in range(5) :
+    random_fish = random.choice(fish_list)
+    fish_coordinate = random_fish.get_rect(topleft=(fish_position[position][0], fish_position[position][1]))
+    window.blit(random_fish, fish_coordinate)
 
 # 이미지를 넣어주었으면, display를 업데이트 해주어야 한다.
 pg.display.update()
