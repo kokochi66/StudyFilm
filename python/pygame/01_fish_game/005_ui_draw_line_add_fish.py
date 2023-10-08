@@ -42,7 +42,6 @@ pg.draw.line(window, (255, 255, 255), (520, 370), (520, height - 30), 3)
 pg.draw.line(window, (255, 255, 255), (70, height - 30), (520, height - 30), 3)
 
 fish_position = random.sample(fish_position, 5)
-print(fish_position)
 
 for position in range(5) :
     random_fish = random.choice(fish_list)
