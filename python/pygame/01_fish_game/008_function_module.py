@@ -9,6 +9,7 @@ def game_end():
     window.blit(result, (170, 550))
     window.blit(game_end, (230, 400))
     pg.display.update()
+    
     end_time = pg.time.get_ticks() + 5000  # 현재 시간 + 5초
     running = True
     while running:
