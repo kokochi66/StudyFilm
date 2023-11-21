@@ -1,5 +1,6 @@
 package com.example.api.service;
 
+import com.example.api.repository.CouponCountRepository;
 import com.example.api.repository.CouponRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class ApiServiceTest {
     @Autowired
     private CouponRepository couponRepository;
 
+    @Autowired
+    private CouponCountRepository couponCountRepository;
+
     @Test
     public void 한번만응모() {
         applyService.apply(1L);
@@ -29,6 +33,8 @@ public class ApiServiceTest {
 
     @Test
     public void 여러명응모() throws InterruptedException {
+        couponCountRepository.flush("coupon_count");
+
         int threadCount = 1000;
         ExecutorService executorService = Executors.newFixedThreadPool(32);
         CountDownLatch countDownLatch = new CountDownLatch(threadCount);
