@@ -1,17 +1,20 @@
 package com.example.api.service;
 
 import com.example.api.domain.Coupon;
+import com.example.api.producer.CouponCreateProducer;
 import com.example.api.repository.CouponCountRepository;
 import com.example.api.repository.CouponRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ApplyService {
 
     private final CouponRepository couponRepository;
     private final CouponCountRepository couponCountRepository;
+    private final CouponCreateProducer couponCreateProducer;
 
     public void apply(Long userId) {
         Long count = couponCountRepository.increment();
@@ -20,7 +23,8 @@ public class ApplyService {
             return;
         }
 
-        couponRepository.save(new Coupon(userId));
+//        couponRepository.save(new Coupon(userId));
+        couponCreateProducer.create(userId);    // kafka를 통해서 userId를 카프카로 전달하도록 한다.
     }
     /*
     * 싱글스레드로 해당 로직이 돌아간다면 무조건, 오류가 발생하지 않을 것이다.
