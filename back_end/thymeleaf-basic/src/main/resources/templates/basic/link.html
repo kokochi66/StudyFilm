@@ -7,6 +7,7 @@
 <body>
 <h1>URL 링크</h1>
 <ul>
+    /hello/{param1}?param2=data2
     <li><a th:href="@{/hello}">basic url</a></li>
     <li><a th:href="@{/hello(param1=${param1}, param2=${param2})}">hello query param</a></li>
     <li><a th:href="@{/hello/{param1}/{param2}(param1=${param1}, param2=${param2})}">path variable</a></li>
